@@ -1,43 +1,444 @@
 {
   "obras": [
     {
-      "id": "paisaje-villena-2024",
-      "titulo": { "es": "Paisaje de Villena", "en": "Villena Landscape" },
-      "año": 2024,
-      "tecnica": { "es": "Óleo sobre lienzo", "en": "Oil on canvas" },
-      "descripcion": { "es": "Vista panorámica de la sierra de Villena al atardecer", "en": "Panoramic view of the Villena mountains at sunset" },
-      "dimensiones": "100x80 cm",
-      "imagen": "paisaje-villena.jpg",
-      "en_venta": true,
-      "precio": null,
-      "categoria": "paisaje",
-      "destacada": true
-    },
-    {
-      "id": "retrato-mujer-2023",
-      "titulo": { "es": "Retrato de mujer", "en": "Portrait of a Woman" },
-      "año": 2023,
-      "tecnica": { "es": "Acrílico sobre tabla", "en": "Acrylic on board" },
-      "descripcion": { "es": "Estudio de luz natural sobre rostro femenino", "en": "Natural light study on female face" },
-      "dimensiones": "60x40 cm",
-      "imagen": "retrato-mujer.jpg",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "retrato",
-      "destacada": false
-    },
-    {
-      "id": "abstracto-rojo-2024",
-      "titulo": { "es": "Composición en rojo", "en": "Composition in Red" },
-      "año": 2024,
-      "tecnica": { "es": "Técnica mixta", "en": "Mixed media" },
-      "descripcion": { "es": "Exploración del color rojo en sus distintas intensidades", "en": "Exploration of the color red in its different intensities" },
-      "dimensiones": "120x100 cm",
-      "imagen": "abstracto-rojo.jpg",
+      "id": "fragmentos-del-vacio",
+      "titulo": {
+        "es": "Fragmentos del vacío",
+        "en": "Fragments of the Void"
+      },
+      "año": 2000,
+      "tecnica": {
+        "es": "Grafito y acrílico sobre lienzo",
+        "en": "Graphite and acrylic on canvas"
+      },
+      "descripcion": {
+        "es": "Composición en capas que explora la tensión entre figura y ausencia, con planos superpuestos de grafito y un destello de verde esmeralda",
+        "en": "Layered composition exploring the tension between figure and absence, with overlapping graphite planes and a flash of emerald green"
+      },
+      "dimensiones": "116x89 cm",
+      "imagen": "fragmentos-del-vacio.jpg",
       "en_venta": true,
       "precio": null,
       "categoria": "abstracto",
       "destacada": true
+    },
+    {
+      "id": "el-visionario",
+      "titulo": {
+        "es": "El visionario",
+        "en": "The Visionary"
+      },
+      "año": 1987,
+      "tecnica": {
+        "es": "Técnica mixta sobre tabla",
+        "en": "Mixed media on board"
+      },
+      "descripcion": {
+        "es": "Retrato fragmentado con elementos simbólicos y totémicos que rodean la figura central, envuelta en tonos púrpura y dorado",
+        "en": "Fragmented portrait with symbolic and totemic elements surrounding the central figure, wrapped in purple and gold tones"
+      },
+      "dimensiones": "100x81 cm",
+      "imagen": "el-visionario.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "retrato",
+      "destacada": true
+    },
+    {
+      "id": "vuelo-sobre-la-tierra",
+      "titulo": {
+        "es": "Vuelo sobre la tierra",
+        "en": "Flight over the Earth"
+      },
+      "año": 1992,
+      "tecnica": {
+        "es": "Óleo y grafito sobre lienzo",
+        "en": "Oil and graphite on canvas"
+      },
+      "descripcion": {
+        "es": "Paisaje onírico de tonos lavanda y ocre donde una forma orgánica asciende desde un terreno erosionado",
+        "en": "Dreamlike landscape in lavender and ochre tones where an organic form ascends from eroded terrain"
+      },
+      "dimensiones": "130x97 cm",
+      "imagen": "vuelo-sobre-la-tierra.jpg",
+      "en_venta": true,
+      "precio": null,
+      "categoria": "paisaje",
+      "destacada": false
+    },
+    {
+      "id": "la-habitacion-suspendida",
+      "titulo": {
+        "es": "La habitación suspendida",
+        "en": "The Suspended Room"
+      },
+      "año": 1992,
+      "tecnica": {
+        "es": "Grafito sobre papel",
+        "en": "Graphite on paper"
+      },
+      "descripcion": {
+        "es": "Escena interior surrealista donde objetos y figuras flotan en un espacio arquitectónico fragmentado, con un corazón luminoso en el centro",
+        "en": "Surrealist interior scene where objects and figures float in a fragmented architectural space, with a luminous heart at the center"
+      },
+      "dimensiones": "70x100 cm",
+      "imagen": "la-habitacion-suspendida.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "figurativo",
+      "destacada": true
+    },
+    {
+      "id": "ruinas-y-presagios",
+      "titulo": {
+        "es": "Ruinas y presagios",
+        "en": "Ruins and Omens"
+      },
+      "año": 1992,
+      "tecnica": {
+        "es": "Grafito sobre papel",
+        "en": "Graphite on paper"
+      },
+      "descripcion": {
+        "es": "Dibujo de gran formato que evoca columnas clásicas en descomposición y figuras envueltas en telas, sobre un horizonte difuso",
+        "en": "Large-format drawing evoking decaying classical columns and cloth-wrapped figures, against a diffuse horizon"
+      },
+      "dimensiones": "70x100 cm",
+      "imagen": "ruinas-y-presagios.jpg",
+      "en_venta": true,
+      "precio": null,
+      "categoria": "figurativo",
+      "destacada": false
+    },
+    {
+      "id": "altea01",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "altea01.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "paisaje",
+      "destacada": false
+    },
+    {
+      "id": "altea02",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "altea02.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "paisaje",
+      "destacada": false
+    },
+    {
+      "id": "altea03",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "altea03.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "paisaje",
+      "destacada": false
+    },
+    {
+      "id": "altea04",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "altea04.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "paisaje",
+      "destacada": false
+    },
+    {
+      "id": "altea05",
+      "titulo": {
+        "es": "Toro",
+        "en": "Bull"
+      },
+      "año": 2008,
+      "tecnica": {
+        "es": "Grafito y témpera acrílica sobre cartón",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "72 x 102 cm",
+      "imagen": "altea05.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Grafito",
+      "destacada": true
+    },
+    {
+      "id": "altea06",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "altea06.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "paisaje",
+      "destacada": false
+    },
+    {
+      "id": "altea07",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "altea07.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "paisaje",
+      "destacada": false
+    },
+    {
+      "id": "altea08",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "altea08.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "paisaje",
+      "destacada": false
+    },
+    {
+      "id": "altea09",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "altea09.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "paisaje",
+      "destacada": false
+    },
+    {
+      "id": "altea10",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "altea10.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "paisaje",
+      "destacada": false
+    },
+    {
+      "id": "altea11",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "altea11.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "paisaje",
+      "destacada": false
+    },
+    {
+      "id": "altea12",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "altea12.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "paisaje",
+      "destacada": false
+    },
+    {
+      "id": "altea14",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "altea14.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "paisaje",
+      "destacada": false
+    },
+    {
+      "id": "altea15",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "altea15.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "paisaje",
+      "destacada": false
+    },
+    {
+      "id": "altea16",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "altea16.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "paisaje",
+      "destacada": false
     }
   ]
 }

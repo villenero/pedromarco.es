@@ -6,8 +6,7 @@ import data from '../../../../obras.json';
 const lang = 'es';
 
 export function getStaticPaths() {
-  const obras = import('../../../../obras.json').then(m => m.default.obras);
-  return obras.then(list => list.map(obra => ({ params: { id: obra.id } })));
+  return data.obras.map(obra => ({ params: { id: obra.id } }));
 }
 
 const { id } = Astro.params;
@@ -21,11 +20,12 @@ if (!obra) return Astro.redirect('/es/');
       ← {t(lang, 'artwork.back')}
     </a>
 
-    <!-- Image -->
     <div class="bg-gray-100 rounded-xl overflow-hidden mb-8">
-      <div class="aspect-[4/3] flex items-center justify-center text-gray-400">
-        {obra.imagen}
-      </div>
+      <img
+        src={`/obras/${obra.imagen}`}
+        alt={obra.titulo[lang]}
+        class="w-full h-auto object-contain"
+      />
     </div>
 
     <!-- Details -->

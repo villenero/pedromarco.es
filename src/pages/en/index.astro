@@ -8,6 +8,7 @@ const categorias = [...new Set(obras.obras.map(o => o.categoria))];
 ---
 
 <Base title={t(lang, 'home.title')} lang={lang}>
+  <!-- Filter bar -->
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <div class="flex flex-wrap gap-2">
       <button class="filter-btn active px-4 py-2 text-sm rounded-full border border-gray-300 transition-colors hover:bg-gray-900 hover:text-white" data-category="all">
@@ -21,18 +22,21 @@ const categorias = [...new Set(obras.obras.map(o => o.categoria))];
     </div>
   </div>
 
+  <!-- Masonry grid -->
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
     <div id="masonry" class="columns-2 sm:columns-3 lg:columns-4 xl:columns-5 gap-4 [column-fill:_balance]">
-      {obras.obras.map(obra => (
-        <a
-          href={`/en/work/${obra.id}`}
-          class="masonry-item block mb-4 break-inside-avoid group relative overflow-hidden rounded-lg"
+      {obras.obras.map((obra, i) => (
+        <div
+          class="masonry-item block mb-4 break-inside-avoid group relative overflow-hidden rounded-lg cursor-pointer"
           data-category={obra.categoria}
+          data-index={i}
         >
-          <div class="aspect-[3/4] bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center text-gray-500 text-sm">
-            {obra.imagen}
-          </div>
-
+          <img
+            src={`/obras/thumbs/${obra.imagen}`}
+            alt={obra.titulo[lang]}
+            class="w-full h-auto object-cover bg-gray-100"
+            loading="lazy"
+          />
           <div class="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-colors duration-300 flex items-end">
             <div class="p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-2 group-hover:translate-y-0">
               <p class="font-semibold">{obra.titulo[lang]}</p>
@@ -40,10 +44,208 @@ const categorias = [...new Set(obras.obras.map(o => o.categoria))];
               {obra.en_venta && <span class="inline-block mt-1 text-xs bg-white/20 px-2 py-0.5 rounded-full">{t(lang, 'home.for_sale')}</span>}
             </div>
           </div>
-        </a>
+        </div>
       ))}
     </div>
   </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+
+    <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+
+    <button class="modal-nav modal-prev" id="modal-prev" aria-label="Previous">&#8249;</button>
+    <button class="modal-nav modal-next" id="modal-next" aria-label="Next">&#8250;</button>
+
+    <div class="modal-content" id="modal-content">
+      <div class="modal-image-wrap">
+        <img id="modal-img" src="" alt="" class="modal-image" />
+        <div class="modal-zoom">
+          <span class="modal-zoom-label">100%</span>
+          <input type="range" id="modal-zoom" min="100" max="300" value="100" step="10" />
+        </div>
+      </div>
+      <div class="modal-info" id="modal-info"></div>
+    </div>
+  </div>
+
+  <script is:inline define:vars={{ obrasData: obras.obras, lang }}>
+    const labels = {
+      year: 'Year',
+      technique: 'Technique',
+      dimensions: 'Dimensions',
+      for_sale: 'Available',
+      not_for_sale: 'Not for sale'
+    };
+
+    let currentIndex = -1;
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    const modalInfo = document.getElementById('modal-info');
+    const modalZoom = document.getElementById('modal-zoom');
+    const zoomLabel = document.querySelector('.modal-zoom-label');
+
+    function getVisibleItems() {
+      return [...document.querySelectorAll('.masonry-item')].filter(el => el.style.display !== 'none');
+    }
+
+    function openModal(index) {
+      const visibleItems = getVisibleItems();
+      currentIndex = index;
+      const dataIndex = parseInt(visibleItems[index].getAttribute('data-index'));
+      const obra = obrasData[dataIndex];
+      if (!obra) return;
+
+      modalImg.src = `/obras/${obra.imagen}`;
+      modalImg.alt = obra.titulo[lang];
+      modalImg.style.transform = 'scale(1)';
+      modalImg.style.cursor = 'default';
+      modalZoom.value = 100;
+      zoomLabel.textContent = '100%';
+      resetDrag();
+
+      modalInfo.innerHTML = `
+        <h2 class="text-2xl font-bold mb-4">${obra.titulo[lang]}</h2>
+        <div class="space-y-3 text-sm">
+          ${obra.año ? `<div><span class="text-gray-400 block">${labels.year}</span><span class="font-medium">${obra.año}</span></div>` : ''}
+          ${obra.tecnica[lang] && obra.tecnica[lang] !== 'No definido' ? `<div><span class="text-gray-400 block">${labels.technique}</span><span class="font-medium">${obra.tecnica[lang]}</span></div>` : ''}
+          ${obra.dimensiones && obra.dimensiones !== 'No definido' ? `<div><span class="text-gray-400 block">${labels.dimensions}</span><span class="font-medium">${obra.dimensiones}</span></div>` : ''}
+        </div>
+        ${obra.descripcion[lang] && obra.descripcion[lang] !== 'No definido' ? `<p class="text-gray-600 leading-relaxed mt-4">${obra.descripcion[lang]}</p>` : ''}
+        <div class="mt-4">
+          ${obra.en_venta
+            ? `<span class="inline-flex items-center gap-1.5 text-sm font-medium text-green-700 bg-green-50 px-3 py-1.5 rounded-full">&#9679; ${labels.for_sale}</span>`
+            : ''}
+        </div>
+      `;
+
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function navigate(dir) {
+      const visibleItems = getVisibleItems();
+      const next = currentIndex + dir;
+      if (next >= 0 && next < visibleItems.length) openModal(next);
+    }
+
+    document.querySelectorAll('.masonry-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const visibleItems = getVisibleItems();
+        const idx = visibleItems.indexOf(item);
+        if (idx !== -1) openModal(idx);
+      });
+    });
+
+    document.getElementById('modal-close').addEventListener('click', closeModal);
+    document.querySelector('.modal-backdrop').addEventListener('click', closeModal);
+    document.addEventListener('keydown', (e) => {
+      if (!modal.classList.contains('open')) return;
+      if (e.key === 'Escape') closeModal();
+      if (e.key === 'ArrowLeft') navigate(-1);
+      if (e.key === 'ArrowRight') navigate(1);
+    });
+
+    document.getElementById('modal-prev').addEventListener('click', () => navigate(-1));
+    document.getElementById('modal-next').addEventListener('click', () => navigate(1));
+
+    // Zoom + drag
+    let dragX = 0, dragY = 0, isDragging = false, startX = 0, startY = 0;
+
+    function applyTransform() {
+      const scale = modalZoom.value / 100;
+      modalImg.style.transform = `translate(${dragX}px, ${dragY}px) scale(${scale})`;
+    }
+
+    function resetDrag() {
+      dragX = 0; dragY = 0;
+      isDragging = false;
+    }
+
+    modalZoom.addEventListener('input', (e) => {
+      const val = e.target.value;
+      zoomLabel.textContent = val + '%';
+      if (val == 100) resetDrag();
+      applyTransform();
+      modalImg.style.cursor = val > 100 ? 'grab' : 'default';
+    });
+
+    modalImg.addEventListener('mousedown', (e) => {
+      if (modalZoom.value <= 100) return;
+      isDragging = true;
+      startX = e.clientX - dragX;
+      startY = e.clientY - dragY;
+      modalImg.style.cursor = 'grabbing';
+      modalImg.style.transition = 'none';
+      e.preventDefault();
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      dragX = e.clientX - startX;
+      dragY = e.clientY - startY;
+      applyTransform();
+    });
+
+    document.addEventListener('mouseup', () => {
+      if (!isDragging) return;
+      isDragging = false;
+      modalImg.style.cursor = 'grab';
+      modalImg.style.transition = '';
+    });
+
+    // Mouse wheel zoom
+    document.querySelector('.modal-image-wrap').addEventListener('wheel', (e) => {
+      e.preventDefault();
+      let val = parseInt(modalZoom.value) + (e.deltaY < 0 ? 10 : -10);
+      val = Math.max(100, Math.min(300, val));
+      modalZoom.value = val;
+      zoomLabel.textContent = val + '%';
+      if (val == 100) resetDrag();
+      applyTransform();
+      modalImg.style.cursor = val > 100 ? 'grab' : 'default';
+    }, { passive: false });
+
+    modalImg.addEventListener('touchstart', (e) => {
+      if (modalZoom.value <= 100 || e.touches.length !== 1) return;
+      isDragging = true;
+      startX = e.touches[0].clientX - dragX;
+      startY = e.touches[0].clientY - dragY;
+      modalImg.style.transition = 'none';
+    }, { passive: true });
+
+    document.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      dragX = e.touches[0].clientX - startX;
+      dragY = e.touches[0].clientY - startY;
+      applyTransform();
+    }, { passive: true });
+
+    document.addEventListener('touchend', () => {
+      if (!isDragging) return;
+      isDragging = false;
+      modalImg.style.transition = '';
+    });
+
+    const buttons = document.querySelectorAll('.filter-btn');
+    const items = document.querySelectorAll('.masonry-item');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const cat = btn.getAttribute('data-category');
+        items.forEach(item => {
+          item.style.display = (cat === 'all' || item.getAttribute('data-category') === cat) ? '' : 'none';
+        });
+      });
+    });
+  </script>
 </Base>
 
 <style>
@@ -52,27 +254,116 @@ const categorias = [...new Set(obras.obras.map(o => o.categoria))];
     color: white;
     border-color: #111;
   }
+
+  .modal-overlay {
+    position: fixed; inset: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.25s ease;
+  }
+  .modal-overlay.open {
+    opacity: 1; pointer-events: auto;
+  }
+  .modal-backdrop {
+    position: absolute; inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  .modal-close {
+    position: absolute; top: 16px; right: 16px; z-index: 110;
+    width: 44px; height: 44px;
+    background: white; border: none; border-radius: 50%;
+    font-size: 28px; line-height: 1; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    color: #333; box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: background 0.15s;
+  }
+  .modal-close:hover { background: #f3f4f6; }
+
+  .modal-nav {
+    position: absolute; top: 50%; transform: translateY(-50%); z-index: 110;
+    width: 48px; height: 48px;
+    background: white; border: none; border-radius: 50%;
+    font-size: 32px; line-height: 1; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    color: #333; box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: background 0.15s;
+  }
+  .modal-nav:hover { background: #f3f4f6; }
+  .modal-prev { left: 16px; }
+  .modal-next { right: 16px; }
+
+  .modal-content {
+    position: relative; z-index: 105;
+    display: flex;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    max-width: 90vw;
+    max-height: 90vh;
+    width: 1200px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  }
+
+  .modal-image-wrap {
+    flex: 1;
+    min-width: 0;
+    background: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+  .modal-image {
+    max-width: 100%;
+    max-height: calc(90vh - 50px);
+    object-fit: contain;
+    transition: transform 0.2s ease;
+    transform-origin: center center;
+  }
+
+  .modal-zoom {
+    position: absolute; bottom: 12px; right: 12px;
+    display: flex; align-items: center; gap: 6px;
+    padding: 4px 10px;
+    background: rgba(255,255,255,0.85);
+    border-radius: 20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  }
+  .modal-zoom-label {
+    font-size: 11px; color: #666; min-width: 32px;
+  }
+  .modal-zoom input[type="range"] {
+    width: 80px; height: 3px; cursor: pointer;
+    accent-color: #3b82f6;
+  }
+
+  .modal-info {
+    width: 320px;
+    flex-shrink: 0;
+    padding: 32px 24px;
+    overflow-y: auto;
+    border-left: 1px solid #eee;
+  }
+
+  @media (max-width: 768px) {
+    .modal-content {
+      flex-direction: column;
+      max-height: 95vh;
+      width: 95vw;
+    }
+    .modal-image-wrap {
+      max-height: 50vh;
+    }
+    .modal-info {
+      width: 100%;
+      border-left: none;
+      border-top: 1px solid #eee;
+      padding: 20px 16px;
+    }
+    .modal-prev { left: 8px; }
+    .modal-next { right: 8px; }
+  }
 </style>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const buttons = document.querySelectorAll('.filter-btn');
-    const items = document.querySelectorAll('.masonry-item');
-
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        buttons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        const cat = btn.getAttribute('data-category');
-        items.forEach(item => {
-          if (cat === 'all' || item.getAttribute('data-category') === cat) {
-            (item as HTMLElement).style.display = '';
-          } else {
-            (item as HTMLElement).style.display = 'none';
-          }
-        });
-      });
-    });
-  });
-</script>

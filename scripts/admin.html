@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Obras</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, sans-serif; background: #f5f5f5; color: #222; }
+
+  .topbar {
+    position: sticky; top: 0; z-index: 10;
+    background: #fff; border-bottom: 1px solid #ddd;
+    padding: 12px 20px; display: flex; align-items: center; gap: 12px;
+  }
+  .topbar h1 { font-size: 18px; font-weight: 600; }
+  .topbar .spacer { flex: 1; }
+  .status { font-size: 13px; color: #888; }
+  .status.saved { color: #16a34a; }
+  .status.error { color: #dc2626; }
+
+  .layout { display: grid; grid-template-columns: 360px 1fr; height: calc(100vh - 53px); }
+  @media (max-width: 800px) { .layout { grid-template-columns: 1fr; } }
+
+  /* Card list */
+  .list { overflow-y: auto; border-right: 1px solid #ddd; background: #fff; }
+  .card {
+    display: flex; gap: 12px; padding: 10px 16px; cursor: pointer;
+    border-bottom: 1px solid #eee; transition: background 0.15s;
+  }
+  .card:hover { background: #f9f9f9; }
+  .card.active { background: #eff6ff; border-left: 3px solid #3b82f6; }
+  .card.undefined { border-left: 3px solid #f59e0b; }
+  .card img { width: 60px; height: 60px; object-fit: cover; border-radius: 4px; background: #eee; }
+  .card-info { flex: 1; min-width: 0; }
+  .card-title { font-size: 14px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .card-meta { font-size: 12px; color: #888; margin-top: 2px; }
+  .card-badges { display: flex; gap: 4px; margin-top: 4px; }
+  .badge {
+    font-size: 10px; padding: 1px 6px; border-radius: 8px;
+    background: #e5e7eb; color: #555;
+  }
+  .badge.sale { background: #dcfce7; color: #16a34a; }
+  .badge.featured { background: #fef3c7; color: #b45309; }
+
+  /* Form */
+  .form-panel { overflow-y: auto; padding: 24px; }
+  .form-panel.empty { display: flex; align-items: center; justify-content: center; color: #aaa; font-size: 16px; }
+
+  .form-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    max-width: 900px;
+  }
+  .full { grid-column: 1 / -1; }
+
+  .field label {
+    display: block; font-size: 12px; font-weight: 600;
+    color: #555; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .field input, .field textarea, .field select {
+    width: 100%; padding: 8px 10px; border: 1px solid #ddd; border-radius: 6px;
+    font-size: 14px; font-family: inherit; background: #fff;
+    transition: border-color 0.15s;
+  }
+  .field input:focus, .field textarea:focus, .field select:focus {
+    outline: none; border-color: #3b82f6;
+  }
+  .field textarea { resize: vertical; min-height: 70px; }
+  .field input[type="checkbox"] { width: auto; }
+  .field .hint { font-size: 11px; color: #aaa; margin-top: 2px; }
+
+  .check-row { display: flex; align-items: center; gap: 8px; margin-top: 20px; }
+  .check-row label { font-size: 14px; font-weight: 400; color: #222; text-transform: none; letter-spacing: 0; }
+
+  .img-preview {
+    margin-top: 8px; width: 120px; height: 120px; object-fit: cover;
+    border-radius: 6px; background: #eee; border: 1px solid #ddd;
+  }
+
+  .form-actions {
+    grid-column: 1 / -1;
+    display: flex; gap: 10px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #eee;
+  }
+
+  btn, .btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 8px 16px; border-radius: 6px; font-size: 14px; font-weight: 500;
+    border: 1px solid #ddd; background: #fff; cursor: pointer;
+    transition: all 0.15s;
+  }
+  .btn:hover { background: #f5f5f5; }
+  .btn-primary { background: #3b82f6; color: #fff; border-color: #3b82f6; }
+  .btn-primary:hover { background: #2563eb; }
+  .btn-danger { color: #dc2626; border-color: #fca5a5; }
+  .btn-danger:hover { background: #fef2f2; }
+  .btn-new { background: #16a34a; color: #fff; border-color: #16a34a; }
+  .btn-new:hover { background: #15803d; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>Obras — Admin</h1>
+  <div class="spacer"></div>
+  <span class="status" id="status"></span>
+  <button class="btn btn-new" onclick="newObra()">+ Nueva obra</button>
+</div>
+
+<div class="layout">
+  <div class="list" id="list"></div>
+  <div class="form-panel empty" id="formPanel">
+    <span>Selecciona una obra o crea una nueva</span>
+  </div>
+</div>
+
+<script>
+let obras = [];
+let images = [];
+let currentId = null;
+let isNew = false;
+
+async function fetchObras() {
+  const res = await fetch('/api/obras');
+  obras = await res.json();
+  renderList();
+}
+
+async function fetchImages() {
+  const res = await fetch('/api/images');
+  images = await res.json();
+}
+
+function renderList() {
+  const list = document.getElementById('list');
+  list.innerHTML = obras.map(o => {
+    const isUndef = o.titulo.es === 'No definido';
+    const cls = [
+      'card',
+      o.id === currentId ? 'active' : '',
+      isUndef ? 'undefined' : ''
+    ].filter(Boolean).join(' ');
+    return `
+      <div class="${cls}" onclick="selectObra('${o.id}')">
+        <img src="/obras/thumbs/${o.imagen}" alt="" onerror="this.style.display='none'">
+        <div class="card-info">
+          <div class="card-title">${o.titulo.es}</div>
+          <div class="card-meta">${o.año || '—'} · ${o.dimensiones || '—'}</div>
+          <div class="card-badges">
+            <span class="badge">${o.categoria || '—'}</span>
+            ${o.en_venta ? '<span class="badge sale">En venta</span>' : ''}
+            ${o.destacada ? '<span class="badge featured">Destacada</span>' : ''}
+          </div>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+function selectObra(id) {
+  currentId = id;
+  isNew = false;
+  const o = obras.find(x => x.id === id);
+  if (!o) return;
+  renderForm(o);
+  renderList();
+}
+
+function newObra() {
+  currentId = null;
+  isNew = true;
+  renderForm({
+    id: '',
+    titulo: { es: '', en: '' },
+    'año': null,
+    tecnica: { es: '', en: '' },
+    descripcion: { es: '', en: '' },
+    dimensiones: '',
+    imagen: '',
+    en_venta: false,
+    precio: null,
+    categoria: '',
+    destacada: false
+  });
+  renderList();
+}
+
+function renderForm(o) {
+  const panel = document.getElementById('formPanel');
+  panel.classList.remove('empty');
+
+  const imageOptions = images.map(f =>
+    `<option value="${f}">${f}</option>`
+  ).join('');
+
+  const categorias = [...new Set(obras.map(x => x.categoria).filter(Boolean))];
+  const catOptions = categorias.map(c => `<option value="${c}">${c}</option>`).join('');
+
+  panel.innerHTML = `
+    <div class="form-grid">
+      <div class="field ${isNew ? '' : 'full'}">
+        <label>ID (slug)</label>
+        <input id="f-id" value="${o.id}" ${isNew ? '' : 'readonly style="background:#f3f4f6;color:#888"'}>
+        ${isNew ? '<div class="hint">Se genera del titulo si lo dejas vacio</div>' : ''}
+      </div>
+
+      <div class="field">
+        <label>Titulo (ES)</label>
+        <input id="f-titulo-es" value="${esc(o.titulo.es)}" ${isNew ? 'oninput="autoSlug()"' : ''}>
+      </div>
+      <div class="field">
+        <label>Titulo (EN)</label>
+        <input id="f-titulo-en" value="${esc(o.titulo.en)}">
+      </div>
+
+      <div class="field">
+        <label>Ano</label>
+        <input id="f-ano" type="number" value="${o.año ?? ''}">
+      </div>
+      <div class="field">
+        <label>Dimensiones</label>
+        <input id="f-dimensiones" value="${esc(o.dimensiones)}">
+      </div>
+
+      <div class="field">
+        <label>Tecnica (ES)</label>
+        <input id="f-tecnica-es" value="${esc(o.tecnica.es)}">
+      </div>
+      <div class="field">
+        <label>Tecnica (EN)</label>
+        <input id="f-tecnica-en" value="${esc(o.tecnica.en)}">
+      </div>
+
+      <div class="field">
+        <label>Descripcion (ES)</label>
+        <textarea id="f-desc-es">${esc(o.descripcion.es)}</textarea>
+      </div>
+      <div class="field">
+        <label>Descripcion (EN)</label>
+        <textarea id="f-desc-en">${esc(o.descripcion.en)}</textarea>
+      </div>
+
+      <div class="field">
+        <label>Imagen</label>
+        <select id="f-imagen" onchange="updatePreview()">
+          <option value="">— Seleccionar —</option>
+          ${imageOptions}
+        </select>
+        <img class="img-preview" id="img-preview" src="${o.imagen ? '/obras/thumbs/' + o.imagen : ''}" onerror="this.style.display='none'">
+      </div>
+      <div class="field">
+        <label>Categoria</label>
+        <input id="f-categoria" list="cat-list" value="${esc(o.categoria)}">
+        <datalist id="cat-list">${catOptions}</datalist>
+      </div>
+
+      <div class="field">
+        <label>Precio</label>
+        <input id="f-precio" type="number" value="${o.precio ?? ''}" placeholder="Dejar vacio si no aplica">
+      </div>
+      <div class="field"></div>
+
+      <div class="full" style="display:flex;gap:24px">
+        <div class="check-row">
+          <input type="checkbox" id="f-enventa" ${o.en_venta ? 'checked' : ''}>
+          <label for="f-enventa">En venta</label>
+        </div>
+        <div class="check-row">
+          <input type="checkbox" id="f-destacada" ${o.destacada ? 'checked' : ''}>
+          <label for="f-destacada">Destacada</label>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button class="btn btn-primary" onclick="saveObra()">Guardar</button>
+        <button class="btn btn-danger" onclick="deleteObra()" ${isNew ? 'disabled' : ''}>Eliminar</button>
+      </div>
+    </div>`;
+
+  // Set select value after render
+  const sel = document.getElementById('f-imagen');
+  if (sel && o.imagen) sel.value = o.imagen;
+}
+
+function esc(s) {
+  if (!s) return '';
+  return s.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function slugify(s) {
+  return s.toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
+function autoSlug() {
+  if (!isNew) return;
+  const title = document.getElementById('f-titulo-es').value;
+  document.getElementById('f-id').value = slugify(title);
+}
+
+function updatePreview() {
+  const img = document.getElementById('img-preview');
+  const val = document.getElementById('f-imagen').value;
+  if (val) {
+    img.src = '/obras/thumbs/' + val;
+    img.style.display = '';
+  } else {
+    img.style.display = 'none';
+  }
+}
+
+function collectForm() {
+  const precio = document.getElementById('f-precio').value;
+  const ano = document.getElementById('f-ano').value;
+  return {
+    id: document.getElementById('f-id').value.trim(),
+    titulo: {
+      es: document.getElementById('f-titulo-es').value.trim(),
+      en: document.getElementById('f-titulo-en').value.trim()
+    },
+    'año': ano ? parseInt(ano) : null,
+    tecnica: {
+      es: document.getElementById('f-tecnica-es').value.trim(),
+      en: document.getElementById('f-tecnica-en').value.trim()
+    },
+    descripcion: {
+      es: document.getElementById('f-desc-es').value.trim(),
+      en: document.getElementById('f-desc-en').value.trim()
+    },
+    dimensiones: document.getElementById('f-dimensiones').value.trim(),
+    imagen: document.getElementById('f-imagen').value,
+    en_venta: document.getElementById('f-enventa').checked,
+    precio: precio ? parseFloat(precio) : null,
+    categoria: document.getElementById('f-categoria').value.trim(),
+    destacada: document.getElementById('f-destacada').checked
+  };
+}
+
+function setStatus(msg, type = '') {
+  const el = document.getElementById('status');
+  el.textContent = msg;
+  el.className = 'status ' + type;
+  if (type === 'saved') setTimeout(() => { el.textContent = ''; }, 2000);
+}
+
+async function saveObra() {
+  const obra = collectForm();
+  if (!obra.id) { setStatus('El ID es obligatorio', 'error'); return; }
+
+  try {
+    if (isNew) {
+      const res = await fetch('/api/obras', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(obra)
+      });
+      if (!res.ok) {
+        const err = await res.json();
+        setStatus(err.error || 'Error', 'error');
+        return;
+      }
+    } else {
+      await fetch(`/api/obras/${encodeURIComponent(currentId)}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(obra)
+      });
+    }
+    currentId = obra.id;
+    isNew = false;
+    await fetchObras();
+    selectObra(currentId);
+    setStatus('Guardado', 'saved');
+  } catch (e) {
+    setStatus('Error al guardar', 'error');
+  }
+}
+
+async function deleteObra() {
+  if (isNew || !currentId) return;
+  if (!confirm('Eliminar esta obra?')) return;
+  try {
+    await fetch(`/api/obras/${encodeURIComponent(currentId)}`, { method: 'DELETE' });
+    currentId = null;
+    const panel = document.getElementById('formPanel');
+    panel.classList.add('empty');
+    panel.innerHTML = '<span>Selecciona una obra o crea una nueva</span>';
+    await fetchObras();
+    setStatus('Eliminada', 'saved');
+  } catch (e) {
+    setStatus('Error al eliminar', 'error');
+  }
+}
+
+// Init
+Promise.all([fetchObras(), fetchImages()]);
+</script>
+</body>
+</html>

@@ -10,7 +10,7 @@ Portfolio website for **Pedro Marco Hernández**, a painter from Villena (Alican
 - **Styles:** Tailwind CSS (v4, mobile-first)
 - **i18n:** Manual routing — `/es/` and `/en/` with shared JSON translations
 - **"Database":** `obras.json` at project root — single source of truth for all artwork
-- **Images:** `src/images/obras/` — Astro optimizes them at build time
+- **Images:** `public/obras/` (full-size originals) + `public/obras/thumbs/` (400px thumbnails for gallery)
 - **Deploy:** Static output to `dist/`, hosted on Cloudflare Pages
 
 ## Project Structure
@@ -26,7 +26,7 @@ pedromarco.es/
 │   │   ├── en.json             ← English UI strings
 │   │   └── utils.ts            ← t() helper, lang detection, path helpers
 │   ├── images/
-│   │   └── obras/              ← Artwork images (Astro optimizes at build)
+│   │   └── obras/              ← (legacy, use public/obras/ instead)
 │   ├── pages/
 │   │   ├── index.astro         ← Redirect / → /es/
 │   │   ├── es/
@@ -41,7 +41,16 @@ pedromarco.es/
 │   │       └── contact.astro   ← Contact
 │   └── styles/
 │       └── global.css          ← Tailwind import
-├── public/                     ← Static assets (logo, favicon)
+├── public/
+│   ├── logo.png                ← Site logo (signature), displayed in nav header
+│   ├── obras/                  ← Full-size artwork images (detail pages)
+│   │   └── thumbs/             ← 400px-wide thumbnails (masonry gallery)
+│   ├── favicon.ico
+│   └── favicon.svg
+├── scripts/
+│   ├── generate-thumbs.sh      ← Regenerate thumbnails after adding new images
+│   ├── admin.mjs               ← Local admin server (Node.js, zero deps)
+│   └── admin.html              ← Admin panel UI (single-page, inline CSS/JS)
 ├── astro.config.mjs
 └── package.json
 ```
@@ -65,7 +74,7 @@ pedromarco.es/
 ```
 
 - `id` is used as the URL slug: `/es/obra/{id}` and `/en/work/{id}`
-- `imagen` references a file in `src/images/obras/`
+- `imagen` references a file in `public/obras/` (full) and `public/obras/thumbs/` (thumbnail)
 - `categoria` is used for filtering in the gallery (lowercase, no accents)
 - Bilingual fields (`titulo`, `tecnica`, `descripcion`) have `es` and `en` keys
 
@@ -80,16 +89,38 @@ npm run build
 
 # Preview built site
 npm run preview
+
+# Local admin panel (edit obras.json via browser)
+npm run admin    # → http://localhost:4000
 ```
 
 Build output goes to `dist/` — this is what gets deployed.
+
+### Adding New Artwork Images
+
+1. Place the original image in `public/obras/`
+2. Run `./scripts/generate-thumbs.sh` to create the 400px thumbnail
+3. Edit the entry via admin panel (`npm run admin`) or manually in `obras.json`
+
+Gallery pages use `/obras/thumbs/` for fast loading; detail pages use `/obras/` for full resolution.
+
+### Admin Panel
+
+Local-only tool at `http://localhost:4000` for managing `obras.json`. Zero dependencies — pure Node.js (`node:http`). Features:
+- List all obras with thumbnail previews
+- Edit all fields (bilingual titles, technique, description, year, dimensions, category, price, etc.)
+- Image selector from available files in `public/obras/thumbs/`
+- Create and delete obras
+- Writes directly to `obras.json`
+
+**Not deployed** — stays local. The scripts/ folder is not part of the Astro build.
 
 ## Design Principles
 
 - **Mobile-first.** Every page must look great on phones. Design for 375px first, then scale up.
 - **Masonry layout** on the gallery: CSS columns (2 mobile → 3 tablet → 4-5 desktop). Pure CSS, no JS libraries.
 - **Minimal UI.** The art is the protagonist. White backgrounds, thin borders, lots of whitespace.
-- **Performance.** Zero JS by default (Astro). Images optimized at build. Target <1s load time.
+- **Performance.** Zero JS by default (Astro). Two-tier images: 400px thumbs for gallery, originals for detail. Target <1s load time.
 - **Bilingual.** Every page exists in `/es/` and `/en/`. UI strings in `src/i18n/*.json`, artwork text in `obras.json`.
 
 ## i18n Rules
