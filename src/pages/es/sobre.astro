@@ -1,0 +1,16 @@
+---
+import Base from '../../layouts/Base.astro';
+import { t } from '../../i18n/utils';
+const lang = 'es';
+---
+
+<Base title={`${t(lang, 'about.title')} — Pedro Marco`} lang={lang}>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <h1 class="text-3xl font-bold mb-8">{t(lang, 'about.title')}</h1>
+    <div class="prose prose-gray max-w-none">
+      <p class="text-lg text-gray-600">
+        Contenido biográfico de Pedro Marco Hernández. Pendiente de redactar.
+      </p>
+    </div>
+  </div>
+</Base>

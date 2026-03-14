@@ -1,0 +1,30 @@
+{
+  "nav": {
+    "home": "Obra",
+    "about": "Sobre el artista",
+    "contact": "Contacto"
+  },
+  "home": {
+    "title": "Pedro Marco Hernández — Obra",
+    "all": "Todas",
+    "for_sale": "En venta"
+  },
+  "artwork": {
+    "year": "Año",
+    "technique": "Técnica",
+    "dimensions": "Dimensiones",
+    "for_sale": "Disponible",
+    "sold": "Vendido",
+    "not_for_sale": "No está en venta",
+    "back": "Volver a galería"
+  },
+  "about": {
+    "title": "Sobre el artista"
+  },
+  "contact": {
+    "title": "Contacto"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados"
+  }
+}

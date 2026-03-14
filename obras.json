@@ -1,0 +1,43 @@
+{
+  "obras": [
+    {
+      "id": "paisaje-villena-2024",
+      "titulo": { "es": "Paisaje de Villena", "en": "Villena Landscape" },
+      "año": 2024,
+      "tecnica": { "es": "Óleo sobre lienzo", "en": "Oil on canvas" },
+      "descripcion": { "es": "Vista panorámica de la sierra de Villena al atardecer", "en": "Panoramic view of the Villena mountains at sunset" },
+      "dimensiones": "100x80 cm",
+      "imagen": "paisaje-villena.jpg",
+      "en_venta": true,
+      "precio": null,
+      "categoria": "paisaje",
+      "destacada": true
+    },
+    {
+      "id": "retrato-mujer-2023",
+      "titulo": { "es": "Retrato de mujer", "en": "Portrait of a Woman" },
+      "año": 2023,
+      "tecnica": { "es": "Acrílico sobre tabla", "en": "Acrylic on board" },
+      "descripcion": { "es": "Estudio de luz natural sobre rostro femenino", "en": "Natural light study on female face" },
+      "dimensiones": "60x40 cm",
+      "imagen": "retrato-mujer.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "retrato",
+      "destacada": false
+    },
+    {
+      "id": "abstracto-rojo-2024",
+      "titulo": { "es": "Composición en rojo", "en": "Composition in Red" },
+      "año": 2024,
+      "tecnica": { "es": "Técnica mixta", "en": "Mixed media" },
+      "descripcion": { "es": "Exploración del color rojo en sus distintas intensidades", "en": "Exploration of the color red in its different intensities" },
+      "dimensiones": "120x100 cm",
+      "imagen": "abstracto-rojo.jpg",
+      "en_venta": true,
+      "precio": null,
+      "categoria": "abstracto",
+      "destacada": true
+    }
+  ]
+}

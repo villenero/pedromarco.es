@@ -1,0 +1,67 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { t } from '../../../i18n/utils';
+import data from '../../../../obras.json';
+
+const lang = 'es';
+
+export function getStaticPaths() {
+  const obras = import('../../../../obras.json').then(m => m.default.obras);
+  return obras.then(list => list.map(obra => ({ params: { id: obra.id } })));
+}
+
+const { id } = Astro.params;
+const obra = data.obras.find(o => o.id === id);
+if (!obra) return Astro.redirect('/es/');
+---
+
+<Base title={`${obra.titulo[lang]} — Pedro Marco`} lang={lang}>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <a href="/es/" class="inline-flex items-center gap-1 text-sm text-gray-500 hover:text-gray-900 mb-6 transition-colors">
+      ← {t(lang, 'artwork.back')}
+    </a>
+
+    <!-- Image -->
+    <div class="bg-gray-100 rounded-xl overflow-hidden mb-8">
+      <div class="aspect-[4/3] flex items-center justify-center text-gray-400">
+        {obra.imagen}
+      </div>
+    </div>
+
+    <!-- Details -->
+    <div class="space-y-4">
+      <h1 class="text-3xl font-bold">{obra.titulo[lang]}</h1>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-sm">
+        <div>
+          <span class="text-gray-400 block">{t(lang, 'artwork.year')}</span>
+          <span class="font-medium">{obra.año}</span>
+        </div>
+        <div>
+          <span class="text-gray-400 block">{t(lang, 'artwork.technique')}</span>
+          <span class="font-medium">{obra.tecnica[lang]}</span>
+        </div>
+        <div>
+          <span class="text-gray-400 block">{t(lang, 'artwork.dimensions')}</span>
+          <span class="font-medium">{obra.dimensiones}</span>
+        </div>
+      </div>
+
+      {obra.descripcion[lang] && (
+        <p class="text-gray-600 leading-relaxed">{obra.descripcion[lang]}</p>
+      )}
+
+      <div class="pt-4">
+        {obra.en_venta ? (
+          <span class="inline-flex items-center gap-1.5 text-sm font-medium text-green-700 bg-green-50 px-3 py-1.5 rounded-full">
+            ● {t(lang, 'artwork.for_sale')}
+          </span>
+        ) : (
+          <span class="inline-flex items-center gap-1.5 text-sm text-gray-500 bg-gray-100 px-3 py-1.5 rounded-full">
+            {t(lang, 'artwork.not_for_sale')}
+          </span>
+        )}
+      </div>
+    </div>
+  </div>
+</Base>
