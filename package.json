@@ -14,6 +14,7 @@
     "deploy": "astro build && wrangler pages deploy dist --project-name pedromarco-es"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.1",
     "@tailwindcss/vite": "^4.2.1",
     "astro": "^6.0.4",
     "tailwindcss": "^4.2.1"

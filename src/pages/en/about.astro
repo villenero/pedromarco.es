@@ -2,9 +2,28 @@
 import Base from '../../layouts/Base.astro';
 import { t } from '../../i18n/utils';
 const lang = 'en';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Pedro Marco",
+  "birthDate": "1949",
+  "deathDate": "2022",
+  "birthPlace": { "@type": "Place", "name": "Villena, Alicante, Spain" },
+  "nationality": "Spanish",
+  "jobTitle": "Painter",
+  "description": "Pedro Marco (Villena, Alicante, 1949-2022) devoted himself entirely to the visual arts from 1972. Self-taught, he specialised in printmaking after a scholarship in Hamburg (Germany) in 1982.",
+  "knowsAbout": ["Painting", "Printmaking", "Surrealism", "Visual arts"],
+  "sameAs": "https://pedromarco.es"
+};
 ---
 
-<Base title={`${t(lang, 'about.title')} — Pedro Marco`} lang={lang}>
+<Base
+  title="Pedro Marco — Artist biography"
+  description="Biography of Pedro Marco (Villena, 1949-2022), self-taught painter specialising in surrealism and printmaking."
+  lang={lang}
+  jsonLd={jsonLd}
+>
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <h1 class="text-3xl font-bold mb-8">{t(lang, 'about.title')}</h1>
     <div class="prose prose-gray max-w-none text-gray-600 leading-relaxed space-y-4">

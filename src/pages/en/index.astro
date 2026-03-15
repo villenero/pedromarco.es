@@ -5,9 +5,37 @@ import obras from '../../../obras.json';
 
 const lang = 'en';
 const categorias = [...new Set(obras.obras.map(o => o.categoria))];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "name": "Pedro Marco",
+      "birthDate": "1949",
+      "deathDate": "2022",
+      "birthPlace": { "@type": "Place", "name": "Villena, Alicante, Spain" },
+      "nationality": "Spanish",
+      "jobTitle": "Painter",
+      "description": "Self-taught surrealist painter from Villena (Alicante), specialising in printmaking and visual arts."
+    },
+    {
+      "@type": "ImageGallery",
+      "name": "Complete works of Pedro Marco",
+      "description": "Gallery of works by surrealist painter Pedro Marco (Villena, 1949-2022).",
+      "numberOfItems": obras.obras.length,
+      "url": "https://pedromarco.es/en/"
+    }
+  ]
+};
 ---
 
-<Base title={t(lang, 'home.title')} lang={lang}>
+<Base
+  title="Pedro Marco — Surrealist painter from Villena | Complete works"
+  description="Complete works of Pedro Marco, surrealist painter from Villena (Alicante). Abstract, portrait, landscape and figurative art."
+  lang={lang}
+  jsonLd={jsonLd}
+>
   <!-- Filter bar -->
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <div class="flex flex-wrap gap-2">
@@ -24,10 +52,10 @@ const categorias = [...new Set(obras.obras.map(o => o.categoria))];
 
   <!-- Masonry grid -->
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
-    <div id="masonry" class="columns-2 sm:columns-3 lg:columns-4 xl:columns-5 gap-4 [column-fill:_balance]">
+    <div id="masonry" class="columns-2 sm:columns-3 lg:columns-4 xl:columns-5 gap-2 [column-fill:_balance]">
       {obras.obras.map((obra, i) => (
         <div
-          class="masonry-item block mb-4 break-inside-avoid group relative overflow-hidden rounded-lg cursor-pointer"
+          class="masonry-item block mb-2 break-inside-avoid group relative overflow-hidden cursor-pointer"
           data-category={obra.categoria}
           data-index={i}
         >
@@ -131,7 +159,7 @@ const categorias = [...new Set(obras.obras.map(o => o.categoria))];
         ${descripcion ? `<p class="text-gray-600 leading-relaxed mt-4">${descripcion}</p>` : ''}
         <div class="mt-4">
           ${obra.en_venta
-            ? `<span class="inline-flex items-center gap-1.5 text-sm font-medium text-green-700 bg-green-50 px-3 py-1.5 rounded-full">&#9679; ${labels.for_sale}</span>`
+            ? `<span class="inline-flex items-center gap-2.5 text-sm font-medium text-green-700 bg-green-50 px-3 py-1.5 rounded-full">&#9679; ${labels.for_sale}</span>`
             : ''}
         </div>
       `;

@@ -6,9 +6,13 @@ interface Props {
   title: string;
   description?: string;
   lang?: Lang;
+  image?: string;
+  jsonLd?: Record<string, any>;
 }
 
-const { title, description = 'Pedro Marco Hernández — Pintor', lang: propLang } = Astro.props;
+const siteUrl = 'https://pedromarco.es';
+
+const { title, description = 'Pedro Marco Hernández — Pintor', lang: propLang, image, jsonLd } = Astro.props;
 const lang = propLang ?? getLangFromUrl(Astro.url);
 const otherLang = lang === 'es' ? 'en' : 'es';
 
@@ -35,6 +39,18 @@ for (const [from, to] of Object.entries(routeMap)) {
 }
 
 const otherLangPath = `/${otherLang}${translatedPath}`;
+
+// SEO URLs
+const canonicalUrl = `${siteUrl}${currentPath}`;
+const esUrl = lang === 'es' ? canonicalUrl : `${siteUrl}/${otherLang}${translatedPath}`.replace(`/${otherLang}`, '/es');
+const enUrl = lang === 'en' ? canonicalUrl : `${siteUrl}/${otherLang}${translatedPath}`.replace(`/${otherLang}`, '/en');
+const hrefEs = `${siteUrl}/es${pathWithoutLang}`;
+const hrefEn = `${siteUrl}/en${translatedPath}`;
+
+// OG
+const ogImage = image ?? `${siteUrl}/favicon-512.png`;
+const ogLocale = lang === 'es' ? 'es_ES' : 'en_GB';
+const ogLocaleAlt = lang === 'es' ? 'en_GB' : 'es_ES';
 ---
 
 <!doctype html>
@@ -46,11 +62,38 @@ const otherLangPath = `/${otherLang}${translatedPath}`;
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- SEO -->
+  <link rel="canonical" href={canonicalUrl} />
+  <link rel="alternate" hreflang="es" href={lang === 'es' ? canonicalUrl : `${siteUrl}/es${lang === 'en' ? pathWithoutLang.replace('/work', '/obra').replace('/about', '/sobre').replace('/contact', '/contacto') : pathWithoutLang}`} />
+  <link rel="alternate" hreflang="en" href={lang === 'en' ? canonicalUrl : `${siteUrl}/en${lang === 'es' ? pathWithoutLang.replace('/obra', '/work').replace('/sobre', '/about').replace('/contacto', '/contact') : pathWithoutLang}`} />
+  <link rel="alternate" hreflang="x-default" href={`${siteUrl}/es${pathWithoutLang}`} />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content={ogLocale} />
+  <meta property="og:locale:alternate" content={ogLocaleAlt} />
+  <meta property="og:site_name" content="Pedro Marco" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  {jsonLd && (
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  )}
+
   <title>{title}</title>
 </head>
 <body class="min-h-screen bg-white text-gray-900 flex flex-col">
   <!-- Navigation -->
-  <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+  <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
@@ -117,7 +160,13 @@ const otherLangPath = `/${otherLang}${translatedPath}`;
 
   <!-- Footer -->
   <footer class="border-t border-gray-100 py-8 text-center text-sm text-gray-400">
-    <div class="mb-2">
+    <div class="mb-2 flex items-center justify-center gap-4">
+      <a href={getLocalizedPath(lang, '/')} class="hover:text-gray-600 transition-colors">
+        {t(lang, 'nav.home')}
+      </a>
+      <a href={getLocalizedPath(lang, lang === 'es' ? '/sobre' : '/about')} class="hover:text-gray-600 transition-colors">
+        {t(lang, 'nav.about')}
+      </a>
       <a href={getLocalizedPath(lang, lang === 'es' ? '/contacto' : '/contact')} class="hover:text-gray-600 transition-colors">
         {t(lang, 'nav.contact')}
       </a>

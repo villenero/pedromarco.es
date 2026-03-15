@@ -12,9 +12,30 @@ export function getStaticPaths() {
 const { id } = Astro.params;
 const obra = data.obras.find(o => o.id === id);
 if (!obra) return Astro.redirect('/es/');
+
+const titulo = obra.titulo[lang] && obra.titulo[lang] !== 'No definido' ? obra.titulo[lang] : obra.titulo['en'];
+const tecnica = obra.tecnica[lang] && obra.tecnica[lang] !== 'No definido' ? obra.tecnica[lang] : obra.tecnica['en'];
+const description = `${titulo}${tecnica ? ` — ${tecnica}` : ''}${obra.año ? ` (${obra.año})` : ''}. Obra de Pedro Marco, pintor surrealista de Villena.`;
+const ogImage = `https://pedromarco.es/obras/${obra.imagen}`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "VisualArtwork",
+  "name": titulo,
+  "artist": {
+    "@type": "Person",
+    "name": "Pedro Marco"
+  },
+  "dateCreated": obra.año ? String(obra.año) : undefined,
+  "artMedium": tecnica || undefined,
+  "image": ogImage,
+  "description": obra.descripcion[lang] || obra.descripcion['en'] || undefined,
+  "width": obra.dimensiones && obra.dimensiones !== 'No definido' ? obra.dimensiones : undefined,
+  "url": `https://pedromarco.es/es/obra/${obra.id}`
+};
 ---
 
-<Base title={`${obra.titulo[lang]} — Pedro Marco`} lang={lang}>
+<Base title={`${titulo} — Pedro Marco`} description={description} lang={lang} image={ogImage} jsonLd={jsonLd}>
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <a href="/es/" class="inline-flex items-center gap-1 text-sm text-gray-500 hover:text-gray-900 mb-6 transition-colors">
       ← {t(lang, 'artwork.back')}
