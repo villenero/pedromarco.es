@@ -15,7 +15,7 @@ const detailImagesMap: Record<string, string[]> = {};
 for (const obra of obras.obras) {
   const ext = path.extname(obra.imagen);
   const base = path.basename(obra.imagen, ext);
-  const pattern = new RegExp(`^${base.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}-(\\d{2})${ext.replace('.', '\\.')}$`, 'i');
+  const pattern = new RegExp(`^${base.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}_(\\d{2})${ext.replace('.', '\\.')}$`, 'i');
   const details = allFiles
     .filter(f => pattern.test(f))
     .sort();
