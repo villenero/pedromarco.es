@@ -446,12 +446,12 @@ const jsonLd = {
   }
 
   /* Detail thumbnails */
-  .detail-section {
+  :global(.detail-section) {
     margin-top: 20px;
     border-top: 1px solid #eee;
     padding-top: 16px;
   }
-  .detail-section-title {
+  :global(.detail-section-title) {
     font-size: 12px;
     font-weight: 600;
     text-transform: uppercase;
@@ -459,12 +459,13 @@ const jsonLd = {
     color: #9ca3af;
     margin-bottom: 10px;
   }
-  .detail-thumbs {
+  :global(.detail-thumbs) {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     gap: 8px;
   }
-  .detail-thumb {
+  :global(.detail-thumb) {
     width: 60px;
     height: 60px;
     min-width: 60px;
@@ -474,17 +475,18 @@ const jsonLd = {
     border-radius: 6px;
     overflow: hidden;
     cursor: pointer;
+    flex-shrink: 0;
     border: 2px solid #e5e7eb;
     transition: border-color 0.15s;
     flex-shrink: 0;
   }
-  .detail-thumb:hover {
+  :global(.detail-thumb:hover) {
     border-color: #9ca3af;
   }
-  .detail-thumb.active {
+  :global(.detail-thumb.active) {
     border-color: #111;
   }
-  .detail-thumb img {
+  :global(.detail-thumb img) {
     width: 100%;
     height: 100%;
     object-fit: cover;
