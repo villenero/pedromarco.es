@@ -178,7 +178,9 @@ const jsonLd = {
       modalImg.src = `/obras/${obra.imagen}`;
       modalImg.alt = titulo;
       resetViewer();
-      modalInfo.classList.remove('mobile-info-visible');
+      if (window.innerWidth <= 768) {
+        modalInfo.classList.add('mobile-info-visible');
+      }
 
       const details = detailImagesMap[obra.id] || [];
       let thumbsHtml = '';
