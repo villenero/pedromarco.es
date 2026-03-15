@@ -20,7 +20,8 @@
       "en_venta": true,
       "precio": null,
       "categoria": "abstracto",
-      "destacada": true
+      "destacada": true,
+      "propietario": null
     },
     {
       "id": "el-visionario",
@@ -42,7 +43,8 @@
       "en_venta": false,
       "precio": null,
       "categoria": "retrato",
-      "destacada": true
+      "destacada": true,
+      "propietario": null
     },
     {
       "id": "vuelo-sobre-la-tierra",
@@ -64,7 +66,8 @@
       "en_venta": true,
       "precio": null,
       "categoria": "paisaje",
-      "destacada": false
+      "destacada": false,
+      "propietario": null
     },
     {
       "id": "la-habitacion-suspendida",
@@ -86,7 +89,8 @@
       "en_venta": false,
       "precio": null,
       "categoria": "figurativo",
-      "destacada": true
+      "destacada": true,
+      "propietario": null
     },
     {
       "id": "ruinas-y-presagios",
@@ -108,7 +112,8 @@
       "en_venta": true,
       "precio": null,
       "categoria": "figurativo",
-      "destacada": false
+      "destacada": false,
+      "propietario": null
     },
     {
       "id": "altea01",
@@ -130,7 +135,8 @@
       "en_venta": false,
       "precio": null,
       "categoria": "paisaje",
-      "destacada": false
+      "destacada": false,
+      "propietario": null
     },
     {
       "id": "altea02",
@@ -152,7 +158,8 @@
       "en_venta": false,
       "precio": null,
       "categoria": "paisaje",
-      "destacada": false
+      "destacada": false,
+      "propietario": null
     },
     {
       "id": "altea03",
@@ -174,7 +181,8 @@
       "en_venta": false,
       "precio": null,
       "categoria": "paisaje",
-      "destacada": false
+      "destacada": false,
+      "propietario": null
     },
     {
       "id": "altea04",
@@ -196,7 +204,8 @@
       "en_venta": false,
       "precio": null,
       "categoria": "paisaje",
-      "destacada": false
+      "destacada": false,
+      "propietario": null
     },
     {
       "id": "altea05",
@@ -218,7 +227,8 @@
       "en_venta": false,
       "precio": null,
       "categoria": "Grafito",
-      "destacada": true
+      "destacada": true,
+      "propietario": null
     },
     {
       "id": "altea06",
@@ -240,7 +250,8 @@
       "en_venta": false,
       "precio": null,
       "categoria": "paisaje",
-      "destacada": false
+      "destacada": false,
+      "propietario": null
     },
     {
       "id": "altea07",
@@ -262,7 +273,8 @@
       "en_venta": false,
       "precio": null,
       "categoria": "paisaje",
-      "destacada": false
+      "destacada": false,
+      "propietario": null
     },
     {
       "id": "altea08",
@@ -284,7 +296,8 @@
       "en_venta": false,
       "precio": null,
       "categoria": "paisaje",
-      "destacada": false
+      "destacada": false,
+      "propietario": null
     },
     {
       "id": "altea09",
@@ -306,7 +319,8 @@
       "en_venta": false,
       "precio": null,
       "categoria": "paisaje",
-      "destacada": false
+      "destacada": false,
+      "propietario": null
     },
     {
       "id": "altea10",
@@ -328,7 +342,8 @@
       "en_venta": false,
       "precio": null,
       "categoria": "paisaje",
-      "destacada": false
+      "destacada": false,
+      "propietario": null
     },
     {
       "id": "altea11",
@@ -350,7 +365,8 @@
       "en_venta": false,
       "precio": null,
       "categoria": "paisaje",
-      "destacada": false
+      "destacada": false,
+      "propietario": null
     },
     {
       "id": "altea12",
@@ -372,7 +388,8 @@
       "en_venta": false,
       "precio": null,
       "categoria": "paisaje",
-      "destacada": false
+      "destacada": false,
+      "propietario": null
     },
     {
       "id": "altea14",
@@ -394,7 +411,8 @@
       "en_venta": false,
       "precio": null,
       "categoria": "paisaje",
-      "destacada": false
+      "destacada": false,
+      "propietario": null
     },
     {
       "id": "altea15",
@@ -416,7 +434,8 @@
       "en_venta": false,
       "precio": null,
       "categoria": "paisaje",
-      "destacada": false
+      "destacada": false,
+      "propietario": null
     },
     {
       "id": "altea16",
@@ -438,7 +457,146 @@
       "en_venta": false,
       "precio": null,
       "categoria": "paisaje",
-      "destacada": false
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "20201210-211638",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "20201210_211638.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "20201210-211710",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "20201210_211710.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "20201210-212111",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "20201210_212111.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "20210305-131323",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "20210305_131323.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "2022-gloria",
+      "titulo": {
+        "es": "Gloria",
+        "en": "No definido"
+      },
+      "año": 2022,
+      "tecnica": {
+        "es": "Acrílico sobre cartón",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "102 x 72 cm",
+      "imagen": "2022-Gloria.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": true,
+      "propietario": "Colección Familia Pedro Marco"
+    },
+    {
+      "id": "pict0185",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "PICT0185.JPG",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
     }
   ]
 }

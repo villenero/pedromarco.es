@@ -103,6 +103,7 @@
   <h1>Obras — Admin</h1>
   <div class="spacer"></div>
   <span class="status" id="status"></span>
+  <button class="btn" onclick="generateThumbs()" id="btn-thumbs">Generar thumbs</button>
   <button class="btn btn-new" onclick="newObra()">+ Nueva obra</button>
 </div>
 
@@ -178,7 +179,8 @@ function newObra() {
     en_venta: false,
     precio: null,
     categoria: '',
-    destacada: false
+    destacada: false,
+    propietario: null
   });
   renderList();
 }
@@ -256,7 +258,10 @@ function renderForm(o) {
         <label>Precio</label>
         <input id="f-precio" type="number" value="${o.precio ?? ''}" placeholder="Dejar vacio si no aplica">
       </div>
-      <div class="field"></div>
+      <div class="field">
+        <label>Propietario</label>
+        <input id="f-propietario" value="${esc(o.propietario || '')}">
+      </div>
 
       <div class="full" style="display:flex;gap:24px">
         <div class="check-row">
@@ -332,8 +337,11 @@ function collectForm() {
     en_venta: document.getElementById('f-enventa').checked,
     precio: precio ? parseFloat(precio) : null,
     categoria: document.getElementById('f-categoria').value.trim(),
-    destacada: document.getElementById('f-destacada').checked
+    destacada: document.getElementById('f-destacada').checked,
+    propietario: document.getElementById('f-propietario').value.trim() || null
   };
+
+  return obj;
 }
 
 function setStatus(msg, type = '') {
@@ -390,6 +398,27 @@ async function deleteObra() {
   } catch (e) {
     setStatus('Error al eliminar', 'error');
   }
+}
+
+async function generateThumbs() {
+  const btn = document.getElementById('btn-thumbs');
+  btn.disabled = true;
+  btn.textContent = 'Generando...';
+  setStatus('Ejecutando generate-thumbs.sh...', '');
+  try {
+    const res = await fetch('/api/generate-thumbs', { method: 'POST' });
+    const data = await res.json();
+    if (data.ok) {
+      setStatus('Thumbs generados', 'saved');
+      await Promise.all([fetchObras(), fetchImages()]);
+    } else {
+      setStatus('Error: ' + data.output, 'error');
+    }
+  } catch (e) {
+    setStatus('Error al ejecutar script', 'error');
+  }
+  btn.disabled = false;
+  btn.textContent = 'Generar thumbs';
 }
 
 // Init

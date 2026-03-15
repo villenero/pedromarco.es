@@ -2,6 +2,7 @@ import { createServer } from 'node:http';
 import { readFile, writeFile, readdir } from 'node:fs/promises';
 import { join, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { execFile } from 'node:child_process';
 
 const ROOT = join(fileURLToPath(import.meta.url), '../..');
 const OBRAS_PATH = join(ROOT, 'obras.json');
@@ -67,6 +68,21 @@ const server = createServer(async (req, res) => {
     // Admin HTML
     if (path === '/' || path === '/admin') {
       return serveFile(res, join(ROOT, 'scripts/admin.html'));
+    }
+
+    // API: run generate-thumbs script
+    if (path === '/api/generate-thumbs' && method === 'POST') {
+      const script = join(ROOT, 'scripts/generate-thumbs.sh');
+      return new Promise((resolve) => {
+        execFile('bash', [script], { cwd: ROOT }, (err, stdout, stderr) => {
+          if (err) {
+            json(res, { ok: false, output: stderr || err.message }, 500);
+          } else {
+            json(res, { ok: true, output: stdout });
+          }
+          resolve();
+        });
+      });
     }
 
     // API: list images

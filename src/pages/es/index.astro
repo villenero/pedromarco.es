@@ -39,8 +39,8 @@ const categorias = [...new Set(obras.obras.map(o => o.categoria))];
           />
           <div class="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-colors duration-300 flex items-end">
             <div class="p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-2 group-hover:translate-y-0">
-              <p class="font-semibold">{obra.titulo[lang]}</p>
-              <p class="text-sm text-white/70">{obra.año} · {obra.tecnica[lang]}</p>
+              <p class="font-semibold">{obra.titulo[lang] && obra.titulo[lang] !== 'No definido' ? obra.titulo[lang] : obra.titulo[lang === 'es' ? 'en' : 'es']}</p>
+              <p class="text-sm text-white/70">{obra.año} · {obra.tecnica[lang] && obra.tecnica[lang] !== 'No definido' ? obra.tecnica[lang] : obra.tecnica[lang === 'es' ? 'en' : 'es']}</p>
               {obra.en_venta && <span class="inline-block mt-1 text-xs bg-white/20 px-2 py-0.5 rounded-full">{t(lang, 'home.for_sale')}</span>}
             </div>
           </div>
@@ -79,6 +79,7 @@ const categorias = [...new Set(obras.obras.map(o => o.categoria))];
       year: 'Año',
       technique: 'Técnica',
       dimensions: 'Dimensiones',
+      owner: 'Propietario',
       for_sale: 'Disponible',
       not_for_sale: 'No está en venta'
     };
@@ -94,6 +95,16 @@ const categorias = [...new Set(obras.obras.map(o => o.categoria))];
       return [...document.querySelectorAll('.masonry-item')].filter(el => el.style.display !== 'none');
     }
 
+    // Bilingual fallback: use other language if current is empty/undefined
+    function bi(field) {
+      const other = lang === 'es' ? 'en' : 'es';
+      const val = field[lang];
+      if (val && val !== 'No definido') return val;
+      const fallback = field[other];
+      if (fallback && fallback !== 'No definido') return fallback;
+      return null;
+    }
+
     function openModal(index) {
       const visibleItems = getVisibleItems();
       currentIndex = index;
@@ -101,8 +112,12 @@ const categorias = [...new Set(obras.obras.map(o => o.categoria))];
       const obra = obrasData[dataIndex];
       if (!obra) return;
 
+      const titulo = bi(obra.titulo) || '';
+      const tecnica = bi(obra.tecnica);
+      const descripcion = bi(obra.descripcion);
+
       modalImg.src = `/obras/${obra.imagen}`;
-      modalImg.alt = obra.titulo[lang];
+      modalImg.alt = titulo;
       modalImg.style.transform = 'scale(1)';
       modalImg.style.cursor = 'default';
       modalZoom.value = 100;
@@ -110,13 +125,14 @@ const categorias = [...new Set(obras.obras.map(o => o.categoria))];
       resetDrag();
 
       modalInfo.innerHTML = `
-        <h2 class="text-2xl font-bold mb-4">${obra.titulo[lang]}</h2>
+        <h2 class="text-2xl font-bold mb-4">${titulo}</h2>
         <div class="space-y-3 text-sm">
           ${obra.año ? `<div><span class="text-gray-400 block">${labels.year}</span><span class="font-medium">${obra.año}</span></div>` : ''}
-          ${obra.tecnica[lang] && obra.tecnica[lang] !== 'No definido' ? `<div><span class="text-gray-400 block">${labels.technique}</span><span class="font-medium">${obra.tecnica[lang]}</span></div>` : ''}
+          ${tecnica ? `<div><span class="text-gray-400 block">${labels.technique}</span><span class="font-medium">${tecnica}</span></div>` : ''}
           ${obra.dimensiones && obra.dimensiones !== 'No definido' ? `<div><span class="text-gray-400 block">${labels.dimensions}</span><span class="font-medium">${obra.dimensiones}</span></div>` : ''}
+          ${obra.propietario ? `<div><span class="text-gray-400 block">${labels.owner}</span><span class="font-medium">${obra.propietario}</span></div>` : ''}
         </div>
-        ${obra.descripcion[lang] && obra.descripcion[lang] !== 'No definido' ? `<p class="text-gray-600 leading-relaxed mt-4">${obra.descripcion[lang]}</p>` : ''}
+        ${descripcion ? `<p class="text-gray-600 leading-relaxed mt-4">${descripcion}</p>` : ''}
         <div class="mt-4">
           ${obra.en_venta
             ? `<span class="inline-flex items-center gap-1.5 text-sm font-medium text-green-700 bg-green-50 px-3 py-1.5 rounded-full">&#9679; ${labels.for_sale}</span>`
