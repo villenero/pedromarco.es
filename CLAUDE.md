@@ -45,12 +45,16 @@ pedromarco.es/
 │   ├── logo.png                ← Site logo (signature), displayed in nav header
 │   ├── obras/                  ← Full-size artwork images (detail pages)
 │   │   └── thumbs/             ← 400px-wide thumbnails (masonry gallery)
-│   ├── favicon.ico
-│   └── favicon.svg
+│   ├── favicon.png             ← Source favicon (512px, transparent bg)
+│   ├── favicon.ico             ← 32x32 for legacy browsers
+│   ├── favicon-192.png         ← 192px for Android/PWA
+│   ├── favicon-512.png         ← Original 512px source
+│   └── apple-touch-icon.png    ← 180px for iOS
 ├── scripts/
 │   ├── generate-thumbs.sh      ← Regenerate thumbnails after adding new images
 │   ├── admin.mjs               ← Local admin server (Node.js, zero deps)
 │   └── admin.html              ← Admin panel UI (single-page, inline CSS/JS)
+├── resources/                  ← Private assets (PSDs, etc.) — not published
 ├── astro.config.mjs
 └── package.json
 ```
@@ -69,7 +73,8 @@ pedromarco.es/
   "en_venta": true,
   "precio": null,
   "categoria": "paisaje",
-  "destacada": true
+  "destacada": true,
+  "propietario": "Nombre del propietario"
 }
 ```
 
@@ -77,6 +82,8 @@ pedromarco.es/
 - `imagen` references a file in `public/obras/` (full) and `public/obras/thumbs/` (thumbnail)
 - `categoria` is used for filtering in the gallery (lowercase, no accents)
 - Bilingual fields (`titulo`, `tecnica`, `descripcion`) have `es` and `en` keys
+- `propietario` is a plain string (not bilingual)
+- Bilingual fallback: if a field is empty or "No definido" in the current language, the other language is shown
 
 ## Build & Run
 
@@ -92,6 +99,9 @@ npm run preview
 
 # Local admin panel (edit obras.json via browser)
 npm run admin    # → http://localhost:4000
+
+# Build + deploy to Cloudflare Pages
+npm run deploy
 ```
 
 Build output goes to `dist/` — this is what gets deployed.
@@ -99,7 +109,7 @@ Build output goes to `dist/` — this is what gets deployed.
 ### Adding New Artwork Images
 
 1. Place the original image in `public/obras/`
-2. Run `./scripts/generate-thumbs.sh` to create the 400px thumbnail
+2. Run `./scripts/generate-thumbs.sh` — generates 400px thumbnails AND auto-registers new entries in `obras.json`
 3. Edit the entry via admin panel (`npm run admin`) or manually in `obras.json`
 
 Gallery pages use `/obras/thumbs/` for fast loading; detail pages use `/obras/` for full resolution.
@@ -111,6 +121,7 @@ Local-only tool at `http://localhost:4000` for managing `obras.json`. Zero depen
 - Edit all fields (bilingual titles, technique, description, year, dimensions, category, price, etc.)
 - Image selector from available files in `public/obras/thumbs/`
 - Create and delete obras
+- "Generar thumbs" button to run generate-thumbs.sh from the browser
 - Writes directly to `obras.json`
 
 **Not deployed** — stays local. The scripts/ folder is not part of the Astro build.
@@ -142,4 +153,5 @@ Local-only tool at `http://localhost:4000` for managing `obras.json`. Zero depen
 ## Domain
 
 - **pedromarco.es** (pending DNS setup)
-- Deploy target: Cloudflare Pages (or GitHub Pages)
+- Live at: https://pedromarco-es.pages.dev
+- Deploy target: Cloudflare Pages (`npm run deploy`)

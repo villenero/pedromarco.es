@@ -58,22 +58,57 @@ const otherLangPath = `/${otherLang}${translatedPath}`;
           <img src="/logo.png" alt="Pedro Marco" class="h-8" />
         </a>
 
-        <!-- Nav links -->
-        <div class="flex items-center gap-6 text-sm">
+        <!-- Nav links (desktop) -->
+        <div class="hidden sm:flex items-center gap-6 text-sm">
           <a href={getLocalizedPath(lang, '/')} class="hover:opacity-70 transition-opacity">
             {t(lang, 'nav.home')}
           </a>
           <a href={getLocalizedPath(lang, lang === 'es' ? '/sobre' : '/about')} class="hover:opacity-70 transition-opacity">
             {t(lang, 'nav.about')}
           </a>
-          <!-- Language switcher -->
           <a href={otherLangPath} class="uppercase text-xs font-medium px-2 py-1 border border-gray-300 rounded hover:bg-gray-100 transition-colors">
             {otherLang}
           </a>
         </div>
+
+        <!-- Hamburger (mobile) -->
+        <button id="menu-toggle" class="sm:hidden p-2 -mr-2" aria-label="Menu">
+          <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" d="M6 6l12 12M6 18L18 6"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="sm:hidden hidden border-t border-gray-100 bg-white/95 backdrop-blur-md">
+      <div class="flex flex-col px-4 py-3 gap-3 text-sm">
+        <a href={getLocalizedPath(lang, '/')} class="py-1 hover:opacity-70 transition-opacity">
+          {t(lang, 'nav.home')}
+        </a>
+        <a href={getLocalizedPath(lang, lang === 'es' ? '/sobre' : '/about')} class="py-1 hover:opacity-70 transition-opacity">
+          {t(lang, 'nav.about')}
+        </a>
+        <a href={otherLangPath} class="uppercase text-xs font-medium px-2 py-1 border border-gray-300 rounded w-fit hover:bg-gray-100 transition-colors">
+          {otherLang}
+        </a>
       </div>
     </div>
   </nav>
+
+  <script is:inline>
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      const menu = document.getElementById('mobile-menu');
+      const open = document.getElementById('icon-open');
+      const close = document.getElementById('icon-close');
+      menu.classList.toggle('hidden');
+      open.classList.toggle('hidden');
+      close.classList.toggle('hidden');
+    });
+  </script>
 
   <!-- Content -->
   <main class="flex-1">
@@ -87,7 +122,8 @@ const otherLangPath = `/${otherLang}${translatedPath}`;
         {t(lang, 'nav.contact')}
       </a>
     </div>
-    <p>&copy; {new Date().getFullYear()} Pedro Marco Hernández. {t(lang, 'footer.rights')}.</p>
+    <img src="/favicon.png" alt="" class="h-6 mx-auto mb-2 opacity-40" />
+    <p>&copy; {new Date().getFullYear()} Familia Pedro Marco. {t(lang, 'footer.rights')}.</p>
   </footer>
 </body>
 </html>

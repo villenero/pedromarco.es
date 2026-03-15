@@ -26,8 +26,8 @@
     {
       "id": "el-visionario",
       "titulo": {
-        "es": "El visionario",
-        "en": "The Visionary"
+        "es": "José María Soler",
+        "en": ""
       },
       "año": 1987,
       "tecnica": {
@@ -35,7 +35,7 @@
         "en": "Mixed media on board"
       },
       "descripcion": {
-        "es": "Retrato fragmentado con elementos simbólicos y totémicos que rodean la figura central, envuelta en tonos púrpura y dorado",
+        "es": "Retrato fragmentado del arqueólogo José María Soler con elementos simbólicos y totémicos que rodean la figura central, envuelta en tonos púrpura y dorado",
         "en": "Fragmented portrait with symbolic and totemic elements surrounding the central figure, wrapped in purple and gold tones"
       },
       "dimensiones": "100x81 cm",
@@ -486,12 +486,12 @@
     {
       "id": "20201210-211710",
       "titulo": {
-        "es": "No definido",
+        "es": "Miguel Hernández",
         "en": "No definido"
       },
       "año": null,
       "tecnica": {
-        "es": "No definido",
+        "es": "Grafito",
         "en": "No definido"
       },
       "descripcion": {
@@ -502,14 +502,14 @@
       "imagen": "20201210_211710.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "retrato",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "20201210-212111",
       "titulo": {
-        "es": "No definido",
+        "es": "Lorca",
         "en": "No definido"
       },
       "año": null,
@@ -525,7 +525,7 @@
       "imagen": "20201210_212111.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "retrato",
       "destacada": false,
       "propietario": null
     },
@@ -595,6 +595,75 @@
       "en_venta": false,
       "precio": null,
       "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "caricatura-angel",
+      "titulo": {
+        "es": "Ángel",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "caricatura-angel.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "ilustracion",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "caricatura-joaquin-marco",
+      "titulo": {
+        "es": "Joaquinito",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "caricatura-joaquin-marco.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "ilustracion",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "caricatura-leticia",
+      "titulo": {
+        "es": "Leticia",
+        "en": "No definido"
+      },
+      "año": 1976,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "caricatura-leticia.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "ilustracion",
       "destacada": false,
       "propietario": null
     }
