@@ -509,7 +509,7 @@
     {
       "id": "caricatura-angel",
       "titulo": {
-        "es": "Ángel",
+        "es": "Ángel Albuixech",
         "en": "No definido"
       },
       "año": null,
@@ -1332,7 +1332,7 @@
       "precio": null,
       "categoria": "No definido",
       "destacada": false,
-      "propietario": null
+      "propietario": "Ayuntamiento de Villena"
     },
     {
       "id": "20201210-212111",
@@ -1415,7 +1415,7 @@
         "en": "No definido"
       },
       "descripcion": {
-        "es": "No definido",
+        "es": "Autoretrato",
         "en": "No definido"
       },
       "dimensiones": "No definido",
@@ -1515,6 +1515,236 @@
       "en_venta": false,
       "precio": null,
       "categoria": "retrato",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "2011-isla",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "2011-isla.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "2014-eee",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "2014-eee.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "2017-salicornio",
+      "titulo": {
+        "es": "Miguel Ybern",
+        "en": "No definido"
+      },
+      "año": 2016,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "2017-Salicornio.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "retrato",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "2019-retrato",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "2019-retrato.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "retrato",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "columna-petra",
+      "titulo": {
+        "es": "Columnas Petra",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "columna-petra.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": "Familia Danton Wagner"
+    },
+    {
+      "id": "eros-00",
+      "titulo": {
+        "es": "Eros busto",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "eros-00.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "eros-columna",
+      "titulo": {
+        "es": "Eros Columna",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "eros-columna.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "eros-faro",
+      "titulo": {
+        "es": "Eros Faro",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "eros-faro.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "eros-ojo",
+      "titulo": {
+        "es": "Eros Ojo",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "eros-ojo.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "puertas-villena",
+      "titulo": {
+        "es": "Puertas Villeneras",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "puertas-villena.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
       "destacada": false,
       "propietario": null
     }
