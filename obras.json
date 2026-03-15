@@ -109,7 +109,7 @@
       },
       "dimensiones": "70x100 cm",
       "imagen": "ruinas-y-presagios.jpg",
-      "en_venta": true,
+      "en_venta": false,
       "precio": null,
       "categoria": "figurativo",
       "destacada": false,
@@ -144,9 +144,9 @@
         "es": "No definido",
         "en": "No definido"
       },
-      "año": null,
+      "año": 2008,
       "tecnica": {
-        "es": "No definido",
+        "es": "Grafito y témpera acrílica sobre cartón",
         "en": "No definido"
       },
       "descripcion": {
@@ -169,7 +169,7 @@
       },
       "año": null,
       "tecnica": {
-        "es": "No definido",
+        "es": "Grafito y témpera acrílica sobre cartón",
         "en": "No definido"
       },
       "descripcion": {
@@ -190,9 +190,9 @@
         "es": "No definido",
         "en": "No definido"
       },
-      "año": null,
+      "año": 2008,
       "tecnica": {
-        "es": "No definido",
+        "es": "Grafito y témpera acrílica sobre cartón",
         "en": "No definido"
       },
       "descripcion": {
@@ -739,12 +739,12 @@
     {
       "id": "80-04",
       "titulo": {
-        "es": "No definido",
+        "es": "Orgasmo",
         "en": "No definido"
       },
-      "año": 1980,
+      "año": 1978,
       "tecnica": {
-        "es": "No definido",
+        "es": "Tinta china sobre cartón",
         "en": "No definido"
       },
       "descripcion": {
@@ -762,7 +762,7 @@
     {
       "id": "80-07-grande",
       "titulo": {
-        "es": "No definido",
+        "es": "Leti",
         "en": "No definido"
       },
       "año": 1980,
@@ -780,12 +780,12 @@
       "precio": null,
       "categoria": "No definido",
       "destacada": false,
-      "propietario": null
+      "propietario": "Familia Pedro Marco"
     },
     {
       "id": "84-02",
       "titulo": {
-        "es": "No definido",
+        "es": "Espantapajaros",
         "en": "No definido"
       },
       "año": 1984,
@@ -1130,19 +1130,19 @@
     {
       "id": "95-01",
       "titulo": {
-        "es": "No definido",
+        "es": "Puerta cynara scolymus",
         "en": "No definido"
       },
       "año": 1995,
       "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
+        "es": "Grafíto, témpera acrílica y plombagina sobre cartón",
+        "en": ""
       },
       "descripcion": {
         "es": "",
         "en": ""
       },
-      "dimensiones": "No definido",
+      "dimensiones": "102 x 72 cm",
       "imagen": "95-01.JPG",
       "en_venta": false,
       "precio": null,
@@ -1181,7 +1181,7 @@
       },
       "año": 1995,
       "tecnica": {
-        "es": "No definido",
+        "es": "Grafíto, témpera acrílica y plombagina sobre cartón",
         "en": "No definido"
       },
       "descripcion": {
@@ -1199,25 +1199,25 @@
     {
       "id": "95-06-1",
       "titulo": {
-        "es": "No definido",
+        "es": "Puerta al exterior",
         "en": "No definido"
       },
       "año": 1995,
       "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
+        "es": "Grafíto, témpera acrílica y plombagina sobre cartón",
+        "en": ""
       },
       "descripcion": {
         "es": "",
         "en": ""
       },
-      "dimensiones": "No definido",
+      "dimensiones": "102 x 72 cm",
       "imagen": "95-06(1).JPG",
       "en_venta": false,
       "precio": null,
       "categoria": "No definido",
       "destacada": false,
-      "propietario": null
+      "propietario": "Colección Familia Marco"
     },
     {
       "id": "95-06",
