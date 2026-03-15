@@ -10,11 +10,15 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "admin": "node scripts/admin.mjs"
+    "admin": "node scripts/admin.mjs",
+    "deploy": "astro build && wrangler pages deploy dist --project-name pedromarco-es"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.1",
     "astro": "^6.0.4",
     "tailwindcss": "^4.2.1"
+  },
+  "devDependencies": {
+    "wrangler": "^4.73.0"
   }
 }
