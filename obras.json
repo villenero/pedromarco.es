@@ -461,98 +461,6 @@
       "propietario": null
     },
     {
-      "id": "20201210-211638",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "dimensiones": "No definido",
-      "imagen": "20201210_211638.jpg",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "No definido",
-      "destacada": false,
-      "propietario": null
-    },
-    {
-      "id": "20201210-211710",
-      "titulo": {
-        "es": "Miguel Hernández",
-        "en": "No definido"
-      },
-      "año": null,
-      "tecnica": {
-        "es": "Grafito",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "dimensiones": "No definido",
-      "imagen": "20201210_211710.jpg",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "retrato",
-      "destacada": false,
-      "propietario": null
-    },
-    {
-      "id": "20201210-212111",
-      "titulo": {
-        "es": "Lorca",
-        "en": "No definido"
-      },
-      "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "dimensiones": "No definido",
-      "imagen": "20201210_212111.jpg",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "retrato",
-      "destacada": false,
-      "propietario": null
-    },
-    {
-      "id": "20210305-131323",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "dimensiones": "No definido",
-      "imagen": "20210305_131323.jpg",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "No definido",
-      "destacada": false,
-      "propietario": null
-    },
-    {
       "id": "2022-gloria",
       "titulo": {
         "es": "Gloria",
@@ -668,98 +576,6 @@
       "propietario": null
     },
     {
-      "id": "00-01",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "año": 2000,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "",
-        "en": ""
-      },
-      "dimensiones": "No definido",
-      "imagen": "00-01.JPG",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "No definido",
-      "destacada": false,
-      "propietario": null
-    },
-    {
-      "id": "77-02",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "año": 1977,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "",
-        "en": ""
-      },
-      "dimensiones": "No definido",
-      "imagen": "77-02.JPG",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "No definido",
-      "destacada": false,
-      "propietario": null
-    },
-    {
-      "id": "77-03",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "año": 1977,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "",
-        "en": ""
-      },
-      "dimensiones": "No definido",
-      "imagen": "77-03.JPG",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "No definido",
-      "destacada": false,
-      "propietario": null
-    },
-    {
-      "id": "80-04",
-      "titulo": {
-        "es": "Orgasmo",
-        "en": "No definido"
-      },
-      "año": 1978,
-      "tecnica": {
-        "es": "Tinta china sobre cartón",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "",
-        "en": ""
-      },
-      "dimensiones": "No definido",
-      "imagen": "80-04.JPG",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "No definido",
-      "destacada": false,
-      "propietario": null
-    },
-    {
       "id": "80-07-grande",
       "titulo": {
         "es": "Leti",
@@ -783,604 +599,6 @@
       "propietario": "Familia Pedro Marco"
     },
     {
-      "id": "84-02",
-      "titulo": {
-        "es": "Espantapajaros",
-        "en": "No definido"
-      },
-      "año": 1984,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "",
-        "en": ""
-      },
-      "dimensiones": "No definido",
-      "imagen": "84-02.JPG",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "No definido",
-      "destacada": false,
-      "propietario": null
-    },
-    {
-      "id": "84-03",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "año": 1984,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "",
-        "en": ""
-      },
-      "dimensiones": "No definido",
-      "imagen": "84-03.JPG",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "No definido",
-      "destacada": false,
-      "propietario": null
-    },
-    {
-      "id": "87-01",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "año": 1987,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "",
-        "en": ""
-      },
-      "dimensiones": "No definido",
-      "imagen": "87-01.JPG",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "No definido",
-      "destacada": false,
-      "propietario": null
-    },
-    {
-      "id": "88-01",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "año": 1988,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "",
-        "en": ""
-      },
-      "dimensiones": "No definido",
-      "imagen": "88-01.JPG",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "No definido",
-      "destacada": false,
-      "propietario": null
-    },
-    {
-      "id": "89-01",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "año": 1989,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "",
-        "en": ""
-      },
-      "dimensiones": "No definido",
-      "imagen": "89-01.JPG",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "No definido",
-      "destacada": false,
-      "propietario": null
-    },
-    {
-      "id": "89-02",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "año": 1989,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "",
-        "en": ""
-      },
-      "dimensiones": "No definido",
-      "imagen": "89-02.JPG",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "No definido",
-      "destacada": false,
-      "propietario": null
-    },
-    {
-      "id": "90-03",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "año": 1990,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "",
-        "en": ""
-      },
-      "dimensiones": "No definido",
-      "imagen": "90-03.JPG",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "No definido",
-      "destacada": false,
-      "propietario": null
-    },
-    {
-      "id": "90-04",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "año": 1990,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "",
-        "en": ""
-      },
-      "dimensiones": "No definido",
-      "imagen": "90-04.JPG",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "No definido",
-      "destacada": false,
-      "propietario": null
-    },
-    {
-      "id": "90-05",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "año": 1990,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "",
-        "en": ""
-      },
-      "dimensiones": "No definido",
-      "imagen": "90-05.JPG",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "No definido",
-      "destacada": false,
-      "propietario": null
-    },
-    {
-      "id": "90-06",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "año": 1990,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "",
-        "en": ""
-      },
-      "dimensiones": "No definido",
-      "imagen": "90-06.JPG",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "No definido",
-      "destacada": false,
-      "propietario": null
-    },
-    {
-      "id": "91-01",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "año": 1991,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "",
-        "en": ""
-      },
-      "dimensiones": "No definido",
-      "imagen": "91-01.JPG",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "No definido",
-      "destacada": false,
-      "propietario": null
-    },
-    {
-      "id": "92-05",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "año": 1992,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "",
-        "en": ""
-      },
-      "dimensiones": "No definido",
-      "imagen": "92-05.JPG",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "No definido",
-      "destacada": false,
-      "propietario": null
-    },
-    {
-      "id": "92-06",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "año": 1992,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "",
-        "en": ""
-      },
-      "dimensiones": "No definido",
-      "imagen": "92-06.JPG",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "No definido",
-      "destacada": false,
-      "propietario": null
-    },
-    {
-      "id": "94-02",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "año": 1994,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "",
-        "en": ""
-      },
-      "dimensiones": "No definido",
-      "imagen": "94-02.JPG",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "No definido",
-      "destacada": false,
-      "propietario": null
-    },
-    {
-      "id": "94-03",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "año": 1994,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "",
-        "en": ""
-      },
-      "dimensiones": "No definido",
-      "imagen": "94-03.JPG",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "No definido",
-      "destacada": false,
-      "propietario": null
-    },
-    {
-      "id": "95-01",
-      "titulo": {
-        "es": "Puerta cynara scolymus",
-        "en": "No definido"
-      },
-      "año": 1995,
-      "tecnica": {
-        "es": "Grafíto, témpera acrílica y plombagina sobre cartón",
-        "en": ""
-      },
-      "descripcion": {
-        "es": "",
-        "en": ""
-      },
-      "dimensiones": "102 x 72 cm",
-      "imagen": "95-01.JPG",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "No definido",
-      "destacada": false,
-      "propietario": null
-    },
-    {
-      "id": "95-03",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "año": 1995,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "",
-        "en": ""
-      },
-      "dimensiones": "No definido",
-      "imagen": "95-03.JPG",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "No definido",
-      "destacada": false,
-      "propietario": null
-    },
-    {
-      "id": "95-04",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "año": 1995,
-      "tecnica": {
-        "es": "Grafíto, témpera acrílica y plombagina sobre cartón",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "",
-        "en": ""
-      },
-      "dimensiones": "No definido",
-      "imagen": "95-04.JPG",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "No definido",
-      "destacada": false,
-      "propietario": null
-    },
-    {
-      "id": "95-06-1",
-      "titulo": {
-        "es": "Puerta al exterior",
-        "en": "No definido"
-      },
-      "año": 1995,
-      "tecnica": {
-        "es": "Grafíto, témpera acrílica y plombagina sobre cartón",
-        "en": ""
-      },
-      "descripcion": {
-        "es": "",
-        "en": ""
-      },
-      "dimensiones": "102 x 72 cm",
-      "imagen": "95-06(1).JPG",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "No definido",
-      "destacada": false,
-      "propietario": "Colección Familia Marco"
-    },
-    {
-      "id": "95-06",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "año": 1995,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "",
-        "en": ""
-      },
-      "dimensiones": "No definido",
-      "imagen": "95-06.JPG",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "No definido",
-      "destacada": false,
-      "propietario": null
-    },
-    {
-      "id": "96-01",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "año": 1996,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "",
-        "en": ""
-      },
-      "dimensiones": "No definido",
-      "imagen": "96-01.JPG",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "No definido",
-      "destacada": false,
-      "propietario": null
-    },
-    {
-      "id": "96-02",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "año": 1996,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "",
-        "en": ""
-      },
-      "dimensiones": "No definido",
-      "imagen": "96-02.JPG",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "No definido",
-      "destacada": false,
-      "propietario": null
-    },
-    {
-      "id": "97-01",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "año": 1997,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "",
-        "en": ""
-      },
-      "dimensiones": "No definido",
-      "imagen": "97-01.JPG",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "No definido",
-      "destacada": false,
-      "propietario": null
-    },
-    {
-      "id": "97-02",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "año": 1997,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "",
-        "en": ""
-      },
-      "dimensiones": "No definido",
-      "imagen": "97-02.JPG",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "No definido",
-      "destacada": false,
-      "propietario": null
-    },
-    {
-      "id": "98-01",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "año": 1998,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "",
-        "en": ""
-      },
-      "dimensiones": "No definido",
-      "imagen": "98-01.JPG",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "No definido",
-      "destacada": false,
-      "propietario": null
-    },
-    {
-      "id": "98-02",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "año": 1998,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "",
-        "en": ""
-      },
-      "dimensiones": "No definido",
-      "imagen": "98-02.JPG",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "No definido",
-      "destacada": false,
-      "propietario": null
-    },
-    {
       "id": "dsc07080",
       "titulo": {
         "es": "No definido",
@@ -1397,6 +615,811 @@
       },
       "dimensiones": "No definido",
       "imagen": "DSC07080.JPG",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "2008-galgos",
+      "titulo": {
+        "es": "Galgos",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "2008 galgos.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "2020-alfredo-rojas",
+      "titulo": {
+        "es": "Alfredo Rojas",
+        "en": "No definido"
+      },
+      "año": 2020,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "2020 alfredo rojas.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "retrato",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "00-01",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "00-01.JPG",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "77-02",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "77-02.JPG",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "77-03",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "77-03.JPG",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "80-04",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "80-04.JPG",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "84-02",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "84-02.JPG",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "84-03",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "84-03.JPG",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "87-01",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "87-01.JPG",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "88-01",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "88-01.JPG",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "89-01",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "89-01.JPG",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "89-02",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "89-02.JPG",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "90-03",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "90-03.JPG",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "90-04",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "90-04.JPG",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "90-05",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "90-05.JPG",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "90-06",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "90-06.JPG",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "91-01",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "91-01.JPG",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "92-05",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "92-05.JPG",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "92-06",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "92-06.JPG",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "94-02",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "94-02.JPG",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "94-03",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "94-03.JPG",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "95-01",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "95-01.JPG",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "95-03",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "95-03.JPG",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "95-04",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "95-04.JPG",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "95-06",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "95-06.JPG",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "96-01",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "96-01.JPG",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "96-02",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "96-02.JPG",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "97-01",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "97-01.JPG",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "97-02",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "97-02.JPG",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "98-01",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "98-01.JPG",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "98-02",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "98-02.JPG",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "20201210-211638",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "20201210_211638.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "20201210-211710",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "20201210_211710.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "20201210-212111",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "20201210_212111.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "20210305-131323",
+      "titulo": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "20210305_131323.jpg",
       "en_venta": false,
       "precio": null,
       "categoria": "No definido",

@@ -142,7 +142,7 @@ function renderList() {
     ].filter(Boolean).join(' ');
     return `
       <div class="${cls}" onclick="selectObra('${o.id}')">
-        <img src="/obras/thumbs/${o.imagen}" alt="" onerror="this.style.display='none'">
+        <img src="/obras/thumbs/${encodeURIComponent(o.imagen)}" alt="" onerror="this.style.display='none'">
         <div class="card-info">
           <div class="card-title">${o.titulo.es}</div>
           <div class="card-meta">${o.año || '—'} · ${o.dimensiones || '—'}</div>
@@ -246,7 +246,7 @@ function renderForm(o) {
           <option value="">— Seleccionar —</option>
           ${imageOptions}
         </select>
-        <img class="img-preview" id="img-preview" src="${o.imagen ? '/obras/thumbs/' + o.imagen : ''}" onerror="this.style.display='none'">
+        <img class="img-preview" id="img-preview" src="${o.imagen ? '/obras/thumbs/' + encodeURIComponent(o.imagen) : ''}" onerror="this.style.display='none'">
       </div>
       <div class="field">
         <label>Categoria</label>
@@ -307,7 +307,7 @@ function updatePreview() {
   const img = document.getElementById('img-preview');
   const val = document.getElementById('f-imagen').value;
   if (val) {
-    img.src = '/obras/thumbs/' + val;
+    img.src = '/obras/thumbs/' + encodeURIComponent(val);
     img.style.display = '';
   } else {
     img.style.display = 'none';

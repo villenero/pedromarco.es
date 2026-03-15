@@ -149,10 +149,10 @@ const server = createServer(async (req, res) => {
 
     // Static: thumbnails and full images
     if (path.startsWith('/obras/thumbs/')) {
-      return serveFile(res, join(ROOT, 'public', path));
+      return serveFile(res, join(ROOT, 'public', decodeURIComponent(path)));
     }
     if (path.startsWith('/obras/')) {
-      return serveFile(res, join(ROOT, 'public', path));
+      return serveFile(res, join(ROOT, 'public', decodeURIComponent(path)));
     }
 
     res.writeHead(404);

@@ -15,6 +15,12 @@ for img in "$OBRAS_DIR"/*.jpg "$OBRAS_DIR"/*.JPG "$OBRAS_DIR"/*.jpeg "$OBRAS_DIR
   [ -f "$img" ] || continue
   filename=$(basename "$img")
 
+  # Skip variant images (e.g. name_01.jpg, name_02.jpg) — used as extra modal images
+  basename_no_ext="${filename%.*}"
+  if echo "$basename_no_ext" | grep -qE '_[0-9]{2}$'; then
+    continue
+  fi
+
   # Generate thumbnail if missing or outdated
   if [ ! -f "$THUMBS_DIR/$filename" ] || [ "$img" -nt "$THUMBS_DIR/$filename" ]; then
     echo "Generating thumb: $filename"
