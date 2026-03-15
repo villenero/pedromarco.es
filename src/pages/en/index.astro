@@ -222,16 +222,25 @@ const jsonLd = {
 
       modal.classList.add('open');
       document.body.style.overflow = 'hidden';
+      if (window.innerWidth <= 768) {
+        document.body.style.touchAction = 'none';
+      }
     }
 
     function closeModal() {
       modal.classList.remove('open');
       modalInfo.classList.remove('mobile-info-visible');
       document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+      document.body.style.webkitOverflowScrolling = '';
       const mc = document.getElementById('modal-content');
       mc.style.transform = '';
       mc.style.opacity = '';
       mc.style.transition = '';
+      // Force layout recalc on mobile to restore scrolling
+      if (window.innerWidth <= 768) {
+        window.scrollTo(window.scrollX, window.scrollY);
+      }
     }
 
     function navigate(dir) {
@@ -415,11 +424,11 @@ const jsonLd = {
   .modal-overlay {
     position: fixed; inset: 0; z-index: 100;
     display: flex; align-items: center; justify-content: center;
-    opacity: 0; pointer-events: none;
-    transition: opacity 0.25s ease;
+    opacity: 0; pointer-events: none; visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
   }
   .modal-overlay.open {
-    opacity: 1; pointer-events: auto;
+    opacity: 1; pointer-events: auto; visibility: visible;
   }
   .modal-backdrop {
     position: absolute; inset: 0;
@@ -551,6 +560,15 @@ const jsonLd = {
     height: 100%;
     object-fit: cover;
     display: block;
+  }
+
+  /* Mobile: disable hover overlay on gallery cards */
+  @media (max-width: 768px) {
+    .masonry-item > div.absolute {
+      pointer-events: none;
+      user-select: none;
+      -webkit-user-select: none;
+    }
   }
 
   /* Mobile: fullscreen experience */
