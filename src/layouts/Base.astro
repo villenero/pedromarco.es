@@ -14,8 +14,27 @@ const otherLang = lang === 'es' ? 'en' : 'es';
 
 // Build the equivalent path in the other language
 const currentPath = Astro.url.pathname;
-const pathWithoutLang = currentPath.replace(/^\/(es|en)/, '');
-const otherLangPath = `/${otherLang}${pathWithoutLang}`;
+const pathWithoutLang = currentPath.replace(/^\/(es|en)/, '').replace(/\/$/, '') || '/';
+
+// Map translated route segments between languages
+const routeMap: Record<string, string> = {
+  '/sobre': '/about',
+  '/about': '/sobre',
+  '/contacto': '/contact',
+  '/contact': '/contacto',
+  '/obra': '/work',
+  '/work': '/obra',
+};
+
+let translatedPath = pathWithoutLang;
+for (const [from, to] of Object.entries(routeMap)) {
+  if (translatedPath === from || translatedPath.startsWith(from + '/')) {
+    translatedPath = translatedPath.replace(from, to);
+    break;
+  }
+}
+
+const otherLangPath = `/${otherLang}${translatedPath}`;
 ---
 
 <!doctype html>
@@ -24,7 +43,9 @@ const otherLangPath = `/${otherLang}${pathWithoutLang}`;
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content={description} />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <title>{title}</title>
 </head>
 <body class="min-h-screen bg-white text-gray-900 flex flex-col">

@@ -1,4 +1,11 @@
 ---
-// Redirect root to /es/
-return Astro.redirect('/es/');
+// Instant redirect to /es/ — no server needed
 ---
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="refresh" content="0;url=/es/" />
+  <script is:inline>window.location.replace('/es/');</script>
+</head>
+</html>
