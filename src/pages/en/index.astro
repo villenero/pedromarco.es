@@ -179,11 +179,11 @@ const jsonLd = {
       let thumbsHtml = '';
       if (details.length > 0) {
         const allImages = [obra.imagen, ...details];
-        thumbsHtml = `<div class="detail-thumbs">${allImages.map((img, i) =>
+        thumbsHtml = `<div class="detail-section"><h3 class="detail-section-title">Details</h3><div class="detail-thumbs">${allImages.map((img, i) =>
           `<div class="detail-thumb${i === 0 ? ' active' : ''}" data-src="/obras/${img}">` +
-          `<img data-lazy-src="/obras/${img}" alt="" />` +
+          `<img data-lazy-src="/obras/${img}" alt="" width="60" height="60" />` +
           `</div>`
-        ).join('')}</div>`;
+        ).join('')}</div></div>`;
       }
 
       modalInfo.innerHTML = `
@@ -446,15 +446,31 @@ const jsonLd = {
   }
 
   /* Detail thumbnails */
+  .detail-section {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 16px;
+  }
+  .detail-section-title {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #9ca3af;
+    margin-bottom: 10px;
+  }
   .detail-thumbs {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-top: 16px;
   }
   .detail-thumb {
     width: 60px;
     height: 60px;
+    min-width: 60px;
+    min-height: 60px;
+    max-width: 60px;
+    max-height: 60px;
     border-radius: 6px;
     overflow: hidden;
     cursor: pointer;
