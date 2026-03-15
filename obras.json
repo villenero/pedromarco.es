@@ -525,14 +525,14 @@
       "imagen": "caricatura-angel.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "ilustracion",
+      "categoria": "retrato",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "caricatura-joaquin-marco",
       "titulo": {
-        "es": "Joaquinito",
+        "es": "Joaquin Navarro",
         "en": "No definido"
       },
       "año": null,
@@ -548,7 +548,7 @@
       "imagen": "caricatura-joaquin-marco.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "ilustracion",
+      "categoria": "retrato",
       "destacada": false,
       "propietario": null
     },
@@ -571,7 +571,7 @@
       "imagen": "caricatura-leticia.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "ilustracion",
+      "categoria": "retrato",
       "destacada": false,
       "propietario": null
     },
@@ -618,52 +618,6 @@
       "en_venta": false,
       "precio": null,
       "categoria": "No definido",
-      "destacada": false,
-      "propietario": null
-    },
-    {
-      "id": "2008-galgos",
-      "titulo": {
-        "es": "Galgos",
-        "en": "No definido"
-      },
-      "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "dimensiones": "No definido",
-      "imagen": "2008 galgos.jpg",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "No definido",
-      "destacada": false,
-      "propietario": null
-    },
-    {
-      "id": "2020-alfredo-rojas",
-      "titulo": {
-        "es": "Alfredo Rojas",
-        "en": "No definido"
-      },
-      "año": 2020,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "dimensiones": "No definido",
-      "imagen": "2020 alfredo rojas.jpg",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "retrato",
       "destacada": false,
       "propietario": null
     },
@@ -1423,6 +1377,144 @@
       "en_venta": false,
       "precio": null,
       "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "2017-josse",
+      "titulo": {
+        "es": "Josse Peluquero",
+        "en": "No definido"
+      },
+      "año": 2017,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "2017-Josse.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "retrato",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "2020-confinamiento",
+      "titulo": {
+        "es": "Inicio del confinamiento",
+        "en": ""
+      },
+      "año": 2020,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "2020-Confinamiento.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "retrato",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "pepe-lechero",
+      "titulo": {
+        "es": "Pepe El Lechero",
+        "en": "No definido"
+      },
+      "año": 2018,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "pepe-lechero.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "retrato",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "torreblanca",
+      "titulo": {
+        "es": "Torreblanca",
+        "en": "No definido"
+      },
+      "año": 2020,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "torreblanca.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "retrato",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "2008-galgos",
+      "titulo": {
+        "es": "Galgos",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "2008-galgos.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "2020-alfredo-rojas",
+      "titulo": {
+        "es": "Alfredo Rojas",
+        "en": "No definido"
+      },
+      "año": null,
+      "tecnica": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "descripcion": {
+        "es": "No definido",
+        "en": "No definido"
+      },
+      "dimensiones": "No definido",
+      "imagen": "2020-alfredo-rojas.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "retrato",
       "destacada": false,
       "propietario": null
     }
