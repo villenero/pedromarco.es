@@ -8,12 +8,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://pedromarco.es',
   integrations: [
-    sitemap({
-      i18n: {
-        defaultLocale: 'es',
-        locales: { es: 'es', en: 'en' },
-      },
-    }),
+    sitemap(),
   ],
   vite: {
     plugins: [tailwindcss()]

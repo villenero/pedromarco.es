@@ -5,7 +5,6 @@ import obras from '../../../obras.json';
 import fs from 'node:fs';
 import path from 'node:path';
 
-const lang = 'es';
 const categorias = [...new Set(obras.obras.map(o => o.categoria))];
 
 // Build-time: scan public/obras/ for detail images per obra
@@ -51,14 +50,13 @@ const jsonLd = {
 <Base
   title="Pedro Marco — Pintor surrealista de Villena | Obra completa"
   description="Obra completa de Pedro Marco, pintor surrealista de Villena (Alicante). Abstracto, retrato, paisaje y figurativo."
-  lang={lang}
   jsonLd={jsonLd}
 >
   <!-- Filter bar -->
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <div class="flex flex-wrap gap-1">
       <button class="filter-btn active px-3 py-1 text-sm rounded-full border border-transparent transition-colors hover:text-gray-900" data-category="all">
-        {t(lang, 'home.all')}
+        {t('home.all')}
       </button>
       {categorias.map(cat => (
         <button class="filter-btn px-3 py-1 text-sm rounded-full border border-transparent transition-colors hover:text-gray-900 capitalize" data-category={cat}>
@@ -79,15 +77,15 @@ const jsonLd = {
         >
           <img
             src={`/obras/thumbs/${obra.imagen}`}
-            alt={obra.titulo[lang]}
+            alt={obra.titulo}
             class="w-full h-auto object-cover bg-gray-100"
             loading="lazy"
           />
           <div class="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-colors duration-300 flex items-end">
             <div class="p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-2 group-hover:translate-y-0">
-              <p class="font-semibold">{obra.titulo[lang] && obra.titulo[lang] !== 'No definido' ? obra.titulo[lang] : obra.titulo[lang === 'es' ? 'en' : 'es']}</p>
-              <p class="text-sm text-white/70">{obra.año} · {obra.tecnica[lang] && obra.tecnica[lang] !== 'No definido' ? obra.tecnica[lang] : obra.tecnica[lang === 'es' ? 'en' : 'es']}</p>
-              {obra.en_venta && <span class="inline-block mt-1 text-xs bg-white/20 px-2 py-0.5 rounded-full">{t(lang, 'home.for_sale')}</span>}
+              <p class="font-semibold">{obra.titulo}</p>
+              <p class="text-sm text-white/70">{obra.año} · {obra.tecnica}</p>
+              {obra.en_venta && <span class="inline-block mt-1 text-xs bg-white/20 px-2 py-0.5 rounded-full">{t('home.for_sale')}</span>}
             </div>
           </div>
         </div>
@@ -120,7 +118,7 @@ const jsonLd = {
     </div>
   </div>
 
-  <script is:inline define:vars={{ obrasData: obras.obras, lang, detailImagesMap }}>
+  <script is:inline define:vars={{ obrasData: obras.obras, detailImagesMap }}>
     const labels = {
       year: 'Año',
       technique: 'Técnica',
@@ -139,16 +137,6 @@ const jsonLd = {
 
     function getVisibleItems() {
       return [...document.querySelectorAll('.masonry-item')].filter(el => el.style.display !== 'none');
-    }
-
-    // Bilingual fallback: use other language if current is empty/undefined
-    function bi(field) {
-      const other = lang === 'es' ? 'en' : 'es';
-      const val = field[lang];
-      if (val && val !== 'No definido') return val;
-      const fallback = field[other];
-      if (fallback && fallback !== 'No definido') return fallback;
-      return null;
     }
 
     function resetViewer() {
@@ -171,9 +159,9 @@ const jsonLd = {
       const obra = obrasData[dataIndex];
       if (!obra) return;
 
-      const titulo = bi(obra.titulo) || '';
-      const tecnica = bi(obra.tecnica);
-      const descripcion = bi(obra.descripcion);
+      const titulo = obra.titulo || '';
+      const tecnica = obra.tecnica;
+      const descripcion = obra.descripcion;
 
       modalImg.src = `/obras/${obra.imagen}`;
       modalImg.alt = titulo;
@@ -197,11 +185,11 @@ const jsonLd = {
         <h2 class="text-2xl font-bold mb-4">${titulo}</h2>
         <div class="space-y-3 text-sm">
           ${obra.año ? `<div><span class="text-gray-400 block">${labels.year}</span><span class="font-medium">${obra.año}</span></div>` : ''}
-          ${tecnica ? `<div><span class="text-gray-400 block">${labels.technique}</span><span class="font-medium">${tecnica}</span></div>` : ''}
+          ${tecnica && tecnica !== 'No definido' ? `<div><span class="text-gray-400 block">${labels.technique}</span><span class="font-medium">${tecnica}</span></div>` : ''}
           ${obra.dimensiones && obra.dimensiones !== 'No definido' ? `<div><span class="text-gray-400 block">${labels.dimensions}</span><span class="font-medium">${obra.dimensiones}</span></div>` : ''}
           ${obra.propietario ? `<div><span class="text-gray-400 block">${labels.owner}</span><span class="font-medium">${obra.propietario}</span></div>` : ''}
         </div>
-        ${descripcion ? `<p class="text-gray-600 leading-relaxed mt-4">${descripcion}</p>` : ''}
+        ${descripcion && descripcion !== 'No definido' ? `<p class="text-gray-600 leading-relaxed mt-4">${descripcion}</p>` : ''}
         ${thumbsHtml}
         <div class="mt-4">
           ${obra.en_venta
@@ -472,6 +460,7 @@ const jsonLd = {
   .filter-btn {
     color: #6b7280;
     font-weight: 400;
+    cursor: pointer;
   }
   .filter-btn:hover {
     color: #111;

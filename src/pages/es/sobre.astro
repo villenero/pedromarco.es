@@ -1,7 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { t } from '../../i18n/utils';
-const lang = 'es';
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -21,11 +20,10 @@ const jsonLd = {
 <Base
   title="Pedro Marco — Biografía del artista"
   description="Biografía de Pedro Marco (Villena, 1949-2022), pintor autodidacta especializado en surrealismo y grabado."
-  lang={lang}
   jsonLd={jsonLd}
 >
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <h1 class="text-3xl font-bold mb-8">{t(lang, 'about.title')}</h1>
+    <h1 class="text-3xl font-bold mb-8">{t('about.title')}</h1>
     <div class="prose prose-gray max-w-none text-gray-600 leading-relaxed space-y-4">
       <p>
         Pedro Marco (Villena, Alicante, 1949 – 2022) se dedicó por completo a las artes plásticas desde el año 1972. Se definía como autodidacta de formación, pero desde muy temprano destacaron sus habilidades para el dibujo. Esa destreza le incitó a formarse en academias privadas, llegando a convertirse en un dibujante excelente. En 1982 le otorgaron una beca para realizar estudios de arte en Hamburgo (Alemania), donde se especializó en la técnica del grabado.

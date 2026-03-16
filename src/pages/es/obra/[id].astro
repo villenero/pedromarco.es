@@ -3,8 +3,6 @@ import Base from '../../../layouts/Base.astro';
 import { t } from '../../../i18n/utils';
 import data from '../../../../obras.json';
 
-const lang = 'es';
-
 export function getStaticPaths() {
   return data.obras.map(obra => ({ params: { id: obra.id } }));
 }
@@ -13,8 +11,8 @@ const { id } = Astro.params;
 const obra = data.obras.find(o => o.id === id);
 if (!obra) return Astro.redirect('/es/');
 
-const titulo = obra.titulo[lang] && obra.titulo[lang] !== 'No definido' ? obra.titulo[lang] : obra.titulo['en'];
-const tecnica = obra.tecnica[lang] && obra.tecnica[lang] !== 'No definido' ? obra.tecnica[lang] : obra.tecnica['en'];
+const titulo = obra.titulo || '';
+const tecnica = obra.tecnica || '';
 const description = `${titulo}${tecnica ? ` — ${tecnica}` : ''}${obra.año ? ` (${obra.año})` : ''}. Obra de Pedro Marco, pintor surrealista de Villena.`;
 const ogImage = `https://pedromarco.es/obras/${obra.imagen}`;
 
@@ -29,57 +27,57 @@ const jsonLd = {
   "dateCreated": obra.año ? String(obra.año) : undefined,
   "artMedium": tecnica || undefined,
   "image": ogImage,
-  "description": obra.descripcion[lang] || obra.descripcion['en'] || undefined,
+  "description": obra.descripcion || undefined,
   "width": obra.dimensiones && obra.dimensiones !== 'No definido' ? obra.dimensiones : undefined,
   "url": `https://pedromarco.es/es/obra/${obra.id}`
 };
 ---
 
-<Base title={`${titulo} — Pedro Marco`} description={description} lang={lang} image={ogImage} jsonLd={jsonLd}>
+<Base title={`${titulo} — Pedro Marco`} description={description} image={ogImage} jsonLd={jsonLd}>
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <a href="/es/" class="inline-flex items-center gap-1 text-sm text-gray-500 hover:text-gray-900 mb-6 transition-colors">
-      ← {t(lang, 'artwork.back')}
+      ← {t('artwork.back')}
     </a>
 
     <div class="bg-gray-100 rounded-xl overflow-hidden mb-8">
       <img
         src={`/obras/${obra.imagen}`}
-        alt={obra.titulo[lang]}
+        alt={obra.titulo}
         class="w-full h-auto object-contain"
       />
     </div>
 
     <!-- Details -->
     <div class="space-y-4">
-      <h1 class="text-3xl font-bold">{obra.titulo[lang]}</h1>
+      <h1 class="text-3xl font-bold">{obra.titulo}</h1>
 
       <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-sm">
         <div>
-          <span class="text-gray-400 block">{t(lang, 'artwork.year')}</span>
+          <span class="text-gray-400 block">{t('artwork.year')}</span>
           <span class="font-medium">{obra.año}</span>
         </div>
         <div>
-          <span class="text-gray-400 block">{t(lang, 'artwork.technique')}</span>
-          <span class="font-medium">{obra.tecnica[lang]}</span>
+          <span class="text-gray-400 block">{t('artwork.technique')}</span>
+          <span class="font-medium">{obra.tecnica}</span>
         </div>
         <div>
-          <span class="text-gray-400 block">{t(lang, 'artwork.dimensions')}</span>
+          <span class="text-gray-400 block">{t('artwork.dimensions')}</span>
           <span class="font-medium">{obra.dimensiones}</span>
         </div>
       </div>
 
-      {obra.descripcion[lang] && (
-        <p class="text-gray-600 leading-relaxed">{obra.descripcion[lang]}</p>
+      {obra.descripcion && obra.descripcion !== 'No definido' && (
+        <p class="text-gray-600 leading-relaxed">{obra.descripcion}</p>
       )}
 
       <div class="pt-4">
         {obra.en_venta ? (
           <span class="inline-flex items-center gap-1.5 text-sm font-medium text-green-700 bg-green-50 px-3 py-1.5 rounded-full">
-            ● {t(lang, 'artwork.for_sale')}
+            ● {t('artwork.for_sale')}
           </span>
         ) : (
           <span class="inline-flex items-center gap-1.5 text-sm text-gray-500 bg-gray-100 px-3 py-1.5 rounded-full">
-            {t(lang, 'artwork.not_for_sale')}
+            {t('artwork.not_for_sale')}
           </span>
         )}
       </div>

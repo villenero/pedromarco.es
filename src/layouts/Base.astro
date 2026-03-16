@@ -1,60 +1,25 @@
 ---
 import '../styles/global.css';
-import { t, getLangFromUrl, getLocalizedPath, type Lang } from '../i18n/utils';
+import { t } from '../i18n/utils';
 
 interface Props {
   title: string;
   description?: string;
-  lang?: Lang;
   image?: string;
   jsonLd?: Record<string, any>;
 }
 
 const siteUrl = 'https://pedromarco.es';
 
-const { title, description = 'Pedro Marco Hernández — Pintor', lang: propLang, image, jsonLd } = Astro.props;
-const lang = propLang ?? getLangFromUrl(Astro.url);
-const otherLang = lang === 'es' ? 'en' : 'es';
+const { title, description = 'Pedro Marco Hernández — Pintor', image, jsonLd } = Astro.props;
 
-// Build the equivalent path in the other language
 const currentPath = Astro.url.pathname;
-const pathWithoutLang = currentPath.replace(/^\/(es|en)/, '').replace(/\/$/, '') || '/';
-
-// Map translated route segments between languages
-const routeMap: Record<string, string> = {
-  '/sobre': '/about',
-  '/about': '/sobre',
-  '/contacto': '/contact',
-  '/contact': '/contacto',
-  '/obra': '/work',
-  '/work': '/obra',
-};
-
-let translatedPath = pathWithoutLang;
-for (const [from, to] of Object.entries(routeMap)) {
-  if (translatedPath === from || translatedPath.startsWith(from + '/')) {
-    translatedPath = translatedPath.replace(from, to);
-    break;
-  }
-}
-
-const otherLangPath = `/${otherLang}${translatedPath}`;
-
-// SEO URLs
 const canonicalUrl = `${siteUrl}${currentPath}`;
-const esUrl = lang === 'es' ? canonicalUrl : `${siteUrl}/${otherLang}${translatedPath}`.replace(`/${otherLang}`, '/es');
-const enUrl = lang === 'en' ? canonicalUrl : `${siteUrl}/${otherLang}${translatedPath}`.replace(`/${otherLang}`, '/en');
-const hrefEs = `${siteUrl}/es${pathWithoutLang}`;
-const hrefEn = `${siteUrl}/en${translatedPath}`;
-
-// OG
 const ogImage = image ?? `${siteUrl}/favicon-512.png`;
-const ogLocale = lang === 'es' ? 'es_ES' : 'en_GB';
-const ogLocaleAlt = lang === 'es' ? 'en_GB' : 'es_ES';
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -65,9 +30,6 @@ const ogLocaleAlt = lang === 'es' ? 'en_GB' : 'es_ES';
 
   <!-- SEO -->
   <link rel="canonical" href={canonicalUrl} />
-  <link rel="alternate" hreflang="es" href={lang === 'es' ? canonicalUrl : `${siteUrl}/es${lang === 'en' ? pathWithoutLang.replace('/work', '/obra').replace('/about', '/sobre').replace('/contact', '/contacto') : pathWithoutLang}`} />
-  <link rel="alternate" hreflang="en" href={lang === 'en' ? canonicalUrl : `${siteUrl}/en${lang === 'es' ? pathWithoutLang.replace('/obra', '/work').replace('/sobre', '/about').replace('/contacto', '/contact') : pathWithoutLang}`} />
-  <link rel="alternate" hreflang="x-default" href={`${siteUrl}/es${pathWithoutLang}`} />
 
   <!-- Open Graph -->
   <meta property="og:title" content={title} />
@@ -75,8 +37,7 @@ const ogLocaleAlt = lang === 'es' ? 'en_GB' : 'es_ES';
   <meta property="og:image" content={ogImage} />
   <meta property="og:url" content={canonicalUrl} />
   <meta property="og:type" content="website" />
-  <meta property="og:locale" content={ogLocale} />
-  <meta property="og:locale:alternate" content={ogLocaleAlt} />
+  <meta property="og:locale" content="es_ES" />
   <meta property="og:site_name" content="Pedro Marco" />
 
   <!-- Twitter Card -->
@@ -97,20 +58,17 @@ const ogLocaleAlt = lang === 'es' ? 'en_GB' : 'es_ES';
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
-        <a href={getLocalizedPath(lang, '/')} class="hover:opacity-70 transition-opacity">
+        <a href="/es/" class="hover:opacity-70 transition-opacity">
           <img src="/logo.png" alt="Pedro Marco" class="h-8" />
         </a>
 
         <!-- Nav links (desktop) -->
         <div class="hidden sm:flex items-center gap-6 text-sm">
-          <a href={getLocalizedPath(lang, '/')} class="hover:opacity-70 transition-opacity">
-            {t(lang, 'nav.home')}
+          <a href="/es/" class="hover:opacity-70 transition-opacity">
+            {t('nav.home')}
           </a>
-          <a href={getLocalizedPath(lang, lang === 'es' ? '/sobre' : '/about')} class="hover:opacity-70 transition-opacity">
-            {t(lang, 'nav.about')}
-          </a>
-          <a href={otherLangPath} class="uppercase text-xs font-medium px-2 py-1 border border-gray-300 rounded hover:bg-gray-100 transition-colors">
-            {otherLang}
+          <a href="/es/sobre" class="hover:opacity-70 transition-opacity">
+            {t('nav.about')}
           </a>
         </div>
 
@@ -129,14 +87,11 @@ const ogLocaleAlt = lang === 'es' ? 'en_GB' : 'es_ES';
     <!-- Mobile menu -->
     <div id="mobile-menu" class="sm:hidden hidden border-t border-gray-100 bg-white/95 backdrop-blur-md">
       <div class="flex flex-col px-4 py-3 gap-3 text-sm">
-        <a href={getLocalizedPath(lang, '/')} class="py-1 hover:opacity-70 transition-opacity">
-          {t(lang, 'nav.home')}
+        <a href="/es/" class="py-1 hover:opacity-70 transition-opacity">
+          {t('nav.home')}
         </a>
-        <a href={getLocalizedPath(lang, lang === 'es' ? '/sobre' : '/about')} class="py-1 hover:opacity-70 transition-opacity">
-          {t(lang, 'nav.about')}
-        </a>
-        <a href={otherLangPath} class="uppercase text-xs font-medium px-2 py-1 border border-gray-300 rounded w-fit hover:bg-gray-100 transition-colors">
-          {otherLang}
+        <a href="/es/sobre" class="py-1 hover:opacity-70 transition-opacity">
+          {t('nav.about')}
         </a>
       </div>
     </div>
@@ -161,18 +116,18 @@ const ogLocaleAlt = lang === 'es' ? 'en_GB' : 'es_ES';
   <!-- Footer -->
   <footer class="border-t border-gray-100 py-8 text-center text-sm text-gray-400">
     <div class="mb-2 flex items-center justify-center gap-4">
-      <a href={getLocalizedPath(lang, '/')} class="hover:text-gray-600 transition-colors">
-        {t(lang, 'nav.home')}
+      <a href="/es/" class="hover:text-gray-600 transition-colors">
+        {t('nav.home')}
       </a>
-      <a href={getLocalizedPath(lang, lang === 'es' ? '/sobre' : '/about')} class="hover:text-gray-600 transition-colors">
-        {t(lang, 'nav.about')}
+      <a href="/es/sobre" class="hover:text-gray-600 transition-colors">
+        {t('nav.about')}
       </a>
-      <a href={getLocalizedPath(lang, lang === 'es' ? '/contacto' : '/contact')} class="hover:text-gray-600 transition-colors">
-        {t(lang, 'nav.contact')}
+      <a href="/es/contacto" class="hover:text-gray-600 transition-colors">
+        {t('nav.contact')}
       </a>
     </div>
     <img src="/favicon.png" alt="" class="h-6 mx-auto mb-2 opacity-40" />
-    <p>&copy; {new Date().getFullYear()} Familia Pedro Marco. {t(lang, 'footer.rights')}.</p>
+    <p>&copy; {new Date().getFullYear()} Familia Pedro Marco. {t('footer.rights')}.</p>
   </footer>
 </body>
 </html>

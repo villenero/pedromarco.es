@@ -8,7 +8,7 @@ Portfolio website for **Pedro Marco Hernández**, a painter from Villena (Alican
 
 - **Framework:** Astro (static site generator, 0 JS by default)
 - **Styles:** Tailwind CSS (v4, mobile-first)
-- **i18n:** Manual routing — `/es/` and `/en/` with shared JSON translations
+- **Language:** Spanish only (`/es/`). UI strings in `src/i18n/es.json`, artwork text in `obras.json` as plain strings.
 - **"Database":** `obras.json` at project root — single source of truth for all artwork
 - **Images:** `public/obras/` (full-size originals) + `public/obras/thumbs/` (400px thumbnails for gallery)
 - **Deploy:** Static output to `dist/`, hosted on Cloudflare Pages
@@ -20,25 +20,19 @@ pedromarco.es/
 ├── obras.json                  ← THE artwork database (edit this to add/modify works)
 ├── src/
 │   ├── layouts/
-│   │   └── Base.astro          ← Shared layout: nav, footer, meta, language switcher
+│   │   └── Base.astro          ← Shared layout: nav, footer, meta
 │   ├── i18n/
 │   │   ├── es.json             ← Spanish UI strings
-│   │   ├── en.json             ← English UI strings
-│   │   └── utils.ts            ← t() helper, lang detection, path helpers
+│   │   └── utils.ts            ← t() helper for UI strings
 │   ├── images/
 │   │   └── obras/              ← (legacy, use public/obras/ instead)
 │   ├── pages/
 │   │   ├── index.astro         ← Redirect / → /es/
-│   │   ├── es/
-│   │   │   ├── index.astro     ← Masonry gallery (Spanish)
-│   │   │   ├── obra/[id].astro ← Artwork detail page (Spanish)
-│   │   │   ├── sobre.astro     ← About the artist
-│   │   │   └── contacto.astro  ← Contact
-│   │   └── en/
-│   │       ├── index.astro     ← Masonry gallery (English)
-│   │       ├── work/[id].astro ← Artwork detail page (English)
-│   │       ├── about.astro     ← About the artist
-│   │       └── contact.astro   ← Contact
+│   │   └── es/
+│   │       ├── index.astro     ← Masonry gallery
+│   │       ├── obra/[id].astro ← Artwork detail page
+│   │       ├── sobre.astro     ← About the artist
+│   │       └── contacto.astro  ← Contact
 │   └── styles/
 │       └── global.css          ← Tailwind import
 ├── public/
@@ -64,10 +58,10 @@ pedromarco.es/
 ```json
 {
   "id": "slug-identifier",
-  "titulo": { "es": "Título", "en": "Title" },
+  "titulo": "Título de la obra",
   "año": 2024,
-  "tecnica": { "es": "Óleo sobre lienzo", "en": "Oil on canvas" },
-  "descripcion": { "es": "...", "en": "..." },
+  "tecnica": "Óleo sobre lienzo",
+  "descripcion": "Descripción de la obra...",
   "dimensiones": "100x80 cm",
   "imagen": "filename.jpg",
   "en_venta": true,
@@ -78,12 +72,11 @@ pedromarco.es/
 }
 ```
 
-- `id` is used as the URL slug: `/es/obra/{id}` and `/en/work/{id}`
+- `id` is used as the URL slug: `/es/obra/{id}`
 - `imagen` references a file in `public/obras/` (full) and `public/obras/thumbs/` (thumbnail)
-- `categoria` is used for filtering in the gallery (lowercase, no accents)
-- Bilingual fields (`titulo`, `tecnica`, `descripcion`) have `es` and `en` keys
-- `propietario` is a plain string (not bilingual)
-- Bilingual fallback: if a field is empty or "No definido" in the current language, the other language is shown
+- `categoria` is used for filtering in the gallery
+- All text fields (`titulo`, `tecnica`, `descripcion`, `propietario`) are plain strings (Spanish)
+- "No definido" is used as placeholder for fields not yet filled in
 
 ## Build & Run
 
@@ -118,7 +111,7 @@ Gallery pages use `/obras/thumbs/` for fast loading; detail pages use `/obras/` 
 
 Local-only tool at `http://localhost:4000` for managing `obras.json`. Zero dependencies — pure Node.js (`node:http`). Features:
 - List all obras with thumbnail previews
-- Edit all fields (bilingual titles, technique, description, year, dimensions, category, price, etc.)
+- Edit all fields (title, technique, description, year, dimensions, category, price, etc.)
 - Image selector from available files in `public/obras/thumbs/`
 - Create and delete obras
 - "Generar thumbs" button to run generate-thumbs.sh from the browser
@@ -132,16 +125,15 @@ Local-only tool at `http://localhost:4000` for managing `obras.json`. Zero depen
 - **Masonry layout** on the gallery: CSS columns (2 mobile → 3 tablet → 4-5 desktop). Pure CSS, no JS libraries.
 - **Minimal UI.** The art is the protagonist. White backgrounds, thin borders, lots of whitespace.
 - **Performance.** Zero JS by default (Astro). Two-tier images: 400px thumbs for gallery, originals for detail. Target <1s load time.
-- **Bilingual.** Every page exists in `/es/` and `/en/`. UI strings in `src/i18n/*.json`, artwork text in `obras.json`.
+- **Spanish only.** All pages under `/es/`. UI strings in `src/i18n/es.json`. Use `t('key.path')` for UI strings, `obra.titulo` for artwork text.
 
-## i18n Rules
+## URL Structure
 
-- Spanish pages: `/es/`, `/es/obra/[id]`, `/es/sobre`, `/es/contacto`
-- English pages: `/en/`, `/en/work/[id]`, `/en/about`, `/en/contact`
-- Root `/` redirects to `/es/`
-- Language switcher in nav links to the equivalent page in the other language
-- Use `t(lang, 'key.path')` for UI strings
-- Use `obra.titulo[lang]` for artwork-specific text
+- `/` → redirects to `/es/`
+- `/es/` — Masonry gallery
+- `/es/obra/[id]` — Artwork detail page
+- `/es/sobre` — About the artist
+- `/es/contacto` — Contact
 
 ## Git Discipline
 

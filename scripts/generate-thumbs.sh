@@ -45,10 +45,10 @@ for img in "$OBRAS_DIR"/*.jpg "$OBRAS_DIR"/*.JPG "$OBRAS_DIR"/*.jpeg "$OBRAS_DIR
     entry=$(cat <<ENTRY
     {
       "id": "$slug",
-      "titulo": { "es": "No definido", "en": "No definido" },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": { "es": "No definido", "en": "No definido" },
-      "descripcion": { "es": "No definido", "en": "No definido" },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "$filename",
       "en_venta": false,

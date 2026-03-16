@@ -2,42 +2,24 @@
   "obras": [
     {
       "id": "fragmentos-del-vacio",
-      "titulo": {
-        "es": "Fragmentos del vacío",
-        "en": "Fragments of the Void"
-      },
+      "titulo": "Fragmentos del vacío",
       "año": 2000,
-      "tecnica": {
-        "es": "Grafito y acrílico sobre lienzo",
-        "en": "Graphite and acrylic on canvas"
-      },
-      "descripcion": {
-        "es": "Composición en capas que explora la tensión entre figura y ausencia, con planos superpuestos de grafito y un destello de verde esmeralda",
-        "en": "Layered composition exploring the tension between figure and absence, with overlapping graphite planes and a flash of emerald green"
-      },
+      "tecnica": "Grafito y acrílico sobre lienzo",
+      "descripcion": "Composición en capas que explora la tensión entre figura y ausencia, con planos superpuestos de grafito y un destello de verde esmeralda",
       "dimensiones": "116x89 cm",
       "imagen": "fragmentos-del-vacio.jpg",
       "en_venta": true,
       "precio": null,
-      "categoria": "abstracto",
+      "categoria": "Cuadros",
       "destacada": true,
       "propietario": null
     },
     {
       "id": "el-visionario",
-      "titulo": {
-        "es": "José María Soler",
-        "en": ""
-      },
+      "titulo": "José María Soler",
       "año": 1987,
-      "tecnica": {
-        "es": "Técnica mixta sobre tabla",
-        "en": "Mixed media on board"
-      },
-      "descripcion": {
-        "es": "Retrato fragmentado del arqueólogo José María Soler con elementos simbólicos y totémicos que rodean la figura central, envuelta en tonos púrpura y dorado",
-        "en": "Fragmented portrait with symbolic and totemic elements surrounding the central figure, wrapped in purple and gold tones"
-      },
+      "tecnica": "Técnica mixta sobre tabla",
+      "descripcion": "Retrato fragmentado del arqueólogo José María Soler con elementos simbólicos y totémicos que rodean la figura central, envuelta en tonos púrpura y dorado",
       "dimensiones": "100x81 cm",
       "imagen": "el-visionario.jpg",
       "en_venta": false,
@@ -48,479 +30,290 @@
     },
     {
       "id": "vuelo-sobre-la-tierra",
-      "titulo": {
-        "es": "Vuelo sobre la tierra",
-        "en": "Flight over the Earth"
-      },
+      "titulo": "Vuelo sobre la tierra",
       "año": 1992,
-      "tecnica": {
-        "es": "Óleo y grafito sobre lienzo",
-        "en": "Oil and graphite on canvas"
-      },
-      "descripcion": {
-        "es": "Paisaje onírico de tonos lavanda y ocre donde una forma orgánica asciende desde un terreno erosionado",
-        "en": "Dreamlike landscape in lavender and ochre tones where an organic form ascends from eroded terrain"
-      },
+      "tecnica": "Óleo y grafito sobre lienzo",
+      "descripcion": "Paisaje onírico de tonos lavanda y ocre donde una forma orgánica asciende desde un terreno erosionado",
       "dimensiones": "130x97 cm",
       "imagen": "vuelo-sobre-la-tierra.jpg",
       "en_venta": true,
       "precio": null,
-      "categoria": "paisaje",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "la-habitacion-suspendida",
-      "titulo": {
-        "es": "La habitación suspendida",
-        "en": "The Suspended Room"
-      },
+      "titulo": "La habitación suspendida",
       "año": 1992,
-      "tecnica": {
-        "es": "Grafito sobre papel",
-        "en": "Graphite on paper"
-      },
-      "descripcion": {
-        "es": "Escena interior surrealista donde objetos y figuras flotan en un espacio arquitectónico fragmentado, con un corazón luminoso en el centro",
-        "en": "Surrealist interior scene where objects and figures float in a fragmented architectural space, with a luminous heart at the center"
-      },
+      "tecnica": "Grafito sobre papel",
+      "descripcion": "Escena interior surrealista donde objetos y figuras flotan en un espacio arquitectónico fragmentado, con un corazón luminoso en el centro",
       "dimensiones": "70x100 cm",
       "imagen": "la-habitacion-suspendida.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "figurativo",
+      "categoria": "Cuadros",
       "destacada": true,
       "propietario": null
     },
     {
       "id": "ruinas-y-presagios",
-      "titulo": {
-        "es": "Ruinas y presagios",
-        "en": "Ruins and Omens"
-      },
+      "titulo": "Ruinas y presagios",
       "año": 1992,
-      "tecnica": {
-        "es": "Grafito sobre papel",
-        "en": "Graphite on paper"
-      },
-      "descripcion": {
-        "es": "Dibujo de gran formato que evoca columnas clásicas en descomposición y figuras envueltas en telas, sobre un horizonte difuso",
-        "en": "Large-format drawing evoking decaying classical columns and cloth-wrapped figures, against a diffuse horizon"
-      },
+      "tecnica": "Grafito sobre papel",
+      "descripcion": "Dibujo de gran formato que evoca columnas clásicas en descomposición y figuras envueltas en telas, sobre un horizonte difuso",
       "dimensiones": "70x100 cm",
       "imagen": "ruinas-y-presagios.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "figurativo",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "altea01",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "altea01.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "paisaje",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "altea02",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": 2008,
-      "tecnica": {
-        "es": "Grafito y témpera acrílica sobre cartón",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "Grafito y témpera acrílica sobre cartón",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "altea02.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "paisaje",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "altea03",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "Grafito y témpera acrílica sobre cartón",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "Grafito y témpera acrílica sobre cartón",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "altea03.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "paisaje",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "altea04",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": 2008,
-      "tecnica": {
-        "es": "Grafito y témpera acrílica sobre cartón",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "Grafito y témpera acrílica sobre cartón",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "altea04.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "paisaje",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "altea05",
-      "titulo": {
-        "es": "Toro",
-        "en": "Bull"
-      },
+      "titulo": "Toro",
       "año": 2008,
-      "tecnica": {
-        "es": "Grafito y témpera acrílica sobre cartón",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "Grafito y témpera acrílica sobre cartón",
+      "descripcion": "No definido",
       "dimensiones": "72 x 102 cm",
       "imagen": "altea05.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Grafito",
+      "categoria": "Cuadros",
       "destacada": true,
       "propietario": null
     },
     {
       "id": "altea06",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "altea06.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "paisaje",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "altea07",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "altea07.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "paisaje",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "altea08",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "altea08.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "paisaje",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "altea09",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "altea09.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "paisaje",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "altea10",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "altea10.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "paisaje",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "altea11",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "altea11.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "paisaje",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "altea12",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "altea12.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "paisaje",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "altea14",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "altea14.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "paisaje",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "altea15",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "altea15.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "paisaje",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "altea16",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "altea16.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "paisaje",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "2022-gloria",
-      "titulo": {
-        "es": "Gloria",
-        "en": "No definido"
-      },
+      "titulo": "Gloria",
       "año": 2022,
-      "tecnica": {
-        "es": "Acrílico sobre cartón",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "Acrílico sobre cartón",
+      "descripcion": "No definido",
       "dimensiones": "102 x 72 cm",
       "imagen": "2022-Gloria.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": true,
       "propietario": "Colección Familia Pedro Marco"
     },
     {
       "id": "pict0185",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "PICT0185.JPG",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "caricatura-angel",
-      "titulo": {
-        "es": "Ángel Albuixech",
-        "en": "No definido"
-      },
+      "titulo": "Ángel Albuixech",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "caricatura-angel.jpg",
       "en_venta": false,
@@ -531,19 +324,10 @@
     },
     {
       "id": "caricatura-joaquin-marco",
-      "titulo": {
-        "es": "Joaquin Navarro",
-        "en": "No definido"
-      },
+      "titulo": "Joaquin Navarro",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "caricatura-joaquin-marco.jpg",
       "en_venta": false,
@@ -554,19 +338,10 @@
     },
     {
       "id": "caricatura-leticia",
-      "titulo": {
-        "es": "Leticia",
-        "en": "No definido"
-      },
+      "titulo": "Leticia",
       "año": 1976,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "caricatura-leticia.jpg",
       "en_venta": false,
@@ -577,824 +352,500 @@
     },
     {
       "id": "80-07-grande",
-      "titulo": {
-        "es": "Leti",
-        "en": "No definido"
-      },
+      "titulo": "Leti",
       "año": 1980,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "",
-        "en": ""
-      },
+      "tecnica": "No definido",
+      "descripcion": "",
       "dimensiones": "No definido",
       "imagen": "80-07-grande.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": "Familia Pedro Marco"
     },
     {
       "id": "dsc07080",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "",
-        "en": ""
-      },
+      "tecnica": "No definido",
+      "descripcion": "",
       "dimensiones": "No definido",
       "imagen": "DSC07080.JPG",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "00-01",
-      "titulo": {
-        "es": "Luz Laude",
-        "en": "No definido"
-      },
+      "titulo": "Luz Laude",
       "año": 2000,
-      "tecnica": {
-        "es": "Grafito, témpera acrílica y plombagina sobre cartón",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "Grafito, témpera acrílica y plombagina sobre cartón",
+      "descripcion": "No definido",
       "dimensiones": "67 x 42 cm",
       "imagen": "00-01.JPG",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": "Colección particular"
     },
     {
       "id": "77-02",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "77-02.JPG",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "77-03",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "77-03.JPG",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "80-04",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "80-04.JPG",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "84-02",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "84-02.JPG",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "84-03",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "84-03.JPG",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "87-01",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "87-01.JPG",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "88-01",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "88-01.JPG",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "89-01",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "89-01.JPG",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "89-02",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "89-02.JPG",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "90-03",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "90-03.JPG",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "90-04",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "90-04.JPG",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "90-05",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "90-05.JPG",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "90-06",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "90-06.JPG",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "91-01",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "91-01.JPG",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "92-05",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "92-05.JPG",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "92-06",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "92-06.JPG",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "94-02",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "94-02.JPG",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "94-03",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "94-03.JPG",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "95-01",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "95-01.JPG",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "95-03",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "95-03.JPG",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "95-04",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "95-04.JPG",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "95-06",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "95-06.JPG",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "96-01",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "96-01.JPG",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "96-02",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "96-02.JPG",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "97-01",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "97-01.JPG",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "97-02",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "97-02.JPG",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "98-01",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "98-01.JPG",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "98-02",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "98-02.JPG",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "20201210-211638",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "20201210_211638.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "20201210-211710",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "Ombligos de patata",
+      "año": 2017,
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "20201210_211710.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": "Ayuntamiento de Villena"
     },
     {
       "id": "20201210-212111",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "Lorca",
+      "año": 2017,
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "20201210_212111.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "20210305-131323",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "20210305_131323.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "2017-josse",
-      "titulo": {
-        "es": "Josse Peluquero",
-        "en": "No definido"
-      },
+      "titulo": "Josse Peluquero",
       "año": 2017,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "2017-Josse.jpg",
       "en_venta": false,
@@ -1405,19 +856,10 @@
     },
     {
       "id": "2020-confinamiento",
-      "titulo": {
-        "es": "Inicio del confinamiento",
-        "en": ""
-      },
+      "titulo": "Inicio del confinamiento",
       "año": 2020,
-      "tecnica": {
-        "es": "Grafito sobre papel",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "Autoretrato",
-        "en": "No definido"
-      },
+      "tecnica": "Grafito sobre papel",
+      "descripcion": "Autoretrato",
       "dimensiones": "31 x 23 cm",
       "imagen": "2020-Confinamiento.jpg",
       "en_venta": false,
@@ -1428,19 +870,10 @@
     },
     {
       "id": "pepe-lechero",
-      "titulo": {
-        "es": "Pepe El Lechero",
-        "en": "No definido"
-      },
+      "titulo": "Pepe El Lechero",
       "año": 2018,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "pepe-lechero.jpg",
       "en_venta": false,
@@ -1451,19 +884,10 @@
     },
     {
       "id": "torreblanca",
-      "titulo": {
-        "es": "Torreblanca",
-        "en": "No definido"
-      },
+      "titulo": "Torreblanca",
       "año": 2020,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "torreblanca.jpg",
       "en_venta": false,
@@ -1474,42 +898,24 @@
     },
     {
       "id": "2008-galgos",
-      "titulo": {
-        "es": "Galgos",
-        "en": "No definido"
-      },
+      "titulo": "Galgos",
       "año": 2008,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "72 x 102 cm",
       "imagen": "2008-galgos.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": "Colección particular"
     },
     {
       "id": "2020-alfredo-rojas",
-      "titulo": {
-        "es": "Alfredo Rojas",
-        "en": "No definido"
-      },
+      "titulo": "Alfredo Rojas",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "2020-alfredo-rojas.jpg",
       "en_venta": false,
@@ -1520,65 +926,38 @@
     },
     {
       "id": "2011-isla",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "2011-isla.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "2014-eee",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "2014-eee.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "2017-salicornio",
-      "titulo": {
-        "es": "Miguel Ybern",
-        "en": "No definido"
-      },
+      "titulo": "Miguel Ybern",
       "año": 2016,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "2017-Salicornio.jpg",
       "en_venta": false,
@@ -1589,19 +968,10 @@
     },
     {
       "id": "2019-retrato",
-      "titulo": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "titulo": "No definido",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "2019-retrato.jpg",
       "en_venta": false,
@@ -1612,139 +982,85 @@
     },
     {
       "id": "columna-petra",
-      "titulo": {
-        "es": "Columnas Petra",
-        "en": "No definido"
-      },
+      "titulo": "Columnas Petra",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "columna-petra.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": "Familia Danton Wagner"
     },
     {
       "id": "eros-00",
-      "titulo": {
-        "es": "Eros busto",
-        "en": "No definido"
-      },
+      "titulo": "Eros busto",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "eros-00.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "eros-columna",
-      "titulo": {
-        "es": "Eros Columna",
-        "en": "No definido"
-      },
+      "titulo": "Eros Columna",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "eros-columna.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "eros-faro",
-      "titulo": {
-        "es": "Eros Faro",
-        "en": "No definido"
-      },
+      "titulo": "Eros Faro",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "eros-faro.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "eros-ojo",
-      "titulo": {
-        "es": "Eros Ojo",
-        "en": "No definido"
-      },
+      "titulo": "Eros Ojo",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "eros-ojo.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
     {
       "id": "puertas-villena",
-      "titulo": {
-        "es": "Puertas Villeneras",
-        "en": "No definido"
-      },
+      "titulo": "Puertas Villeneras",
       "año": null,
-      "tecnica": {
-        "es": "No definido",
-        "en": "No definido"
-      },
-      "descripcion": {
-        "es": "No definido",
-        "en": "No definido"
-      },
+      "tecnica": "No definido",
+      "descripcion": "No definido",
       "dimensiones": "No definido",
       "imagen": "puertas-villena.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "No definido",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     }

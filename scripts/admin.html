@@ -134,7 +134,7 @@ async function fetchImages() {
 function renderList() {
   const list = document.getElementById('list');
   list.innerHTML = obras.map(o => {
-    const isUndef = o.titulo.es === 'No definido';
+    const isUndef = o.titulo === 'No definido';
     const cls = [
       'card',
       o.id === currentId ? 'active' : '',
@@ -144,7 +144,7 @@ function renderList() {
       <div class="${cls}" onclick="selectObra('${o.id}')">
         <img src="/obras/thumbs/${encodeURIComponent(o.imagen)}" alt="" onerror="this.style.display='none'">
         <div class="card-info">
-          <div class="card-title">${o.titulo.es}</div>
+          <div class="card-title">${o.titulo}</div>
           <div class="card-meta">${o.año || '—'} · ${o.dimensiones || '—'}</div>
           <div class="card-badges">
             <span class="badge">${o.categoria || '—'}</span>
@@ -170,10 +170,10 @@ function newObra() {
   isNew = true;
   renderForm({
     id: '',
-    titulo: { es: '', en: '' },
+    titulo: '',
     'año': null,
-    tecnica: { es: '', en: '' },
-    descripcion: { es: '', en: '' },
+    tecnica: '',
+    descripcion: '',
     dimensiones: '',
     imagen: '',
     en_venta: false,
@@ -204,13 +204,9 @@ function renderForm(o) {
         ${isNew ? '<div class="hint">Se genera del titulo si lo dejas vacio</div>' : ''}
       </div>
 
-      <div class="field">
-        <label>Titulo (ES)</label>
-        <input id="f-titulo-es" value="${esc(o.titulo.es)}" ${isNew ? 'oninput="autoSlug()"' : ''}>
-      </div>
-      <div class="field">
-        <label>Titulo (EN)</label>
-        <input id="f-titulo-en" value="${esc(o.titulo.en)}">
+      <div class="field full">
+        <label>Titulo</label>
+        <input id="f-titulo" value="${esc(o.titulo)}" ${isNew ? 'oninput="autoSlug()"' : ''}>
       </div>
 
       <div class="field">
@@ -222,22 +218,14 @@ function renderForm(o) {
         <input id="f-dimensiones" value="${esc(o.dimensiones)}">
       </div>
 
-      <div class="field">
-        <label>Tecnica (ES)</label>
-        <input id="f-tecnica-es" value="${esc(o.tecnica.es)}">
-      </div>
-      <div class="field">
-        <label>Tecnica (EN)</label>
-        <input id="f-tecnica-en" value="${esc(o.tecnica.en)}">
+      <div class="field full">
+        <label>Tecnica</label>
+        <input id="f-tecnica" value="${esc(o.tecnica)}">
       </div>
 
-      <div class="field">
-        <label>Descripcion (ES)</label>
-        <textarea id="f-desc-es">${esc(o.descripcion.es)}</textarea>
-      </div>
-      <div class="field">
-        <label>Descripcion (EN)</label>
-        <textarea id="f-desc-en">${esc(o.descripcion.en)}</textarea>
+      <div class="field full">
+        <label>Descripcion</label>
+        <textarea id="f-desc">${esc(o.descripcion)}</textarea>
       </div>
 
       <div class="field">
@@ -299,7 +287,7 @@ function slugify(s) {
 
 function autoSlug() {
   if (!isNew) return;
-  const title = document.getElementById('f-titulo-es').value;
+  const title = document.getElementById('f-titulo').value;
   document.getElementById('f-id').value = slugify(title);
 }
 
@@ -319,19 +307,10 @@ function collectForm() {
   const ano = document.getElementById('f-ano').value;
   return {
     id: document.getElementById('f-id').value.trim(),
-    titulo: {
-      es: document.getElementById('f-titulo-es').value.trim(),
-      en: document.getElementById('f-titulo-en').value.trim()
-    },
+    titulo: document.getElementById('f-titulo').value.trim(),
     'año': ano ? parseInt(ano) : null,
-    tecnica: {
-      es: document.getElementById('f-tecnica-es').value.trim(),
-      en: document.getElementById('f-tecnica-en').value.trim()
-    },
-    descripcion: {
-      es: document.getElementById('f-desc-es').value.trim(),
-      en: document.getElementById('f-desc-en').value.trim()
-    },
+    tecnica: document.getElementById('f-tecnica').value.trim(),
+    descripcion: document.getElementById('f-desc').value.trim(),
     dimensiones: document.getElementById('f-dimensiones').value.trim(),
     imagen: document.getElementById('f-imagen').value,
     en_venta: document.getElementById('f-enventa').checked,
@@ -340,8 +319,6 @@ function collectForm() {
     destacada: document.getElementById('f-destacada').checked,
     propietario: document.getElementById('f-propietario').value.trim() || null
   };
-
-  return obj;
 }
 
 function setStatus(msg, type = '') {
