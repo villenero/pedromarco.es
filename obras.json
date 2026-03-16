@@ -624,25 +624,25 @@
     {
       "id": "00-01",
       "titulo": {
-        "es": "No definido",
+        "es": "Luz Laude",
         "en": "No definido"
       },
-      "año": null,
+      "año": 2000,
       "tecnica": {
-        "es": "No definido",
+        "es": "Grafito, témpera acrílica y plombagina sobre cartón",
         "en": "No definido"
       },
       "descripcion": {
         "es": "No definido",
         "en": "No definido"
       },
-      "dimensiones": "No definido",
+      "dimensiones": "67 x 42 cm",
       "imagen": "00-01.JPG",
       "en_venta": false,
       "precio": null,
       "categoria": "No definido",
       "destacada": false,
-      "propietario": null
+      "propietario": "Colección particular"
     },
     {
       "id": "77-02",
@@ -1411,20 +1411,20 @@
       },
       "año": 2020,
       "tecnica": {
-        "es": "No definido",
+        "es": "Grafito sobre papel",
         "en": "No definido"
       },
       "descripcion": {
         "es": "Autoretrato",
         "en": "No definido"
       },
-      "dimensiones": "No definido",
+      "dimensiones": "31 x 23 cm",
       "imagen": "2020-Confinamiento.jpg",
       "en_venta": false,
       "precio": null,
       "categoria": "retrato",
       "destacada": false,
-      "propietario": null
+      "propietario": "Familia Pedro Marco"
     },
     {
       "id": "pepe-lechero",
@@ -1478,7 +1478,7 @@
         "es": "Galgos",
         "en": "No definido"
       },
-      "año": null,
+      "año": 2008,
       "tecnica": {
         "es": "No definido",
         "en": "No definido"
@@ -1487,13 +1487,13 @@
         "es": "No definido",
         "en": "No definido"
       },
-      "dimensiones": "No definido",
+      "dimensiones": "72 x 102 cm",
       "imagen": "2008-galgos.jpg",
       "en_venta": false,
       "precio": null,
       "categoria": "No definido",
       "destacada": false,
-      "propietario": null
+      "propietario": "Colección particular"
     },
     {
       "id": "2020-alfredo-rojas",
