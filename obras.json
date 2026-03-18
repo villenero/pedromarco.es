@@ -1063,20 +1063,6 @@
       "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
-    },
-    {
-      "id": "spectrum",
-      "titulo": "Spectrum",
-      "año": 1983,
-      "tecnica": "No definido",
-      "descripcion": "No definido",
-      "dimensiones": "No definido",
-      "imagen": "spectrum.jpg",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "Cuadros",
-      "destacada": false,
-      "propietario": "Colección privada"
     }
   ]
 }
