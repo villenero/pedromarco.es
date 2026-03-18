@@ -71,14 +71,14 @@ const jsonLd = {
     <div id="masonry" class="columns-2 sm:columns-3 lg:columns-4 xl:columns-5 gap-2 [column-fill:_balance]">
       {obras.obras.map((obra, i) => (
         <div
-          class="masonry-item block mb-2 break-inside-avoid group relative overflow-hidden cursor-pointer"
+          class="masonry-item obra-fade block mb-2 break-inside-avoid group relative overflow-hidden cursor-pointer"
           data-category={obra.categoria}
           data-index={i}
         >
           <img
             src={`/obras/thumbs/${obra.imagen}`}
             alt={obra.titulo}
-            class="w-full h-auto object-cover bg-gray-100 obra-fade"
+            class="w-full h-auto object-cover bg-gray-100"
             loading="lazy"
           />
           <div class="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-colors duration-300 flex items-end">
@@ -450,7 +450,7 @@ const jsonLd = {
         }
       });
     }, { threshold: 0.1 });
-    document.querySelectorAll('.obra-fade').forEach(img => fadeObserver.observe(img));
+    document.querySelectorAll('.obra-fade').forEach(el => fadeObserver.observe(el));
 
     // Filter buttons
     const buttons = document.querySelectorAll('.filter-btn');
