@@ -78,7 +78,7 @@ const jsonLd = {
           <img
             src={`/obras/thumbs/${obra.imagen}`}
             alt={obra.titulo}
-            class="w-full h-auto object-cover bg-gray-100"
+            class="w-full h-auto object-cover bg-gray-100 obra-fade"
             loading="lazy"
           />
           <div class="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-colors duration-300 flex items-end">
@@ -440,6 +440,18 @@ const jsonLd = {
       }, { passive: true });
     })();
 
+    // Fade-in on scroll with random stagger
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const delay = Math.random() * 200;
+          setTimeout(() => entry.target.classList.add('visible'), delay);
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.obra-fade').forEach(img => fadeObserver.observe(img));
+
     // Filter buttons
     const buttons = document.querySelectorAll('.filter-btn');
     const items = document.querySelectorAll('.masonry-item');
@@ -457,6 +469,17 @@ const jsonLd = {
 </Base>
 
 <style>
+  /* Fade-in on scroll */
+  .obra-fade {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+  }
+  .obra-fade.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   .filter-btn {
     color: #6b7280;
     font-weight: 400;
