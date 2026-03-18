@@ -15,6 +15,116 @@ const jsonLd = {
   "knowsAbout": ["Pintura", "Grabado", "Surrealismo", "Artes plásticas"],
   "sameAs": "https://pedromarco.es"
 };
+
+// Fusionar todos los eventos en un solo timeline
+const allEvents = [
+  // Exposiciones Individuales
+  { year: 2024, type: 'expo', title: 'Pedro Marco. Tras los Pasos de Ilici', venue: 'Museo de Arte Contemporáneo de Elche (Alicante)' },
+  { year: 2021, type: 'expo', title: 'Pedro Marco. Arte Celular', venue: 'Bar - Galería Experimental El Túnel, Villena (Alicante)' },
+  { year: 2016, type: 'expo', title: 'Pedro Marco a Lorca. Dibujos', venue: 'Bar - Galería Experimental El Túnel, Villena (Alicante)' },
+  { year: 2013, type: 'expo', title: 'Pedro Marco. Nuestros Tesoros', venue: 'Bar - Galería Experimental El Túnel, Villena (Alicante)' },
+  { year: 2011, type: 'expo', title: 'Eros', venue: 'Bar - Galería Experimental El Túnel, Villena (Alicante)' },
+  { year: 2010, type: 'expo', title: 'Pedro Marco. Onirismos', venue: 'Fundación Eberhard Schlotter, Altea (Alicante)' },
+  { year: 2006, type: 'expo', title: 'Pedro Marco 1966-2006', venue: 'Kakv, Villena (Alicante)' },
+  { year: 2005, type: 'expo', title: 'Pedro Marco', venue: 'Bar - Galería Experimental El Túnel, Villena (Alicante)' },
+  { year: 2004, type: 'expo', title: 'Pedro Marco', venue: 'Sala de Exposiciones de la Casa Municipal de Cultura, Yecla (Murcia)' },
+  { year: 2001, type: 'expo', title: 'Latitudes', venue: 'Sala de Exposiciones Juana Francés, Alicante' },
+  { year: 1999, type: 'expo', title: 'Pedro Marco', venue: "Galerie L'Entree des Artistes, Barbizon, Francia" },
+  { year: 1998, type: 'expo', title: 'Pedro Marco', venue: 'Casa del Gobernador, Tabarca (Alicante)' },
+  { year: 1997, type: 'expo', title: 'Pedro Marco', venue: 'Sala de Exposiciones Casa de Cultura, Biar (Alicante)' },
+  { year: 1996, type: 'expo', title: 'Constelaciones', venue: 'Bar - Galería Experimental El Túnel, Villena (Alicante)' },
+  { year: 1995, type: 'expo', title: 'Efluvios. Pedro Marco', venue: 'Palacio Gravina, Alicante' },
+  { year: 1994, type: 'expo', title: 'Pedro Marco', venue: 'Galería de Arte Studio D, Londres' },
+  { year: 1993, type: 'expo', title: 'Pedro Marco', venue: 'Galería Tábula, Moraira (Alicante)' },
+  { year: 1992, type: 'expo', title: 'Pedro Marco', venue: 'Kakv, Villena (Alicante)' },
+  { year: 1991, type: 'expo', title: 'Pedro Marco. 24 horas dibujando', venue: 'Bar - Galería Experimental El Túnel, Villena (Alicante)' },
+  { year: 1990, type: 'expo', title: 'Pedro Marco', venue: "Ken's Art Gallery, Florencia" },
+  { year: 1985, type: 'expo', title: 'Obras de Pedro Marco', venue: 'Trama Art, Barcelona' },
+  { year: 1983, type: 'expo', title: 'Pedro Marco. Culto a la Naturaleza', venue: 'Bar - Galería Experimental El Túnel, Villena (Alicante)' },
+  { year: 1982, type: 'expo', title: 'Villena en pinzas', venue: 'Sala de Exposiciones del Círculo Agrícola Mercantil Villenense, Villena (Alicante)' },
+  { year: 1981, type: 'expo', title: 'Pedro Marco', venue: 'Sala Goya, Casa de España, París' },
+  { year: 1979, type: 'expo', title: 'Pedro Marco', venue: 'Galería Amics, Alicante' },
+  { year: 1977, type: 'expo', title: 'Pedro Marco', venue: 'Sala de Exposiciones, Caja de Ahorros de Alicante y Murcia, Villena (Alicante)' },
+  { year: 1976, type: 'expo', title: 'Pedro Marco. Dibujos', venue: 'Galería Chys, Murcia' },
+  { year: 1975, type: 'expo', title: 'Pedro Marco', venue: 'Sala de Exposiciones del Ministerio de Información y Turismo, San Sebastián' },
+  { year: 1975, type: 'expo', title: 'Pedro Marco. Óleos y dibujos', venue: 'A Delta, Sala de Arte, Madrid' },
+  { year: 1974, type: 'expo', title: 'Pedro Marco', venue: 'Sala de Exposiciones del Ministerio de Información y Turismo, San Sebastián' },
+  { year: 1972, type: 'expo', title: 'Pedro Marco', venue: 'Sala de Exposiciones del Círculo Agrícola Mercantil Villenense, Villena (Alicante)' },
+  { year: 1972, type: 'expo', title: 'Pedro Marco. Dibujos', venue: 'Hall Teatro Chapí, Villena (Alicante)' },
+  { year: 1966, type: 'expo', title: 'Exposición de Pintura de Pedro Marco', venue: 'Aula de Cultura de la Caja de Ahorros del Sureste de España, Villena (Alicante)' },
+  
+  // Certámenes, Salones y Bienales
+  { year: 2002, type: 'certamen', title: 'IV Bienal de Artistas Plásticos Solidarios', venue: 'Mapayn Mundi' },
+  { year: 2000, type: 'certamen', title: 'II Bienal de Artistas Plásticos Solidarios', venue: 'Mapayn Mundi' },
+  { year: 1994, type: 'certamen', title: 'Convocatoria Al voltant del dibuix', venue: 'Jávea (Alicante)' },
+  { year: 1991, type: 'certamen', title: 'III Convocatoria de Artes Plásticas', venue: 'Ciudad de Villena (Alicante)' },
+  { year: 1989, type: 'certamen', title: 'X Concurso Nacional de Pintura de Minicuadros', venue: 'Elda (Alicante)' },
+  { year: 1989, type: 'certamen', title: 'X Convocatoria de Artes Plásticas', venue: 'Diputación de Alicante', note: 'Presentado' },
+  { year: 1989, type: 'certamen', title: 'XII Certamen Nacional de Pintura Eusebio Sempere', venue: 'Onil (Alicante)', note: 'Primer Premio Provincial' },
+  { year: 1988, type: 'certamen', title: 'IX Convocatoria de Artes Plásticas', venue: 'Diputación de Alicante', note: 'Presentado' },
+  { year: 1988, type: 'certamen', title: '65 Salon Société des Artistes Méridionaux', venue: 'Palais des Arts, Toulouse, Francia', note: 'Seleccionado' },
+  { year: 1987, type: 'certamen', title: 'III Certamen de Pintura', venue: 'Villa de Sax (Alicante)', note: 'Finalista' },
+  { year: 1986, type: 'certamen', title: 'VII Convocatoria de Artes Plásticas', venue: 'Diputación de Alicante', note: 'Presentado' },
+  { year: 1986, type: 'certamen', title: "II Bienal d'Art sobre el Deporte", venue: 'Barcelona', note: 'Seleccionado' },
+  { year: 1986, type: 'certamen', title: 'XXV Convocatoria del Premio Internacional de Dibujo Joan Miró', venue: 'Fundació Joan Miró, Barcelona', note: 'Seleccionado' },
+  { year: 1985, type: 'certamen', title: "I Bienal d'Art sobre el Deporte", venue: 'Barcelona', note: 'Seleccionado' },
+  { year: 1985, type: 'certamen', title: 'XXIV Convocatoria del Premio Internacional de Dibujo Joan Miró', venue: 'Fundació Joan Miró, Barcelona', note: 'Seleccionado' },
+  { year: 1985, type: 'certamen', title: 'I Bienal de Pintura de Chinchilla', venue: 'Albacete' },
+  { year: 1985, type: 'certamen', title: 'VI Convocatoria de Artes Plásticas', venue: 'Diputación de Alicante', note: 'Adquirida' },
+  { year: 1983, type: 'certamen', title: 'I Bienal de Pintura Emilio Varela', venue: 'Alicante', note: 'Finalista' },
+  { year: 1981, type: 'certamen', title: 'XI Reunión Provincial de Artes Plásticas', venue: '', note: 'Presentado' },
+  { year: 1979, type: 'certamen', title: 'Premio Ciudad de Alicante', venue: '', note: 'Seleccionado' },
+  { year: 1979, type: 'certamen', title: 'X Reunión de Artes Plásticas', venue: 'Instituto de Estudios Alicantinos, Alicante', note: 'Adquirida' },
+  { year: 1978, type: 'certamen', title: 'Premio Eusebio Sempere', venue: 'Onil (Alicante)', note: 'Seleccionado' },
+  { year: 1977, type: 'certamen', title: 'II Convocatoria de Artes Plásticas', venue: 'Diputación de Alicante', note: 'Presentado' },
+  { year: 1976, type: 'certamen', title: 'III Exposición Nacional de Arte', venue: 'Villena (Alicante)' },
+  { year: 1976, type: 'certamen', title: 'VIII Certamen Provincial de Artes Plásticas', venue: 'Instituto de Estudios Alicantinos, Alicante', note: 'Adquiridas' },
+  { year: 1975, type: 'certamen', title: 'IV Salón de Pintura de Sagunto', venue: 'Valencia' },
+  { year: 1975, type: 'certamen', title: 'II Exposición Nacional de Arte', venue: 'Villena (Alicante)' },
+  { year: 1975, type: 'certamen', title: 'I Convocatoria de Artes Plásticas', venue: 'Diputación de Alicante', note: 'Presentado' },
+  { year: 1974, type: 'certamen', title: 'XLIV Salón de Otoño', venue: 'Madrid' },
+  { year: 1974, type: 'certamen', title: 'VI Certamen Provincial de Artes Plásticas', venue: 'Instituto de Estudios Alicantinos, Alicante', note: 'Adquiridas' },
+  { year: 1973, type: 'certamen', title: 'I Salón de Arte Centro Plaza Caracas', venue: '', note: 'Adquiridas' },
+
+  // Estancias Formativas y Creativas
+  { year: 2004, type: 'estancia', title: 'Estancia formativa', venue: 'Tindurf, Argelia' },
+  { year: 1997, type: 'estancia', title: 'Estancia formativa', venue: 'Jordania y Siria' },
+  { year: 1994, type: 'estancia', title: 'Estancia formativa', venue: 'Londres, Reino Unido' },
+  { year: 1991, type: 'estancia', title: 'Estancia formativa', venue: 'País Vasco, España' },
+  { year: 1990, type: 'estancia', title: 'Estancia formativa', venue: 'Vigonovo, Italia' },
+  { year: 1983, type: 'estancia', title: 'Estancia formativa', venue: 'Hamburgo, Alemania' },
+  { year: 1982, type: 'estancia', title: 'Estancia formativa', venue: 'Hamburgo, Alemania' },
+  { year: 1980, type: 'estancia', title: 'Estancia formativa', venue: 'Bruselas, Bélgica' },
+  { year: 1979, type: 'estancia', title: 'Estancia formativa', venue: 'París, Francia' },
+  { year: 1974, type: 'estancia', title: 'Estancia formativa', venue: 'País Vasco, España' },
+  { year: 1973, type: 'estancia', title: 'Estancia formativa', venue: 'Venezuela y Colombia' },
+  { year: 1969, type: 'estancia', title: 'Estancia formativa', venue: 'Madrid, España' },
+  { year: 1968, type: 'estancia', title: 'Estancia formativa', venue: 'Madrid, España' },
+];
+
+// Ordenar cronológicamente de más reciente a más antiguo
+allEvents.sort((a, b) => b.year - a.year);
+
+// Agrupar por años
+const eventsByYear = allEvents.reduce((acc, event) => {
+  if (!acc[event.year]) {
+    acc[event.year] = [];
+  }
+  acc[event.year].push(event);
+  return acc;
+}, {});
+
+// Obtener lista de años para el IntersectionObserver
+const years = Object.keys(eventsByYear).sort((a, b) => b - a);
+
+const getEventIcon = (type) => {
+  switch (type) {
+    case 'expo': return '🎨';
+    case 'certamen': return '🏆';
+    case 'estancia': return '✈️';
+    default: return '🎨';
+  }
+};
 ---
 
 <Base
@@ -22,6 +132,7 @@ const jsonLd = {
   description="Biografía de Pedro Marco (Villena, 1949-2022), pintor autodidacta especializado en surrealismo y grabado."
   jsonLd={jsonLd}
 >
+  <!-- Biografía -->
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <h1 class="text-3xl font-bold mb-8">{t('about.title')}</h1>
     <div class="prose prose-gray max-w-none text-gray-600 leading-relaxed space-y-4">
@@ -35,128 +146,170 @@ const jsonLd = {
         Su primera exposición individual la realizó con tan solo diecisiete años en su ciudad natal, y a partir de ese momento un sinfín de exposiciones individuales y colectivas se han ido sucediendo tanto en el ámbito nacional como en el internacional. Villena, Caracas, Madrid, San Sebastián, Murcia, Alicante, París, Barcelona, Florencia y Londres han sido algunas de las ciudades donde se han podido admirar sus creaciones, siempre rodeadas de un halo de surrealismo y fantasía. Sus obras han sido adquiridas por instituciones públicas y privadas, y han sido seleccionadas y premiadas en numerosos certámenes de pintura.
       </p>
     </div>
-
-    <div class="mt-16">
-      <h2 class="text-2xl font-bold mb-8">Exposiciones Individuales</h2>
-      <div class="space-y-0">
-        {[
-          { year: '2024', title: 'Pedro Marco. Tras los Pasos de Ilici', venue: 'Museo de Arte Contemporáneo de Elche (Alicante)' },
-          { year: '2021', title: 'Pedro Marco. Arte Celular', venue: 'Bar - Galería Experimental El Túnel, Villena (Alicante)' },
-          { year: '2016', title: 'Pedro Marco a Lorca. Dibujos', venue: 'Bar - Galería Experimental El Túnel, Villena (Alicante)' },
-          { year: '2013', title: 'Pedro Marco. Nuestros Tesoros', venue: 'Bar - Galería Experimental El Túnel, Villena (Alicante)' },
-          { year: '2011', title: 'Eros', venue: 'Bar - Galería Experimental El Túnel, Villena (Alicante)' },
-          { year: '2010', title: 'Pedro Marco. Onirismos', venue: 'Fundación Eberhard Schlotter, Altea (Alicante)' },
-          { year: '2006', title: 'Pedro Marco 1966-2006', venue: 'Kakv, Villena (Alicante)' },
-          { year: '2005', title: 'Pedro Marco', venue: 'Bar - Galería Experimental El Túnel, Villena (Alicante)' },
-          { year: '2004', title: 'Pedro Marco', venue: 'Sala de Exposiciones de la Casa Municipal de Cultura, Yecla (Murcia)' },
-          { year: '2001', title: 'Latitudes', venue: 'Sala de Exposiciones Juana Francés, Alicante' },
-          { year: '1999', title: 'Pedro Marco', venue: "Galerie L'Entree des Artistes, Barbizon, Francia" },
-          { year: '1998', title: 'Pedro Marco', venue: 'Casa del Gobernador, Tabarca (Alicante)' },
-          { year: '1997', title: 'Pedro Marco', venue: 'Sala de Exposiciones Casa de Cultura, Biar (Alicante)' },
-          { year: '1996', title: 'Constelaciones', venue: 'Bar - Galería Experimental El Túnel, Villena (Alicante)' },
-          { year: '1995', title: 'Efluvios. Pedro Marco', venue: 'Palacio Gravina, Alicante' },
-          { year: '1994', title: 'Pedro Marco', venue: 'Galería de Arte Studio D, Londres' },
-          { year: '1993', title: 'Pedro Marco', venue: 'Galería Tábula, Moraira (Alicante)' },
-          { year: '1992', title: 'Pedro Marco', venue: 'Kakv, Villena (Alicante)' },
-          { year: '1991', title: 'Pedro Marco. 24 horas dibujando', venue: 'Bar - Galería Experimental El Túnel, Villena (Alicante)' },
-          { year: '1990', title: 'Pedro Marco', venue: "Ken's Art Gallery, Florencia" },
-          { year: '1985', title: 'Obras de Pedro Marco', venue: 'Trama Art, Barcelona' },
-          { year: '1983', title: 'Pedro Marco. Culto a la Naturaleza', venue: 'Bar - Galería Experimental El Túnel, Villena (Alicante)' },
-          { year: '1982', title: 'Villena en pinzas', venue: 'Sala de Exposiciones del Círculo Agrícola Mercantil Villenense, Villena (Alicante)' },
-          { year: '1981', title: 'Pedro Marco', venue: 'Sala Goya, Casa de España, París' },
-          { year: '1979', title: 'Pedro Marco', venue: 'Galería Amics, Alicante' },
-          { year: '1977', title: 'Pedro Marco', venue: 'Sala de Exposiciones, Caja de Ahorros de Alicante y Murcia, Villena (Alicante)' },
-          { year: '1976', title: 'Pedro Marco. Dibujos', venue: 'Galería Chys, Murcia' },
-          { year: '1975', title: 'Pedro Marco', venue: 'Sala de Exposiciones del Ministerio de Información y Turismo, San Sebastián' },
-          { year: '1975', title: 'Pedro Marco. Óleos y dibujos', venue: 'A Delta, Sala de Arte, Madrid' },
-          { year: '1974', title: 'Pedro Marco', venue: 'Sala de Exposiciones del Ministerio de Información y Turismo, San Sebastián' },
-          { year: '1972', title: 'Pedro Marco', venue: 'Sala de Exposiciones del Círculo Agrícola Mercantil Villenense, Villena (Alicante)' },
-          { year: '1972', title: 'Pedro Marco. Dibujos', venue: 'Hall Teatro Chapí, Villena (Alicante)' },
-          { year: '1966', title: 'Exposición de Pintura de Pedro Marco', venue: 'Aula de Cultura de la Caja de Ahorros del Sureste de España, Villena (Alicante)' },
-        ].map((expo) => (
-          <div class="flex gap-4 py-3 border-b border-gray-100 last:border-0">
-            <span class="text-sm font-semibold text-gray-900 tabular-nums w-12 shrink-0 pt-0.5">{expo.year}</span>
-            <div>
-              <span class="font-medium text-gray-800">{expo.title}</span>
-              <span class="text-gray-500 block sm:inline sm:before:content-['._—_.']">{expo.venue}</span>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-
-    <div class="mt-16">
-      <h2 class="text-2xl font-bold mb-8">Certámenes, Salones y Bienales</h2>
-      <div class="space-y-0">
-        {[
-          { year: '2002', title: 'IV Bienal de Artistas Plásticos Solidarios', venue: 'Mapayn Mundi' },
-          { year: '2000', title: 'II Bienal de Artistas Plásticos Solidarios', venue: 'Mapayn Mundi' },
-          { year: '1994', title: 'Convocatoria Al voltant del dibuix', venue: 'Jávea (Alicante)' },
-          { year: '1991', title: 'III Convocatoria de Artes Plásticas', venue: 'Ciudad de Villena (Alicante)' },
-          { year: '1989', title: 'X Concurso Nacional de Pintura de Minicuadros', venue: 'Elda (Alicante)' },
-          { year: '1989', title: 'X Convocatoria de Artes Plásticas', venue: 'Diputación de Alicante', note: 'Presentado' },
-          { year: '1989', title: 'XII Certamen Nacional de Pintura Eusebio Sempere', venue: 'Onil (Alicante)', note: 'Primer Premio Provincial' },
-          { year: '1988', title: 'IX Convocatoria de Artes Plásticas', venue: 'Diputación de Alicante', note: 'Presentado' },
-          { year: '1988', title: '65 Salon Société des Artistes Méridionaux', venue: 'Palais des Arts, Toulouse, Francia', note: 'Seleccionado' },
-          { year: '1987', title: 'III Certamen de Pintura', venue: 'Villa de Sax (Alicante)', note: 'Finalista' },
-          { year: '1986', title: 'VII Convocatoria de Artes Plásticas', venue: 'Diputación de Alicante', note: 'Presentado' },
-          { year: '1986', title: "II Bienal d'Art sobre el Deporte", venue: 'Barcelona', note: 'Seleccionado' },
-          { year: '1986', title: 'XXV Convocatoria del Premio Internacional de Dibujo Joan Miró', venue: 'Fundació Joan Miró, Barcelona', note: 'Seleccionado' },
-          { year: '1985', title: "I Bienal d'Art sobre el Deporte", venue: 'Barcelona', note: 'Seleccionado' },
-          { year: '1985', title: 'XXIV Convocatoria del Premio Internacional de Dibujo Joan Miró', venue: 'Fundació Joan Miró, Barcelona', note: 'Seleccionado' },
-          { year: '1985', title: 'I Bienal de Pintura de Chinchilla', venue: 'Albacete' },
-          { year: '1985', title: 'VI Convocatoria de Artes Plásticas', venue: 'Diputación de Alicante', note: 'Adquirida' },
-          { year: '1983', title: 'I Bienal de Pintura Emilio Varela', venue: 'Alicante', note: 'Finalista' },
-          { year: '1981', title: 'XI Reunión Provincial de Artes Plásticas', venue: '', note: 'Presentado' },
-          { year: '1979', title: 'Premio Ciudad de Alicante', venue: '', note: 'Seleccionado' },
-          { year: '1979', title: 'X Reunión de Artes Plásticas', venue: 'Instituto de Estudios Alicantinos, Alicante', note: 'Adquirida' },
-          { year: '1978', title: 'Premio Eusebio Sempere', venue: 'Onil (Alicante)', note: 'Seleccionado' },
-          { year: '1977', title: 'II Convocatoria de Artes Plásticas', venue: 'Diputación de Alicante', note: 'Presentado' },
-          { year: '1976', title: 'III Exposición Nacional de Arte', venue: 'Villena (Alicante)' },
-          { year: '1976', title: 'VIII Certamen Provincial de Artes Plásticas', venue: 'Instituto de Estudios Alicantinos, Alicante', note: 'Adquiridas' },
-          { year: '1975', title: 'IV Salón de Pintura de Sagunto', venue: 'Valencia' },
-          { year: '1975', title: 'II Exposición Nacional de Arte', venue: 'Villena (Alicante)' },
-          { year: '1975', title: 'I Convocatoria de Artes Plásticas', venue: 'Diputación de Alicante', note: 'Presentado' },
-          { year: '1974', title: 'XLIV Salón de Otoño', venue: 'Madrid' },
-          { year: '1974', title: 'VI Certamen Provincial de Artes Plásticas', venue: 'Instituto de Estudios Alicantinos, Alicante', note: 'Adquiridas' },
-          { year: '1973', title: 'I Salón de Arte Centro Plaza Caracas', venue: '', note: 'Adquiridas' },
-        ].map((item) => (
-          <div class="flex gap-4 py-3 border-b border-gray-100 last:border-0">
-            <span class="text-sm font-semibold text-gray-900 tabular-nums w-12 shrink-0 pt-0.5">{item.year}</span>
-            <div>
-              <span class="font-medium text-gray-800">{item.title}</span>
-              {item.venue && <span class="text-gray-500 block sm:inline sm:before:content-['._—_.']">{item.venue}</span>}
-              {item.note && <span class="inline-block ml-2 text-xs font-medium px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200">{item.note}</span>}
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-
-    <div class="mt-16">
-      <h2 class="text-2xl font-bold mb-8">Estancias Formativas y Creativas</h2>
-      <div class="space-y-0">
-        {[
-          { year: '2004', place: 'Tindurf, Argelia' },
-          { year: '1997', place: 'Jordania y Siria' },
-          { year: '1994', place: 'Londres, Reino Unido' },
-          { year: '1991', place: 'País Vasco, España' },
-          { year: '1990', place: 'Vigonovo, Italia' },
-          { year: '1983', place: 'Hamburgo, Alemania' },
-          { year: '1982', place: 'Hamburgo, Alemania' },
-          { year: '1980', place: 'Bruselas, Bélgica' },
-          { year: '1979', place: 'París, Francia' },
-          { year: '1974', place: 'País Vasco, España' },
-          { year: '1973', place: 'Venezuela y Colombia' },
-          { year: '1969', place: 'Madrid, España' },
-          { year: '1968', place: 'Madrid, España' },
-        ].map((item) => (
-          <div class="flex gap-4 py-3 border-b border-gray-100 last:border-0">
-            <span class="text-sm font-semibold text-gray-900 tabular-nums w-12 shrink-0 pt-0.5">{item.year}</span>
-            <span class="text-gray-800">{item.place}</span>
-          </div>
-        ))}
-      </div>
-    </div>
   </div>
+
+  <!-- Timeline Scrollytelling -->
+  <section class="bg-amber-50/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Layout Desktop: Panel izquierdo sticky + Timeline derecho -->
+      <div class="hidden sm:flex min-h-screen">
+        <!-- Panel izquierdo sticky (40%) -->
+        <div class="w-2/5 sticky top-16 self-start h-screen flex items-center justify-center">
+          <div class="text-center">
+            <h2 class="text-2xl font-bold mb-4 text-gray-900">Trayectoria</h2>
+            <p class="text-gray-600 mb-8 max-w-sm">Toda una vida dedicada al arte</p>
+            <div id="current-year" class="text-8xl sm:text-9xl font-black text-amber-900/20 transition-opacity duration-500">
+              {years[0]}
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline derecho (60%) -->
+        <div class="w-3/5 py-16">
+          <div class="relative">
+            <!-- Línea vertical -->
+            <div class="absolute left-6 top-0 bottom-0 w-0.5 bg-amber-200"></div>
+            
+            {years.map((year) => (
+              <div class="year-section mb-16" data-year={year}>
+                <!-- Punto del año en la línea -->
+                <div class="absolute left-4 w-4 h-4 bg-amber-400 rounded-full border-4 border-white shadow-sm"></div>
+                
+                <!-- Eventos del año -->
+                <div class="ml-16">
+                  <h3 class="text-xl font-bold text-gray-900 mb-6">{year}</h3>
+                  <div class="space-y-4">
+                    {eventsByYear[year].map((event) => (
+                      <div class="bg-white rounded-lg p-4 shadow-sm border border-amber-100/50">
+                        <div class="flex items-start gap-3">
+                          <span class="text-lg shrink-0 mt-0.5">{getEventIcon(event.type)}</span>
+                          <div class="min-w-0 flex-1">
+                            <h4 class="font-medium text-gray-900 leading-tight">{event.title}</h4>
+                            {event.venue && (
+                              <p class="text-sm text-gray-600 mt-1">{event.venue}</p>
+                            )}
+                            {event.note && (
+                              <span class="inline-block mt-2 text-xs font-medium px-2 py-1 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
+                                {event.note}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Layout Mobile (< 640px): Año sticky en top bar + Timeline vertical -->
+      <div class="sm:hidden">
+        <!-- Año sticky en top bar mobile -->
+        <div class="sticky top-16 z-40 bg-amber-50/80 backdrop-blur-md border-b border-amber-100 py-3">
+          <div class="text-center">
+            <div id="current-year-mobile" class="text-2xl font-black text-amber-900 transition-opacity duration-500">
+              {years[0]}
+            </div>
+            <p class="text-xs text-gray-600">Trayectoria artística</p>
+          </div>
+        </div>
+
+        <!-- Timeline mobile -->
+        <div class="py-8">
+          <div class="relative">
+            <!-- Línea vertical -->
+            <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-amber-200"></div>
+            
+            {years.map((year) => (
+              <div class="year-section-mobile mb-12" data-year={year}>
+                <!-- Punto del año en la línea -->
+                <div class="absolute left-2 w-4 h-4 bg-amber-400 rounded-full border-4 border-white shadow-sm"></div>
+                
+                <!-- Eventos del año -->
+                <div class="ml-12">
+                  <h3 class="text-lg font-bold text-gray-900 mb-4">{year}</h3>
+                  <div class="space-y-3">
+                    {eventsByYear[year].map((event) => (
+                      <div class="bg-white rounded-lg p-3 shadow-sm border border-amber-100/50">
+                        <div class="flex items-start gap-2">
+                          <span class="text-base shrink-0 mt-0.5">{getEventIcon(event.type)}</span>
+                          <div class="min-w-0 flex-1">
+                            <h4 class="font-medium text-gray-900 text-sm leading-tight">{event.title}</h4>
+                            {event.venue && (
+                              <p class="text-xs text-gray-600 mt-1">{event.venue}</p>
+                            )}
+                            {event.note && (
+                              <span class="inline-block mt-1 text-xs font-medium px-1.5 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
+                                {event.note}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IntersectionObserver Script -->
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', function() {
+      const currentYearDesktop = document.getElementById('current-year');
+      const currentYearMobile = document.getElementById('current-year-mobile');
+      const yearSections = document.querySelectorAll('.year-section');
+      const yearSectionsMobile = document.querySelectorAll('.year-section-mobile');
+      
+      // Configurar IntersectionObserver
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const year = entry.target.getAttribute('data-year');
+              
+              // Actualizar año desktop
+              if (currentYearDesktop) {
+                currentYearDesktop.style.opacity = '0.3';
+                setTimeout(() => {
+                  currentYearDesktop.textContent = year;
+                  currentYearDesktop.style.opacity = '1';
+                }, 150);
+              }
+              
+              // Actualizar año mobile
+              if (currentYearMobile) {
+                currentYearMobile.style.opacity = '0.3';
+                setTimeout(() => {
+                  currentYearMobile.textContent = year;
+                  currentYearMobile.style.opacity = '1';
+                }, 150);
+              }
+            }
+          });
+        },
+        {
+          threshold: 0.3,
+          rootMargin: '-20% 0px -60% 0px'
+        }
+      );
+      
+      // Observar secciones desktop
+      yearSections.forEach((section) => {
+        observer.observe(section);
+      });
+      
+      // Observar secciones mobile
+      yearSectionsMobile.forEach((section) => {
+        observer.observe(section);
+      });
+    });
+  </script>
 </Base>
