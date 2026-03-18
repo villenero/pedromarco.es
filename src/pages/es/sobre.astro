@@ -154,13 +154,11 @@ const getEventIcon = (type) => {
       <!-- Layout Desktop: Panel izquierdo sticky + Timeline derecho -->
       <div class="hidden sm:flex min-h-screen">
         <!-- Panel izquierdo sticky (40%) -->
-        <div class="w-2/5 sticky top-16 self-start h-screen flex items-center justify-center">
-          <div class="text-center">
-            <h2 class="text-2xl font-bold mb-4 text-gray-900">Trayectoria</h2>
-            <p class="text-gray-600 mb-8 max-w-sm">Toda una vida dedicada al arte</p>
-            <div id="current-year" class="text-8xl sm:text-9xl font-black text-amber-900/20 transition-opacity duration-500">
-              {years[0]}
-            </div>
+        <div class="w-2/5 sticky top-16 self-start h-[calc(100vh-4rem)] flex flex-col justify-start pt-12 pl-4 lg:pl-12">
+          <p class="text-sm font-semibold uppercase tracking-widest text-amber-800/60 mb-2">Trayectoria</p>
+          <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight mb-12">Toda una vida<br/>dedicada al arte</h2>
+          <div id="current-year" class="text-[10rem] lg:text-[14rem] font-black text-amber-900/15 leading-none transition-opacity duration-500">
+            {years[0]}
           </div>
         </div>
 
@@ -173,27 +171,25 @@ const getEventIcon = (type) => {
             {years.map((year) => (
               <div class="year-section mb-16" data-year={year}>
                 <!-- Punto del año en la línea -->
-                <div class="absolute left-4 w-4 h-4 bg-amber-400 rounded-full border-4 border-white shadow-sm"></div>
+                <div class="year-dot absolute left-4 w-5 h-5 rounded-full border-4 border-white bg-amber-300/50 transition-all duration-300" data-year={year}></div>
                 
                 <!-- Eventos del año -->
                 <div class="ml-16">
-                  <h3 class="text-xl font-bold text-gray-900 mb-6">{year}</h3>
-                  <div class="space-y-4">
+                  <h3 class="text-2xl font-bold text-gray-900 mb-6">{year}</h3>
+                  <div class="space-y-5">
                     {eventsByYear[year].map((event) => (
-                      <div class="bg-white rounded-lg p-4 shadow-sm border border-amber-100/50">
-                        <div class="flex items-start gap-3">
-                          <span class="text-lg shrink-0 mt-0.5">{getEventIcon(event.type)}</span>
-                          <div class="min-w-0 flex-1">
-                            <h4 class="font-medium text-gray-900 leading-tight">{event.title}</h4>
-                            {event.venue && (
-                              <p class="text-sm text-gray-600 mt-1">{event.venue}</p>
-                            )}
-                            {event.note && (
-                              <span class="inline-block mt-2 text-xs font-medium px-2 py-1 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
-                                {event.note}
-                              </span>
-                            )}
-                          </div>
+                      <div class="flex items-start gap-3">
+                        <span class="text-xl shrink-0 mt-0.5">{getEventIcon(event.type)}</span>
+                        <div class="min-w-0 flex-1">
+                          <h4 class="text-lg font-medium text-gray-900 leading-tight">{event.title}</h4>
+                          {event.venue && (
+                            <p class="text-base text-gray-500 mt-1">{event.venue}</p>
+                          )}
+                          {event.note && (
+                            <span class="inline-block mt-2 text-xs font-medium px-2 py-1 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
+                              {event.note}
+                            </span>
+                          )}
                         </div>
                       </div>
                     ))}
@@ -268,6 +264,8 @@ const getEventIcon = (type) => {
       const yearSections = document.querySelectorAll('.year-section');
       const yearSectionsMobile = document.querySelectorAll('.year-section-mobile');
       
+      const allDots = document.querySelectorAll('.year-dot');
+      
       // Configurar IntersectionObserver
       const observer = new IntersectionObserver(
         (entries) => {
@@ -292,6 +290,19 @@ const getEventIcon = (type) => {
                   currentYearMobile.style.opacity = '1';
                 }, 150);
               }
+
+              // Iluminar punto activo
+              allDots.forEach(dot => {
+                if (dot.getAttribute('data-year') === year) {
+                  dot.style.backgroundColor = '#92400e';
+                  dot.style.boxShadow = '0 0 12px rgba(146, 64, 14, 0.5)';
+                  dot.style.transform = 'scale(1.3)';
+                } else {
+                  dot.style.backgroundColor = '';
+                  dot.style.boxShadow = '';
+                  dot.style.transform = '';
+                }
+              });
             }
           });
         },

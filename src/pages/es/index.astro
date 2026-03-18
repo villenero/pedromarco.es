@@ -440,15 +440,32 @@ const jsonLd = {
       }, { passive: true });
     })();
 
-    // Fade-in on scroll with random stagger
+    // Fade-in on scroll with random order
+    // Collect visible items in batches, then reveal them in shuffled order
+    let fadePending = [];
+    let fadeTimer = null;
+    function flushFadeBatch() {
+      // Shuffle the batch randomly
+      for (let i = fadePending.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [fadePending[i], fadePending[j]] = [fadePending[j], fadePending[i]];
+      }
+      fadePending.forEach((el, i) => {
+        setTimeout(() => el.classList.add('visible'), Math.floor(i / 2) * 40);
+      });
+      fadePending = [];
+    }
     const fadeObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          const delay = Math.random() * 200;
-          setTimeout(() => entry.target.classList.add('visible'), delay);
+          fadePending.push(entry.target);
           fadeObserver.unobserve(entry.target);
         }
       });
+      if (fadePending.length > 0) {
+        clearTimeout(fadeTimer);
+        fadeTimer = setTimeout(flushFadeBatch, 50);
+      }
     }, { threshold: 0.1 });
     document.querySelectorAll('.obra-fade').forEach(el => fadeObserver.observe(el));
 
