@@ -120,6 +120,24 @@ const jsonLd = {
       </div>
       <div class="modal-info" id="modal-info"></div>
     </div>
+
+    <!-- Share popover (outside modal-info to avoid innerHTML resets) -->
+    <div class="share-popover" id="share-popover" style="display:none">
+      <div class="share-popover-arrow"></div>
+      <span class="share-popover-title">Compartir obra</span>
+      <a class="share-opt" href="#" id="share-wa" target="_blank" rel="noopener">
+        <span class="share-opt-icon share-opt-wa">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </span>
+        <span>WhatsApp</span>
+      </a>
+      <button class="share-opt" id="share-copy">
+        <span class="share-opt-icon share-opt-copy">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+        </span>
+        <span>Copiar enlace</span>
+      </button>
+    </div>
   </div>
 
   <script is:inline define:vars={{ obrasData: obras.obras, detailImagesMap }}>
@@ -189,21 +207,9 @@ const jsonLd = {
       modalInfo.innerHTML = `
         <div class="flex items-start justify-between gap-3 mb-4">
           <h2 class="text-2xl font-bold">${titulo}</h2>
-          <div class="share-wrap flex-shrink-0" style="position:relative">
-            <button class="share-btn" title="Compartir" aria-label="Compartir">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
-            </button>
-            <div class="share-popover" style="display:none">
-              <a class="share-opt" href="#" data-action="whatsapp">
-                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                WhatsApp
-              </a>
-              <button class="share-opt" data-action="copy">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
-                Copiar enlace
-              </button>
-            </div>
-          </div>
+          <button class="share-trigger" title="Compartir" aria-label="Compartir">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/></svg>
+          </button>
         </div>
         <div class="space-y-3 text-sm">
           ${obra.año ? `<div><span class="text-gray-400 block">${labels.year}</span><span class="font-medium">${obra.año}</span></div>` : ''}
@@ -235,34 +241,43 @@ const jsonLd = {
       });
 
       // Share popover handler
-      var shareBtn = modalInfo.querySelector('.share-btn');
-      var popover = modalInfo.querySelector('.share-popover');
-      if (shareBtn && popover) {
-        var fullUrl = window.location.origin + obraUrl;
-        shareBtn.addEventListener('click', function(e) {
+      var shareTrigger = modalInfo.querySelector('.share-trigger');
+      var popover = document.getElementById('share-popover');
+      var shareWa = document.getElementById('share-wa');
+      var shareCopy = document.getElementById('share-copy');
+      var fullUrl = window.location.origin + obraUrl;
+
+      if (shareTrigger) {
+        shareTrigger.addEventListener('click', function(e) {
           e.stopPropagation();
-          popover.style.display = popover.style.display === 'none' ? 'flex' : 'none';
+          var isOpen = popover.style.display !== 'none';
+          popover.style.display = isOpen ? 'none' : 'flex';
+          if (!isOpen) {
+            var rect = shareTrigger.getBoundingClientRect();
+            var modalRect = modal.getBoundingClientRect();
+            popover.style.position = 'fixed';
+            popover.style.top = (rect.bottom + 8) + 'px';
+            popover.style.right = (modalRect.right - rect.right) + 'px';
+            popover.style.left = 'auto';
+          }
         });
-        var waOpt = popover.querySelector('[data-action="whatsapp"]');
-        if (waOpt) {
-          waOpt.href = 'https://wa.me/?text=' + encodeURIComponent(titulo + ' — Pedro Marco\n' + fullUrl);
-          waOpt.target = '_blank';
-          waOpt.addEventListener('click', function() { popover.style.display = 'none'; });
-        }
-        var copyOpt = popover.querySelector('[data-action="copy"]');
-        if (copyOpt) {
-          copyOpt.addEventListener('click', function() {
-            navigator.clipboard.writeText(fullUrl).then(function() {
-              copyOpt.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> ¡Copiado!';
-              copyOpt.classList.add('copied');
-              setTimeout(function() {
-                copyOpt.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg> Copiar enlace';
-                copyOpt.classList.remove('copied');
-              }, 2000);
-            });
+      }
+      if (shareWa) {
+        shareWa.href = 'https://wa.me/?text=' + encodeURIComponent(titulo + ' — Pedro Marco\n' + fullUrl);
+      }
+      if (shareCopy) {
+        shareCopy.onclick = function() {
+          var label = shareCopy.querySelector('span:last-child');
+          navigator.clipboard.writeText(fullUrl).then(function() {
+            label.textContent = '¡Copiado!';
+            shareCopy.classList.add('copied');
             popover.style.display = 'none';
+            setTimeout(function() {
+              label.textContent = 'Copiar enlace';
+              shareCopy.classList.remove('copied');
+            }, 2000);
           });
-        }
+        };
       }
 
       modal.classList.add('open');
@@ -275,6 +290,8 @@ const jsonLd = {
     function closeModal() {
       modal.classList.remove('open');
       modalInfo.classList.remove('mobile-info-visible');
+      var pop = document.getElementById('share-popover');
+      if (pop) pop.style.display = 'none';
       document.body.style.overflow = '';
       document.body.style.touchAction = '';
       document.body.style.webkitOverflowScrolling = '';
@@ -309,8 +326,8 @@ const jsonLd = {
 
     // Close share popover on click outside
     document.addEventListener('click', function(e) {
-      var pop = document.querySelector('.share-popover');
-      if (pop && pop.style.display !== 'none' && !e.target.closest('.share-wrap')) {
+      var pop = document.getElementById('share-popover');
+      if (pop && pop.style.display !== 'none' && !e.target.closest('.share-trigger') && !e.target.closest('.share-popover')) {
         pop.style.display = 'none';
       }
     });
@@ -558,44 +575,73 @@ const jsonLd = {
     transform: translateY(0);
   }
 
-  .share-btn {
+  /* Share trigger button */
+  .share-trigger {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
     color: #9ca3af;
     background: #f3f4f6;
     border: none;
     cursor: pointer;
     transition: all 0.15s;
-    margin-top: 4px;
+    flex-shrink: 0;
   }
-  .share-btn:hover {
+  .share-trigger:hover {
     color: #374151;
     background: #e5e7eb;
+    transform: scale(1.05);
   }
+
+  /* Share popover */
   .share-popover {
     position: absolute;
-    top: 100%;
+    top: 44px;
     right: 0;
-    margin-top: 6px;
     flex-direction: column;
-    gap: 2px;
     background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15), 0 0 0 1px rgba(0,0,0,0.05);
-    padding: 4px;
+    border-radius: 14px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.04);
+    padding: 12px;
     z-index: 120;
-    min-width: 160px;
+    min-width: 180px;
+    animation: popIn 0.15s ease-out;
+  }
+  @keyframes popIn {
+    from { opacity: 0; transform: translateY(-4px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  .share-popover-arrow {
+    position: absolute;
+    top: -6px;
+    right: 14px;
+    width: 12px;
+    height: 12px;
+    background: white;
+    transform: rotate(45deg);
+    box-shadow: -1px -1px 0 0 rgba(0,0,0,0.04);
+    border-radius: 2px;
+  }
+  .share-popover-title {
+    display: block;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #9ca3af;
+    padding: 0 4px 8px;
+    border-bottom: 1px solid #f3f4f6;
+    margin-bottom: 8px;
   }
   .share-opt {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 8px 12px;
-    border-radius: 7px;
+    gap: 10px;
+    padding: 8px;
+    border-radius: 10px;
     font-size: 13px;
     font-weight: 500;
     color: #374151;
@@ -608,11 +654,21 @@ const jsonLd = {
     white-space: nowrap;
   }
   .share-opt:hover {
-    background: #f3f4f6;
+    background: #f9fafb;
   }
-  .share-opt.copied {
-    color: #059669;
+  .share-opt-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    flex-shrink: 0;
   }
+  .share-opt-wa { background: #25D366; }
+  .share-opt-copy { background: #f3f4f6; color: #6b7280; }
+  .share-opt.copied .share-opt-copy { background: #d1fae5; color: #059669; }
+  .share-opt.copied { color: #059669; }
 
   .badge {
     display: inline-flex;
@@ -878,11 +934,14 @@ const jsonLd = {
     .modal-info :global(.text-gray-400) { color: rgba(255,255,255,0.6); }
     .modal-info :global(.text-gray-600) { color: rgba(255,255,255,0.8); }
     .modal-info :global(.font-medium) { color: white; }
-    .modal-info :global(.share-btn) { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.7); }
-    .modal-info :global(.share-btn:hover) { background: rgba(255,255,255,0.25); color: white; }
+    .modal-info :global(.share-trigger) { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.7); }
+    .modal-info :global(.share-trigger:hover) { background: rgba(255,255,255,0.25); color: white; }
     .modal-info :global(.share-popover) { background: rgba(30,30,30,0.95); box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+    .modal-info :global(.share-popover-arrow) { background: rgba(30,30,30,0.95); }
+    .modal-info :global(.share-popover-title) { color: rgba(255,255,255,0.4); border-bottom-color: rgba(255,255,255,0.1); }
     .modal-info :global(.share-opt) { color: rgba(255,255,255,0.85); }
     .modal-info :global(.share-opt:hover) { background: rgba(255,255,255,0.1); }
+    .modal-info :global(.share-opt-copy) { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); }
     .modal-info :global(.share-opt.copied) { color: #6ee7b7; }
     .modal-info :global(.text-green-700) { color: #86efac; }
     .modal-info :global(.bg-green-50) { background: rgba(134,239,172,0.15); }
