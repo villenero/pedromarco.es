@@ -185,8 +185,14 @@ const jsonLd = {
         ).join('')}</div></div>`;
       }
 
+      const obraUrl = '/es/obra/' + obra.id;
       modalInfo.innerHTML = `
-        <h2 class="text-2xl font-bold mb-4">${titulo}</h2>
+        <div class="flex items-start justify-between gap-3 mb-4">
+          <h2 class="text-2xl font-bold">${titulo}</h2>
+          <a href="${obraUrl}" class="share-btn flex-shrink-0" title="Compartir / Ver página" aria-label="Compartir">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+          </a>
+        </div>
         <div class="space-y-3 text-sm">
           ${obra.año ? `<div><span class="text-gray-400 block">${labels.year}</span><span class="font-medium">${obra.año}</span></div>` : ''}
           ${tecnica && tecnica !== 'No definido' ? `<div><span class="text-gray-400 block">${labels.technique}</span><span class="font-medium">${tecnica}</span></div>` : ''}
@@ -215,6 +221,28 @@ const jsonLd = {
           switchImage(thumb.getAttribute('data-src'));
         });
       });
+
+      // Share button handler
+      var shareBtn = modalInfo.querySelector('.share-btn');
+      if (shareBtn) {
+        shareBtn.addEventListener('click', function(e) {
+          var fullUrl = window.location.origin + obraUrl;
+          if (navigator.share) {
+            e.preventDefault();
+            navigator.share({ title: titulo + ' — Pedro Marco', url: fullUrl }).catch(function(){});
+          } else {
+            e.preventDefault();
+            navigator.clipboard.writeText(fullUrl).then(function() {
+              shareBtn.classList.add('copied');
+              shareBtn.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>';
+              setTimeout(function() {
+                shareBtn.classList.remove('copied');
+                shareBtn.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>';
+              }, 2000);
+            });
+          }
+        });
+      }
 
       modal.classList.add('open');
       document.body.style.overflow = 'hidden';
@@ -501,6 +529,28 @@ const jsonLd = {
     transform: translateY(0);
   }
 
+  .share-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    color: #9ca3af;
+    background: #f3f4f6;
+    transition: all 0.15s;
+    text-decoration: none;
+    margin-top: 4px;
+  }
+  .share-btn:hover {
+    color: #374151;
+    background: #e5e7eb;
+  }
+  .share-btn.copied {
+    color: #059669;
+    background: #d1fae5;
+  }
+
   .badge {
     display: inline-flex;
     align-items: center;
@@ -765,6 +815,9 @@ const jsonLd = {
     .modal-info :global(.text-gray-400) { color: rgba(255,255,255,0.6); }
     .modal-info :global(.text-gray-600) { color: rgba(255,255,255,0.8); }
     .modal-info :global(.font-medium) { color: white; }
+    .modal-info :global(.share-btn) { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.7); }
+    .modal-info :global(.share-btn:hover) { background: rgba(255,255,255,0.25); color: white; }
+    .modal-info :global(.share-btn.copied) { background: rgba(5,150,105,0.3); color: #6ee7b7; }
     .modal-info :global(.text-green-700) { color: #86efac; }
     .modal-info :global(.bg-green-50) { background: rgba(134,239,172,0.15); }
     :global(.detail-section) { border-top-color: rgba(255,255,255,0.2); }
