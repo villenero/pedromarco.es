@@ -120,26 +120,26 @@ const ogImage = image ?? `${siteUrl}/favicon-512.png`;
         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 6l12 12M6 18L18 6"/></svg>
       </button>
       <!-- Header con fondo cálido -->
-      <div class="bg-gradient-to-br from-amber-50 to-orange-50 px-8 pt-8 pb-6 text-center">
-        <img src="/favicon.png" alt="" class="w-16 h-16 mx-auto mb-4 opacity-70" />
-        <h2 class="text-2xl font-bold text-gray-900 mb-1">Ayúdanos a preservar su legado</h2>
+      <div class="bg-gradient-to-br from-amber-50 to-orange-50 px-6 sm:px-8 pt-6 sm:pt-8 pb-4 sm:pb-6 text-center">
+        <img src="/favicon.png" alt="" class="w-12 sm:w-16 h-12 sm:h-16 mx-auto mb-3 sm:mb-4 opacity-70" />
+        <h2 class="text-xl sm:text-2xl font-bold text-gray-900 mb-1">Ayúdanos a preservar su legado</h2>
         <p class="text-amber-800/70 text-sm">Pedro Marco · Villena, 1949–2022</p>
       </div>
       <!-- Body -->
-      <div class="px-8 py-6 text-gray-600 text-[15px] leading-relaxed space-y-4">
+      <div class="px-6 sm:px-8 py-4 sm:py-6 text-gray-600 text-sm sm:text-[15px] leading-relaxed space-y-3 sm:space-y-4">
         <p>
-          A lo largo de más de 56 años de trayectoria, Pedro Marco creó un cuerpo de obra extenso que hoy se encuentra disperso en colecciones privadas, instituciones y hogares.
+          A lo largo de más de 56 años de trayectoria, Pedro Marco creó un cuerpo de obra extenso hoy disperso en colecciones privadas, instituciones y hogares.
         </p>
         <p>
-          <strong class="text-gray-800">¿Tienes una obra suya?</strong> Un cuadro, un grabado, un dibujo… Nos encantaría saber de él. Cada pieza recuperada es un paso más para completar el catálogo del artista.
+          <strong class="text-gray-800">¿Tienes una obra suya?</strong> Un cuadro, grabado o dibujo… Nos encantaría saber de él.
         </p>
-        <div class="flex items-start gap-3 bg-amber-50/60 rounded-xl p-4 text-sm">
-          <span class="text-xl mt-0.5">📷</span>
-          <span>Basta con una foto desde el móvil y cualquier dato que conozcas: título, año, cómo llegó a tus manos…</span>
+        <div class="flex items-start gap-3 bg-amber-50/60 rounded-xl p-3 sm:p-4 text-sm">
+          <span class="text-lg sm:text-xl mt-0.5">📷</span>
+          <span>Basta con una foto desde el móvil y cualquier dato que conozcas.</span>
         </div>
       </div>
       <!-- Actions -->
-      <div class="px-8 pb-8 flex flex-col sm:flex-row gap-3">
+      <div class="px-6 sm:px-8 pb-6 sm:pb-8 flex flex-col sm:flex-row gap-3">
         <a
           id="welcome-collaborate"
           href="/es/contacto"
@@ -170,14 +170,16 @@ const ogImage = image ?? `${siteUrl}/favicon-512.png`;
     }
   </style>
 
-  <!-- Floating snail button -->
-  <button
-    id="snail-fab"
-    aria-label="Colaborar con el catálogo"
-    class="fixed bottom-6 right-6 z-[150] w-12 h-12 rounded-full bg-white/80 backdrop-blur-sm shadow-lg border border-gray-200/60 flex items-center justify-center hover:bg-amber-50 hover:shadow-xl hover:scale-110 transition-all duration-300 cursor-pointer group"
-  >
-    <img src="/favicon.png" alt="" class="w-7 h-7 opacity-50 group-hover:opacity-80 transition-opacity" />
-  </button>
+  <!-- Floating snail button (hidden on /contacto) -->
+  {!currentPath.includes('/contacto') && (
+    <button
+      id="snail-fab"
+      aria-label="Colaborar con el catálogo"
+      class="fixed bottom-6 right-6 z-[150] w-12 h-12 rounded-full bg-white/80 backdrop-blur-sm shadow-lg border border-gray-200/60 flex items-center justify-center hover:bg-amber-50 hover:shadow-xl hover:scale-110 transition-all duration-300 cursor-pointer group"
+    >
+      <img src="/favicon.png" alt="" class="w-7 h-7 opacity-50 group-hover:opacity-80 transition-opacity" />
+    </button>
+  )}
 
   <script is:inline>
     (function() {
@@ -197,8 +199,8 @@ const ogImage = image ?? `${siteUrl}/favicon-512.png`;
         setTimeout(openModal, 1500);
       }
 
-      // Floating button always opens modal
-      fab.addEventListener('click', openModal);
+      // Floating button always opens modal (not present on /contacto)
+      if (fab) fab.addEventListener('click', openModal);
 
       // Close handlers
       document.getElementById('welcome-close').addEventListener('click', dismiss);
