@@ -137,6 +137,7 @@ const ogImage = image ?? `${siteUrl}/favicon-512.png`;
       <!-- Actions -->
       <div class="px-8 pb-8 flex flex-col sm:flex-row gap-3">
         <a
+          id="welcome-collaborate"
           href="/es/contacto"
           class="flex-1 inline-flex items-center justify-center gap-2 bg-amber-800 text-white px-5 py-3 rounded-xl font-medium hover:bg-amber-900 transition-colors text-sm"
         >
@@ -169,16 +170,19 @@ const ogImage = image ?? `${siteUrl}/favicon-512.png`;
     (function() {
       if (localStorage.getItem('pm_welcome_seen')) return;
       var modal = document.getElementById('welcome-modal');
-      // Show after a brief delay for better UX
       setTimeout(function() { modal.style.display = 'flex'; }, 1500);
-      function close() {
-        modal.style.display = 'none';
+      function dismiss() {
         localStorage.setItem('pm_welcome_seen', '1');
+        modal.style.display = 'none';
       }
-      document.getElementById('welcome-close').addEventListener('click', close);
-      document.getElementById('welcome-backdrop').addEventListener('click', close);
+      // Mark as seen on ANY interaction (close, backdrop, collaborate link)
+      document.getElementById('welcome-close').addEventListener('click', dismiss);
+      document.getElementById('welcome-backdrop').addEventListener('click', dismiss);
+      document.getElementById('welcome-collaborate').addEventListener('click', function() {
+        localStorage.setItem('pm_welcome_seen', '1');
+      });
       document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.style.display === 'flex') close();
+        if (e.key === 'Escape' && modal.style.display === 'flex') dismiss();
       });
     })();
   </script>
