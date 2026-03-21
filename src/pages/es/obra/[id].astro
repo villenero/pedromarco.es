@@ -2,6 +2,8 @@
 import Base from '../../../layouts/Base.astro';
 import { t } from '../../../i18n/utils';
 import data from '../../../../obras.json';
+import fs from 'node:fs';
+import path from 'node:path';
 
 export function getStaticPaths() {
   return data.obras.map(obra => ({ params: { id: obra.id } }));
@@ -10,6 +12,15 @@ export function getStaticPaths() {
 const { id } = Astro.params;
 const obra = data.obras.find(o => o.id === id);
 if (!obra) return Astro.redirect('/es/');
+
+// Find detail/variant images (_01, _02, etc.)
+const obrasDir = path.resolve('public/obras');
+const ext = path.extname(obra.imagen);
+const base = path.basename(obra.imagen, ext);
+const pattern = new RegExp(`^${base.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}_(\\d{2})${ext.replace('.', '\\.')}$`, 'i');
+const detailImages = fs.readdirSync(obrasDir)
+  .filter(f => pattern.test(f) && fs.statSync(path.join(obrasDir, f)).isFile())
+  .sort();
 
 const titulo = obra.titulo || '';
 const tecnica = obra.tecnica || '';
@@ -39,13 +50,27 @@ const jsonLd = {
       ← {t('artwork.back')}
     </a>
 
-    <div class="bg-gray-100 rounded-xl overflow-hidden mb-8">
+    <div class="bg-gray-100 rounded-xl overflow-hidden mb-4">
       <img
+        id="main-img"
         src={`/obras/${obra.imagen}`}
         alt={obra.titulo}
-        class="w-full h-auto object-contain"
+        class="w-full h-auto object-contain cursor-zoom-in"
       />
     </div>
+
+    {detailImages.length > 0 && (
+      <div class="flex gap-2 mb-8 overflow-x-auto pb-2">
+        <button class="detail-thumb active" data-src={`/obras/${obra.imagen}`}>
+          <img src={`/obras/thumbs/${obra.imagen}`} alt={obra.titulo} />
+        </button>
+        {detailImages.map(img => (
+          <button class="detail-thumb" data-src={`/obras/${img}`}>
+            <img src={`/obras/thumbs/${img}`} alt={`${obra.titulo} — detalle`} loading="lazy" />
+          </button>
+        ))}
+      </div>
+    )}
 
     <!-- Details -->
     <div class="space-y-4">
@@ -83,4 +108,38 @@ const jsonLd = {
       </div>
     </div>
   </div>
+
+  <script is:inline>
+    document.querySelectorAll('.detail-thumb').forEach(function(thumb) {
+      thumb.addEventListener('click', function() {
+        document.querySelectorAll('.detail-thumb').forEach(function(t) { t.classList.remove('active'); });
+        thumb.classList.add('active');
+        document.getElementById('main-img').src = thumb.getAttribute('data-src');
+      });
+    });
+  </script>
+
+  <style>
+    .detail-thumb {
+      width: 64px;
+      height: 64px;
+      min-width: 64px;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 2px solid #e5e7eb;
+      transition: border-color 0.15s;
+      padding: 0;
+      background: none;
+      flex-shrink: 0;
+    }
+    .detail-thumb:hover { border-color: #9ca3af; }
+    .detail-thumb.active { border-color: #111; }
+    .detail-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  </style>
 </Base>
