@@ -1098,11 +1098,25 @@
       "año": 1996,
       "tecnica": "Grafito y lápices de color sobre papel",
       "descripcion": "Retrato íntimo del arqueólogo José María Soler, descubridor del Tesoro de Villena, realizado pocos meses antes de su fallecimiento. Trazo nervioso y envolvente con acentos cálidos de ocre y anaranjado sobre la severidad del grafito",
-      "dimensiones": "No definido",
+      "dimensiones": "21 x 29 cm",
       "imagen": "jose-maria-soler.jpg",
       "en_venta": false,
       "precio": null,
       "categoria": "retrato",
+      "destacada": true,
+      "propietario": "Familia Toni Pardo"
+    },
+    {
+      "id": "tabarca-y-flor",
+      "titulo": "Tabarca y flor",
+      "año": null,
+      "tecnica": "Grafito sobre papel con toques de acuarela",
+      "descripcion": "Paisaje marino nocturno enmarcado como una ventana al inconsciente, con rocas emergentes bajo una luz lunar velada. Una mariposa de alas naranjas irrumpe sobre un hibisco en el ángulo inferior, único destello de color en la composición monocroma",
+      "dimensiones": "No definido",
+      "imagen": "tabarca y flor.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
       "destacada": true,
       "propietario": null
     }
