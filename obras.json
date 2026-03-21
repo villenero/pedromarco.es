@@ -1091,6 +1091,20 @@
       "categoria": "Cuadros",
       "destacada": true,
       "propietario": null
+    },
+    {
+      "id": "jose-maria-soler",
+      "titulo": "José María Soler García",
+      "año": 1996,
+      "tecnica": "Grafito y lápices de color sobre papel",
+      "descripcion": "Retrato íntimo del arqueólogo José María Soler, descubridor del Tesoro de Villena, realizado pocos meses antes de su fallecimiento. Trazo nervioso y envolvente con acentos cálidos de ocre y anaranjado sobre la severidad del grafito",
+      "dimensiones": "No definido",
+      "imagen": "jose-maria-soler.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "retrato",
+      "destacada": true,
+      "propietario": null
     }
   ]
 }
