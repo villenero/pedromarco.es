@@ -576,7 +576,7 @@ const jsonLd = {
   }
 
   /* Share trigger button */
-  .share-trigger {
+  :global(.share-trigger) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -590,7 +590,7 @@ const jsonLd = {
     transition: all 0.15s;
     flex-shrink: 0;
   }
-  .share-trigger:hover {
+  :global(.share-trigger:hover) {
     color: #374151;
     background: #e5e7eb;
     border-color: #d1d5db;
