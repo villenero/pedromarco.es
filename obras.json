@@ -1077,6 +1077,20 @@
       "categoria": "Cuadros",
       "destacada": true,
       "propietario": null
+    },
+    {
+      "id": "flechas",
+      "titulo": "Corona de dardos",
+      "año": null,
+      "tecnica": "Técnica mixta (aerógrafo, acrílico y grafito)",
+      "descripcion": "Torso masculino anónimo atrapado entre planos translúcidos, coronado por una constelación de dardos rojos que irradian como pensamientos punzantes sobre una grisalla litúrgica",
+      "dimensiones": "No definido",
+      "imagen": "flechas.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": true,
+      "propietario": null
     }
   ]
 }
