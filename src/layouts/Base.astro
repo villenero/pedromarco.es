@@ -124,7 +124,7 @@ const ogImage = image ?? `${siteUrl}/favicon-512.png`;
       <!-- Body -->
       <div class="px-8 py-6 text-gray-600 text-[15px] leading-relaxed space-y-4">
         <p>
-          Durante más de cuatro décadas, Pedro Marco creó un cuerpo de obra extenso que hoy se encuentra disperso en colecciones privadas, instituciones y hogares.
+          A lo largo de más de 56 años de trayectoria, Pedro Marco creó un cuerpo de obra extenso que hoy se encuentra disperso en colecciones privadas, instituciones y hogares.
         </p>
         <p>
           <strong class="text-gray-800">¿Tienes una obra suya?</strong> Un cuadro, un grabado, un dibujo… Nos encantaría saber de él. Cada pieza recuperada es un paso más para completar el catálogo del artista.
@@ -166,16 +166,37 @@ const ogImage = image ?? `${siteUrl}/favicon-512.png`;
     }
   </style>
 
+  <!-- Floating snail button -->
+  <button
+    id="snail-fab"
+    aria-label="Colaborar con el catálogo"
+    class="fixed bottom-6 right-6 z-[150] w-12 h-12 rounded-full bg-white/80 backdrop-blur-sm shadow-lg border border-gray-200/60 flex items-center justify-center hover:bg-amber-50 hover:shadow-xl hover:scale-110 transition-all duration-300 cursor-pointer group"
+  >
+    <img src="/favicon.png" alt="" class="w-7 h-7 opacity-50 group-hover:opacity-80 transition-opacity" />
+  </button>
+
   <script is:inline>
     (function() {
-      if (localStorage.getItem('pm_welcome_seen')) return;
       var modal = document.getElementById('welcome-modal');
-      setTimeout(function() { modal.style.display = 'flex'; }, 1500);
+      var fab = document.getElementById('snail-fab');
+
+      function openModal() {
+        modal.style.display = 'flex';
+      }
       function dismiss() {
         localStorage.setItem('pm_welcome_seen', '1');
         modal.style.display = 'none';
       }
-      // Mark as seen on ANY interaction (close, backdrop, collaborate link)
+
+      // First visit: auto-show after delay
+      if (!localStorage.getItem('pm_welcome_seen')) {
+        setTimeout(openModal, 1500);
+      }
+
+      // Floating button always opens modal
+      fab.addEventListener('click', openModal);
+
+      // Close handlers
       document.getElementById('welcome-close').addEventListener('click', dismiss);
       document.getElementById('welcome-backdrop').addEventListener('click', dismiss);
       document.getElementById('welcome-collaborate').addEventListener('click', function() {
