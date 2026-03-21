@@ -6,6 +6,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const categorias = [...new Set(obras.obras.map(o => o.categoria))];
+const categoriaCounts: Record<string, number> = {};
+for (const o of obras.obras) {
+  categoriaCounts[o.categoria] = (categoriaCounts[o.categoria] || 0) + 1;
+}
 
 // Build-time: scan public/obras/ for detail images per obra
 const obrasDir = path.resolve('public/obras');
@@ -56,11 +60,11 @@ const jsonLd = {
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <div class="flex flex-wrap gap-1">
       <button class="filter-btn active px-3 py-1 text-sm rounded-full border border-transparent transition-colors hover:text-gray-900" data-category="all">
-        {t('home.all')}
+        {t('home.all')} <span class="badge">{obras.obras.length}</span>
       </button>
       {categorias.map(cat => (
         <button class="filter-btn px-3 py-1 text-sm rounded-full border border-transparent transition-colors hover:text-gray-900 capitalize" data-category={cat}>
-          {cat}
+          {cat} <span class="badge">{categoriaCounts[cat]}</span>
         </button>
       ))}
     </div>
@@ -497,6 +501,26 @@ const jsonLd = {
     transform: translateY(0);
   }
 
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    margin-left: 3px;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1;
+    border-radius: 9px;
+    background: #e5e7eb;
+    color: #6b7280;
+    vertical-align: middle;
+  }
+  .filter-btn.active .badge {
+    background: #2c2420;
+    color: #fff;
+  }
   .filter-btn {
     color: #6b7280;
     font-weight: 400;
