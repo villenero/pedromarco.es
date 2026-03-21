@@ -1063,20 +1063,6 @@
       "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
-    },
-    {
-      "id": "hilo-conductor",
-      "titulo": "Hilo conductor",
-      "año": null,
-      "tecnica": "Técnica mixta (grafito y acrílico sobre cartón)",
-      "descripcion": "Paisaje mediterráneo onírico con un ciprés monumental, plumas flotantes y un hilo rojo que se anuda a un imperdible hiperrealista que traspasa el plano pictórico",
-      "dimensiones": "No definido",
-      "imagen": "hilo-conductor.jpg",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "Cuadros",
-      "destacada": true,
-      "propietario": null
     }
   ]
 }
