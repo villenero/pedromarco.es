@@ -137,6 +137,13 @@ const jsonLd = {
         </span>
         <span>Copiar enlace</span>
       </button>
+      <div class="share-separator"></div>
+      <button class="share-opt" id="share-fullscreen">
+        <span class="share-opt-icon share-opt-fs">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9m11.25-5.25v4.5m0-4.5h-4.5m4.5 0L15 9m-11.25 11.25v-4.5m0 4.5h4.5m-4.5 0L9 15m11.25 5.25v-4.5m0 4.5h-4.5m4.5 0L15 15"/></svg>
+        </span>
+        <span>Pantalla completa</span>
+      </button>
     </div>
   </div>
 
@@ -276,6 +283,25 @@ const jsonLd = {
               label.textContent = 'Copiar enlace';
               shareCopy.classList.remove('copied');
             }, 2000);
+          });
+        };
+      }
+      var shareFs = document.getElementById('share-fullscreen');
+      if (shareFs) {
+        shareFs.onclick = function() {
+          popover.style.display = 'none';
+          var imgSrc = modalImg.src;
+          var overlay = document.createElement('div');
+          overlay.id = 'fullscreen-overlay';
+          overlay.style.cssText = 'position:fixed;inset:0;z-index:300;background:#000;display:flex;align-items:center;justify-content:center;cursor:zoom-out;';
+          var img = document.createElement('img');
+          img.src = imgSrc;
+          img.style.cssText = 'max-width:100%;max-height:100%;object-fit:contain;';
+          overlay.appendChild(img);
+          document.body.appendChild(overlay);
+          overlay.addEventListener('click', function() { overlay.remove(); });
+          document.addEventListener('keydown', function handler(e) {
+            if (e.key === 'Escape') { overlay.remove(); document.removeEventListener('keydown', handler); }
           });
         };
       }
@@ -670,6 +696,12 @@ const jsonLd = {
   .share-opt-copy { background: #f3f4f6; color: #6b7280; }
   .share-opt.copied .share-opt-copy { background: #d1fae5; color: #059669; }
   .share-opt.copied { color: #059669; }
+  .share-opt-fs { background: #f3f4f6; color: #6b7280; }
+  .share-separator {
+    height: 1px;
+    background: #f3f4f6;
+    margin: 4px 0;
+  }
 
   .badge {
     display: inline-flex;
@@ -954,6 +986,8 @@ const jsonLd = {
     .modal-info :global(.share-opt) { color: rgba(255,255,255,0.85); }
     .modal-info :global(.share-opt:hover) { background: rgba(255,255,255,0.1); }
     .modal-info :global(.share-opt-copy) { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); }
+    .modal-info :global(.share-opt-fs) { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); }
+    .modal-info :global(.share-separator) { background: rgba(255,255,255,0.1); }
     .modal-info :global(.share-opt.copied) { color: #6ee7b7; }
     .modal-info :global(.text-green-700) { color: #86efac; }
     .modal-info :global(.bg-green-50) { background: rgba(134,239,172,0.15); }
