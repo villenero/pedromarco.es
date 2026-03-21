@@ -189,9 +189,21 @@ const jsonLd = {
       modalInfo.innerHTML = `
         <div class="flex items-start justify-between gap-3 mb-4">
           <h2 class="text-2xl font-bold">${titulo}</h2>
-          <a href="${obraUrl}" class="share-btn flex-shrink-0" title="Compartir / Ver página" aria-label="Compartir">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
-          </a>
+          <div class="share-wrap flex-shrink-0" style="position:relative">
+            <button class="share-btn" title="Compartir" aria-label="Compartir">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+            </button>
+            <div class="share-popover" style="display:none">
+              <a class="share-opt" href="#" data-action="whatsapp">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                WhatsApp
+              </a>
+              <button class="share-opt" data-action="copy">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                Copiar enlace
+              </button>
+            </div>
+          </div>
         </div>
         <div class="space-y-3 text-sm">
           ${obra.año ? `<div><span class="text-gray-400 block">${labels.year}</span><span class="font-medium">${obra.año}</span></div>` : ''}
@@ -222,26 +234,35 @@ const jsonLd = {
         });
       });
 
-      // Share button handler
+      // Share popover handler
       var shareBtn = modalInfo.querySelector('.share-btn');
-      if (shareBtn) {
+      var popover = modalInfo.querySelector('.share-popover');
+      if (shareBtn && popover) {
+        var fullUrl = window.location.origin + obraUrl;
         shareBtn.addEventListener('click', function(e) {
-          var fullUrl = window.location.origin + obraUrl;
-          if (navigator.share) {
-            e.preventDefault();
-            navigator.share({ title: titulo + ' — Pedro Marco', url: fullUrl }).catch(function(){});
-          } else {
-            e.preventDefault();
+          e.stopPropagation();
+          popover.style.display = popover.style.display === 'none' ? 'flex' : 'none';
+        });
+        var waOpt = popover.querySelector('[data-action="whatsapp"]');
+        if (waOpt) {
+          waOpt.href = 'https://wa.me/?text=' + encodeURIComponent(titulo + ' — Pedro Marco\n' + fullUrl);
+          waOpt.target = '_blank';
+          waOpt.addEventListener('click', function() { popover.style.display = 'none'; });
+        }
+        var copyOpt = popover.querySelector('[data-action="copy"]');
+        if (copyOpt) {
+          copyOpt.addEventListener('click', function() {
             navigator.clipboard.writeText(fullUrl).then(function() {
-              shareBtn.classList.add('copied');
-              shareBtn.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>';
+              copyOpt.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> ¡Copiado!';
+              copyOpt.classList.add('copied');
               setTimeout(function() {
-                shareBtn.classList.remove('copied');
-                shareBtn.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>';
+                copyOpt.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg> Copiar enlace';
+                copyOpt.classList.remove('copied');
               }, 2000);
             });
-          }
-        });
+            popover.style.display = 'none';
+          });
+        }
       }
 
       modal.classList.add('open');
@@ -285,6 +306,14 @@ const jsonLd = {
     // Close
     document.getElementById('modal-close').addEventListener('click', closeModal);
     document.querySelector('.modal-backdrop').addEventListener('click', closeModal);
+
+    // Close share popover on click outside
+    document.addEventListener('click', function(e) {
+      var pop = document.querySelector('.share-popover');
+      if (pop && pop.style.display !== 'none' && !e.target.closest('.share-wrap')) {
+        pop.style.display = 'none';
+      }
+    });
     document.addEventListener('keydown', (e) => {
       if (!modal.classList.contains('open')) return;
       if (e.key === 'Escape') closeModal();
@@ -538,17 +567,51 @@ const jsonLd = {
     border-radius: 8px;
     color: #9ca3af;
     background: #f3f4f6;
+    border: none;
+    cursor: pointer;
     transition: all 0.15s;
-    text-decoration: none;
     margin-top: 4px;
   }
   .share-btn:hover {
     color: #374151;
     background: #e5e7eb;
   }
-  .share-btn.copied {
+  .share-popover {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 6px;
+    flex-direction: column;
+    gap: 2px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15), 0 0 0 1px rgba(0,0,0,0.05);
+    padding: 4px;
+    z-index: 120;
+    min-width: 160px;
+  }
+  .share-opt {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #374151;
+    text-decoration: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.1s;
+    white-space: nowrap;
+  }
+  .share-opt:hover {
+    background: #f3f4f6;
+  }
+  .share-opt.copied {
     color: #059669;
-    background: #d1fae5;
   }
 
   .badge {
@@ -817,7 +880,10 @@ const jsonLd = {
     .modal-info :global(.font-medium) { color: white; }
     .modal-info :global(.share-btn) { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.7); }
     .modal-info :global(.share-btn:hover) { background: rgba(255,255,255,0.25); color: white; }
-    .modal-info :global(.share-btn.copied) { background: rgba(5,150,105,0.3); color: #6ee7b7; }
+    .modal-info :global(.share-popover) { background: rgba(30,30,30,0.95); box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+    .modal-info :global(.share-opt) { color: rgba(255,255,255,0.85); }
+    .modal-info :global(.share-opt:hover) { background: rgba(255,255,255,0.1); }
+    .modal-info :global(.share-opt.copied) { color: #6ee7b7; }
     .modal-info :global(.text-green-700) { color: #86efac; }
     .modal-info :global(.bg-green-50) { background: rgba(134,239,172,0.15); }
     :global(.detail-section) { border-top-color: rgba(255,255,255,0.2); }
