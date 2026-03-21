@@ -111,6 +111,78 @@ const ogImage = image ?? `${siteUrl}/favicon-512.png`;
     });
   </script>
 
+  <!-- Welcome modal (first visit only) -->
+  <div id="welcome-modal" class="fixed inset-0 z-[200] flex items-center justify-center p-4" style="display:none">
+    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" id="welcome-backdrop"></div>
+    <div class="relative bg-white rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden animate-modal-in">
+      <!-- Header con fondo cálido -->
+      <div class="bg-gradient-to-br from-amber-50 to-orange-50 px-8 pt-8 pb-6 text-center">
+        <img src="/favicon.png" alt="" class="w-16 h-16 mx-auto mb-4 opacity-70" />
+        <h2 class="text-2xl font-bold text-gray-900 mb-1">Ayúdanos a preservar su legado</h2>
+        <p class="text-amber-800/70 text-sm">Pedro Marco · Villena, 1949–2022</p>
+      </div>
+      <!-- Body -->
+      <div class="px-8 py-6 text-gray-600 text-[15px] leading-relaxed space-y-4">
+        <p>
+          Durante más de cuatro décadas, Pedro Marco creó un cuerpo de obra extenso que hoy se encuentra disperso en colecciones privadas, instituciones y hogares.
+        </p>
+        <p>
+          <strong class="text-gray-800">¿Tienes una obra suya?</strong> Un cuadro, un grabado, un dibujo… Nos encantaría saber de él. Cada pieza recuperada es un paso más para completar el catálogo del artista.
+        </p>
+        <div class="flex items-start gap-3 bg-amber-50/60 rounded-xl p-4 text-sm">
+          <span class="text-xl mt-0.5">📷</span>
+          <span>Basta con una foto desde el móvil y cualquier dato que conozcas: título, año, cómo llegó a tus manos…</span>
+        </div>
+      </div>
+      <!-- Actions -->
+      <div class="px-8 pb-8 flex flex-col sm:flex-row gap-3">
+        <a
+          href="/es/contacto"
+          class="flex-1 inline-flex items-center justify-center gap-2 bg-amber-800 text-white px-5 py-3 rounded-xl font-medium hover:bg-amber-900 transition-colors text-sm"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+          </svg>
+          Quiero colaborar
+        </a>
+        <button
+          id="welcome-close"
+          class="flex-1 px-5 py-3 rounded-xl font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors text-sm"
+        >
+          Ahora no, gracias
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    @keyframes modal-in {
+      from { opacity: 0; transform: translateY(20px) scale(0.97); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .animate-modal-in {
+      animation: modal-in 0.35s ease-out;
+    }
+  </style>
+
+  <script is:inline>
+    (function() {
+      if (localStorage.getItem('pm_welcome_seen')) return;
+      var modal = document.getElementById('welcome-modal');
+      // Show after a brief delay for better UX
+      setTimeout(function() { modal.style.display = 'flex'; }, 1500);
+      function close() {
+        modal.style.display = 'none';
+        localStorage.setItem('pm_welcome_seen', '1');
+      }
+      document.getElementById('welcome-close').addEventListener('click', close);
+      document.getElementById('welcome-backdrop').addEventListener('click', close);
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'flex') close();
+      });
+    })();
+  </script>
+
   <!-- Content -->
   <main class="flex-1">
     <slot />
