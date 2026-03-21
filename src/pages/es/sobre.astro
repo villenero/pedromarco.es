@@ -170,10 +170,10 @@ const icons = {
         <div class="w-2/5 pt-32 pb-[50vh]">
           <div class="relative">
             <!-- Línea vertical -->
-            <div class="absolute left-6 top-0 bottom-0 w-0.5 bg-amber-200"></div>
-            
-            {years.map((year) => (
-              <div class="year-section mb-24 opacity-30 transition-opacity duration-500" data-year={year}>
+            <div class="absolute left-6 top-0 bottom-0 w-0.5 bg-gray-600"></div>
+
+            {years.map((year, i) => (
+              <div class={`year-section mb-24 opacity-30 transition-opacity duration-500 ${i === 0 ? 'mt-16' : ''}`} data-year={year}>
                 <!-- Punto del año en la línea -->
                 <div class="year-dot absolute left-4 w-5 h-5 rounded-full border-4 border-white bg-amber-300/50 transition-all duration-300" data-year={year}></div>
                 
@@ -220,10 +220,10 @@ const icons = {
         <div class="py-8">
           <div class="relative">
             <!-- Línea vertical -->
-            <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-amber-200"></div>
+            <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-gray-600"></div>
             
-            {years.map((year) => (
-              <div class="year-section-mobile mb-12" data-year={year}>
+            {years.map((year, i) => (
+              <div class={`year-section-mobile mb-12 ${i === 0 ? 'mt-8' : ''}`} data-year={year}>
                 <!-- Punto del año en la línea -->
                 <div class="absolute left-2 w-4 h-4 bg-amber-400 rounded-full border-4 border-white shadow-sm"></div>
                 
@@ -266,49 +266,55 @@ const icons = {
       const currentYearMobile = document.getElementById('current-year-mobile');
       const yearSections = document.querySelectorAll('.year-section');
       const yearSectionsMobile = document.querySelectorAll('.year-section-mobile');
-      
+
       const allDots = document.querySelectorAll('.year-dot');
-      
+
+      function activateYear(year) {
+        // Actualizar año desktop
+        if (currentYearDesktop) {
+          currentYearDesktop.style.opacity = '0.3';
+          setTimeout(() => {
+            currentYearDesktop.textContent = year;
+            currentYearDesktop.style.opacity = '1';
+          }, 150);
+        }
+
+        // Actualizar año mobile
+        if (currentYearMobile) {
+          currentYearMobile.style.opacity = '0.3';
+          setTimeout(() => {
+            currentYearMobile.textContent = year;
+            currentYearMobile.style.opacity = '1';
+          }, 150);
+        }
+
+        // Iluminar punto activo + opacidad secciones
+        allDots.forEach(dot => {
+          if (dot.getAttribute('data-year') === year) {
+            dot.style.backgroundColor = '#92400e';
+            dot.style.boxShadow = '0 0 12px rgba(146, 64, 14, 0.5)';
+            dot.style.transform = 'scale(1.3)';
+          } else {
+            dot.style.backgroundColor = '';
+            dot.style.boxShadow = '';
+            dot.style.transform = '';
+          }
+        });
+        yearSections.forEach(section => {
+          section.style.opacity = section.getAttribute('data-year') === year ? '1' : '0.3';
+        });
+      }
+
+      // Pausar observer durante scroll programático
+      var isProgrammaticScroll = false;
+
       // Configurar IntersectionObserver
       const observer = new IntersectionObserver(
         (entries) => {
+          if (isProgrammaticScroll) return;
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              const year = entry.target.getAttribute('data-year');
-              
-              // Actualizar año desktop
-              if (currentYearDesktop) {
-                currentYearDesktop.style.opacity = '0.3';
-                setTimeout(() => {
-                  currentYearDesktop.textContent = year;
-                  currentYearDesktop.style.opacity = '1';
-                }, 150);
-              }
-              
-              // Actualizar año mobile
-              if (currentYearMobile) {
-                currentYearMobile.style.opacity = '0.3';
-                setTimeout(() => {
-                  currentYearMobile.textContent = year;
-                  currentYearMobile.style.opacity = '1';
-                }, 150);
-              }
-
-              // Iluminar punto activo + opacidad secciones
-              allDots.forEach(dot => {
-                if (dot.getAttribute('data-year') === year) {
-                  dot.style.backgroundColor = '#92400e';
-                  dot.style.boxShadow = '0 0 12px rgba(146, 64, 14, 0.5)';
-                  dot.style.transform = 'scale(1.3)';
-                } else {
-                  dot.style.backgroundColor = '';
-                  dot.style.boxShadow = '';
-                  dot.style.transform = '';
-                }
-              });
-              yearSections.forEach(section => {
-                section.style.opacity = section.getAttribute('data-year') === year ? '1' : '0.3';
-              });
+              activateYear(entry.target.getAttribute('data-year'));
             }
           });
         },
@@ -317,15 +323,46 @@ const icons = {
           rootMargin: '-20% 0px -60% 0px'
         }
       );
-      
+
       // Observar secciones desktop
       yearSections.forEach((section) => {
         observer.observe(section);
       });
-      
+
       // Observar secciones mobile
       yearSectionsMobile.forEach((section) => {
         observer.observe(section);
+      });
+
+      // Click en hitos: scroll a zona activa del observer (~25% del viewport)
+      var allClickable = document.querySelectorAll('.year-section, .year-section-mobile');
+      allClickable.forEach(function(section) {
+        section.style.cursor = 'pointer';
+        section.addEventListener('click', function() {
+          var year = section.getAttribute('data-year');
+          isProgrammaticScroll = true;
+          activateYear(year);
+
+          // Posicionar el elemento al 25% del viewport (dentro de la zona del observer)
+          var rect = section.getBoundingClientRect();
+          var targetY = window.scrollY + rect.top - (window.innerHeight * 0.25);
+          window.scrollTo({ top: targetY, behavior: 'smooth' });
+
+          // Reactivar observer cuando termine el scroll
+          var scrollTimeout;
+          function onScrollEnd() {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(function() {
+              isProgrammaticScroll = false;
+              window.removeEventListener('scroll', onScrollEnd);
+            }, 150);
+          }
+          window.addEventListener('scroll', onScrollEnd);
+          // Fallback por si el scroll ya terminó (elemento ya visible)
+          setTimeout(function() {
+            isProgrammaticScroll = false;
+          }, 1000);
+        });
       });
     });
   </script>

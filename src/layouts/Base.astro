@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { t } from '../i18n/utils';
+import obrasData from '../../obras.json';
 
 interface Props {
   title: string;
@@ -10,6 +11,8 @@ interface Props {
 }
 
 const siteUrl = 'https://pedromarco.es';
+const totalObras = obrasData.obras.length;
+const buildDate = new Date().toLocaleDateString('es-ES', { year: 'numeric', month: 'long' });
 
 const { title, description = 'Pedro Marco Hernández — Pintor', image, jsonLd } = Astro.props;
 
@@ -128,6 +131,7 @@ const ogImage = image ?? `${siteUrl}/favicon-512.png`;
     </div>
     <img src="/favicon.png" alt="" class="h-6 mx-auto mb-2 opacity-40" />
     <p>&copy; {new Date().getFullYear()} Familia Pedro Marco. {t('footer.rights')}.</p>
+    <p class="mt-2 text-xs text-gray-300">{totalObras} obras catalogadas · Actualizado {buildDate}</p>
   </footer>
 </body>
 </html>
