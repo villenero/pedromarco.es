@@ -115,6 +115,10 @@ const ogImage = image ?? `${siteUrl}/favicon-512.png`;
   <div id="welcome-modal" class="fixed inset-0 z-[200] flex items-center justify-center p-4" style="display:none">
     <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" id="welcome-backdrop"></div>
     <div class="relative bg-white rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden animate-modal-in">
+      <!-- Close X -->
+      <button id="welcome-x" class="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center rounded-full text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors" aria-label="Cerrar">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 6l12 12M6 18L18 6"/></svg>
+      </button>
       <!-- Header con fondo cálido -->
       <div class="bg-gradient-to-br from-amber-50 to-orange-50 px-8 pt-8 pb-6 text-center">
         <img src="/favicon.png" alt="" class="w-16 h-16 mx-auto mb-4 opacity-70" />
@@ -198,6 +202,7 @@ const ogImage = image ?? `${siteUrl}/favicon-512.png`;
 
       // Close handlers
       document.getElementById('welcome-close').addEventListener('click', dismiss);
+      document.getElementById('welcome-x').addEventListener('click', dismiss);
       document.getElementById('welcome-backdrop').addEventListener('click', dismiss);
       document.getElementById('welcome-collaborate').addEventListener('click', function() {
         localStorage.setItem('pm_welcome_seen', '1');
