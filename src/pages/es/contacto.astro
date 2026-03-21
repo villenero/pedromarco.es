@@ -13,64 +13,243 @@ import { t } from '../../i18n/utils';
       <p>Puede contactar con la familia del artista en <a href="mailto:pedromarco@pedromarco.es" class="text-amber-800 underline hover:text-amber-900 transition-colors">pedromarco@pedromarco.es</a></p>
     </div>
 
-    <!-- Ayúdanos a mejorar el catálogo -->
+    <!-- Formulario de recogida de obras -->
     <div class="mt-16 border-t border-gray-200 pt-12">
       <div class="bg-amber-50 rounded-2xl p-8 sm:p-10">
         <div class="flex items-start gap-4 mb-6">
           <span class="text-4xl flex-shrink-0" aria-hidden="true">🎨</span>
           <div>
             <h2 class="text-2xl font-bold text-gray-900 mb-2">Ayúdanos a completar su legado</h2>
-            <p class="text-lg text-amber-900/80">Tu colaboración es fundamental para preservar la obra de Pedro Marco.</p>
+            <p class="text-lg text-amber-900/80">¿Tienes una obra de Pedro Marco? Compártela con nosotros.</p>
           </div>
         </div>
 
-        <div class="text-gray-700 space-y-4 leading-relaxed">
+        <div class="text-gray-700 space-y-3 leading-relaxed text-sm mb-8">
           <p>
-            A lo largo de más de cuatro décadas de carrera, Pedro Marco creó un cuerpo de obra extenso y diverso: pinturas, grabados, dibujos y obra gráfica que se encuentran repartidos por colecciones privadas, instituciones y hogares de todo el mundo.
-          </p>
-          <p>
-            <strong>No tenemos constancia de todas las piezas.</strong> Sabemos que muchas obras fueron vendidas, regaladas o adquiridas a lo largo de los años, y nos encantaría poder documentarlas para que formen parte del catálogo completo del artista.
+            A lo largo de más de 56 años de trayectoria, Pedro Marco creó un cuerpo de obra extenso: pinturas, grabados, dibujos y obra gráfica repartidos por colecciones privadas, instituciones y hogares.
           </p>
           <p>
             <strong>Si tienes un cuadro, grabado o dibujo de Pedro Marco</strong> —ya sea heredado, adquirido o recibido como obsequio— nos haría una enorme ilusión saber de él. Cada pieza cuenta una historia y merece ser recordada.
           </p>
         </div>
 
-        <div class="mt-8 bg-white rounded-xl p-6 border border-amber-200/60">
-          <h3 class="font-semibold text-gray-900 mb-3">¿Cómo puedes ayudar?</h3>
-          <ul class="space-y-2 text-gray-600">
-            <li class="flex items-start gap-2">
-              <span class="text-amber-700 mt-1">📷</span>
-              <span>Envíanos una <strong>fotografía</strong> de la obra (no hace falta que sea profesional, con el móvil es suficiente).</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-amber-700 mt-1">📝</span>
-              <span>Si conoces algún dato —<strong>título, año, técnica, dimensiones</strong>— inclúyelo. Cualquier detalle ayuda.</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-amber-700 mt-1">💬</span>
-              <span>Si hay una <strong>historia detrás</strong> de cómo llegó a tus manos, nos encantaría conocerla.</span>
-            </li>
-          </ul>
-        </div>
+        <!-- Form -->
+        <form
+          id="obra-form"
+          action="https://formsubmit.co/pedromarco@pedromarco.es"
+          method="POST"
+          enctype="multipart/form-data"
+          class="space-y-5"
+        >
+          <!-- FormSubmit config -->
+          <input type="hidden" name="_subject" value="🎨 Nueva colaboración — Obra de Pedro Marco">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="box">
+          <input type="hidden" name="_next" value="https://pedromarco.es/es/gracias">
+          <input type="text" name="_honey" style="display:none">
 
-        <div class="mt-8 text-center">
-          <a
-            href="mailto:pedromarco@pedromarco.es?subject=Colaboración%20catálogo%20—%20Tengo%20una%20obra%20de%20Pedro%20Marco"
-            class="inline-flex items-center gap-2 bg-amber-800 text-white px-6 py-3 rounded-lg font-medium hover:bg-amber-900 transition-colors"
-          >
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-            </svg>
-            Escríbenos con tu obra
-          </a>
-          <p class="mt-3 text-sm text-gray-500">Responderemos personalmente a cada mensaje.</p>
-        </div>
+          <!-- Nombre -->
+          <div>
+            <label for="nombre" class="block text-sm font-medium text-gray-700 mb-1">Tu nombre *</label>
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              required
+              placeholder="Nombre y apellidos"
+              class="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors text-sm"
+            />
+          </div>
 
-        <p class="mt-6 text-sm text-gray-500 italic text-center">
-          Cada obra recuperada es un paso más para que el legado de Pedro Marco siga vivo. Gracias por formar parte de ello.
-        </p>
+          <!-- Email -->
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email de contacto *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="tu@email.com"
+              class="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors text-sm"
+            />
+          </div>
+
+          <!-- Teléfono (opcional) -->
+          <div>
+            <label for="telefono" class="block text-sm font-medium text-gray-700 mb-1">Teléfono <span class="text-gray-400 font-normal">(opcional)</span></label>
+            <input
+              type="tel"
+              id="telefono"
+              name="telefono"
+              placeholder="+34 600 000 000"
+              class="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors text-sm"
+            />
+          </div>
+
+          <!-- Datos de la obra -->
+          <div class="border-t border-amber-200/60 pt-5">
+            <h3 class="text-sm font-semibold text-gray-800 mb-3 flex items-center gap-2">
+              <span>📋</span> Datos de la obra
+            </h3>
+          </div>
+
+          <!-- Título -->
+          <div>
+            <label for="titulo" class="block text-sm font-medium text-gray-700 mb-1">Título <span class="text-gray-400 font-normal">(si lo conoces)</span></label>
+            <input
+              type="text"
+              id="titulo"
+              name="titulo_obra"
+              placeholder="Ej: Paisaje con figura, Sin título..."
+              class="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors text-sm"
+            />
+          </div>
+
+          <!-- Año y técnica en 2 columnas -->
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label for="anio" class="block text-sm font-medium text-gray-700 mb-1">Año aproximado</label>
+              <input
+                type="text"
+                id="anio"
+                name="anio_obra"
+                placeholder="Ej: 1985, años 90..."
+                class="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors text-sm"
+              />
+            </div>
+            <div>
+              <label for="dimensiones" class="block text-sm font-medium text-gray-700 mb-1">Dimensiones</label>
+              <input
+                type="text"
+                id="dimensiones"
+                name="dimensiones_obra"
+                placeholder="Ej: 100x70 cm"
+                class="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors text-sm"
+              />
+            </div>
+          </div>
+
+          <!-- Historia / comentarios -->
+          <div>
+            <label for="historia" class="block text-sm font-medium text-gray-700 mb-1">¿Cómo llegó a tus manos? <span class="text-gray-400 font-normal">(cualquier detalle ayuda)</span></label>
+            <textarea
+              id="historia"
+              name="historia"
+              rows="3"
+              placeholder="Fue un regalo de Pedro, lo compré en una exposición, era de mi abuelo..."
+              class="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors text-sm resize-y"
+            ></textarea>
+          </div>
+
+          <!-- Imagen -->
+          <div>
+            <label for="imagen" class="block text-sm font-medium text-gray-700 mb-1">
+              Fotografía de la obra *
+            </label>
+            <div id="drop-zone" class="relative border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-amber-500 transition-colors cursor-pointer">
+              <input
+                type="file"
+                id="imagen"
+                name="attachment"
+                accept="image/*"
+                required
+                class="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+              />
+              <div id="drop-content">
+                <svg class="mx-auto h-10 w-10 text-gray-300 mb-2" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
+                </svg>
+                <p class="text-sm text-gray-500">
+                  <span class="text-amber-700 font-medium">Pulsa para seleccionar</span> o arrastra una imagen
+                </p>
+                <p class="text-xs text-gray-400 mt-1">JPG, PNG — máx. 5 MB — con el móvil es suficiente</p>
+              </div>
+              <div id="drop-preview" class="hidden">
+                <img id="preview-img" src="" alt="" class="max-h-24 mx-auto rounded mb-2" />
+                <p id="preview-name" class="text-sm text-gray-600"></p>
+                <p class="text-xs text-amber-700 mt-1">Pulsa para cambiar</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <div class="pt-2">
+            <button
+              type="submit"
+              id="submit-btn"
+              class="w-full inline-flex items-center justify-center gap-2 bg-amber-800 text-white px-6 py-3 rounded-lg font-medium hover:bg-amber-900 transition-colors text-sm"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+              </svg>
+              Enviar información
+            </button>
+          </div>
+
+          <p class="text-xs text-gray-400 text-center">
+            Tus datos solo se usarán para contactarte sobre la obra. Responderemos personalmente.
+          </p>
+        </form>
       </div>
     </div>
   </div>
+
+  <script is:inline>
+    // File preview
+    const input = document.getElementById('imagen');
+    const dropZone = document.getElementById('drop-zone');
+    const content = document.getElementById('drop-content');
+    const preview = document.getElementById('drop-preview');
+    const previewImg = document.getElementById('preview-img');
+    const previewName = document.getElementById('preview-name');
+
+    function showPreview(file) {
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        previewImg.src = e.target.result;
+        previewName.textContent = file.name + ' (' + (file.size / 1024 / 1024).toFixed(1) + ' MB)';
+        content.classList.add('hidden');
+        preview.classList.remove('hidden');
+        dropZone.classList.remove('border-gray-300');
+        dropZone.classList.add('border-amber-500');
+      };
+      reader.readAsDataURL(file);
+    }
+
+    input.addEventListener('change', function() {
+      showPreview(this.files[0]);
+    });
+
+    // Drag & drop
+    ['dragenter', 'dragover'].forEach(evt => {
+      dropZone.addEventListener(evt, function(e) {
+        e.preventDefault();
+        dropZone.classList.add('border-amber-500', 'bg-amber-50/50');
+      });
+    });
+    ['dragleave', 'drop'].forEach(evt => {
+      dropZone.addEventListener(evt, function(e) {
+        e.preventDefault();
+        dropZone.classList.remove('bg-amber-50/50');
+      });
+    });
+    dropZone.addEventListener('drop', function(e) {
+      e.preventDefault();
+      const file = e.dataTransfer.files[0];
+      if (file && file.type.startsWith('image/')) {
+        const dt = new DataTransfer();
+        dt.items.add(file);
+        input.files = dt.files;
+        showPreview(file);
+      }
+    });
+
+    // Submit loading state
+    document.getElementById('obra-form').addEventListener('submit', function() {
+      const btn = document.getElementById('submit-btn');
+      btn.disabled = true;
+      btn.innerHTML = '<svg class="animate-spin h-5 w-5" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path></svg> Enviando...';
+    });
+  </script>
 </Base>
