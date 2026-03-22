@@ -24,7 +24,7 @@ const detailImages = fs.readdirSync(obrasDir)
 
 const titulo = obra.titulo || '';
 const tecnica = obra.tecnica || '';
-const description = `${titulo}${tecnica ? ` — ${tecnica}` : ''}${obra.año ? ` (${obra.año})` : ''}. Obra de Pedro Marco, pintor surrealista de Villena.`;
+const description = `${titulo}${tecnica ? ` — ${tecnica}` : ''}${obra.año ? ` (${obra.año})` : ''}. Obra de Pedro Marco, pintor de sueños de Villena.`;
 const ogImage = `https://pedromarco.es/obras/${obra.imagen}`;
 
 const jsonLd = {
