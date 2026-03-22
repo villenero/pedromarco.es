@@ -997,7 +997,7 @@
     {
       "id": "eros-00",
       "titulo": "Eros busto",
-      "año": null,
+      "año": 2011,
       "tecnica": "Grafito y lápiz de color rojo sobre papel",
       "descripcion": "Busto clásico de inspiración grecolatina representado tumbado, con cabello rizado y labios carnosos pintados en rojo intenso como único elemento cromático. La minuciosa trama de líneas curvas que modela el rostro confiere a la pieza una cualidad escultórica y onírica",
       "dimensiones": "No definido",
@@ -1011,7 +1011,7 @@
     {
       "id": "eros-columna",
       "titulo": "Eros Columna",
-      "año": null,
+      "año": 2011,
       "tecnica": "Grafito sobre papel",
       "descripcion": "Una columna-pedestal de factura clásica sostiene un herma barbado de raigambre antigua, mientras tras ella se despliegan dos grandes discos ornamentales poblados de ojos, formas marinas y líneas caligráficas en espiral. Lo arquitectónico conjugado con un trasfondo cósmico que alude a la pulsión erótica como fuerza universal",
       "dimensiones": "No definido",
@@ -1025,7 +1025,7 @@
     {
       "id": "eros-faro",
       "titulo": "Eros Faro",
-      "año": null,
+      "año": 2011,
       "tecnica": "Grafito y carboncillo sobre papel",
       "descripcion": "Un monumental torso femenino desnudo visto de espaldas emerge entre nubes tormentosas y se funde con el cielo, mientras un pequeño faro y barcas varadas establecen una escala que subraya lo colosal de la figura. Cuerpo, mar y tormenta se confunden en una misma pulsión erótica envolvente",
       "dimensiones": "No definido",
@@ -1039,7 +1039,7 @@
     {
       "id": "eros-ojo",
       "titulo": "Eros Ojo",
-      "año": null,
+      "año": 2011,
       "tecnica": "Óleo y técnica mixta sobre cartón",
       "descripcion": "Sobre un fondo de tonos lilas con textura matérica, un triángulo invertido de color carne alberga un gran ojo cuya forma fusiona deliberadamente la anatomía ocular con la genital femenina, creando una imagen de doble lectura. Un sello en relieve refuerza el carácter objetual y talismánico de la pieza",
       "dimensiones": "No definido",
@@ -1052,7 +1052,7 @@
     },
     {
       "id": "puertas-villena",
-      "titulo": "Puertas Villeneras",
+      "titulo": "Cinco puertas villenenses",
       "año": null,
       "tecnica": "Técnica mixta (grafito, acuarela y acrílico) sobre cartón",
       "descripcion": "Cinco portadas monumentales renacentistas y barrocas de Villena se alinean en la franja inferior, con sus vanos abiertos a cielos azules, convirtiendo cada umbral en ventana al infinito. Sobre ellas, un gran óvalo revela el Castillo de la Atalaya bajo una luna creciente, fundiendo lo real-documental con lo visionario",
@@ -1062,7 +1062,7 @@
       "precio": null,
       "categoria": "Cuadros",
       "destacada": false,
-      "propietario": null
+      "propietario": "Gloria Azorín Vidal"
     },
     {
       "id": "hilo-conductor",
@@ -1444,11 +1444,11 @@
     },
     {
       "id": "1969-revista-villena",
-      "titulo": "Revista Villena",
+      "titulo": "Revista Villena 1969",
       "año": 1969,
-      "tecnica": "Técnica mixta",
+      "tecnica": "Collage técnica mixta",
       "descripcion": "Ilustración temprana para la revista de Villena, muestra de los inicios artísticos de Pedro Marco",
-      "dimensiones": null,
+      "dimensiones": "",
       "imagen": "1969 Revista Villena.jpg",
       "en_venta": false,
       "precio": null,
@@ -1458,11 +1458,11 @@
     },
     {
       "id": "1986-moros-y-cristianos",
-      "titulo": "Moros y Cristianos",
+      "titulo": "Moros y Cristianos, Villena 1986",
       "año": 1986,
       "tecnica": "Técnica mixta",
       "descripcion": "Cartel de las fiestas de Moros y Cristianos de Villena, con la fuerza expresiva y el colorido de Pedro Marco",
-      "dimensiones": null,
+      "dimensiones": "",
       "imagen": "1986 Moros y Cristianos.jpg",
       "en_venta": false,
       "precio": null,
@@ -1475,12 +1475,26 @@
       "titulo": "Chapí",
       "año": 2014,
       "tecnica": "Técnica mixta",
-      "descripcion": "Retrato del compositor villenense Ruperto Chapí, con el trazo expresivo y la profundidad cromática de Pedro Marco",
-      "dimensiones": null,
+      "descripcion": "Retrato del compositor villenense Ruperto Chapí, pintado en directo, con el trazo expresivo y la profundidad cromática de Pedro Marco",
+      "dimensiones": "",
       "imagen": "2014 Chapi.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "2011-miembro",
+      "titulo": "Miembro",
+      "año": 2011,
+      "tecnica": "Técnica mixta",
+      "descripcion": "Composición expresiva que explora la figura humana con el lenguaje gestual y onírico de Pedro Marco",
+      "dimensiones": null,
+      "imagen": "2011 Miembro.jpg",
+      "en_venta": true,
+      "precio": null,
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     }
