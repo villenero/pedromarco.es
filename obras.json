@@ -1581,6 +1581,62 @@
       "categoria": "Retrato",
       "destacada": false,
       "propietario": null
+    },
+    {
+      "id": "2007-taza",
+      "titulo": "Taza",
+      "año": 2007,
+      "tecnica": "Técnica mixta",
+      "descripcion": "Naturaleza muerta con taza, tratada con el lenguaje onírico y las texturas matéricas de Pedro Marco",
+      "dimensiones": null,
+      "imagen": "2007 taza.jpg",
+      "en_venta": true,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "2011-schlotter",
+      "titulo": "Schlotter",
+      "año": 2011,
+      "tecnica": "Técnica mixta",
+      "descripcion": "Retrato de Schlotter con la fuerza expresiva y el trazo gestual de Pedro Marco",
+      "dimensiones": null,
+      "imagen": "2011 Schlotter.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Retrato",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "2019-huella-del-angel",
+      "titulo": "Huella del Ángel",
+      "año": 2019,
+      "tecnica": "Técnica mixta",
+      "descripcion": "Composición etérea que evoca una presencia celestial a través de capas de color y materia",
+      "dimensiones": null,
+      "imagen": "2019 Huella del Angel.jpg",
+      "en_venta": true,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "2019-orejon-espantapajaros",
+      "titulo": "Orejón espantapájaros",
+      "año": 2019,
+      "tecnica": "Técnica mixta",
+      "descripcion": "Figura grotesca y lúdica entre lo humano y lo fantástico, con el humor surrealista de Pedro Marco",
+      "dimensiones": null,
+      "imagen": "2019 Orejon Espantapajaros.jpg",
+      "en_venta": true,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": null
     }
   ]
 }
