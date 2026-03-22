@@ -1292,7 +1292,7 @@
       "id": "2018-pitera",
       "titulo": "Pitera",
       "año": 2018,
-      "tecnica": "Óleo y técnica mixta sobre lienzo",
+      "tecnica": "Óleo y técnica mixta sobre cartón",
       "descripcion": "El tallo floral de un agave americano se eleva con precisión botánica sobre un fondo etéreo de veladuras en blancos y turquesas, mientras en la base una esfera de materia densa estalla en un arco iris de colores vivos. La pitera mediterránea —que florece una sola vez antes de morir— transformada en árbol cósmico que conecta lo terrenal con lo trascendente",
       "dimensiones": "No definido",
       "imagen": "2018 Pitera.jpg",
@@ -1300,7 +1300,7 @@
       "precio": null,
       "categoria": "Cuadros",
       "destacada": true,
-      "propietario": null
+      "propietario": "Familia Pedro Marco"
     },
     {
       "id": "2020-06-antonio-gomez",
@@ -1761,6 +1761,62 @@
       "en_venta": true,
       "precio": null,
       "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "2020-centenario",
+      "titulo": "Centenario",
+      "año": 2020,
+      "tecnica": "Técnica mixta",
+      "descripcion": "Obra conmemorativa del centenario, con la fuerza expresiva y las capas de significado propias de Pedro Marco",
+      "dimensiones": null,
+      "imagen": "2020 Centenario.jpg",
+      "en_venta": true,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "2020-juglarea",
+      "titulo": "Juglaresa",
+      "año": 2020,
+      "tecnica": "Técnica mixta",
+      "descripcion": "Figura femenina de resonancias medievales y carácter lúdico, entre lo onírico y lo festivo",
+      "dimensiones": null,
+      "imagen": "2020 Juglarea.jpg",
+      "en_venta": true,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "2020-ostras",
+      "titulo": "Ostras",
+      "año": 2020,
+      "tecnica": "Técnica mixta",
+      "descripcion": "Composición orgánica que explora las formas y texturas del mundo marino con el lenguaje surrealista de Pedro Marco",
+      "dimensiones": null,
+      "imagen": "2020 Ostras.jpg",
+      "en_venta": true,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "2020-retrato-mujer",
+      "titulo": "Retrato de mujer",
+      "año": 2020,
+      "tecnica": "Técnica mixta",
+      "descripcion": "Retrato femenino con la sensibilidad y la fuerza expresiva de los últimos años de Pedro Marco",
+      "dimensiones": null,
+      "imagen": "2020 Retrato mujer.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Retrato",
       "destacada": false,
       "propietario": null
     }
