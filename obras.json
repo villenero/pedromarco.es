@@ -1875,6 +1875,20 @@
       "categoria": "Diseño",
       "destacada": false,
       "propietario": null
+    },
+    {
+      "id": "1976-cartel-fiestas",
+      "titulo": "Cartel de Fiestas",
+      "año": 1976,
+      "tecnica": "Técnica mixta",
+      "descripcion": "Cartel de fiestas de Villena con el estilo gráfico expresivo de la primera época de Pedro Marco",
+      "dimensiones": null,
+      "imagen": "1976 Cartel Fiestas.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Diseño",
+      "destacada": false,
+      "propietario": null
     }
   ]
 }
