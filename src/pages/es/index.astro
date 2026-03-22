@@ -59,11 +59,11 @@ const jsonLd = {
   <!-- Filter bar -->
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <div class="flex flex-wrap gap-1">
-      <button class="filter-btn active px-3 py-1 text-sm rounded-full border border-transparent transition-colors hover:text-gray-900" data-category="all">
+      <button class="filter-btn px-3 py-1 text-sm rounded-full border border-transparent transition-colors hover:text-gray-900" data-category="all">
         {t('home.all')} <span class="badge">{obras.obras.length}</span>
       </button>
       {categorias.map(cat => (
-        <button class="filter-btn px-3 py-1 text-sm rounded-full border border-transparent transition-colors hover:text-gray-900 capitalize" data-category={cat}>
+        <button class={`filter-btn px-3 py-1 text-sm rounded-full border border-transparent transition-colors hover:text-gray-900 capitalize${cat === 'Cuadros' ? ' active' : ''}`} data-category={cat}>
           {cat} <span class="badge">{categoriaCounts[cat]}</span>
         </button>
       ))}
@@ -78,6 +78,7 @@ const jsonLd = {
           class="masonry-item obra-fade block mb-2 break-inside-avoid group relative overflow-hidden cursor-pointer"
           data-category={obra.categoria}
           data-index={i}
+          style={obra.categoria !== 'Cuadros' ? 'display:none' : ''}
         >
           <img
             src={`/obras/thumbs/${obra.imagen}`}
