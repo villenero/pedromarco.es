@@ -1441,6 +1441,48 @@
       "categoria": "Retrato",
       "destacada": false,
       "propietario": null
+    },
+    {
+      "id": "1969-revista-villena",
+      "titulo": "Revista Villena",
+      "año": 1969,
+      "tecnica": "Técnica mixta",
+      "descripcion": "Ilustración temprana para la revista de Villena, muestra de los inicios artísticos de Pedro Marco",
+      "dimensiones": null,
+      "imagen": "1969 Revista Villena.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Diseño",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "1986-moros-y-cristianos",
+      "titulo": "Moros y Cristianos",
+      "año": 1986,
+      "tecnica": "Técnica mixta",
+      "descripcion": "Cartel de las fiestas de Moros y Cristianos de Villena, con la fuerza expresiva y el colorido de Pedro Marco",
+      "dimensiones": null,
+      "imagen": "1986 Moros y Cristianos.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Diseño",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "2014-chapi",
+      "titulo": "Chapí",
+      "año": 2014,
+      "tecnica": "Técnica mixta",
+      "descripcion": "Retrato del compositor villenense Ruperto Chapí, con el trazo expresivo y la profundidad cromática de Pedro Marco",
+      "dimensiones": null,
+      "imagen": "2014 Chapi.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Retrato",
+      "destacada": false,
+      "propietario": null
     }
   ]
 }
