@@ -1405,8 +1405,8 @@
       "titulo": "Jirafa",
       "año": 2010,
       "tecnica": "Técnica mixta",
-      "descripcion": "Composición surrealista con una jirafa como protagonista, entre lo onírico y lo figurativo",
-      "dimensiones": null,
+      "descripcion": "Composición surrealista de grandes dimensiones con una jirafa como protagonista, entre lo onírico y lo figurativo",
+      "dimensiones": "400 x 150 cm",
       "imagen": "2010-Jirafa.jpg",
       "en_venta": true,
       "precio": null,
@@ -1425,6 +1425,20 @@
       "en_venta": false,
       "precio": null,
       "categoria": "Diseño",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "2017-cesar-lopez-hurtado",
+      "titulo": "César López Hurtado",
+      "año": 2017,
+      "tecnica": "Tinta sobre papel",
+      "descripcion": "Caricatura de perfil de César López Hurtado, Arracada de Oro 2017, con el trazo limpio y expresivo de Pedro Marco",
+      "dimensiones": null,
+      "imagen": "2017 Cesar Lopez Hurtado.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Retrato",
       "destacada": false,
       "propietario": null
     }
