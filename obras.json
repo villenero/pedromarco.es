@@ -1827,7 +1827,7 @@
       "tecnica": "Técnica mixta",
       "descripcion": "Serie de ilustraciones con el trazo expresivo y el universo visual de Pedro Marco",
       "dimensiones": "",
-      "imagen": "",
+      "imagen": "2019 Ilustraciones.jpg",
       "en_venta": false,
       "precio": null,
       "categoria": "Diseño",
@@ -1845,6 +1845,20 @@
       "en_venta": true,
       "precio": null,
       "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "2019-retrato-feike-veldman",
+      "titulo": "Feike Veldman",
+      "año": 2019,
+      "tecnica": "Técnica mixta",
+      "descripcion": "Retrato de Feike Veldman con la fuerza expresiva y la profundidad cromática de Pedro Marco",
+      "dimensiones": null,
+      "imagen": "2019 Retrato Feike Veldman.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Retrato",
       "destacada": false,
       "propietario": null
     }
