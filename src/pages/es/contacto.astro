@@ -36,17 +36,16 @@ import { t } from '../../i18n/utils';
         <!-- Form -->
         <form
           id="obra-form"
-          action="https://formsubmit.co/0263a6ae8b02d5d3cc99725922b866b5"
+          action="https://api.web3forms.com/submit"
           method="POST"
           enctype="multipart/form-data"
           class="space-y-5"
         >
-          <!-- FormSubmit config -->
-          <input type="hidden" name="_subject" value="🎨 Nueva colaboración — Obra de Pedro Marco">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="box">
-          <input type="hidden" name="_next" value="https://pedromarco.es/es/gracias">
-          <input type="text" name="_honey" style="display:none">
+          <!-- Web3Forms config -->
+          <input type="hidden" name="access_key" value="c51a46e5-d111-44b5-a329-9020ca3b36ae">
+          <input type="hidden" name="subject" value="🎨 Nueva colaboración — Obra de Pedro Marco">
+          <input type="hidden" name="redirect" value="https://pedromarco.es/es/gracias">
+          <input type="checkbox" name="botcheck" class="hidden" style="display:none">
 
           <!-- Nombre -->
           <div>
