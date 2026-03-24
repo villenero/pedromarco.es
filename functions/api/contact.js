@@ -51,7 +51,7 @@ export async function onRequestPost(context) {
 
     // Send via Resend API
     const resendPayload = {
-      from: 'Pedro Marco Web <web@send.pedromarco.es>',
+      from: 'Pedro Marco Web <web@pedromarco.es>',
       to: ['pedromarco@pedromarco.es'],
       reply_to: email,
       subject: `🎨 Nueva colaboración — ${nombre}`,
