@@ -142,8 +142,43 @@ Local-only tool at `http://localhost:4000` for managing `obras.json`. Zero depen
 3. **Commit with descriptive message:** `feat:`, `fix:`, `style:` prefixes
 4. **One task = one commit**
 
-## Domain
+## Contact Form
 
-- **pedromarco.es** (pending DNS setup)
-- Live at: https://pedromarco-es.pages.dev
-- Deploy target: Cloudflare Pages (`npm run deploy`)
+The contact form (`/es/contacto`) runs entirely on our own infrastructure — no third-party form services.
+
+**Stack:**
+- **Frontend:** HTML form → `POST /api/contact`
+- **Backend:** Cloudflare Pages Function (`functions/api/contact.js`)
+- **Email delivery:** Resend API (free tier, 3000 emails/month)
+- **From address:** `web@pedromarco.es`
+- **To:** `pedromarco@pedromarco.es`
+- **Reply-To:** Set to the sender's email address
+
+**Features:**
+- File attachments (photos of artworks) ✅
+- Honeypot anti-spam field (`botcheck`) ✅
+- HTML-formatted email with all form fields
+- Redirect to `/es/gracias` on success
+
+**Environment variables (Cloudflare Pages):**
+- `RESEND_API_KEY` — Resend sending-only API key (configured as secret)
+
+**DNS records for email (Cloudflare DNS):**
+- TXT `resend._domainkey` → DKIM public key
+- MX `send` → `feedback-smtp.eu-west-1.amazonses.com` (priority 10)
+- TXT `send` → `v=spf1 include:amazonses.com ~all`
+- TXT `_dmarc` → `v=DMARC1; p=none;`
+
+**Resend account:** carlos@telemaco.es — Dashboard at resend.com
+**Resend domain ID:** `54557898-ae8b-4117-90c5-999e4f1849a1`
+
+**History:** Tried FormSubmit (unreliable) → Web3Forms (no uploads on free tier) → Resend + Pages Function (current, works perfectly).
+
+## Domain & Hosting
+
+- **Domain:** pedromarco.es
+- **DNS:** Cloudflare (zone ID: `f4da79e2ff418f19fda3d4f0eb886e9d`)
+- **Hosting:** Cloudflare Pages (project: `pedromarco-es`)
+- **Live at:** https://pedromarco.es / https://pedromarco-es.pages.dev
+- **Deploy:** `npm run deploy` or manual `wrangler pages deploy dist --project-name pedromarco-es`
+- **Cloudflare API token:** `~/.clawdbot/credentials/cloudflare/api_token` (Pages + DNS permissions)
