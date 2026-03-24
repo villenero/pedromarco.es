@@ -36,15 +36,12 @@ import { t } from '../../i18n/utils';
         <!-- Form -->
         <form
           id="obra-form"
-          action="https://api.web3forms.com/submit"
+          action="/api/contact"
           method="POST"
           enctype="multipart/form-data"
           class="space-y-5"
         >
-          <!-- Web3Forms config -->
-          <input type="hidden" name="access_key" value="c51a46e5-d111-44b5-a329-9020ca3b36ae">
-          <input type="hidden" name="subject" value="🎨 Nueva colaboración — Obra de Pedro Marco">
-          <input type="hidden" name="redirect" value="https://pedromarco.es/es/gracias">
+          <!-- Honeypot anti-spam -->
           <input type="checkbox" name="botcheck" class="hidden" style="display:none">
 
           <!-- Nombre -->
