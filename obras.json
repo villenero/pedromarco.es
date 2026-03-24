@@ -1220,10 +1220,10 @@
     },
     {
       "id": "2021-06-retrato",
-      "titulo": "retrato",
+      "titulo": "Pascual Ribera",
       "año": 2021,
       "tecnica": "Grafito y lápiz de color sobre papel",
-      "descripcion": "Retrato de un busto que emerge de un recuadro flotante sobre la pila bautismal barroca de la iglesia de Santiago de Villena, dorada ornamentada con querubines y volutas. Arquitecturas etéreas y una clave de sol se desvanecen al fondo, enlazando lo sacro, lo musical y lo onírico",
+      "descripcion": "Retrato de Pascual Ribera que emerge de un recuadro flotante sobre la pila bautismal barroca de la iglesia de Santiago de Villena, dorada ornamentada con querubines y volutas. Arquitecturas etéreas y una clave de sol se desvanecen al fondo, enlazando lo sacro, lo musical y lo onírico",
       "dimensiones": "No definido",
       "imagen": "2021-06 retrato.jpg",
       "en_venta": false,
@@ -1528,10 +1528,10 @@
     },
     {
       "id": "2011-amistad",
-      "titulo": "Amistad",
+      "titulo": "Trini Seller y Juan Navío",
       "año": 2011,
       "tecnica": "Técnica mixta",
-      "descripcion": "Composición que evoca el vínculo entre figuras, con capas de color y materia entrelazadas",
+      "descripcion": "Composición que evoca la amistad del artista con el matrimonio Seller-Navío.",
       "dimensiones": "",
       "imagen": "2011 Amistad.jpg",
       "en_venta": false,
@@ -1973,6 +1973,20 @@
       "categoria": "Diseño",
       "destacada": false,
       "propietario": "José Manuel Soler López"
+    },
+    {
+      "id": "1978-logo-marruecos",
+      "titulo": "No definido",
+      "año": null,
+      "tecnica": "No definido",
+      "descripcion": "No definido",
+      "dimensiones": "No definido",
+      "imagen": "1978 logo marruecos.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "No definido",
+      "destacada": false,
+      "propietario": null
     }
   ]
 }
