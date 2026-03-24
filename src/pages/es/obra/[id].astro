@@ -89,6 +89,12 @@ const jsonLd = {
           <span class="text-gray-400 block">{t('artwork.dimensions')}</span>
           <span class="font-medium">{obra.dimensiones}</span>
         </div>
+        {obra.propietario && (
+          <div>
+            <span class="text-gray-400 block">Propietario</span>
+            <span class="font-medium">{obra.propietario}</span>
+          </div>
+        )}
       </div>
 
       {obra.descripcion && obra.descripcion !== 'No definido' && (
