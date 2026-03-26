@@ -178,14 +178,16 @@ const icons = {
             {years[0]}
           </div>
           <!-- Miniaturas de obras del año activo -->
-          <div id="year-thumbs" class="mt-6 flex flex-wrap gap-2 transition-opacity duration-500">
+          <div id="year-thumbs" class="mt-6 transition-opacity duration-500">
             {years.map((year) => (
               <div class="year-thumbs-group hidden" data-thumbs-year={year}>
-                {(obrasByYear[year] || []).map((obra) => (
-                  <a href={`/es/obra/${obra.id}`} title={obra.titulo} class="block w-16 h-16 lg:w-20 lg:h-20 rounded-md overflow-hidden border border-amber-200/50 hover:border-amber-400 hover:scale-110 transition-all duration-200 shadow-sm hover:shadow-md">
-                    <img src={`/obras/thumbs/${obra.imagen}`} alt={obra.titulo} class="w-full h-full object-cover" loading="lazy" />
-                  </a>
-                ))}
+                <div class="grid grid-cols-5 gap-2 max-w-[28rem]">
+                  {(obrasByYear[year] || []).map((obra) => (
+                    <a href={`/es/obra/${obra.id}`} title={obra.titulo} class="block aspect-square rounded-md overflow-hidden border border-amber-200/50 hover:border-amber-400 hover:scale-110 transition-all duration-200 shadow-sm hover:shadow-md">
+                      <img src={`/obras/thumbs/${obra.imagen}`} alt={obra.titulo} class="w-full h-full object-cover" loading="lazy" />
+                    </a>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
