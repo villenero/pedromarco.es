@@ -1723,20 +1723,6 @@
       "propietario": null
     },
     {
-      "id": "2019-retrato",
-      "titulo": "Mirada serena",
-      "año": 2019,
-      "tecnica": "Técnica mixta",
-      "descripcion": "Retrato que captura la esencia del modelo con la mirada penetrante y los trazos gestuales de Pedro Marco",
-      "dimensiones": null,
-      "imagen": "2019 Retrato.jpg",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "Retrato",
-      "destacada": false,
-      "propietario": null
-    },
-    {
       "id": "2021-guillermo",
       "titulo": "Guillermo",
       "año": 2021,
