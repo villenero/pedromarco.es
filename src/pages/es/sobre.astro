@@ -1,6 +1,19 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { t } from '../../i18n/utils';
+import fs from 'node:fs';
+import path from 'node:path';
+
+// Cargar obras para mostrar miniaturas por año
+const obrasRaw = JSON.parse(fs.readFileSync(path.resolve('obras.json'), 'utf-8'));
+const obrasByYear: Record<string, Array<{id: string, titulo: string, imagen: string}>> = {};
+for (const o of obrasRaw.obras) {
+  if (o.año && o.imagen) {
+    const y = String(o.año);
+    if (!obrasByYear[y]) obrasByYear[y] = [];
+    obrasByYear[y].push({ id: o.id, titulo: o.titulo, imagen: o.imagen });
+  }
+}
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -164,6 +177,18 @@ const icons = {
           <div id="current-year" class="text-[10rem] lg:text-[14rem] font-black text-amber-900/15 leading-none transition-opacity duration-500">
             {years[0]}
           </div>
+          <!-- Miniaturas de obras del año activo -->
+          <div id="year-thumbs" class="mt-6 flex flex-wrap gap-2 transition-opacity duration-500">
+            {years.map((year) => (
+              <div class="year-thumbs-group hidden" data-thumbs-year={year}>
+                {(obrasByYear[year] || []).map((obra) => (
+                  <a href={`/es/obra/${obra.id}`} title={obra.titulo} class="block w-16 h-16 lg:w-20 lg:h-20 rounded-md overflow-hidden border border-amber-200/50 hover:border-amber-400 hover:scale-110 transition-all duration-200 shadow-sm hover:shadow-md">
+                    <img src={`/obras/thumbs/${obra.imagen}`} alt={obra.titulo} class="w-full h-full object-cover" loading="lazy" />
+                  </a>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
 
         <!-- Timeline derecho (40%) -->
@@ -213,6 +238,18 @@ const icons = {
               {years[0]}
             </div>
             <p class="text-xs text-gray-600">Trayectoria artística</p>
+          </div>
+          <!-- Miniaturas mobile -->
+          <div id="year-thumbs-mobile" class="mt-2 flex gap-1.5 overflow-x-auto px-3 pb-1 justify-center">
+            {years.map((year) => (
+              <div class="year-thumbs-group-mobile hidden flex gap-1.5 shrink-0" data-thumbs-year={year}>
+                {(obrasByYear[year] || []).map((obra) => (
+                  <a href={`/es/obra/${obra.id}`} title={obra.titulo} class="block w-10 h-10 rounded overflow-hidden border border-amber-200/50 shrink-0">
+                    <img src={`/obras/thumbs/${obra.imagen}`} alt={obra.titulo} class="w-full h-full object-cover" loading="lazy" />
+                  </a>
+                ))}
+              </div>
+            ))}
           </div>
         </div>
 
@@ -269,6 +306,10 @@ const icons = {
 
       const allDots = document.querySelectorAll('.year-dot');
 
+      // Thumbs groups
+      var thumbGroups = document.querySelectorAll('.year-thumbs-group');
+      var thumbGroupsMobile = document.querySelectorAll('.year-thumbs-group-mobile');
+
       function activateYear(year) {
         // Actualizar año desktop
         if (currentYearDesktop) {
@@ -287,6 +328,24 @@ const icons = {
             currentYearMobile.style.opacity = '1';
           }, 150);
         }
+
+        // Mostrar miniaturas del año activo
+        thumbGroups.forEach(function(g) {
+          if (g.getAttribute('data-thumbs-year') === year) {
+            g.classList.remove('hidden');
+            g.classList.add('flex');
+          } else {
+            g.classList.add('hidden');
+            g.classList.remove('flex');
+          }
+        });
+        thumbGroupsMobile.forEach(function(g) {
+          if (g.getAttribute('data-thumbs-year') === year) {
+            g.classList.remove('hidden');
+          } else {
+            g.classList.add('hidden');
+          }
+        });
 
         // Iluminar punto activo + opacidad secciones
         allDots.forEach(dot => {
