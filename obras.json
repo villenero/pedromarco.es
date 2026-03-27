@@ -561,6 +561,20 @@
       "propietario": null
     },
     {
+      "id": "1996-grabado",
+      "titulo": "Grabado",
+      "año": 1996,
+      "tecnica": "Aguafuerte y aguatinta",
+      "descripcion": "Grabado al aguafuerte y aguatinta en el que Pedro Marco conjuga el trazo incisivo de la punta seca con sutiles gradaciones tonales para evocar un paisaje onírico de resonancias megalíticas. La composición confronta un conjunto de dólmenes y menhires erguidos sobre una llanura desolada con la presencia inquietante de un tronco arbóreo y figuras orgánicas, generando una tensión entre lo ancestral y lo vivo, lo pétreo y lo carnal. Una atmósfera de misterio y soledad metafísica donde el silencio del paisaje parece custodiar una memoria arcaica.",
+      "dimensiones": null,
+      "imagen": "1996 Grabado.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Grabados",
+      "destacada": false,
+      "propietario": null
+    },
+    {
       "id": "jose-maria-soler",
       "titulo": "José María Soler García",
       "año": 1996,
