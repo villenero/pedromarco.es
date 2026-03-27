@@ -197,6 +197,20 @@
       "propietario": null
     },
     {
+      "id": "1983-hamburgo",
+      "titulo": "Hamburgo",
+      "año": 1983,
+      "tecnica": "Aguafuerte",
+      "descripcion": "Grabado al aguafuerte realizado durante la estancia del artista en Hamburgo, donde las agujas de las iglesias se perfilan con delicadeza al fondo, vistas a través del lago Alster y un velo de ramas desnudas en primer plano. La composición, resuelta con dominio magistral de la punta seca, crea una tensión lírica entre la trama orgánica de las ramas y la serenidad brumosa del paisaje urbano reflejado en el agua. Una atmósfera contemplativa e invernal impregnada de la melancolía nórdica que marcó la producción gráfica de Pedro Marco en su etapa alemana.",
+      "dimensiones": null,
+      "imagen": "1983 Hamburgo.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Grabados",
+      "destacada": false,
+      "propietario": null
+    },
+    {
       "id": "84-03",
       "titulo": "Personaje a Escena",
       "año": 1985,
@@ -561,20 +575,6 @@
       "propietario": null
     },
     {
-      "id": "1996-grabado",
-      "titulo": "Grabado",
-      "año": 1996,
-      "tecnica": "Aguafuerte y aguatinta",
-      "descripcion": "Grabado al aguafuerte y aguatinta en el que Pedro Marco conjuga el trazo incisivo de la punta seca con sutiles gradaciones tonales para evocar un paisaje onírico de resonancias megalíticas. La composición confronta un conjunto de dólmenes y menhires erguidos sobre una llanura desolada con la presencia inquietante de un tronco arbóreo y figuras orgánicas, generando una tensión entre lo ancestral y lo vivo, lo pétreo y lo carnal. Una atmósfera de misterio y soledad metafísica donde el silencio del paisaje parece custodiar una memoria arcaica.",
-      "dimensiones": null,
-      "imagen": "1996 Grabado.jpg",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "Grabados",
-      "destacada": false,
-      "propietario": null
-    },
-    {
       "id": "jose-maria-soler",
       "titulo": "José María Soler García",
       "año": 1996,
@@ -615,6 +615,20 @@
       "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
+    },
+    {
+      "id": "1996-grabado",
+      "titulo": "Pétreo",
+      "año": 1996,
+      "tecnica": "Aguafuerte y aguatinta",
+      "descripcion": "Grabado al aguafuerte en el que Pedro Marco conjuga el trazo incisivo de la punta seca con sutiles gradaciones tonales para evocar un paisaje onírico de resonancias megalíticas. La composición confronta un conjunto de dólmenes y menhires erguidos sobre una llanura desolada con la presencia inquietante de un tronco arbóreo y figuras orgánicas, generando una tensión entre lo ancestral y lo vivo, lo pétreo y lo carnal. Una atmósfera de misterio y soledad metafísica donde el silencio del paisaje parece custodiar una memoria arcaica.",
+      "dimensiones": "26 x 39 cm",
+      "imagen": "1996 Grabado.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Grabados",
+      "destacada": false,
+      "propietario": "Isabel Navarro Maestre"
     },
     {
       "id": "97-02",
