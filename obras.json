@@ -15,6 +15,20 @@
       "propietario": null
     },
     {
+      "id": "1964-paisaje-2",
+      "titulo": "Paisaje tropical",
+      "año": 1964,
+      "tecnica": "Óleo sobre lienzo",
+      "descripcion": "Óleo de exuberante vegetación tropical enmarcando una laguna serena con nenúfares y un flamenco solitario, bajo un cielo de atardecer en tonos anaranjados y rosados. La paleta dominante de verdes profundos, ocres y naranjas cálidos se trabaja con pincelada densa y empastada, creando texturas ricas en el follaje. La composición evoca un paraíso onírico donde la naturaleza adquiere una presencia casi fantástica.",
+      "dimensiones": null,
+      "imagen": "1964 Paisaje 2.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": null
+    },
+    {
       "id": "1964-villena",
       "titulo": "Villena",
       "año": 1964,
@@ -699,6 +713,20 @@
       "categoria": "Retrato",
       "destacada": false,
       "propietario": "Albuixech"
+    },
+    {
+      "id": "2007-espantapajaros-2",
+      "titulo": "Espantapájaros",
+      "año": 2007,
+      "tecnica": "Técnica mixta sobre lienzo",
+      "descripcion": "Vasto paisaje de llanura nevada bajo un cielo gris perla, dominado por una paleta casi monocromática de blancos y grises azulados. En primer plano irrumpe una figura totémica con detalles de color y un pájaro posado, que contrasta con la inmensidad desolada del fondo. La técnica combina trazos amplios y difusos en el paisaje con un detallismo minucioso en el objeto central, generando una tensión onírica característica del universo pictórico de Pedro Marco.",
+      "dimensiones": null,
+      "imagen": "2007 Espantapajaros2.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": null
     },
     {
       "id": "2007-tariks",
