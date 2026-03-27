@@ -66,7 +66,7 @@
       "imagen": "1967 Autoretrato.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": "Familia Marco Hernández"
     },
@@ -122,7 +122,7 @@
       "imagen": "1974 Leo.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": "Familia Serrano"
     },
@@ -150,7 +150,7 @@
       "imagen": "caricatura-leticia.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -164,7 +164,7 @@
       "imagen": "1978 Trinidad Hernadez.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": "Agueda Marco Hernández"
     },
@@ -200,15 +200,15 @@
       "id": "1983-hamburgo",
       "titulo": "Hamburgo",
       "año": 1983,
-      "tecnica": "Aguafuerte",
+      "tecnica": "Aguafuerte y punta seca",
       "descripcion": "Grabado al aguafuerte realizado durante la estancia del artista en Hamburgo, donde las agujas de las iglesias se perfilan con delicadeza al fondo, vistas a través del lago Alster y un velo de ramas desnudas en primer plano. La composición, resuelta con dominio magistral de la punta seca, crea una tensión lírica entre la trama orgánica de las ramas y la serenidad brumosa del paisaje urbano reflejado en el agua. Una atmósfera contemplativa e invernal impregnada de la melancolía nórdica que marcó la producción gráfica de Pedro Marco en su etapa alemana.",
-      "dimensiones": null,
+      "dimensiones": "37 x 27 cm",
       "imagen": "1983 Hamburgo.jpg",
       "en_venta": false,
       "precio": null,
       "categoria": "Grabados",
       "destacada": false,
-      "propietario": null
+      "propietario": "Colección particular"
     },
     {
       "id": "84-03",
@@ -234,7 +234,7 @@
       "imagen": "1986 Hnos Sanchez Grinan.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": true,
       "propietario": "Ayto. de Villena"
     },
@@ -262,7 +262,7 @@
       "imagen": "el-visionario.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": true,
       "propietario": null
     },
@@ -374,7 +374,7 @@
       "imagen": "1990 retrato.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -584,7 +584,7 @@
       "imagen": "jose-maria-soler.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": true,
       "propietario": "Familia Toni Pardo"
     },
@@ -752,7 +752,7 @@
       "imagen": "2004 Autoretrato.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": "Miguel García Pardo"
     },
@@ -766,7 +766,7 @@
       "imagen": "2004 Ferrero.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -794,7 +794,7 @@
       "imagen": "2005 Sarri.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -808,7 +808,7 @@
       "imagen": "2010 autoretrato.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": "Albuixech"
     },
@@ -906,7 +906,7 @@
       "imagen": "2008 Retrato.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -962,7 +962,7 @@
       "imagen": "2010 Danton.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": "Familia Wagner"
     },
@@ -1102,7 +1102,7 @@
       "imagen": "2011 Schlotter.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -1116,7 +1116,7 @@
       "imagen": "2011 Amistad.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -1172,7 +1172,7 @@
       "imagen": "2015 Carlos Perez.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -1186,7 +1186,7 @@
       "imagen": "2016 Erique.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -1200,7 +1200,7 @@
       "imagen": "2016 Fran.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -1228,7 +1228,7 @@
       "imagen": "2017-Salicornio.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -1242,7 +1242,7 @@
       "imagen": "2016-07 Paco Marco.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -1270,7 +1270,7 @@
       "imagen": "2016 Soli.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -1326,7 +1326,7 @@
       "imagen": "2017 Cesar Lopez Hurtado.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -1340,7 +1340,7 @@
       "imagen": "2017-Josse.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -1368,7 +1368,7 @@
       "imagen": "2017-07 Mauro.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -1382,7 +1382,7 @@
       "imagen": "2017-07 Mauro Caricatura.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -1396,7 +1396,7 @@
       "imagen": "2017 retrato.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -1424,7 +1424,7 @@
       "imagen": "2017 Retrato 2.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -1466,7 +1466,7 @@
       "imagen": "2018 lute.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -1480,7 +1480,7 @@
       "imagen": "2018 Risas.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -1494,7 +1494,7 @@
       "imagen": "pepe-lechero.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -1522,7 +1522,7 @@
       "imagen": "2018 Retrato.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -1536,7 +1536,7 @@
       "imagen": "2018 huerta.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -1550,7 +1550,7 @@
       "imagen": "2018 SIbile.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -1564,7 +1564,7 @@
       "imagen": "2019 retrato-44.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -1592,7 +1592,7 @@
       "imagen": "2019 restrato 4.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -1606,7 +1606,7 @@
       "imagen": "2019 Retrato Feike Veldman.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -1648,7 +1648,7 @@
       "imagen": "2019-retrato.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -1676,7 +1676,7 @@
       "imagen": "2019 retrato 45.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -1690,7 +1690,7 @@
       "imagen": "2019 retrato 6.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -1704,7 +1704,7 @@
       "imagen": "2020-06 Antonio Gomez.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -1760,7 +1760,7 @@
       "imagen": "2020 retrato 3.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -1774,7 +1774,7 @@
       "imagen": "2020-Confinamiento.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": "Familia Pedro Marco"
     },
@@ -1788,7 +1788,7 @@
       "imagen": "2020 Jesus Valero.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": "Jesús Valero"
     },
@@ -1802,7 +1802,7 @@
       "imagen": "caricatura-joaquin-marco.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -1844,7 +1844,7 @@
       "imagen": "2020 Paco Ferri.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -1858,7 +1858,7 @@
       "imagen": "2020 retrato 5.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -1872,7 +1872,7 @@
       "imagen": "2020 Retrato mujer.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -1886,7 +1886,7 @@
       "imagen": "2020 compan.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -1900,7 +1900,7 @@
       "imagen": "2020 retrato 4.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -1914,7 +1914,7 @@
       "imagen": "2020 confinamiento 2.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": "Familia Pedro Marco"
     },
@@ -1928,7 +1928,7 @@
       "imagen": "torreblanca.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -1956,7 +1956,7 @@
       "imagen": "2021-Autoretrato.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": true,
       "propietario": "Familia Pedro Marco"
     },
@@ -1970,7 +1970,7 @@
       "imagen": "2021 Guillermo.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -2026,7 +2026,7 @@
       "imagen": "2021-06 retrato.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -2040,7 +2040,7 @@
       "imagen": "2021-Pademia-y-quimio.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": true,
       "propietario": "Familia Pedro Marco"
     },
@@ -2068,7 +2068,7 @@
       "imagen": "2020-alfredo-rojas.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
@@ -2418,7 +2418,7 @@
       "imagen": "caricatura-angel.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Retrato",
+      "categoria": "Retratos",
       "destacada": false,
       "propietario": null
     },
