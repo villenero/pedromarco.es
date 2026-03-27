@@ -101,17 +101,13 @@ const jsonLd = {
         <p class="text-gray-600 leading-relaxed">{obra.descripcion}</p>
       )}
 
-      <div class="pt-4">
-        {obra.en_venta ? (
+      {obra.en_venta && (
+        <div class="pt-4">
           <span class="inline-flex items-center gap-1.5 text-sm font-medium text-green-700 bg-green-50 px-3 py-1.5 rounded-full">
             ● {t('artwork.for_sale')}
           </span>
-        ) : (
-          <span class="inline-flex items-center gap-1.5 text-sm text-gray-500 bg-gray-100 px-3 py-1.5 rounded-full">
-            {t('artwork.not_for_sale')}
-          </span>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   </div>
 

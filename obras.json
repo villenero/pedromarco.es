@@ -62,13 +62,13 @@
       "año": 1967,
       "tecnica": "Óleo sobre lienzo",
       "descripcion": "Óleo de factura clásica que captura al artista a sus dieciocho años, con pinceladas suaves que modelan un rostro juvenil de mirada directa e introspectiva. La paleta sobria de grises azulados contrasta con los tonos cálidos del cabello y la camisa blanca, creando una composición centrada y equilibrada.",
-      "dimensiones": null,
+      "dimensiones": "48 x 38 cm",
       "imagen": "1967 Autoretrato.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Cuadros",
+      "categoria": "Retrato",
       "destacada": false,
-      "propietario": null
+      "propietario": "Familia Marco Hernández"
     },
     {
       "id": "1969-revista-villena",
@@ -158,15 +158,15 @@
       "id": "1978-trinidad-hernandez",
       "titulo": "Trinidad Hernández",
       "año": 1978,
-      "tecnica": "Pastel sobre papel",
+      "tecnica": "Lápices de colores sobre papel",
       "descripcion": "Delicado retrato al pastel de Trinidad Hernández, madre del artista, que revela un dominio exquisito de la técnica con trazos etéreos que difuminan los contornos en un halo de luz dorada. Los tonos nacarados del rostro se complementan con el azul turquesa del vestido, mientras la composición en tres cuartos otorga elegancia y profundidad psicológica.",
-      "dimensiones": null,
+      "dimensiones": "72 x 54 cm",
       "imagen": "1978 Trinidad Hernadez.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Cuadros",
+      "categoria": "Retrato",
       "destacada": false,
-      "propietario": null
+      "propietario": "Agueda Marco Hernández"
     },
     {
       "id": "80-07-grande",
@@ -200,15 +200,15 @@
       "id": "1986-hnos-sanchez-grinan",
       "titulo": "Hermanos Sánchez Griñán",
       "año": 1986,
-      "tecnica": "Técnica mixta sobre lienzo",
+      "tecnica": "Técnica mixta sobre cartón",
       "descripcion": "Composición monumental que fusiona el retrato realista con elementos geométricos y caligráficos propios de las artes gráficas, en homenaje a los hermanos Sánchez Griñán, mentores y maestros del artista en sus inicios en las artes gráficas. La paleta de tonos pastel envuelve ambas figuras en un entramado de líneas, planos y formas que evocan su oficio.",
-      "dimensiones": null,
+      "dimensiones": "100 x 71 cm",
       "imagen": "1986 Hnos Sanchez Grinan.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Cuadros",
-      "destacada": false,
-      "propietario": null
+      "categoria": "Retrato",
+      "destacada": true,
+      "propietario": "Ayto. de Villena"
     },
     {
       "id": "1986-moros-y-cristianos",
@@ -706,13 +706,13 @@
       "año": 2004,
       "tecnica": "Técnica mixta sobre papel",
       "descripcion": "Dibujo de trazo gestual y economía expresiva que revela la madurez artística de Pedro Marco en su exploración surrealista. Líneas fluidas de carboncillo y grafito construyen un rostro que se fragmenta y metamorfosea, con toques de color que aportan tensión cromática. La composición transmite introspección filosófica y una identidad en perpetua transformación.",
-      "dimensiones": null,
+      "dimensiones": "43 x 30 cm",
       "imagen": "2004 Autoretrato.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Cuadros",
+      "categoria": "Retrato",
       "destacada": false,
-      "propietario": null
+      "propietario": "Miguel García Pardo"
     },
     {
       "id": "2004-ferrero",
