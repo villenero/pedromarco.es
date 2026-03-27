@@ -771,6 +771,20 @@
       "propietario": null
     },
     {
+      "id": "2004-metamorfosis",
+      "titulo": "Metamorfosis",
+      "año": 2004,
+      "tecnica": "Técnica mixta sobre lienzo",
+      "descripcion": "Composición audaz en la que formas orgánicas en plena mutación —una mariposa iridiscente de tonos turquesa y violeta, tallos serpenteantes y estructuras larvarias envueltas en espirales doradas— emergen desde un vórtice luminoso sobre un fondo cremoso. La técnica combina un dibujo minucioso de precisión casi entomológica con pinceladas gestuales y chorreados matéricos, logrando una tensión entre lo figurativo y lo abstracto. Una atmósfera de misterio y transformación suspendida, como si el espectador asistiera al instante exacto en que la materia trasciende su forma original.",
+      "dimensiones": null,
+      "imagen": "2004 Metamorfosis.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": null
+    },
+    {
       "id": "2004-villena-un-tesoro",
       "titulo": "Villena, un tesoro",
       "año": 2004,
