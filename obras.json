@@ -57,6 +57,20 @@
       "propietario": "José Manuel Soler López"
     },
     {
+      "id": "1967-autoretrato",
+      "titulo": "Autorretrato",
+      "año": 1967,
+      "tecnica": "Óleo sobre lienzo",
+      "descripcion": "Óleo de factura clásica que captura al artista a sus dieciocho años, con pinceladas suaves que modelan un rostro juvenil de mirada directa e introspectiva. La paleta sobria de grises azulados contrasta con los tonos cálidos del cabello y la camisa blanca, creando una composición centrada y equilibrada.",
+      "dimensiones": null,
+      "imagen": "1967 Autoretrato.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": null
+    },
+    {
       "id": "1969-revista-villena",
       "titulo": "Revista Villena 1969",
       "año": 1969,
@@ -141,6 +155,20 @@
       "propietario": null
     },
     {
+      "id": "1978-trinidad-hernandez",
+      "titulo": "Trinidad Hernández",
+      "año": 1978,
+      "tecnica": "Pastel sobre papel",
+      "descripcion": "Delicado retrato al pastel de Trinidad Hernández, madre del artista, que revela un dominio exquisito de la técnica con trazos etéreos que difuminan los contornos en un halo de luz dorada. Los tonos nacarados del rostro se complementan con el azul turquesa del vestido, mientras la composición en tres cuartos otorga elegancia y profundidad psicológica.",
+      "dimensiones": null,
+      "imagen": "1978 Trinidad Hernadez.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": null
+    },
+    {
       "id": "80-07-grande",
       "titulo": "Leticia",
       "año": 1980,
@@ -167,6 +195,20 @@
       "categoria": "Cuadros",
       "destacada": false,
       "propietario": "Diputación de Alicante"
+    },
+    {
+      "id": "1986-hnos-sanchez-grinan",
+      "titulo": "Hermanos Sánchez Griñán",
+      "año": 1986,
+      "tecnica": "Técnica mixta sobre lienzo",
+      "descripcion": "Composición monumental que fusiona el retrato realista con elementos geométricos y caligráficos propios de las artes gráficas, en homenaje a los hermanos Sánchez Griñán, mentores y maestros del artista en sus inicios en las artes gráficas. La paleta de tonos pastel envuelve ambas figuras en un entramado de líneas, planos y formas que evocan su oficio.",
+      "dimensiones": null,
+      "imagen": "1986 Hnos Sanchez Grinan.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": null
     },
     {
       "id": "1986-moros-y-cristianos",
@@ -659,6 +701,20 @@
       "propietario": "José Manuel Soler López"
     },
     {
+      "id": "2004-autoretrato",
+      "titulo": "Autorretrato",
+      "año": 2004,
+      "tecnica": "Técnica mixta sobre papel",
+      "descripcion": "Dibujo de trazo gestual y economía expresiva que revela la madurez artística de Pedro Marco en su exploración surrealista. Líneas fluidas de carboncillo y grafito construyen un rostro que se fragmenta y metamorfosea, con toques de color que aportan tensión cromática. La composición transmite introspección filosófica y una identidad en perpetua transformación.",
+      "dimensiones": null,
+      "imagen": "2004 Autoretrato.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": null
+    },
+    {
       "id": "2004-ferrero",
       "titulo": "Juan Carlos Ferrero",
       "año": 2004,
@@ -713,6 +769,20 @@
       "categoria": "Retrato",
       "destacada": false,
       "propietario": "Albuixech"
+    },
+    {
+      "id": "2006-huevo",
+      "titulo": "Huevo",
+      "año": 2006,
+      "tecnica": "Técnica mixta sobre lienzo",
+      "descripcion": "Obra emblemática del surrealismo de Pedro Marco: una esfera monumental de tonalidades iridiscentes domina el centro compositivo, coronada por un huevo abierto que revela su yema dorada. Figuras de cuervos oscuros flanquean la composición mientras aves fantásticas sobrevuelan el espacio, creando un diálogo entre lo terrenal y lo cósmico. Una meditación sobre el origen, la fertilidad y el misterio de la creación.",
+      "dimensiones": null,
+      "imagen": "2006 Huevo.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": null
     },
     {
       "id": "2007-espantapajaros-2",
