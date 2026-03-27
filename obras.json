@@ -183,6 +183,20 @@
       "propietario": "Familia Pedro Marco"
     },
     {
+      "id": "1983-grabado",
+      "titulo": "Grabado",
+      "año": 1983,
+      "tecnica": "Xilografía",
+      "descripcion": "Xilografía de marcado contraste en blanco y negro que presenta una figura femenina de formas biomórficas y fragmentadas, resuelta con la energía expresiva de la talla en madera que Pedro Marco perfeccionó durante su estancia en Hamburgo. La composición, dominada por un gran disco solar que irradia tras la figura, sitúa el cuerpo en un espacio onírico donde la anatomía se disuelve y recompone siguiendo una lógica surrealista. El trazo vigoroso de la gubia y el juego rítmico de líneas paralelas confieren a la estampa una tensión casi totémica, entre lo primitivo y lo visionario.",
+      "dimensiones": null,
+      "imagen": "1983 Grabado.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Grabados",
+      "destacada": false,
+      "propietario": null
+    },
+    {
       "id": "84-03",
       "titulo": "Personaje a Escena",
       "año": 1985,
