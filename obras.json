@@ -776,13 +776,13 @@
       "año": 2006,
       "tecnica": "Técnica mixta sobre lienzo",
       "descripcion": "Obra emblemática del surrealismo de Pedro Marco: una esfera monumental de tonalidades iridiscentes domina el centro compositivo, coronada por un huevo abierto que revela su yema dorada. Figuras de cuervos oscuros flanquean la composición mientras aves fantásticas sobrevuelan el espacio, creando un diálogo entre lo terrenal y lo cósmico. Una meditación sobre el origen, la fertilidad y el misterio de la creación.",
-      "dimensiones": null,
+      "dimensiones": "",
       "imagen": "2006 Huevo.jpg",
       "en_venta": false,
       "precio": null,
       "categoria": "Cuadros",
-      "destacada": false,
-      "propietario": null
+      "destacada": true,
+      "propietario": "Notaría Enrique Sacristán"
     },
     {
       "id": "2007-espantapajaros-2",
