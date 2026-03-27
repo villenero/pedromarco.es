@@ -6,13 +6,13 @@
       "año": 1964,
       "tecnica": "Óleo sobre lienzo",
       "descripcion": "Óleo de marcado lirismo paisajístico en el que una puesta de sol incendia el horizonte marino con intensos amarillos, naranjas y rosados. Una barca varada y redes de pesca reposan sobre la arena, enmarcadas por la silueta de una palmera. La pincelada pastosa y la gradación lumínica transmiten una atmósfera de serena melancolía mediterránea.",
-      "dimensiones": null,
+      "dimensiones": "90 x 40 cm",
       "imagen": "1964 Paisaje.jpg",
       "en_venta": false,
       "precio": null,
       "categoria": "Cuadros",
       "destacada": false,
-      "propietario": null
+      "propietario": "José Estevan Ruescas"
     },
     {
       "id": "1964-paisaje-2",
@@ -20,13 +20,13 @@
       "año": 1964,
       "tecnica": "Óleo sobre lienzo",
       "descripcion": "Óleo de exuberante vegetación tropical enmarcando una laguna serena con nenúfares y un flamenco solitario, bajo un cielo de atardecer en tonos anaranjados y rosados. La paleta dominante de verdes profundos, ocres y naranjas cálidos se trabaja con pincelada densa y empastada, creando texturas ricas en el follaje. La composición evoca un paraíso onírico donde la naturaleza adquiere una presencia casi fantástica.",
-      "dimensiones": null,
+      "dimensiones": "100 x 70 cm",
       "imagen": "1964 Paisaje 2.jpg",
       "en_venta": false,
       "precio": null,
       "categoria": "Cuadros",
       "destacada": false,
-      "propietario": null
+      "propietario": "Familia Marco Hernández"
     },
     {
       "id": "1964-villena",
@@ -34,13 +34,13 @@
       "año": 1964,
       "tecnica": "Óleo sobre lienzo",
       "descripcion": "Vista panorámica del Castillo de la Atalaya de Villena recortado contra un cielo crepuscular de tonos dorados y anaranjados, con las sierras difuminadas al fondo. El caserío se despliega en sombras densas a los pies de la fortaleza, flanqueado por los campanarios de las iglesias de la villa. Óleo de factura clásica y paleta terrosa que rinde homenaje a la ciudad natal del artista.",
-      "dimensiones": null,
+      "dimensiones": "180 x 78 cm",
       "imagen": "1964 Villena.jpg",
       "en_venta": false,
       "precio": null,
       "categoria": "Cuadros",
       "destacada": false,
-      "propietario": null
+      "propietario": "José Marco Esteban"
     },
     {
       "id": "1966-bosque",
@@ -424,9 +424,9 @@
       "id": "1994-villena",
       "titulo": "Villena",
       "año": 1994,
-      "tecnica": "Técnica mixta sobre lienzo",
+      "tecnica": "Témpera acrílica sobre tabla",
       "descripcion": "Composición surreal en la que el paisaje urbano de Villena —con su castillo, campanarios y cipreses— aparece contenido dentro de una gran esfera translúcida que flota sobre un fondo neutro. La paleta suave de ocres, verdes apagados y azules grisáceos se funde mediante pinceladas curvilíneas que distorsionan la perspectiva, creando un efecto de mundo encapsulado. Una obra que sintetiza la vertiente más onírica de Pedro Marco, transformando el paisaje natal en una visión atemporal.",
-      "dimensiones": null,
+      "dimensiones": "68 x 89 cm",
       "imagen": "1994 Villena.jpg",
       "en_venta": false,
       "precio": null,
@@ -718,9 +718,9 @@
       "id": "2007-espantapajaros-2",
       "titulo": "Espantapájaros",
       "año": 2007,
-      "tecnica": "Técnica mixta sobre lienzo",
+      "tecnica": "Grafito y témpera acrílica sobre cartón",
       "descripcion": "Vasto paisaje de llanura nevada bajo un cielo gris perla, dominado por una paleta casi monocromática de blancos y grises azulados. En primer plano irrumpe una figura totémica con detalles de color y un pájaro posado, que contrasta con la inmensidad desolada del fondo. La técnica combina trazos amplios y difusos en el paisaje con un detallismo minucioso en el objeto central, generando una tensión onírica característica del universo pictórico de Pedro Marco.",
-      "dimensiones": null,
+      "dimensiones": "120 x 76 cm",
       "imagen": "2007 Espantapajaros2.jpg",
       "en_venta": false,
       "precio": null,

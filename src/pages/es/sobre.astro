@@ -15,6 +15,22 @@ for (const o of obrasRaw.obras) {
   }
 }
 
+// Agrupar obras de años anteriores al primer año del timeline (1966)
+// con el año más antiguo que sí tenga eventos
+const earliestTimelineYear = 1966;
+const yearsToMerge = Object.keys(obrasByYear)
+  .map(Number)
+  .filter(y => y < earliestTimelineYear)
+  .sort((a, b) => a - b);
+if (yearsToMerge.length > 0) {
+  const targetYear = String(earliestTimelineYear);
+  if (!obrasByYear[targetYear]) obrasByYear[targetYear] = [];
+  for (const y of yearsToMerge) {
+    obrasByYear[targetYear].push(...obrasByYear[String(y)]);
+    delete obrasByYear[String(y)];
+  }
+}
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
