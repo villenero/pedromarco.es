@@ -75,7 +75,7 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
     </div>
 
     <!-- Timeline container -->
-    <div id="timeline-container" class="relative max-w-5xl mx-auto px-4 pb-24">
+    <div id="timeline-container" class="relative max-w-5xl mx-auto px-4 pb-24 overflow-x-hidden">
       <!-- SVG path layer -->
       <svg id="timeline-svg" class="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none">
         <defs>
@@ -84,10 +84,10 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
             <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="3" xChannelSelector="R" yChannelSelector="G" />
           </filter>
         </defs>
-        <!-- Background path (thick, rough) -->
-        <path id="timeline-path-bg" fill="none" stroke="#d4a574" stroke-width="6" stroke-linecap="round" opacity="0.25" filter="url(#brush-stroke)" />
+        <!-- Background path (thick, rough) — filter only on desktop for performance -->
+        <path id="timeline-path-bg" fill="none" stroke="#d4a574" stroke-width="6" stroke-linecap="round" opacity="0.25" />
         <!-- Progress path (fills as you scroll) -->
-        <path id="timeline-path-progress" fill="none" stroke="#92400e" stroke-width="3" stroke-linecap="round" filter="url(#brush-stroke)" />
+        <path id="timeline-path-progress" fill="none" stroke="#92400e" stroke-width="3" stroke-linecap="round" />
         <!-- Full path for measurement (invisible) -->
         <path id="timeline-path" fill="none" stroke="transparent" stroke-width="1" />
       </svg>
@@ -97,7 +97,7 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
         id="snail"
         src="/favicon.png"
         alt=""
-        class="absolute w-10 h-10 sm:w-12 sm:h-12 pointer-events-none z-20 opacity-0 transition-opacity duration-500"
+        class="absolute w-8 h-8 sm:w-12 sm:h-12 pointer-events-none z-20 opacity-0 transition-opacity duration-500"
         style="transform-origin: center center;"
       />
 
@@ -127,7 +127,7 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
 
             {/* Artwork thumbnails */}
             {stop.obras.length > 0 && (
-              <div class={`grid grid-cols-3 sm:grid-cols-4 gap-1.5 sm:gap-2 mt-2 max-w-[20rem] ${stop.side === 'left' ? 'ml-auto' : ''}`} style={stop.side === 'left' ? 'direction:rtl' : ''}>
+              <div class={`grid grid-cols-4 sm:grid-cols-4 gap-1 sm:gap-2 mt-2 max-w-[14rem] sm:max-w-[20rem] ${stop.side === 'left' ? 'ml-auto' : ''}`} style={stop.side === 'left' ? 'direction:rtl' : ''}>
                 {stop.obras.slice(0, 8).map((obra) => (
                   <a
                     href={`/es/obra/${obra.id}?from=recorrido`}
@@ -176,6 +176,12 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
     if (!container || !svg || !pathEl || !snail || stops.length === 0) return;
 
     var isMobile = window.innerWidth < 640;
+
+    // Apply brush-stroke filter only on desktop (too expensive on mobile)
+    if (!isMobile) {
+      pathBg.setAttribute('filter', 'url(#brush-stroke)');
+      pathProgress.setAttribute('filter', 'url(#brush-stroke)');
+    }
 
     // Seeded pseudo-random (mulberry32) — deterministic across loads
     function mulberry32(seed) {
@@ -382,7 +388,7 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
         var point2 = pathEl.getPointAtLength(Math.min(len + 2, totalLength));
         var angle = Math.atan2(point2.y - point.y, point2.x - point.x) * (180 / Math.PI);
 
-        var snailSize = isMobile ? 20 : 24;
+        var snailSize = isMobile ? 16 : 24;
         snail.style.left = (point.x - snailSize) + 'px';
         snail.style.top = (point.y - snailSize) + 'px';
         snail.style.transform = 'rotate(' + (angle - 90) + 'deg)';
