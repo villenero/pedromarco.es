@@ -2659,6 +2659,48 @@
       "categoria": "Cuadros",
       "destacada": true,
       "propietario": "Ayuntamiento de Villena"
+    },
+    {
+      "id": "2007-batalla-de-almansa",
+      "titulo": "Batalla de Almansa",
+      "año": 2007,
+      "tecnica": "Óleo sobre lienzo",
+      "descripcion": "Interpretación de la Batalla de Almansa (1707). En primer plano, la mano de un alto mando se alza tapando el sol mientras contempla la vasta llanura donde formaciones de tropas y caballería chocan en detalle casi microscópico, disolviéndose en patrones arremolinados y abstractos. Un panel carmesí vertical en el borde derecho introduce un elemento teatral, como si la escena fuera una revelación tras el telón. Paleta luminosa e iridiscente de lavandas, malvas, amarillos pálidos y grises nacarados, con ocres cálidos en el primer plano y el contraste dramático del rojo profundo.",
+      "dimensiones": "No definido",
+      "imagen": "2007 Batalla de Almansa.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": "Ayuntamiento de Villena"
+    },
+    {
+      "id": "2006-tatuajes-de-sangre",
+      "titulo": "Tatuajes de sangre",
+      "año": 2006,
+      "tecnica": "Grafito, témpera acrílica y plombagina sobre cartón",
+      "descripcion": "Mujer saharaui velada que domina la composición, su cuerpo disolviéndose en una cola serpentina que se enrosca en espiral. Presenta dos palmas abiertas adornadas con intrincados patrones de henna —manos de Fátima— enmarcadas en una retícula geométrica, mientras un arco radiante corona su cabeza. A la izquierda, una estructura arquitectónica translúcida flota sobre una forma orgánica oscura en el suelo árido, con un asentamiento desértico visible en el horizonte. Pintada durante la estancia del artista en los campos de refugiados saharauis. Paleta de dorados arenosos y ocres desérticos con los ropajes fluyendo en azules, turquesas, lavandas y verdes iridiscentes.",
+      "dimensiones": "71 x 100 cm",
+      "imagen": "2006 Tatuajes de sangre.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": "Notaría Enrique Sacristán"
+    },
+    {
+      "id": "2006-corrales-saharauis",
+      "titulo": "Corrales saharauis",
+      "año": 2006,
+      "tecnica": "Grafito, témpera acrílica sobre cartón",
+      "descripcion": "Conjuntos arquitectónicos surrealistas —recintos fortificados, ruinas o estructuras improvisadas de campamento— aislados en una vasta extensión desértica vacía. En primer plano, un denso ensamblaje de muros con arcos, torres cilíndricas y una gran forma circular con figuras decorativas. Al fondo, un grupo más fragmentado junto a una figura solitaria de pie. Obra casi enteramente monocromática en negros, grises y blancos con apenas un toque de ocre, ejecutada con trama cruzada, detalle lineal fino y sombreado punteado junto a gradientes atmosféricos difuminados. La desolación del paisaje de los campos de refugiados saharauis se transmite a través del vacío que rodea las estructuras.",
+      "dimensiones": "50 x 65 cm",
+      "imagen": "2006 corrales saharauis.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": "Colección particular"
     }
   ]
 }
