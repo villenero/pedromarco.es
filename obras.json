@@ -2701,6 +2701,34 @@
       "categoria": "Cuadros",
       "destacada": false,
       "propietario": "Colección particular"
+    },
+    {
+      "id": "2001-espantagolf",
+      "titulo": "Espantapájaros",
+      "año": 2001,
+      "tecnica": "Óleo sobre lienzo",
+      "descripcion": "Híbrido surrealista entre espantapájaros y golfista: una figura espectral y alargada con cabeza de maniquí verde esmeralda, envuelta en tela blanca retorcida, empuña un palo de golf. El cuerpo se afina hasta una punta de aguja clavada en el hoyo sobre el green. Extensiones desgarradas brotan de los hombros como alas de espantapájaros. Formas flotantes de nubes verdes derivan en lo alto mientras olas arremolinadas enmarcan la base. Un plano geométrico rectangular tras la figura crea un escenario o portal somero. Paleta luminosa de azules pálidos, melocotón, lavanda y dorados arenosos, con verdes esmeralda vibrantes en la cabeza y las formas flotantes, y empastes densos de turquesa y ocre en la base turbulenta.",
+      "dimensiones": "100 x 72 cm",
+      "imagen": "2001 Espantagolf.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": "Ricardo Palero"
+    },
+    {
+      "id": "2001-paisaje-disono",
+      "titulo": "Paisaje Dísono",
+      "año": 2001,
+      "tecnica": "Óleo sobre lienzo",
+      "descripcion": "Paisaje onírico con dos grandes cuencas elípticas inclinadas —una con ondas concéntricas de agua, otra un plano verde liso— entre las cuales una pequeña figura solitaria vestida de blanco se sienta, empequeñecida por el entorno surrealista. Tras ella, diagonales de luz o formas arbóreas luminosas atraviesan un fondo brumoso y atmosférico con vórtices arremolinados y vegetación fantasmal. Paleta dominada por verdes oliva apagados, salvia y celadón, con acentos de amarillo dorado, azules suaves, toques de violeta y ocre cálido. Pincelada suelta y gestual que combina veladuras translúcidas con pasajes más opacos, fundiendo lo figurativo con la abstracción en una tensión meditativa entre lo tangible y lo etéreo.",
+      "dimensiones": "50 x 72 cm",
+      "imagen": "2001 Paisaje Disono.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": "Manuel Salguero"
     }
   ]
 }
