@@ -58,6 +58,20 @@ const jsonLd = {
 >
   <!-- Filter bar -->
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-3">
+      <div class="relative flex-1 max-w-sm">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Buscar por título, técnica, año..."
+          class="w-full pl-9 pr-8 py-2 text-sm border border-gray-200 rounded-full bg-white focus:outline-none focus:border-gray-400 focus:ring-1 focus:ring-gray-200 transition-colors"
+        />
+        <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <button id="search-clear" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 hidden" aria-label="Limpiar búsqueda">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
     <div class="flex flex-wrap gap-1">
       <button class="filter-btn px-3 py-1 text-sm rounded-full border border-transparent transition-colors hover:text-gray-900" data-category="all">
         {t('home.all')} <span class="badge">{obras.obras.length}</span>
@@ -561,18 +575,53 @@ const jsonLd = {
     }, { threshold: 0.1 });
     document.querySelectorAll('.obra-fade').forEach(el => fadeObserver.observe(el));
 
-    // Filter buttons
+    // Filter buttons + search
     const buttons = document.querySelectorAll('.filter-btn');
     const items = document.querySelectorAll('.masonry-item');
+    const searchInput = document.getElementById('search-input');
+    const searchClear = document.getElementById('search-clear');
+    let activeCategory = 'Cuadros';
+
+    function normalize(str) {
+      return (str || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    }
+
+    function applyFilters() {
+      const query = normalize(searchInput.value.trim());
+      searchClear.classList.toggle('hidden', !query);
+
+      items.forEach(item => {
+        const idx = parseInt(item.getAttribute('data-index'));
+        const obra = obrasData[idx];
+        const catMatch = activeCategory === 'all' || obra.categoria === activeCategory;
+
+        let searchMatch = true;
+        if (query) {
+          const haystack = normalize(
+            [obra.titulo, obra.descripcion, obra.tecnica, String(obra.año || '')].join(' ')
+          );
+          // All words must match
+          searchMatch = query.split(/\s+/).every(word => haystack.includes(word));
+        }
+
+        item.style.display = (catMatch && searchMatch) ? '' : 'none';
+      });
+    }
+
     buttons.forEach(btn => {
       btn.addEventListener('click', () => {
         buttons.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        const cat = btn.getAttribute('data-category');
-        items.forEach(item => {
-          item.style.display = (cat === 'all' || item.getAttribute('data-category') === cat) ? '' : 'none';
-        });
+        activeCategory = btn.getAttribute('data-category');
+        applyFilters();
       });
+    });
+
+    searchInput.addEventListener('input', applyFilters);
+    searchClear.addEventListener('click', () => {
+      searchInput.value = '';
+      applyFilters();
+      searchInput.focus();
     });
   </script>
 </Base>

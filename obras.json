@@ -2533,6 +2533,48 @@
       "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
+    },
+    {
+      "id": "1996-villenera",
+      "titulo": "Villenera picassiana",
+      "año": 1996,
+      "tecnica": "Técnica mixta sobre papel",
+      "descripcion": "Desnudo femenino sentado en un sillón ornamentado, con un cesto sobre la cabeza que contiene la silueta del Castillo de la Atalaya de Villena. La inscripción «Homenaje a Picasso» revela la intención: la figura se fragmenta en líneas de contorno fluidas y geometrías cubistas, con perspectivas simultáneas en el rostro y la anatomía. Paleta contenida de azul cobalto, ocres cálidos, marrones y grises sobre papel crema. Una celebración de la identidad femenina villenera fusionada con la herencia arquitectónica de la ciudad y la influencia picassiana.",
+      "dimensiones": "29 x 21 cm",
+      "imagen": "1996 Villenera.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": "Colección particular"
+    },
+    {
+      "id": "1983-acuatinta",
+      "titulo": "Acuatinta",
+      "año": 1983,
+      "tecnica": "Aguatinta (grabado calcográfico)",
+      "descripcion": "Figura femenina invertida, con la cabeza en la parte inferior de la composición, ataviada con vestimenta de época y encaje minuciosamente detallado en el escote. El cabello fluye hacia arriba en líneas finas y envolventes, mientras el rostro sereno de ojos entornados transmite una quietud enigmática. Prueba de artista (P/A) que demuestra un dominio excepcional de la gradación tonal del aguatinta, desde las zonas densamente texturadas hasta el delicado punteado y el trabajo lineal fino. La inversión transforma un retrato potencialmente clásico en una imagen onírica y desorientadora, suspendida entre estados de conciencia y sueño. Paleta restringida de azules grisáceos y negros sobre papel crema. Realizada durante la beca de grabado en Hamburgo.",
+      "dimensiones": "25 x 18 cm",
+      "imagen": "1983 acuatinta.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Grabados",
+      "destacada": false,
+      "propietario": "Familia Rubio García"
+    },
+    {
+      "id": "2001-siglo-xviii",
+      "titulo": "Siglo XVIII",
+      "año": 2001,
+      "tecnica": "Óleo sobre lienzo",
+      "descripcion": "Escena onírica en un espacio metafísico donde figuras equinas fantasmales —asnos o mulas en grises etéreos— emergen y se disuelven en la parte superior, mientras tres figuras humanoides desnudas en tonos ocre-amarillentos se encojen debajo en posturas de sumisión o transformación, como soportando un peso invisible. El título «S. XVIII» invoca las sombras de la Ilustración, y la imaginería del asno evoca los Caprichos goyescos donde estos animales simbolizan la ignorancia y la necedad. Paleta sofisticada de azules grisáceos, turquesa, cremas y ocres cálidos con textura de fresco. Una alegoría sobre la persistencia de la irracionalidad bajo el peso de la historia.",
+      "dimensiones": "66 x 47 cm",
+      "imagen": "2001 Siglo XVIII.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": "Paco Torreblanca"
     }
   ]
 }
