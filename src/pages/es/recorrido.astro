@@ -1,0 +1,320 @@
+---
+import Base from '../../layouts/Base.astro';
+import fs from 'node:fs';
+import path from 'node:path';
+
+// Load obras grouped by year
+const obrasRaw = JSON.parse(fs.readFileSync(path.resolve('obras.json'), 'utf-8'));
+const obrasByYear: Record<string, Array<{id: string, titulo: string, imagen: string}>> = {};
+for (const o of obrasRaw.obras) {
+  if (o.año && o.imagen) {
+    const y = String(o.año);
+    if (!obrasByYear[y]) obrasByYear[y] = [];
+    obrasByYear[y].push({ id: o.id, titulo: o.titulo, imagen: o.imagen });
+  }
+}
+
+// Biographical milestones
+const milestones: Record<string, string> = {
+  '1949': 'Nace en Villena',
+  '1966': 'Primera exposición (Caja de Ahorros del Sureste)',
+  '1972': 'Se dedica por completo a las artes plásticas',
+  '1979': 'Estancia formativa en París',
+  '1980': 'Estancia formativa en Bruselas',
+  '1982': 'Beca de grabado en Hamburgo, Alemania',
+  '1986': 'Seleccionado Premio Internacional Joan Miró, Barcelona',
+  '1990': "Ken's Art Gallery, Florencia",
+  '1994': 'Galería Studio D, Londres',
+  '1999': "Galerie L'Entrée des Artistes, Barbizon, Francia",
+  '2006': 'Retrospectiva 1966-2006, KAKV Villena',
+  '2022': 'Fallece en Villena (4 de febrero)',
+  '2024': 'Exposición póstuma — Tras los Pasos de Ilici, MACE Elche',
+};
+
+// Collect all years (from milestones + obras), sorted chronologically
+const allYearsSet = new Set<string>();
+Object.keys(milestones).forEach(y => allYearsSet.add(y));
+Object.keys(obrasByYear).forEach(y => allYearsSet.add(y));
+const allYears = [...allYearsSet].map(Number).sort((a, b) => a - b);
+
+// Build stops data for the template
+interface Stop {
+  year: number;
+  milestone: string | null;
+  obras: Array<{id: string, titulo: string, imagen: string}>;
+  side: 'left' | 'right';
+}
+
+const stops: Stop[] = allYears.map((y, i) => ({
+  year: y,
+  milestone: milestones[String(y)] || null,
+  obras: obrasByYear[String(y)] || [],
+  side: i % 2 === 0 ? 'left' : 'right',
+}));
+
+// Serialize for JS
+const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.milestone !== null })));
+---
+
+<Base
+  title="Pedro Marco — Recorrido artístico"
+  description="Recorrido por la trayectoria artística de Pedro Marco (Villena, 1949-2022). Biografia, hitos y obras organizadas cronologicamente."
+>
+  <div class="bg-amber-50/30 min-h-screen">
+    <!-- Header -->
+    <div class="text-center pt-12 pb-8 px-4">
+      <p class="text-sm font-semibold uppercase tracking-widest text-amber-800/60 mb-2">Trayectoria artística</p>
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-900">Recorrido</h1>
+      <p class="text-gray-500 mt-2 max-w-md mx-auto text-sm">Villena, 1949 &mdash; 2022. Toda una vida dedicada al arte.</p>
+    </div>
+
+    <!-- Timeline container -->
+    <div id="timeline-container" class="relative max-w-5xl mx-auto px-4 pb-24">
+      <!-- SVG path layer -->
+      <svg id="timeline-svg" class="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none">
+        <defs>
+          <filter id="brush-stroke" x="-5%" y="-5%" width="110%" height="110%">
+            <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="4" result="turbulence" seed="3" />
+            <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="3" xChannelSelector="R" yChannelSelector="G" />
+          </filter>
+        </defs>
+        <!-- Background path (thick, rough) -->
+        <path id="timeline-path-bg" fill="none" stroke="#d4a574" stroke-width="6" stroke-linecap="round" opacity="0.25" filter="url(#brush-stroke)" />
+        <!-- Progress path (fills as you scroll) -->
+        <path id="timeline-path-progress" fill="none" stroke="#92400e" stroke-width="3" stroke-linecap="round" filter="url(#brush-stroke)" />
+        <!-- Full path for measurement (invisible) -->
+        <path id="timeline-path" fill="none" stroke="transparent" stroke-width="1" />
+      </svg>
+
+      <!-- Snail -->
+      <img
+        id="snail"
+        src="/favicon.png"
+        alt=""
+        class="absolute w-10 h-10 sm:w-12 sm:h-12 pointer-events-none z-20 opacity-0 transition-opacity duration-500"
+        style="transform-origin: center center;"
+      />
+
+      <!-- Year stops -->
+      {stops.map((stop, i) => (
+        <div
+          class={`timeline-stop relative flex items-start gap-4 sm:gap-8 mb-16 sm:mb-24 opacity-0 translate-y-8 transition-all duration-700 ${
+            stop.side === 'right' ? 'flex-row' : 'flex-row-reverse'
+          }`}
+          data-year={stop.year}
+          data-side={stop.side}
+          data-index={i}
+        >
+          <!-- Spacer for path column -->
+          <div class="hidden sm:block w-[45%] shrink-0" />
+
+          <!-- Content -->
+          <div class={`flex-1 min-w-0 ${stop.side === 'right' ? 'sm:text-left' : 'sm:text-right'}`}>
+            <!-- Year label -->
+            <div class={`inline-flex items-center gap-2 mb-3 ${stop.side === 'left' ? 'sm:flex-row-reverse' : ''}`}>
+              <span class={`text-2xl sm:text-3xl font-black ${stop.milestone ? 'text-amber-800' : 'text-gray-700'}`}>
+                {stop.year}
+              </span>
+              {stop.milestone && (
+                <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
+              )}
+            </div>
+
+            {/* Milestone text */}
+            {stop.milestone && (
+              <p class={`text-sm sm:text-base text-amber-800/80 font-medium mb-3 italic`}>
+                {stop.milestone}
+              </p>
+            )}
+
+            {/* Artwork thumbnails */}
+            {stop.obras.length > 0 && (
+              <div class={`grid grid-cols-3 sm:grid-cols-4 gap-1.5 sm:gap-2 mt-2 ${
+                stop.side === 'left' ? 'sm:ml-auto sm:max-w-[20rem]' : 'sm:max-w-[20rem]'
+              }`}>
+                {stop.obras.slice(0, 8).map((obra) => (
+                  <a
+                    href={`/es/obra/${obra.id}`}
+                    title={obra.titulo}
+                    class="block aspect-square rounded-md overflow-hidden border border-amber-200/50 hover:border-amber-500 hover:scale-105 transition-all duration-200 shadow-sm hover:shadow-md"
+                  >
+                    <img
+                      src={`/obras/thumbs/${obra.imagen}`}
+                      alt={obra.titulo}
+                      class="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </a>
+                ))}
+                {stop.obras.length > 8 && (
+                  <div class="aspect-square rounded-md bg-amber-100/60 border border-amber-200/50 flex items-center justify-center text-sm text-amber-700 font-medium">
+                    +{stop.obras.length - 8}
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+      ))}
+
+      <!-- End marker -->
+      <div class="text-center py-8">
+        <img src="/favicon.png" alt="" class="w-8 h-8 mx-auto opacity-30 mb-2" />
+        <p class="text-sm text-gray-400 italic">El arte permanece</p>
+      </div>
+    </div>
+  </div>
+
+  <script is:inline>
+  document.addEventListener('DOMContentLoaded', function() {
+    var container = document.getElementById('timeline-container');
+    var svg = document.getElementById('timeline-svg');
+    var pathEl = document.getElementById('timeline-path');
+    var pathBg = document.getElementById('timeline-path-bg');
+    var pathProgress = document.getElementById('timeline-path-progress');
+    var snail = document.getElementById('snail');
+    var stops = document.querySelectorAll('.timeline-stop');
+
+    if (!container || !svg || !pathEl || !snail || stops.length === 0) return;
+
+    var isMobile = window.innerWidth < 640;
+
+    // Compute path control points from stop positions
+    function buildPath() {
+      isMobile = window.innerWidth < 640;
+      var containerRect = container.getBoundingClientRect();
+      var containerTop = container.offsetTop;
+      var containerW = containerRect.width;
+      var centerX = isMobile ? containerW * 0.12 : containerW * 0.5;
+      var amplitude = isMobile ? 0 : containerW * 0.06;
+
+      // Gather Y positions for each stop
+      var points = [];
+      // Start point above first stop
+      var firstStop = stops[0];
+      var firstY = firstStop.offsetTop - 40;
+      points.push({ x: centerX, y: firstY });
+
+      stops.forEach(function(stop, i) {
+        var y = stop.offsetTop + 20;
+        var side = stop.getAttribute('data-side');
+        var offsetX = 0;
+        if (!isMobile) {
+          offsetX = side === 'right' ? -amplitude : amplitude;
+        }
+        points.push({ x: centerX + offsetX, y: y });
+      });
+
+      // End point below last stop
+      var lastStop = stops[stops.length - 1];
+      var lastY = lastStop.offsetTop + lastStop.offsetHeight + 40;
+      points.push({ x: centerX, y: lastY });
+
+      // Build smooth cubic bezier path
+      var d = 'M ' + points[0].x + ' ' + points[0].y;
+      for (var i = 1; i < points.length; i++) {
+        var prev = points[i - 1];
+        var curr = points[i];
+        var cpDist = (curr.y - prev.y) * 0.4;
+        d += ' C ' + prev.x + ' ' + (prev.y + cpDist) + ', ' +
+             curr.x + ' ' + (curr.y - cpDist) + ', ' +
+             curr.x + ' ' + curr.y;
+      }
+
+      pathEl.setAttribute('d', d);
+      pathBg.setAttribute('d', d);
+      pathProgress.setAttribute('d', d);
+
+      // Set SVG dimensions
+      svg.setAttribute('width', containerW);
+      svg.setAttribute('height', container.scrollHeight);
+      svg.style.width = containerW + 'px';
+      svg.style.height = container.scrollHeight + 'px';
+
+      // Set dash for progress
+      var totalLen = pathEl.getTotalLength();
+      pathProgress.style.strokeDasharray = totalLen;
+      pathProgress.style.strokeDashoffset = totalLen;
+
+      return totalLen;
+    }
+
+    var totalLength = buildPath();
+
+    // Show snail
+    snail.style.opacity = '1';
+
+    // Scroll handler: move snail along path
+    function onScroll() {
+      var containerRect = container.getBoundingClientRect();
+      var containerH = container.scrollHeight;
+      var scrollTop = window.scrollY || window.pageYOffset;
+      var containerTop = container.offsetTop;
+
+      // Progress: 0 at container top, 1 at container bottom - viewport
+      var progress = (scrollTop - containerTop + window.innerHeight * 0.35) / (containerH);
+      progress = Math.max(0, Math.min(1, progress));
+
+      var len = progress * totalLength;
+
+      // Update progress path
+      pathProgress.style.strokeDashoffset = totalLength - len;
+
+      // Position snail
+      try {
+        var point = pathEl.getPointAtLength(len);
+        var point2 = pathEl.getPointAtLength(Math.min(len + 2, totalLength));
+        var angle = Math.atan2(point2.y - point.y, point2.x - point.x) * (180 / Math.PI);
+
+        var snailSize = isMobile ? 20 : 24;
+        snail.style.left = (point.x - snailSize) + 'px';
+        snail.style.top = (point.y - snailSize) + 'px';
+        snail.style.transform = 'rotate(' + (angle - 90) + 'deg)';
+      } catch(e) {}
+    }
+
+    // IntersectionObserver for revealing stops
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -10% 0px'
+    });
+
+    stops.forEach(function(stop) {
+      observer.observe(stop);
+    });
+
+    // Throttled scroll
+    var ticking = false;
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        requestAnimationFrame(function() {
+          onScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+
+    // Rebuild on resize
+    var resizeTimer;
+    window.addEventListener('resize', function() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function() {
+        totalLength = buildPath();
+        onScroll();
+      }, 200);
+    });
+
+    // Initial position
+    onScroll();
+  });
+  </script>
+</Base>
