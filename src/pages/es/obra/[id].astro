@@ -61,13 +61,19 @@ const jsonLd = {
       })();
     </script>
 
-    <div class="bg-gray-100 rounded-xl overflow-hidden mb-4">
+    <div id="image-wrap" class="bg-gray-100 rounded-xl overflow-hidden mb-4 relative">
       <img
         id="main-img"
         src={`/obras/${obra.imagen}`}
         alt={obra.titulo}
-        class="w-full h-auto object-contain cursor-zoom-in"
+        class="w-full h-auto object-contain"
+        style="transform-origin: center center; transition: transform 0.2s ease;"
       />
+      <!-- Zoom controls -->
+      <div class="absolute bottom-3 right-3 flex items-center gap-2 px-3 py-1.5 bg-white/85 backdrop-blur-sm rounded-full shadow-sm text-xs">
+        <span id="zoom-label" class="text-gray-500 min-w-[32px]">100%</span>
+        <input type="range" id="zoom-slider" min="100" max="300" value="100" step="10" class="w-20 h-[3px] cursor-pointer accent-blue-500" />
+      </div>
     </div>
 
     {detailImages.length > 0 && (
@@ -123,13 +129,130 @@ const jsonLd = {
   </div>
 
   <script is:inline>
-    document.querySelectorAll('.detail-thumb').forEach(function(thumb) {
-      thumb.addEventListener('click', function() {
-        document.querySelectorAll('.detail-thumb').forEach(function(t) { t.classList.remove('active'); });
-        thumb.classList.add('active');
-        document.getElementById('main-img').src = thumb.getAttribute('data-src');
+    (function() {
+      var img = document.getElementById('main-img');
+      var wrap = document.getElementById('image-wrap');
+      var slider = document.getElementById('zoom-slider');
+      var label = document.getElementById('zoom-label');
+      var dragX = 0, dragY = 0, isDragging = false, startX = 0, startY = 0;
+
+      function applyTransform() {
+        var scale = slider.value / 100;
+        img.style.transform = 'translate(' + dragX + 'px,' + dragY + 'px) scale(' + scale + ')';
+      }
+
+      function resetZoom() {
+        dragX = 0; dragY = 0; isDragging = false;
+        slider.value = 100;
+        label.textContent = '100%';
+        img.style.transform = '';
+        img.style.cursor = '';
+      }
+
+      // Slider
+      slider.addEventListener('input', function() {
+        label.textContent = slider.value + '%';
+        if (slider.value == 100) { dragX = 0; dragY = 0; }
+        applyTransform();
+        img.style.cursor = slider.value > 100 ? 'grab' : '';
       });
-    });
+
+      // Mouse wheel zoom
+      wrap.addEventListener('wheel', function(e) {
+        e.preventDefault();
+        var val = parseInt(slider.value) + (e.deltaY < 0 ? 10 : -10);
+        val = Math.max(100, Math.min(300, val));
+        slider.value = val;
+        label.textContent = val + '%';
+        if (val == 100) { dragX = 0; dragY = 0; }
+        applyTransform();
+        img.style.cursor = val > 100 ? 'grab' : '';
+      }, { passive: false });
+
+      // Mouse drag
+      img.addEventListener('mousedown', function(e) {
+        if (slider.value <= 100) return;
+        isDragging = true;
+        startX = e.clientX - dragX;
+        startY = e.clientY - dragY;
+        img.style.cursor = 'grabbing';
+        img.style.transition = 'none';
+        e.preventDefault();
+      });
+      document.addEventListener('mousemove', function(e) {
+        if (!isDragging) return;
+        dragX = e.clientX - startX;
+        dragY = e.clientY - startY;
+        applyTransform();
+      });
+      document.addEventListener('mouseup', function() {
+        if (!isDragging) return;
+        isDragging = false;
+        img.style.cursor = 'grab';
+        img.style.transition = '';
+      });
+
+      // Touch: pinch-to-zoom + drag
+      var pinchStartDist = 0, pinchStartScale = 1, isPinching = false;
+      function touchDist(t1, t2) {
+        var dx = t1.clientX - t2.clientX, dy = t1.clientY - t2.clientY;
+        return Math.sqrt(dx * dx + dy * dy);
+      }
+      img.addEventListener('touchstart', function(e) {
+        if (e.touches.length === 2) {
+          isPinching = true; isDragging = false;
+          pinchStartDist = touchDist(e.touches[0], e.touches[1]);
+          pinchStartScale = parseInt(slider.value) / 100;
+          img.style.transition = 'none';
+          e.preventDefault();
+        } else if (e.touches.length === 1 && parseInt(slider.value) > 100) {
+          isDragging = true;
+          startX = e.touches[0].clientX - dragX;
+          startY = e.touches[0].clientY - dragY;
+          img.style.transition = 'none';
+        }
+      }, { passive: false });
+      document.addEventListener('touchmove', function(e) {
+        if (isPinching && e.touches.length === 2) {
+          var dist = touchDist(e.touches[0], e.touches[1]);
+          var s = Math.max(1, Math.min(3, pinchStartScale * (dist / pinchStartDist)));
+          var val = Math.round(s * 100);
+          slider.value = val; label.textContent = val + '%';
+          if (val <= 100) { dragX = 0; dragY = 0; }
+          applyTransform();
+          e.preventDefault();
+        } else if (isDragging && e.touches.length === 1) {
+          dragX = e.touches[0].clientX - startX;
+          dragY = e.touches[0].clientY - startY;
+          applyTransform();
+        }
+      }, { passive: false });
+      document.addEventListener('touchend', function(e) {
+        if (isPinching) {
+          isPinching = false; img.style.transition = '';
+          if (parseInt(slider.value) <= 100) resetZoom();
+        }
+        if (isDragging && e.touches.length === 0) {
+          isDragging = false; img.style.transition = '';
+        }
+      });
+
+      // Double-click to toggle zoom
+      img.addEventListener('dblclick', function() {
+        if (slider.value > 100) { resetZoom(); }
+        else { slider.value = 200; label.textContent = '200%'; applyTransform(); img.style.cursor = 'grab'; }
+      });
+
+      // Detail thumbs
+      document.querySelectorAll('.detail-thumb').forEach(function(thumb) {
+        thumb.addEventListener('click', function() {
+          document.querySelectorAll('.detail-thumb').forEach(function(t) { t.classList.remove('active'); });
+          thumb.classList.add('active');
+          img.src = thumb.getAttribute('data-src');
+          resetZoom();
+        });
+      });
+    })();
   </script>
 
   <style>
