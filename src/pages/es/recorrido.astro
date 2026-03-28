@@ -270,6 +270,41 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
 
     var totalLength = buildPath();
 
+    // Build a lookup table: Y position → path length (for accurate Y-based positioning)
+    // This solves the problem where horizontal curves add path length that doesn't correspond to vertical progress
+    var yToLenSamples = 500;
+    var yToLenTable = []; // [{y, len}]
+    function buildYToLenTable() {
+      yToLenTable = [];
+      for (var s = 0; s <= yToLenSamples; s++) {
+        var l = (s / yToLenSamples) * totalLength;
+        var pt = pathEl.getPointAtLength(l);
+        yToLenTable.push({ y: pt.y, len: l });
+      }
+    }
+    buildYToLenTable();
+
+    // Binary search: given a target Y, find the path length where the path reaches that Y
+    function yToLength(targetY) {
+      // Clamp to path extents
+      var firstY = yToLenTable[0].y;
+      var lastY = yToLenTable[yToLenTable.length - 1].y;
+      if (targetY <= firstY) return 0;
+      if (targetY >= lastY) return totalLength;
+
+      // Binary search for the closest sample
+      var lo = 0, hi = yToLenTable.length - 1;
+      while (lo < hi - 1) {
+        var mid = (lo + hi) >> 1;
+        if (yToLenTable[mid].y < targetY) lo = mid;
+        else hi = mid;
+      }
+      // Interpolate between lo and hi
+      var a = yToLenTable[lo], b = yToLenTable[hi];
+      var frac = (b.y - a.y) > 0 ? (targetY - a.y) / (b.y - a.y) : 0;
+      return a.len + frac * (b.len - a.len);
+    }
+
     // Precompute stop Y positions (center of each stop element, relative to container)
     var stopYPositions = [];
     function computeStopPositions() {
@@ -291,24 +326,13 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
     function onScroll() {
       var scrollTop = window.scrollY || window.pageYOffset;
       var containerTop = container.offsetTop;
-      var containerH = container.scrollHeight;
       var vh = window.innerHeight;
 
-      // Fix 2: The viewport center in container-relative coordinates
+      // The viewport center in container-relative coordinates (SVG Y space)
       var viewportCenterY = scrollTop + vh * 0.45 - containerTop;
 
-      // Map viewport center to path progress:
-      // Use the same start/end Y as the SVG path points (first stop top - 40, last stop bottom + 40)
-      var firstStopY = stops[0].offsetTop - 40;
-      var lastStopEl = stops[stops.length - 1];
-      var lastStopY = lastStopEl.offsetTop + lastStopEl.offsetHeight + 40;
-      var range = lastStopY - firstStopY;
-
-      // Full 0-1 mapping matching exact SVG path extents
-      var progress = range > 0 ? (viewportCenterY - firstStopY) / range : 0;
-      progress = Math.max(0, Math.min(1, progress));
-
-      var len = progress * totalLength;
+      // Use Y→length lookup to find exactly where on the path this Y is
+      var len = yToLength(viewportCenterY);
 
       // Update progress path
       pathProgress.style.strokeDashoffset = totalLength - len;
@@ -361,6 +385,7 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(function() {
         totalLength = buildPath();
+        buildYToLenTable();
         computeStopPositions();
         onScroll();
       }, 200);
