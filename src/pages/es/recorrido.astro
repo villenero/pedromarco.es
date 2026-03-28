@@ -179,18 +179,30 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
 
     var isMobile = window.innerWidth < 640;
 
+    // Seeded pseudo-random (mulberry32) — deterministic across loads
+    function mulberry32(seed) {
+      return function() {
+        seed |= 0; seed = seed + 0x6D2B79F5 | 0;
+        var t = Math.imul(seed ^ seed >>> 15, 1 | seed);
+        t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+        return ((t ^ t >>> 14) >>> 0) / 4294967296;
+      };
+    }
+    var rand = mulberry32(42);
+
     // Compute path control points from stop positions
     function buildPath() {
       isMobile = window.innerWidth < 640;
+      // Reset seed for deterministic path on every rebuild
+      rand = mulberry32(42);
+
       var containerRect = container.getBoundingClientRect();
-      var containerTop = container.offsetTop;
       var containerW = containerRect.width;
       var centerX = isMobile ? containerW * 0.12 : containerW * 0.5;
-      var amplitude = isMobile ? 0 : containerW * 0.06;
+      var baseAmplitude = isMobile ? 0 : containerW * 0.06;
 
       // Gather Y positions for each stop
       var points = [];
-      // Start point above first stop
       var firstStop = stops[0];
       var firstY = firstStop.offsetTop - 40;
       points.push({ x: centerX, y: firstY });
@@ -200,7 +212,14 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
         var side = stop.getAttribute('data-side');
         var offsetX = 0;
         if (!isMobile) {
-          offsetX = side === 'right' ? -amplitude : amplitude;
+          // Fix 1: Vary amplitude randomly per stop
+          var ampScale = 0.5 + rand() * 1.5; // 0.5x to 2x base amplitude
+          var amp = baseAmplitude * ampScale;
+          // Occasionally flip the expected side for asymmetry
+          var flip = rand() > 0.75 ? -1 : 1;
+          offsetX = (side === 'right' ? -amp : amp) * flip;
+          // Add small random lateral jitter
+          offsetX += (rand() - 0.5) * baseAmplitude * 0.4;
         }
         points.push({ x: centerX + offsetX, y: y });
       });
@@ -210,15 +229,25 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
       var lastY = lastStop.offsetTop + lastStop.offsetHeight + 40;
       points.push({ x: centerX, y: lastY });
 
-      // Build smooth cubic bezier path
+      // Reset seed again for deterministic S-curve insertion
+      var rand2 = mulberry32(137);
+
+      // Build smooth cubic bezier path with varied control points
       var d = 'M ' + points[0].x + ' ' + points[0].y;
       for (var i = 1; i < points.length; i++) {
         var prev = points[i - 1];
         var curr = points[i];
-        var cpDist = (curr.y - prev.y) * 0.4;
-        d += ' C ' + prev.x + ' ' + (prev.y + cpDist) + ', ' +
-             curr.x + ' ' + (curr.y - cpDist) + ', ' +
-             curr.x + ' ' + curr.y;
+        var segH = curr.y - prev.y;
+        // Vary control point distance asymmetrically
+        var cpFrac1 = 0.25 + rand2() * 0.3; // 0.25–0.55
+        var cpFrac2 = 0.25 + rand2() * 0.3;
+        // Add lateral offset to control points for S-curves
+        var cpLateral = isMobile ? 0 : (rand2() - 0.5) * baseAmplitude * 1.2;
+        var cp1x = prev.x + cpLateral * 0.5;
+        var cp1y = prev.y + segH * cpFrac1;
+        var cp2x = curr.x - cpLateral * 0.5;
+        var cp2y = curr.y - segH * cpFrac2;
+        d += ' C ' + cp1x + ' ' + cp1y + ', ' + cp2x + ' ' + cp2y + ', ' + curr.x + ' ' + curr.y;
       }
 
       pathEl.setAttribute('d', d);
@@ -241,18 +270,42 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
 
     var totalLength = buildPath();
 
+    // Precompute stop Y positions (center of each stop element, relative to container)
+    var stopYPositions = [];
+    function computeStopPositions() {
+      stopYPositions = [];
+      stops.forEach(function(stop) {
+        stopYPositions.push(stop.offsetTop + stop.offsetHeight * 0.5);
+      });
+    }
+    computeStopPositions();
+
+    // Track which stops have been "entered" (for one-time translateY animation)
+    var stopsRevealed = new Array(stops.length);
+    for (var si = 0; si < stops.length; si++) stopsRevealed[si] = false;
+
     // Show snail
     snail.style.opacity = '1';
 
-    // Scroll handler: move snail along path
+    // Scroll handler: move snail along path, fade stops by proximity
     function onScroll() {
-      var containerRect = container.getBoundingClientRect();
-      var containerH = container.scrollHeight;
       var scrollTop = window.scrollY || window.pageYOffset;
       var containerTop = container.offsetTop;
+      var containerH = container.scrollHeight;
+      var vh = window.innerHeight;
 
-      // Progress: 0 at container top, 1 at container bottom - viewport
-      var progress = (scrollTop - containerTop + window.innerHeight * 0.35) / (containerH);
+      // Fix 2: The viewport center in container-relative coordinates
+      var viewportCenterY = scrollTop + vh * 0.45 - containerTop;
+
+      // Map viewport center to path progress:
+      // First stop Y → progress 0, last stop Y → progress 1
+      var firstStopY = stops[0].offsetTop;
+      var lastStopEl = stops[stops.length - 1];
+      var lastStopY = lastStopEl.offsetTop + lastStopEl.offsetHeight;
+      var range = lastStopY - firstStopY;
+
+      // Fix 4: Full 0-1 mapping over the stop range
+      var progress = range > 0 ? (viewportCenterY - firstStopY) / range : 0;
       progress = Math.max(0, Math.min(1, progress));
 
       var len = progress * totalLength;
@@ -261,6 +314,7 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
       pathProgress.style.strokeDashoffset = totalLength - len;
 
       // Position snail
+      var snailY = 0;
       try {
         var point = pathEl.getPointAtLength(len);
         var point2 = pathEl.getPointAtLength(Math.min(len + 2, totalLength));
@@ -270,26 +324,24 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
         snail.style.left = (point.x - snailSize) + 'px';
         snail.style.top = (point.y - snailSize) + 'px';
         snail.style.transform = 'rotate(' + (angle - 90) + 'deg)';
+        snailY = point.y;
       } catch(e) {}
-    }
 
-    // IntersectionObserver for revealing stops
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-          observer.unobserve(entry.target);
+      // Fix 3: Fade stops based on proximity to snail
+      stops.forEach(function(stop, i) {
+        var stopCenterY = stopYPositions[i];
+        var dist = Math.abs(stopCenterY - snailY);
+        var opacity = Math.max(0.15, 1 - dist / 600);
+
+        // One-time reveal animation (translateY entrance)
+        if (!stopsRevealed[i] && opacity > 0.3) {
+          stopsRevealed[i] = true;
+          stop.style.transform = 'translateY(0)';
         }
-      });
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -10% 0px'
-    });
 
-    stops.forEach(function(stop) {
-      observer.observe(stop);
-    });
+        stop.style.opacity = opacity;
+      });
+    }
 
     // Throttled scroll
     var ticking = false;
@@ -309,6 +361,7 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(function() {
         totalLength = buildPath();
+        computeStopPositions();
         onScroll();
       }, 200);
     });
