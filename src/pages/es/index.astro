@@ -58,21 +58,7 @@ const jsonLd = {
 >
   <!-- Filter bar -->
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-    <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-3">
-      <div class="relative flex-1 max-w-sm">
-        <input
-          type="text"
-          id="search-input"
-          placeholder="Buscar por título, técnica, año..."
-          class="w-full pl-9 pr-8 py-2 text-sm border border-gray-200 rounded-full bg-white focus:outline-none focus:border-gray-400 focus:ring-1 focus:ring-gray-200 transition-colors"
-        />
-        <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-        <button id="search-clear" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 hidden" aria-label="Limpiar búsqueda">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
-        </button>
-      </div>
-    </div>
-    <div class="flex flex-wrap gap-1">
+    <div class="flex flex-wrap items-center gap-1">
       <button class="filter-btn px-3 py-1 text-sm rounded-full border border-transparent transition-colors hover:text-gray-900" data-category="all">
         {t('home.all')} <span class="badge">{obras.obras.length}</span>
       </button>
@@ -81,6 +67,18 @@ const jsonLd = {
           {cat} <span class="badge">{categoriaCounts[cat]}</span>
         </button>
       ))}
+      <div class="relative ml-auto w-48 sm:w-56">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Buscar..."
+          class="w-full pl-8 pr-7 py-1.5 text-sm border border-gray-200 rounded-full bg-white focus:outline-none focus:border-gray-400 focus:ring-1 focus:ring-gray-200 transition-colors"
+        />
+        <svg class="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <button id="search-clear" class="absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 hidden" aria-label="Limpiar búsqueda">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
     </div>
   </div>
 
