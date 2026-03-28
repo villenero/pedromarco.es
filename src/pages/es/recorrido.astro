@@ -408,10 +408,7 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
     var pathStartY = pathTable[0].y;
     var pathEndY = pathTable[pathTable.length - 1].y;
 
-    // PERF: On mobile, hide progress path entirely (saves expensive dashoffset repaint)
-    if (isMobile) {
-      pathProgress.style.display = 'none';
-    }
+    // Progress path visible on all devices
 
     // === Scroll handler (optimized) ===
     function onScroll() {
@@ -425,10 +422,8 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
       var targetY = pathStartY + scrollFrac * (pathEndY - pathStartY);
       var pt = lookupByY(targetY);
 
-      // Update progress path (desktop only)
-      if (!isMobile) {
-        pathProgress.style.strokeDashoffset = totalLength - pt.len;
-      }
+      // Update progress path
+      pathProgress.style.strokeDashoffset = totalLength - pt.len;
 
       // Position snail with transform only (no layout)
       var tx = pt.x - snailSize;
@@ -485,8 +480,7 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
         buildPathTable();
         pathStartY = pathTable[0].y;
         pathEndY = pathTable[pathTable.length - 1].y;
-        if (isMobile) { pathProgress.style.display = 'none'; }
-        else { pathProgress.style.display = ''; }
+        
         positionStops();
         computeStopPositions();
         onScroll();

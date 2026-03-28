@@ -2631,6 +2631,34 @@
       "categoria": "Cuadros",
       "destacada": true,
       "propietario": "Ayto. Villena"
+    },
+    {
+      "id": "1979-pelea",
+      "titulo": "Pelea",
+      "año": 1979,
+      "tecnica": "Técnica mixta sobre papel",
+      "descripcion": "Dos cabezas aviares —esqueléticas, crudas, semejantes a gallos desplumados o cráneos de ave— se enfrentan pico contra pico en el centro de la composición, trabadas en combate. De cada cabeza brotan enormes torbellinos de energía en espiral que se desbordan más allá del rectángulo pintado hacia los márgenes blancos. Las cabezas se resuelven con detalle casi hiperrealista de carne texturada y tejido expuesto, mientras los remolinos circundantes se ejecutan en pinceladas gestuales, largas y caligráficas que crean un contraste dramático entre quietud y movimiento. Paleta terrosa y contenida de ocres, beiges, marrones cálidos y grises sobre fondo crema.",
+      "dimensiones": "No definido",
+      "imagen": "1979 pelea.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "1982-ciudades",
+      "titulo": "Las ciudades no mueren (díptico)",
+      "año": 1982,
+      "tecnica": "Acrílico sobre tela (díptico)",
+      "descripcion": "Espacio perspectivo monumental: un vasto muro lavanda que se fuga hacia un punto de fuga donde emerge una mano realista empuñando pinceles dentro de un torbellino de energía creativa. La palabra «VILLENA» se inscribe sobre la superficie violeta. Textos manuscritos y fragmentos poéticos salpican la composición creando un palimpsesto de memoria personal y cívica. La textura del muro evoca mampostería erosionada, mientras la escritura integrada en la pintura difumina la línea entre cuadro y documento. El formato díptico refuerza el eje perspectivo dividiendo literalmente la pared de la ciudad. Paleta dominada por lavandas, cremas melocotón y ocres cálidos en una atmósfera luminosa y onírica.",
+      "dimensiones": "161 × 192 cm",
+      "imagen": "1982 Ciudades.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": true,
+      "propietario": "Ayuntamiento de Villena"
     }
   ]
 }
