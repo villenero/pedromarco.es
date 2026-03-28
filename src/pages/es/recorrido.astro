@@ -198,8 +198,8 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
 
       var containerRect = container.getBoundingClientRect();
       var containerW = containerRect.width;
-      var centerX = isMobile ? containerW * 0.12 : containerW * 0.5;
-      var baseAmplitude = isMobile ? 0 : containerW * 0.06;
+      var centerX = isMobile ? containerW * 0.15 : containerW * 0.5;
+      var baseAmplitude = isMobile ? containerW * 0.06 : containerW * 0.06;
 
       // Gather Y positions for each stop
       var points = [];
@@ -211,16 +211,14 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
         var y = stop.offsetTop + 20;
         var side = stop.getAttribute('data-side');
         var offsetX = 0;
-        if (!isMobile) {
-          // Fix 1: Vary amplitude randomly per stop
-          var ampScale = 0.5 + rand() * 1.5; // 0.5x to 2x base amplitude
-          var amp = baseAmplitude * ampScale;
-          // Occasionally flip the expected side for asymmetry
-          var flip = rand() > 0.75 ? -1 : 1;
-          offsetX = (side === 'right' ? -amp : amp) * flip;
-          // Add small random lateral jitter
-          offsetX += (rand() - 0.5) * baseAmplitude * 0.4;
-        }
+        // Vary amplitude randomly per stop
+        var ampScale = 0.5 + rand() * 1.5; // 0.5x to 2x base amplitude
+        var amp = baseAmplitude * ampScale;
+        // Occasionally flip the expected side for asymmetry
+        var flip = rand() > 0.75 ? -1 : 1;
+        offsetX = (side === 'right' ? -amp : amp) * flip;
+        // Add small random lateral jitter
+        offsetX += (rand() - 0.5) * baseAmplitude * 0.4;
         points.push({ x: centerX + offsetX, y: y });
       });
 
@@ -242,7 +240,7 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
         var cpFrac1 = 0.25 + rand2() * 0.3; // 0.25–0.55
         var cpFrac2 = 0.25 + rand2() * 0.3;
         // Add lateral offset to control points for S-curves
-        var cpLateral = isMobile ? 0 : (rand2() - 0.5) * baseAmplitude * 1.2;
+        var cpLateral = (rand2() - 0.5) * baseAmplitude * 1.2;
         var cp1x = prev.x + cpLateral * 0.5;
         var cp1y = prev.y + segH * cpFrac1;
         var cp2x = curr.x - cpLateral * 0.5;
