@@ -580,18 +580,6 @@ const jsonLd = {
     const searchClear = document.getElementById('search-clear');
     let activeCategory = 'Cuadros';
 
-    // Check for ?year= param (from recorrido page)
-    var urlParams = new URLSearchParams(window.location.search);
-    var yearFilter = urlParams.get('year');
-    if (yearFilter) {
-      // Show all categories when filtering by year
-      activeCategory = 'all';
-      buttons.forEach(function(b) {
-        b.classList.toggle('active', b.getAttribute('data-category') === 'all');
-      });
-      searchInput.value = yearFilter;
-    }
-
     function normalize(str) {
       return (str || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     }
@@ -630,17 +618,9 @@ const jsonLd = {
     searchInput.addEventListener('input', applyFilters);
     searchClear.addEventListener('click', () => {
       searchInput.value = '';
-      // Clear year param from URL
-      if (window.history.replaceState) {
-        var cleanUrl = window.location.pathname;
-        window.history.replaceState({}, '', cleanUrl);
-      }
       applyFilters();
       searchInput.focus();
     });
-
-    // Apply filters on load (handles ?year= param)
-    applyFilters();
   </script>
 </Base>
 

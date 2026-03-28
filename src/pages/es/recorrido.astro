@@ -112,15 +112,10 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
           <!-- Content -->
           <div>
             <!-- Year label -->
-            <div class="mb-3 flex items-baseline gap-3">
+            <div class="mb-3">
               <span class={`text-2xl sm:text-3xl font-black ${stop.milestone ? 'text-amber-800' : 'text-gray-700'}`}>
                 {stop.year}
               </span>
-              {stop.obras.length > 0 && (
-                <a href={`/es/?year=${stop.year}`} class="year-link text-xs text-amber-700/70 hover:text-amber-800 transition-colors opacity-0" style="transition: opacity 0.3s;">
-                  ver obras de este año →
-                </a>
-              )}
             </div>
 
             {/* Milestone text */}
@@ -424,12 +419,6 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
         }
 
         stop.style.opacity = opacity;
-
-        // Show "ver obras" link only when snail is close
-        var yearLink = stop.querySelector('.year-link');
-        if (yearLink) {
-          yearLink.style.opacity = dist < 200 ? '1' : '0';
-        }
       });
     }
 
