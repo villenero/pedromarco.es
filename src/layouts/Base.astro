@@ -62,7 +62,7 @@ const ogImage = image ?? `${siteUrl}/favicon-512.png`;
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
         <a href="/es/" class="hover:opacity-70 transition-opacity">
-          <img src="/logo.png" alt="Pedro Marco" class="h-8" />
+          <img src="/logo.png" alt="Pedro Marco" class="h-6 sm:h-8" />
         </a>
 
         <!-- Nav links (desktop) -->
@@ -92,14 +92,14 @@ const ogImage = image ?? `${siteUrl}/favicon-512.png`;
 
     <!-- Mobile menu -->
     <div id="mobile-menu" class="sm:hidden hidden border-t border-gray-100 bg-white/95 backdrop-blur-md">
-      <div class="flex flex-col px-4 py-3 gap-3 text-sm">
-        <a href="/es/" class="py-1 hover:opacity-70 transition-opacity">
+      <div class="flex flex-col items-center py-4 gap-3 text-sm">
+        <a href="/es/" class="py-1.5 hover:opacity-70 transition-opacity">
           {t('nav.home')}
         </a>
-        <a href="/es/sobre" class="py-1 hover:opacity-70 transition-opacity">
+        <a href="/es/sobre" class="py-1.5 hover:opacity-70 transition-opacity">
           {t('nav.about')}
         </a>
-        <a href="/es/recorrido" class="py-1 hover:opacity-70 transition-opacity">
+        <a href="/es/recorrido" class="py-1.5 hover:opacity-70 transition-opacity">
           {t('nav.journey')}
         </a>
       </div>
