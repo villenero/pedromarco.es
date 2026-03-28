@@ -39,7 +39,7 @@
       "en_venta": false,
       "precio": null,
       "categoria": "Cuadros",
-      "destacada": false,
+      "destacada": true,
       "propietario": "José Marco Esteban"
     },
     {
@@ -53,7 +53,7 @@
       "en_venta": false,
       "precio": null,
       "categoria": "Cuadros",
-      "destacada": false,
+      "destacada": true,
       "propietario": "José Manuel Soler López"
     },
     {
@@ -67,7 +67,7 @@
       "en_venta": false,
       "precio": null,
       "categoria": "Retratos",
-      "destacada": false,
+      "destacada": true,
       "propietario": "Familia Marco Hernández"
     },
     {
@@ -2514,6 +2514,20 @@
       "descripcion": "Figura central surrealista —ser híbrido entre lo orgánico, lo mecánico y lo musical— que se alza solitaria en un paisaje vasto y desértico de horizonte infinito. Una espiral de caracol o cuerno corona la composición, envolviendo un rostro sereno y contemplativo, mientras el cuerpo vertical integra elementos de instrumento de cuerda y velos translúcidos que penden de apéndices extendidos. Siluetas de palmeras en rosa coral contrastan con la paleta dominante de grises, lavandas y ocres arenosos. En la tradición del surrealismo metafísico, la obra evoca soledad, misterio y una quieta introspección dentro de un espacio atemporal.",
       "dimensiones": "No definido",
       "imagen": "2020 Espantapajaros.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "1975-mujer",
+      "titulo": "Mujer",
+      "año": 1975,
+      "tecnica": "Óleo sobre lienzo",
+      "descripcion": "Torso femenino desnudo, sin cabeza, modelado con precisión académica, que emerge entre un caos de esferas de reloj, engranajes y mecanismos horológicos. La paleta se bifurca dramáticamente: tonos luminosos de aguamarina, ámbar y dorado en la izquierda frente a un campo profundo de carbón y gris ciruela que engulle el lado derecho. La carne, en suaves tonos melocotón y marfil, contrasta con la maquinaria del tiempo que la rodea e invade. Un drapeado dorado corona la composición como último destello de vitalidad. Surrealismo existencial en la línea de Dalí, pero más oscuro e industrial: el tiempo como fuerza mecánica, no como sueño fundido.",
+      "dimensiones": "No definido",
+      "imagen": "1975 mujer.jpg",
       "en_venta": false,
       "precio": null,
       "categoria": "Cuadros",
