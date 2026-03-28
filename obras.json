@@ -2589,6 +2589,48 @@
       "categoria": "Cuadros",
       "destacada": false,
       "propietario": "Andrés Menor"
+    },
+    {
+      "id": "1972-bailarina",
+      "titulo": "Bailarina",
+      "año": 1972,
+      "tecnica": "Acrílico sobre tabla",
+      "descripcion": "Figura biomórfica y amorfa que evoca el cuerpo de una bailarina en movimiento, con cavidades orgánicas arremolinadas y formas casi anatómicas. Una pequeña y delicada figura femenina se cobija en uno de los huecos, mientras un círculo geométrico —luna o foco— flota en la parte superior. Paleta nacarada de malvas, rosas polvorientos, grises cálidos, cremas y ocres, salpicada de toques de rojo profundo y carbón en las cavidades interiores. Pincelada fluida y envolvente con veladuras translúcidas que crean profundidad y movimiento.",
+      "dimensiones": "58 x 39 cm",
+      "imagen": "1972 bailarina.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": "Pepe Ferrando"
+    },
+    {
+      "id": "2001-siglo-xx",
+      "titulo": "Siglo XX",
+      "año": 2001,
+      "tecnica": "Técnica mixta sobre lienzo",
+      "descripcion": "Composición dual que referencia a Picasso: un autoretrato de Pedro a la izquierda y un desnudo femenino a la derecha, separados por una columna vertical que evoca el borde de un lienzo. Una ornamentada zapatilla de torero en dorado y ocre domina la parte inferior. La inscripción «S.XX» ancla la composición. Dibujo de contorno suelto en verde azulado combinado con empastes densos y pictóricos en la zapatilla y el cabello, creando un diálogo entre homenaje e interpretación propia.",
+      "dimensiones": "66 x 47 cm",
+      "imagen": "2001 Siglo XX.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": "Familia Pedro Marco"
+    },
+    {
+      "id": "2004-metamorfosis-perdida",
+      "titulo": "Metamorfosis perdida",
+      "año": 2004,
+      "tecnica": "Grafito y témpera acrílica sobre cartón",
+      "descripcion": "Una cabeza translúcida con forma de casco o insecto, en verde acuoso, flota en el centro brotando delicadas alas de libélula —criatura atrapada a mitad de transformación. Debajo, una forma densa de media luna rebosa de fragmentos mecánicos y orgánicos: engranajes, ojos, texturas, retículas y detalles biomórficos, desplegados con extraordinaria precisión de grafito. Un plano geométrico diagonal corta el fondo superior. Paleta predominantemente monocromática de grises, platas y blancos, con el acento vibrante del verde translúcido concentrado en la cabeza metamórfica.",
+      "dimensiones": "100 x 70 cm",
+      "imagen": "2004 Metamorfosis perdida.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": true,
+      "propietario": "Ayto. Villena"
     }
   ]
 }
