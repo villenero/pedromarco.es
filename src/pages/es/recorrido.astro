@@ -104,40 +104,30 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
       <!-- Year stops -->
       {stops.map((stop, i) => (
         <div
-          class={`timeline-stop relative flex items-start gap-4 sm:gap-8 mb-16 sm:mb-24 opacity-0 translate-y-8 ${
-            stop.side === 'right' ? 'flex-row' : 'flex-row-reverse'
-          }`}
+          class={`timeline-stop mb-16 sm:mb-24 opacity-0 translate-y-8`}
           data-year={stop.year}
           data-side={stop.side}
           data-index={i}
         >
-          <!-- Spacer for path column -->
-          <div class="hidden sm:block w-[45%] shrink-0" />
-
           <!-- Content -->
-          <div class={`flex-1 min-w-0 ${stop.side === 'right' ? 'sm:text-left' : 'sm:text-right'}`}>
+          <div>
             <!-- Year label -->
-            <div class={`inline-flex items-center gap-2 mb-3 ${stop.side === 'left' ? 'sm:flex-row-reverse' : ''}`}>
+            <div class="mb-3">
               <span class={`text-2xl sm:text-3xl font-black ${stop.milestone ? 'text-amber-800' : 'text-gray-700'}`}>
                 {stop.year}
               </span>
-              {stop.milestone && (
-                <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
-              )}
             </div>
 
             {/* Milestone text */}
             {stop.milestone && (
-              <p class={`text-sm sm:text-base text-amber-800/80 font-medium mb-3 italic`}>
+              <p class="text-sm sm:text-base text-amber-800/80 font-medium mb-3 italic">
                 {stop.milestone}
               </p>
             )}
 
             {/* Artwork thumbnails */}
             {stop.obras.length > 0 && (
-              <div class={`grid grid-cols-3 sm:grid-cols-4 gap-1.5 sm:gap-2 mt-2 ${
-                stop.side === 'left' ? 'sm:ml-auto sm:max-w-[20rem]' : 'sm:max-w-[20rem]'
-              }`}>
+              <div class={`grid grid-cols-3 sm:grid-cols-4 gap-1.5 sm:gap-2 mt-2 max-w-[20rem] ${stop.side === 'left' ? 'ml-auto' : ''}`}>
                 {stop.obras.slice(0, 8).map((obra) => (
                   <a
                     href={`/es/obra/${obra.id}`}
@@ -309,6 +299,43 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
       return a.len + frac * (b.len - a.len);
     }
 
+    // Get path X coordinate at a given Y
+    function getPathXAtY(targetY) {
+      var len = yToLength(targetY);
+      var pt = pathEl.getPointAtLength(len);
+      return pt.x;
+    }
+
+    // Position each stop horizontally relative to the path's X at that stop's Y
+    var GAP_FROM_PATH = 40; // px gap between path and content
+    function positionStops() {
+      var containerW = container.getBoundingClientRect().width;
+      stops.forEach(function(stop) {
+        var side = stop.getAttribute('data-side');
+        var stopY = stop.offsetTop + 20; // approximate Y where this stop sits
+        var pathX = getPathXAtY(stopY);
+
+        if (isMobile) {
+          // On mobile, content goes to the right of the path
+          stop.style.marginLeft = (pathX + GAP_FROM_PATH) + 'px';
+          stop.style.marginRight = '0';
+          stop.style.textAlign = 'left';
+        } else if (side === 'right') {
+          // Content to the right of the path
+          stop.style.marginLeft = (pathX + GAP_FROM_PATH) + 'px';
+          stop.style.marginRight = '0';
+          stop.style.textAlign = 'left';
+        } else {
+          // Content to the left of the path — right-aligned
+          var rightEdge = containerW - pathX + GAP_FROM_PATH;
+          stop.style.marginLeft = '0';
+          stop.style.marginRight = rightEdge + 'px';
+          stop.style.textAlign = 'right';
+        }
+      });
+    }
+    positionStops();
+
     // Precompute stop Y positions (center of each stop element, relative to container)
     var stopYPositions = [];
     function computeStopPositions() {
@@ -402,6 +429,7 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
         buildYToLenTable();
         pathStartY = yToLenTable[0].y;
         pathEndY = yToLenTable[yToLenTable.length - 1].y;
+        positionStops();
         computeStopPositions();
         onScroll();
       }, 200);
