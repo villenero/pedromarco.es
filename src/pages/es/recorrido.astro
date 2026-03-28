@@ -312,24 +312,22 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
       var containerW = container.getBoundingClientRect().width;
       stops.forEach(function(stop) {
         var side = stop.getAttribute('data-side');
-        var stopY = stop.offsetTop + 20; // approximate Y where this stop sits
+        var stopY = stop.offsetTop + 20;
         var pathX = getPathXAtY(stopY);
 
         if (isMobile) {
-          // On mobile, content goes to the right of the path
           stop.style.marginLeft = (pathX + GAP_FROM_PATH) + 'px';
-          stop.style.marginRight = '0';
+          stop.style.width = (containerW - pathX - GAP_FROM_PATH) + 'px';
           stop.style.textAlign = 'left';
         } else if (side === 'right') {
-          // Content to the right of the path
+          // Content to the right of the path, left-aligned (grows away from path)
           stop.style.marginLeft = (pathX + GAP_FROM_PATH) + 'px';
-          stop.style.marginRight = '0';
+          stop.style.width = (containerW - pathX - GAP_FROM_PATH) + 'px';
           stop.style.textAlign = 'left';
         } else {
-          // Content to the left of the path — right-aligned
-          var rightEdge = containerW - pathX + GAP_FROM_PATH;
+          // Content to the left of the path, right-aligned (grows away from path)
           stop.style.marginLeft = '0';
-          stop.style.marginRight = rightEdge + 'px';
+          stop.style.width = (pathX - GAP_FROM_PATH) + 'px';
           stop.style.textAlign = 'right';
         }
       });
