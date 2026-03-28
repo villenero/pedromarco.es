@@ -320,6 +320,10 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
     // Show snail
     snail.style.opacity = '1';
 
+    // Get the Y coordinate of the first point on the path (where the snail starts)
+    var pathStartPoint = pathEl.getPointAtLength(0);
+    var pathStartY = pathStartPoint.y; // in SVG/container coords
+
     // Scroll handler: move snail along path, fade stops by proximity
     function onScroll() {
       var scrollTop = window.scrollY || window.pageYOffset;
@@ -329,8 +333,14 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
       // The viewport center in container-relative coordinates (SVG Y space)
       var viewportCenterY = scrollTop + vh * 0.45 - containerTop;
 
-      // Use Y→length lookup to find exactly where on the path this Y is
-      var len = yToLength(viewportCenterY);
+      // The snail starts at the path start point and only begins moving
+      // when the viewport center reaches that point. Before that, len = 0.
+      var len;
+      if (viewportCenterY <= pathStartY) {
+        len = 0;
+      } else {
+        len = yToLength(viewportCenterY);
+      }
 
       // Update progress path
       pathProgress.style.strokeDashoffset = totalLength - len;
@@ -384,6 +394,8 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
       resizeTimer = setTimeout(function() {
         totalLength = buildPath();
         buildYToLenTable();
+        pathStartPoint = pathEl.getPointAtLength(0);
+        pathStartY = pathStartPoint.y;
         computeStopPositions();
         onScroll();
       }, 200);
