@@ -114,7 +114,7 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
             <!-- Year label -->
             <div class="mb-3">
               {stop.obras.length > 0 ? (
-                <a href={`/es/?year=${stop.year}`} class={`text-2xl sm:text-3xl font-black hover:underline decoration-2 underline-offset-4 ${stop.milestone ? 'text-amber-800' : 'text-gray-700'}`}>
+                <a href={stop.obras.length === 1 ? `/es/obra/${stop.obras[0].id}?from=recorrido` : `/es/?year=${stop.year}`} class={`text-2xl sm:text-3xl font-black hover:underline decoration-2 underline-offset-4 ${stop.milestone ? 'text-amber-800' : 'text-gray-700'}`}>
                   {stop.year}
                 </a>
               ) : (
