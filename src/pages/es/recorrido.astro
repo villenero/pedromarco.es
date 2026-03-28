@@ -131,6 +131,7 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
                 {stop.obras.slice(0, 8).map((obra) => (
                   <a
                     href={`/es/obra/${obra.id}?from=recorrido`}
+                    data-recorrido-link
                     title={obra.titulo}
                     class="block aspect-square rounded-md overflow-hidden border border-amber-200/50 hover:border-amber-500 hover:scale-105 transition-all duration-200 shadow-sm hover:shadow-md"
                     style="direction:ltr"
@@ -434,8 +435,27 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
       }, 200);
     });
 
-    // Initial position
-    onScroll();
+    // Save scroll position when clicking obra links
+    document.querySelectorAll('[data-recorrido-link]').forEach(function(link) {
+      link.addEventListener('click', function() {
+        sessionStorage.setItem('recorrido-scroll', window.scrollY);
+      });
+    });
+
+    // Restore scroll position if returning from obra page
+    var savedScroll = sessionStorage.getItem('recorrido-scroll');
+    if (savedScroll !== null) {
+      sessionStorage.removeItem('recorrido-scroll');
+      // Mark all stops as revealed to skip entrance animations
+      for (var ri = 0; ri < stops.length; ri++) {
+        stopsRevealed[ri] = true;
+        stops[ri].style.transform = 'translateY(0)';
+      }
+      window.scrollTo(0, parseInt(savedScroll, 10));
+      onScroll();
+    } else {
+      onScroll();
+    }
   });
   </script>
 </Base>
