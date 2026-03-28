@@ -46,9 +46,20 @@ const jsonLd = {
 
 <Base title={`${titulo} — Pedro Marco`} description={description} image={ogImage} jsonLd={jsonLd}>
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <a href="/es/" class="inline-flex items-center gap-1 text-sm text-gray-500 hover:text-gray-900 mb-6 transition-colors">
-      ← {t('artwork.back')}
+    <a id="back-link" href="/es/" class="inline-flex items-center gap-1 text-sm text-gray-500 hover:text-gray-900 mb-6 transition-colors">
+      ← <span id="back-text">{t('artwork.back')}</span>
     </a>
+    <script is:inline>
+      (function() {
+        var params = new URLSearchParams(window.location.search);
+        if (params.get('from') === 'recorrido') {
+          var link = document.getElementById('back-link');
+          var text = document.getElementById('back-text');
+          if (link) link.href = '/es/recorrido';
+          if (text) text.textContent = 'Volver al recorrido';
+        }
+      })();
+    </script>
 
     <div class="bg-gray-100 rounded-xl overflow-hidden mb-4">
       <img

@@ -130,7 +130,7 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
               <div class={`grid grid-cols-3 sm:grid-cols-4 gap-1.5 sm:gap-2 mt-2 max-w-[20rem] ${stop.side === 'left' ? 'ml-auto' : ''}`} style={stop.side === 'left' ? 'direction:rtl' : ''}>
                 {stop.obras.slice(0, 8).map((obra) => (
                   <a
-                    href={`/es/obra/${obra.id}`}
+                    href={`/es/obra/${obra.id}?from=recorrido`}
                     title={obra.titulo}
                     class="block aspect-square rounded-md overflow-hidden border border-amber-200/50 hover:border-amber-500 hover:scale-105 transition-all duration-200 shadow-sm hover:shadow-md"
                     style="direction:ltr"
