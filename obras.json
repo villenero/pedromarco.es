@@ -2575,6 +2575,20 @@
       "categoria": "Cuadros",
       "destacada": false,
       "propietario": "Paco Torreblanca"
+    },
+    {
+      "id": "2006-lombarda",
+      "titulo": "Lombarda",
+      "año": 2006,
+      "tecnica": "Témpera y plombagina sobre tabla",
+      "descripcion": "Torso masculino sin cabeza, delineado en rosa, encerrado en una gran esfera translúcida y nacarada. Una hoja vegetal sustituye la cabeza mientras otras flanquean el orbe a ambos lados. Paneles geométricos rectangulares enmarcan la composición. Paleta dominada por violetas, púrpuras, lavandas y magentas, con un campo rosado en la base. El torso se resuelve como contorno lineal fluido —presencia espectral más que forma sólida— mientras las hojas se detallan con precisión realista frente a las pinceladas expresivas y arremolinadas del fondo. Surrealismo que funde lo orgánico vegetal con lo humano dentro de una burbuja onírica.",
+      "dimensiones": "90 x 120 cm",
+      "imagen": "2006 lombarda.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": "Andrés Menor"
     }
   ]
 }
