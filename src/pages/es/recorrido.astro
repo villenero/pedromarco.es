@@ -298,13 +298,13 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
       var viewportCenterY = scrollTop + vh * 0.45 - containerTop;
 
       // Map viewport center to path progress:
-      // First stop Y → progress 0, last stop Y → progress 1
-      var firstStopY = stops[0].offsetTop;
+      // Use the same start/end Y as the SVG path points (first stop top - 40, last stop bottom + 40)
+      var firstStopY = stops[0].offsetTop - 40;
       var lastStopEl = stops[stops.length - 1];
-      var lastStopY = lastStopEl.offsetTop + lastStopEl.offsetHeight;
+      var lastStopY = lastStopEl.offsetTop + lastStopEl.offsetHeight + 40;
       var range = lastStopY - firstStopY;
 
-      // Fix 4: Full 0-1 mapping over the stop range
+      // Full 0-1 mapping matching exact SVG path extents
       var progress = range > 0 ? (viewportCenterY - firstStopY) / range : 0;
       progress = Math.max(0, Math.min(1, progress));
 
