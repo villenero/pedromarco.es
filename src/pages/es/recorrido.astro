@@ -113,9 +113,15 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
           <div>
             <!-- Year label -->
             <div class="mb-3">
-              <span class={`text-2xl sm:text-3xl font-black ${stop.milestone ? 'text-amber-800' : 'text-gray-700'}`}>
-                {stop.year}
-              </span>
+              {stop.obras.length > 0 ? (
+                <a href={`/es/?year=${stop.year}`} class={`text-2xl sm:text-3xl font-black hover:underline decoration-2 underline-offset-4 ${stop.milestone ? 'text-amber-800' : 'text-gray-700'}`}>
+                  {stop.year}
+                </a>
+              ) : (
+                <span class={`text-2xl sm:text-3xl font-black ${stop.milestone ? 'text-amber-800' : 'text-gray-700'}`}>
+                  {stop.year}
+                </span>
+              )}
             </div>
 
             {/* Milestone text */}
