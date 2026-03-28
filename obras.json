@@ -1989,20 +1989,6 @@
       "propietario": null
     },
     {
-      "id": "20210305-131323",
-      "titulo": "Génesis onírica",
-      "año": 2021,
-      "tecnica": "Grafito sobre papel",
-      "descripcion": "Una gran esfera levita sobre un paisaje austero; su superficie está íntegramente cubierta de un abigarrado universo de figuras, criaturas, motivos ornamentales y formas biomórficas dibujadas con extraordinaria minuciosidad. Planeta-manuscrito o atlas onírico donde lo cósmico y lo microscópico convergen en un virtuoso ejercicio de grafito",
-      "dimensiones": "No definido",
-      "imagen": "20210305_131323.jpg",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "Cuadros",
-      "destacada": false,
-      "propietario": null
-    },
-    {
       "id": "2021-05-juan-manuel",
       "titulo": "Juan Manuel (códice)",
       "año": 2021,
@@ -2729,6 +2715,20 @@
       "categoria": "Cuadros",
       "destacada": false,
       "propietario": "Manuel Salguero"
+    },
+    {
+      "id": "2021-paisaje-poetico",
+      "titulo": "Paisaje Poético",
+      "año": 2021,
+      "tecnica": "Técnica mixta sobre papel",
+      "descripcion": "Una gran esfera flota sobre un paisaje brumoso y minimalista donde dos semiesferas menores emergen del suelo herboso. La esfera dominante está densamente cubierta por un microcosmos intrincado de imaginería surrealista: formas orgánicas, criaturas fantásticas, motivos botánicos, fragmentos arquitectónicos y figuras mitológicas, todo entretejido con extraordinario detalle obsesivo. Paleta fría y contenida de azul hielo pálido, gris plateado y blanco azulado, con sutiles destellos de verde y ocre dorado emanando del centro luminoso de la esfera. El contraste entre el microdetalle minucioso de la esfera y el fondo etéreo casi vacío evoca el realismo fantástico visionario.",
+      "dimensiones": "50 x 72 cm",
+      "imagen": "2021 Paisaje Poetico.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": "Colección particular"
     }
   ]
 }
