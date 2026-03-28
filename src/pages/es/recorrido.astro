@@ -127,7 +127,7 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
 
             {/* Artwork thumbnails */}
             {stop.obras.length > 0 && (
-              <div class={`grid grid-cols-4 sm:grid-cols-4 gap-1 sm:gap-2 mt-2 max-w-[14rem] sm:max-w-[20rem] ${stop.side === 'left' ? 'ml-auto' : ''}`} style={stop.side === 'left' ? 'direction:rtl' : ''}>
+              <div class={`thumb-grid grid grid-cols-4 gap-1 sm:gap-2 mt-2 max-w-[14rem] sm:max-w-[20rem]`} data-side={stop.side}>
                 {stop.obras.slice(0, 8).map((obra) => (
                   <a
                     href={`/es/obra/${obra.id}?from=recorrido`}
@@ -182,6 +182,14 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
       pathBg.setAttribute('filter', 'url(#brush-stroke)');
       pathProgress.setAttribute('filter', 'url(#brush-stroke)');
     }
+
+    // On desktop, left-side thumbnail grids use rtl + ml-auto to align toward the path
+    document.querySelectorAll('.thumb-grid').forEach(function(grid) {
+      if (!isMobile && grid.getAttribute('data-side') === 'left') {
+        grid.style.direction = 'rtl';
+        grid.style.marginLeft = 'auto';
+      }
+    });
 
     // Seeded pseudo-random (mulberry32) — deterministic across loads
     function mulberry32(seed) {
