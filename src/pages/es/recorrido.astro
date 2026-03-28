@@ -326,27 +326,24 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
     // Show snail
     snail.style.opacity = '1';
 
-    // Get the Y coordinate of the first point on the path (where the snail starts)
-    var pathStartPoint = pathEl.getPointAtLength(0);
-    var pathStartY = pathStartPoint.y; // in SVG/container coords
+    // Get the Y coordinates of path start and end
+    var pathStartY = yToLenTable[0].y;
+    var pathEndY = yToLenTable[yToLenTable.length - 1].y;
 
     // Scroll handler: move snail along path, fade stops by proximity
     function onScroll() {
       var scrollTop = window.scrollY || window.pageYOffset;
-      var containerTop = container.offsetTop;
       var vh = window.innerHeight;
 
-      // The viewport center in container-relative coordinates (SVG Y space)
-      var viewportCenterY = scrollTop + vh * 0.45 - containerTop;
+      // Simple linear mapping: scroll=0 → snail at path start, scroll=max → snail at path end
+      // This guarantees the snail starts at the first point and reaches the last point
+      var scrollMax = document.documentElement.scrollHeight - vh;
+      var scrollFrac = scrollMax > 0 ? scrollTop / scrollMax : 0;
+      scrollFrac = Math.max(0, Math.min(1, scrollFrac));
 
-      // The snail starts at the path start point and only begins moving
-      // when the viewport center reaches that point. Before that, len = 0.
-      var len;
-      if (viewportCenterY <= pathStartY) {
-        len = 0;
-      } else {
-        len = yToLength(viewportCenterY);
-      }
+      // Map scroll fraction to a Y coordinate on the path, then use Y→length lookup
+      var targetY = pathStartY + scrollFrac * (pathEndY - pathStartY);
+      var len = yToLength(targetY);
 
       // Update progress path
       pathProgress.style.strokeDashoffset = totalLength - len;
@@ -400,8 +397,8 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
       resizeTimer = setTimeout(function() {
         totalLength = buildPath();
         buildYToLenTable();
-        pathStartPoint = pathEl.getPointAtLength(0);
-        pathStartY = pathStartPoint.y;
+        pathStartY = yToLenTable[0].y;
+        pathEndY = yToLenTable[yToLenTable.length - 1].y;
         computeStopPositions();
         onScroll();
       }, 200);
