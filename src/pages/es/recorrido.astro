@@ -104,7 +104,7 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
       <!-- Year stops -->
       {stops.map((stop, i) => (
         <div
-          class={`timeline-stop relative flex items-start gap-4 sm:gap-8 mb-16 sm:mb-24 opacity-0 translate-y-8 transition-all duration-700 ${
+          class={`timeline-stop relative flex items-start gap-4 sm:gap-8 mb-16 sm:mb-24 opacity-0 translate-y-8 ${
             stop.side === 'right' ? 'flex-row' : 'flex-row-reverse'
           }`}
           data-year={stop.year}
@@ -368,10 +368,13 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
         var dist = Math.abs(stopCenterY - snailY);
         var opacity = Math.max(0.15, 1 - dist / 600);
 
-        // One-time reveal animation (translateY entrance)
+        // One-time reveal animation (translateY entrance with temporary transition)
         if (!stopsRevealed[i] && opacity > 0.3) {
           stopsRevealed[i] = true;
+          stop.style.transition = 'transform 0.6s ease-out';
           stop.style.transform = 'translateY(0)';
+          // Remove transition after animation completes so it doesn't slow down opacity updates
+          setTimeout(function() { stop.style.transition = ''; }, 650);
         }
 
         stop.style.opacity = opacity;
