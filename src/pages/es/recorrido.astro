@@ -286,77 +286,95 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
 
     var totalLength = buildPath();
 
-    // Build a lookup table: Y position → path length (for accurate Y-based positioning)
-    // This solves the problem where horizontal curves add path length that doesn't correspond to vertical progress
-    var yToLenSamples = 500;
-    var yToLenTable = []; // [{y, len}]
-    function buildYToLenTable() {
-      yToLenTable = [];
-      for (var s = 0; s <= yToLenSamples; s++) {
-        var l = (s / yToLenSamples) * totalLength;
+    // === PERF OPTIMIZATION: Precalculate dense lookup table ===
+    // Store {x, y, len, angle} for every sample point on the path.
+    // This eliminates ALL getPointAtLength() calls during scroll.
+    var NUM_SAMPLES = 500;
+    var pathTable = []; // [{x, y, len, angle}]
+    function buildPathTable() {
+      pathTable = [];
+      for (var s = 0; s <= NUM_SAMPLES; s++) {
+        var l = (s / NUM_SAMPLES) * totalLength;
         var pt = pathEl.getPointAtLength(l);
-        yToLenTable.push({ y: pt.y, len: l });
+        // Compute angle from next point
+        var l2 = Math.min(l + 2, totalLength);
+        var pt2 = pathEl.getPointAtLength(l2);
+        var angle = Math.atan2(pt2.y - pt.y, pt2.x - pt.x) * (180 / Math.PI);
+        pathTable.push({ x: pt.x, y: pt.y, len: l, angle: angle });
       }
     }
-    buildYToLenTable();
+    buildPathTable();
 
-    // Binary search: given a target Y, find the path length where the path reaches that Y
-    function yToLength(targetY) {
-      // Clamp to path extents
-      var firstY = yToLenTable[0].y;
-      var lastY = yToLenTable[yToLenTable.length - 1].y;
-      if (targetY <= firstY) return 0;
-      if (targetY >= lastY) return totalLength;
+    // Binary search by Y in pathTable — returns interpolated {x, y, len, angle}
+    function lookupByY(targetY) {
+      var first = pathTable[0], last = pathTable[pathTable.length - 1];
+      if (targetY <= first.y) return first;
+      if (targetY >= last.y) return last;
 
-      // Binary search for the closest sample
-      var lo = 0, hi = yToLenTable.length - 1;
+      var lo = 0, hi = pathTable.length - 1;
       while (lo < hi - 1) {
         var mid = (lo + hi) >> 1;
-        if (yToLenTable[mid].y < targetY) lo = mid;
+        if (pathTable[mid].y < targetY) lo = mid;
         else hi = mid;
       }
-      // Interpolate between lo and hi
-      var a = yToLenTable[lo], b = yToLenTable[hi];
+      var a = pathTable[lo], b = pathTable[hi];
       var frac = (b.y - a.y) > 0 ? (targetY - a.y) / (b.y - a.y) : 0;
-      return a.len + frac * (b.len - a.len);
+      return {
+        x: a.x + frac * (b.x - a.x),
+        y: a.y + frac * (b.y - a.y),
+        len: a.len + frac * (b.len - a.len),
+        angle: a.angle + frac * (b.angle - a.angle)
+      };
     }
 
-    // Get path X coordinate at a given Y
-    function getPathXAtY(targetY) {
-      var len = yToLength(targetY);
-      var pt = pathEl.getPointAtLength(len);
-      return pt.x;
+    // Binary search by length in pathTable
+    function lookupByLen(targetLen) {
+      if (targetLen <= 0) return pathTable[0];
+      if (targetLen >= totalLength) return pathTable[pathTable.length - 1];
+
+      var lo = 0, hi = pathTable.length - 1;
+      while (lo < hi - 1) {
+        var mid = (lo + hi) >> 1;
+        if (pathTable[mid].len < targetLen) lo = mid;
+        else hi = mid;
+      }
+      var a = pathTable[lo], b = pathTable[hi];
+      var frac = (b.len - a.len) > 0 ? (targetLen - a.len) / (b.len - a.len) : 0;
+      return {
+        x: a.x + frac * (b.x - a.x),
+        y: a.y + frac * (b.y - a.y),
+        len: a.len + frac * (b.len - a.len),
+        angle: a.angle + frac * (b.angle - a.angle)
+      };
     }
 
     // Position each stop horizontally relative to the path's X at that stop's Y
-    var GAP_FROM_PATH = 40; // px gap between path and content
+    var GAP_FROM_PATH = 40;
     function positionStops() {
       var containerW = container.getBoundingClientRect().width;
       stops.forEach(function(stop) {
         var side = stop.getAttribute('data-side');
         var stopY = stop.offsetTop + 20;
-        var pathX = getPathXAtY(stopY);
+        var pt = lookupByY(stopY);
 
         if (isMobile) {
-          stop.style.marginLeft = (pathX + GAP_FROM_PATH) + 'px';
-          stop.style.width = (containerW - pathX - GAP_FROM_PATH) + 'px';
+          stop.style.marginLeft = (pt.x + GAP_FROM_PATH) + 'px';
+          stop.style.width = (containerW - pt.x - GAP_FROM_PATH) + 'px';
           stop.style.textAlign = 'left';
         } else if (side === 'right') {
-          // Content to the right of the path, left-aligned (grows away from path)
-          stop.style.marginLeft = (pathX + GAP_FROM_PATH) + 'px';
-          stop.style.width = (containerW - pathX - GAP_FROM_PATH) + 'px';
+          stop.style.marginLeft = (pt.x + GAP_FROM_PATH) + 'px';
+          stop.style.width = (containerW - pt.x - GAP_FROM_PATH) + 'px';
           stop.style.textAlign = 'left';
         } else {
-          // Content to the left of the path, right-aligned (grows away from path)
           stop.style.marginLeft = '0';
-          stop.style.width = (pathX - GAP_FROM_PATH) + 'px';
+          stop.style.width = (pt.x - GAP_FROM_PATH) + 'px';
           stop.style.textAlign = 'right';
         }
       });
     }
     positionStops();
 
-    // Precompute stop Y positions (center of each stop element, relative to container)
+    // Precompute stop Y positions
     var stopYPositions = [];
     function computeStopPositions() {
       stopYPositions = [];
@@ -366,69 +384,85 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
     }
     computeStopPositions();
 
-    // Track which stops have been "entered" (for one-time translateY animation)
+    // Track reveal state + previous opacity (only update DOM when changed)
     var stopsRevealed = new Array(stops.length);
-    for (var si = 0; si < stops.length; si++) stopsRevealed[si] = false;
+    var prevOpacities = new Array(stops.length);
+    for (var si = 0; si < stops.length; si++) {
+      stopsRevealed[si] = false;
+      prevOpacities[si] = 0;
+    }
 
-    // Show snail
+    // PERF: Add will-change hint to stops for compositor optimization
+    stops.forEach(function(stop) { stop.style.willChange = 'opacity, transform'; });
+
+    // PERF: Snail uses only transform (no left/top changes = no layout)
+    snail.style.position = 'absolute';
+    snail.style.left = '0';
+    snail.style.top = '0';
+    snail.style.willChange = 'transform';
     snail.style.opacity = '1';
 
-    // Get the Y coordinates of path start and end
-    var pathStartY = yToLenTable[0].y;
-    var pathEndY = yToLenTable[yToLenTable.length - 1].y;
+    var snailSize = isMobile ? 16 : 24;
 
-    // Scroll handler: move snail along path, fade stops by proximity
+    // Get path Y extents
+    var pathStartY = pathTable[0].y;
+    var pathEndY = pathTable[pathTable.length - 1].y;
+
+    // PERF: On mobile, hide progress path entirely (saves expensive dashoffset repaint)
+    if (isMobile) {
+      pathProgress.style.display = 'none';
+    }
+
+    // === Scroll handler (optimized) ===
     function onScroll() {
       var scrollTop = window.scrollY || window.pageYOffset;
       var vh = window.innerHeight;
-
-      // Simple linear mapping: scroll=0 → snail at path start, scroll=max → snail at path end
-      // This guarantees the snail starts at the first point and reaches the last point
       var scrollMax = document.documentElement.scrollHeight - vh;
       var scrollFrac = scrollMax > 0 ? scrollTop / scrollMax : 0;
-      scrollFrac = Math.max(0, Math.min(1, scrollFrac));
+      if (scrollFrac < 0) scrollFrac = 0;
+      if (scrollFrac > 1) scrollFrac = 1;
 
-      // Map scroll fraction to a Y coordinate on the path, then use Y→length lookup
       var targetY = pathStartY + scrollFrac * (pathEndY - pathStartY);
-      var len = yToLength(targetY);
+      var pt = lookupByY(targetY);
 
-      // Update progress path
-      pathProgress.style.strokeDashoffset = totalLength - len;
+      // Update progress path (desktop only)
+      if (!isMobile) {
+        pathProgress.style.strokeDashoffset = totalLength - pt.len;
+      }
 
-      // Position snail
-      var snailY = 0;
-      try {
-        var point = pathEl.getPointAtLength(len);
-        var point2 = pathEl.getPointAtLength(Math.min(len + 2, totalLength));
-        var angle = Math.atan2(point2.y - point.y, point2.x - point.x) * (180 / Math.PI);
+      // Position snail with transform only (no layout)
+      var tx = pt.x - snailSize;
+      var ty = pt.y - snailSize;
+      snail.style.transform = 'translate(' + tx + 'px,' + ty + 'px) rotate(' + (pt.angle - 90) + 'deg)';
 
-        var snailSize = isMobile ? 16 : 24;
-        snail.style.left = (point.x - snailSize) + 'px';
-        snail.style.top = (point.y - snailSize) + 'px';
-        snail.style.transform = 'rotate(' + (angle - 90) + 'deg)';
-        snailY = point.y;
-      } catch(e) {}
+      var snailY = pt.y;
 
-      // Fix 3: Fade stops based on proximity to snail
-      stops.forEach(function(stop, i) {
-        var stopCenterY = stopYPositions[i];
-        var dist = Math.abs(stopCenterY - snailY);
-        var opacity = Math.max(0.15, 1 - dist / 600);
+      // Fade stops — only update DOM when opacity actually changes
+      for (var i = 0; i < stops.length; i++) {
+        var dist = stopYPositions[i] - snailY;
+        if (dist < 0) dist = -dist;
+        var opacity = 1 - dist / 600;
+        if (opacity < 0.15) opacity = 0.15;
+        // Round to 2 decimals to reduce DOM writes
+        opacity = Math.round(opacity * 50) / 50;
 
-        // One-time reveal animation (translateY entrance with temporary transition)
-        if (!stopsRevealed[i] && opacity > 0.3) {
-          stopsRevealed[i] = true;
-          stop.style.transition = 'transform 0.6s ease-out';
-          stop.style.transform = 'translateY(0)';
-          // Remove transition after animation completes so it doesn't slow down opacity updates
-          setTimeout(function() { stop.style.transition = ''; }, 650);
+        if (opacity !== prevOpacities[i]) {
+          prevOpacities[i] = opacity;
+          stops[i].style.opacity = opacity;
         }
 
-        stop.style.opacity = opacity;
-      });
+        if (!stopsRevealed[i] && opacity > 0.3) {
+          stopsRevealed[i] = true;
+          stops[i].style.transition = 'transform 0.6s ease-out';
+          stops[i].style.transform = 'translateY(0)';
+          (function(el) {
+            setTimeout(function() { el.style.transition = ''; }, 650);
+          })(stops[i]);
+        }
+      }
     }
 
-    // Throttled scroll
+    // Throttled scroll with rAF
     var ticking = false;
     window.addEventListener('scroll', function() {
       if (!ticking) {
@@ -438,17 +472,21 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
         });
         ticking = true;
       }
-    });
+    }, { passive: true });
 
     // Rebuild on resize
     var resizeTimer;
     window.addEventListener('resize', function() {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(function() {
+        isMobile = window.innerWidth < 640;
+        snailSize = isMobile ? 16 : 24;
         totalLength = buildPath();
-        buildYToLenTable();
-        pathStartY = yToLenTable[0].y;
-        pathEndY = yToLenTable[yToLenTable.length - 1].y;
+        buildPathTable();
+        pathStartY = pathTable[0].y;
+        pathEndY = pathTable[pathTable.length - 1].y;
+        if (isMobile) { pathProgress.style.display = 'none'; }
+        else { pathProgress.style.display = ''; }
         positionStops();
         computeStopPositions();
         onScroll();
@@ -466,7 +504,6 @@ const stopsJson = JSON.stringify(stops.map(s => ({ year: s.year, milestone: s.mi
     var savedScroll = sessionStorage.getItem('recorrido-scroll');
     if (savedScroll !== null) {
       sessionStorage.removeItem('recorrido-scroll');
-      // Mark all stops as revealed to skip entrance animations
       for (var ri = 0; ri < stops.length; ri++) {
         stopsRevealed[ri] = true;
         stops[ri].style.transform = 'translateY(0)';
