@@ -2273,7 +2273,7 @@
       "titulo": "Junta Central de Fiestas",
       "año": 2021,
       "tecnica": "Óleo sobre lienzo",
-      "descripcion": "Obra conmemorativa del cincuentenario (1970–2020) donde la Virgen de las Virtudes, con manto triangular, corona de estrellas y media luna, preside en primer plano el multitudinario desfile de Moros y Cristianos. Las comparsas convergen en perspectiva frontal hacia la fachada roja del Santuario de las Virtudes al fondo, en una paleta cálida de rojos, dorados y carmines contrapuesta al blanco luminoso del manto mariano y al cielo crepuscular violáceo.",
+      "descripcion": "Obra conmemorativa del cincuentenario (1970–2020) donde la Virgen de las Virtudes, con manto triangular, corona de estrellas y media luna, preside en primer plano el multitudinario desfile de Moros y Cristianos. Las comparsas convergen en perspectiva frontal hacia la fachada roja de la Junta Central de Fiestas al fondo, en una paleta cálida de rojos, dorados y carmines contrapuesta al blanco luminoso del manto mariano y al cielo crepuscular violáceo.",
       "dimensiones": "No definido",
       "imagen": "2021 Junta Central de Fiestas.jpg",
       "en_venta": false,
@@ -2286,21 +2286,21 @@
       "id": "2021-palero-marco",
       "titulo": "Palero Marco",
       "año": 2021,
-      "tecnica": "Técnica mixta (grafito, tinta y acuarela) sobre papel",
-      "descripcion": "Triple retrato masculino que muestra un mismo individuo en tres edades sucesivas —juventud, madurez, vejez— como meditación sobre el paso del tiempo. Los retratos en virtuosa grisalla de grafito se integran con un universo vegetal y animal minuciosamente descrito: ramas, reptiles, caracoles, lombarda seccionada. Dos rectángulos de color puro en degradado —naranja-magenta y amarillo-turquesa— rompen el ilusionismo e introducen un plano abstracto que define el lenguaje del artista.",
+      "tecnica": "Técnica mixta (grafito, tinta y acuarela) sobre cartón",
+      "descripcion": "Triple retrato masculino que muestra tres generaciones sucesivas —juventud, madurez, vejez— como meditación sobre el paso del tiempo. Los retratos en virtuosa grisalla de grafito se integran con un universo vegetal y animal minuciosamente descrito: ramas, reptiles, caracoles, lombarda seccionada. Dos rectángulos de color puro en degradado —naranja-magenta y amarillo-turquesa— rompen el ilusionismo e introducen un plano abstracto que define el lenguaje del artista.",
       "dimensiones": "No definido",
       "imagen": "2021 Palero Marco.jpg",
       "en_venta": false,
       "precio": null,
       "categoria": "Retratos",
       "destacada": false,
-      "propietario": null
+      "propietario": "Ricardo Palero"
     },
     {
       "id": "2021-cardo",
       "titulo": "Cardo",
       "año": 2021,
-      "tecnica": "Acuarela sobre papel",
+      "tecnica": "Acuarela y grafito sobre cartón",
       "descripcion": "Vanitas botánica de ejecución hiperrealista donde una única hoja seca de cardo, curvada por la deshidratación, dialoga con su propia sombra proyectada que se desvanece como eco fantasmal. Paleta contenida de ocres, sienas y dorados sobre el blanco del papel. El amplio espacio vacío genera tensión contemplativa, poniendo el virtuosismo técnico al servicio de una poética del silencio y la fragilidad.",
       "dimensiones": "No definido",
       "imagen": "2021 cardo.jpg",
@@ -2308,7 +2308,7 @@
       "precio": null,
       "categoria": "Cuadros",
       "destacada": false,
-      "propietario": null
+      "propietario": "Familia Pedro Marco"
     },
     {
       "id": "2022-gloria",
