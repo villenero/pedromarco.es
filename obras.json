@@ -858,7 +858,7 @@
       "id": "2004-sahara",
       "titulo": "Sáhara",
       "año": 2004,
-      "tecnica": "Óleo sobre lienzo",
+      "tecnica": "Témpera sobre cartón",
       "descripcion": "Tres figuras saharauis ataviadas con melhfas y turbantes caminan agrupadas por una inmensidad desértica al amanecer. La pincelada horizontal y diluida, casi acuarelística, funde tierra y cielo en una gama de rosas, salmones y ocres que transita hacia azules cerúleos. Las figuras, descentradas en el tercio izquierdo, generan un vacío expansivo que acentúa la soledad y la condición nómada, elevando la escena del costumbrismo a la evocación lírica.",
       "dimensiones": "No definido",
       "imagen": "2004 sahara.jpg",
@@ -1079,6 +1079,20 @@
       "propietario": null
     },
     {
+      "id": "2010-abanico-festero",
+      "titulo": "Abanico festero",
+      "año": 2010,
+      "tecnica": "Pintura sobre tela montada en varillaje de madera calada",
+      "descripcion": "Abanico festero dedicado «A Judit» con la Virgen de las Virtudes, patrona de Villena, entronizada bajo arco clasicista rematado por el escudo de la ciudad. Los estandartes multicolores de las comparsas moras y cristianas se despliegan simétricamente en haz radial que replica la propia estructura del objeto. Roleos vegetales de acanto y tallos florales de trazo barroco enmarcan la escena sobre fondo marfil con irradiación dorada. Pieza única de encargo, representativa de la tradición villenera de regalar abanicos pintados a las festeras.",
+      "dimensiones": "No definido",
+      "imagen": "2010 abanico festero.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Diseño",
+      "destacada": false,
+      "propietario": null
+    },
+    {
       "id": "eros-columna",
       "titulo": "Eros Columna",
       "año": 2011,
@@ -1208,7 +1222,7 @@
       "id": "2011-orejon",
       "titulo": "Orejón",
       "año": 2011,
-      "tecnica": "Óleo sobre lienzo",
+      "tecnica": "Óleo sobre cartón",
       "descripcion": "Portada arquitectónica resuelta con virtuosismo hiperrealista en trampantojo donde dos mascarones se integran en la sillería caliza: un putto sonriente enmarcado por hojas de vid y un busto masculino con bigote y gorguera flanqueado por racimos de uva. La composición vertical y simétrica progresa desde una banda dorada superior hasta un portón claveteado, conjugando lo vivo petrificado con la frialdad mineral en la tensión surrealista característica del autor.",
       "dimensiones": "No definido",
       "imagen": "2011 orejon.jpg",
@@ -1216,7 +1230,7 @@
       "precio": null,
       "categoria": "Cuadros",
       "destacada": false,
-      "propietario": null
+      "propietario": "Pastillo"
     },
     {
       "id": "2011-villeneras",
@@ -2326,7 +2340,7 @@
     },
     {
       "id": "20201210-211638",
-      "titulo": "Erizo",
+      "titulo": "Fertilidad",
       "año": null,
       "tecnica": "Grafito y lápiz de color sobre papel",
       "descripcion": "Una cáscara de erizo de castaña abierta, dibujada con hiperrealismo en grafito, irradia púas con precisión obsesiva alrededor de un interior vacío de formas suavemente orgánicas. De su base pende una única gota de rojo intenso, único acento cromático que introduce tensión entre lo natural y lo carnal",
