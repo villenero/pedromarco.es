@@ -1499,20 +1499,6 @@
       "propietario": null
     },
     {
-      "id": "2016-08-ventanas",
-      "titulo": "Ventanas al vértigo",
-      "año": 2016,
-      "tecnica": "Grafito y acuarela sobre papel",
-      "descripcion": "Un jarrón clásico de piedra sostiene una flor estallada en vivos azules y rojos, único elemento cromático en una escena resuelta casi íntegramente en grises. Flanqueada por una ventana de balcón y un cielo nuboso, la composición se abre hacia una espiral galáctica, enlazando lo doméstico con lo cósmico",
-      "dimensiones": "No definido",
-      "imagen": "2016-08 ventanas.jpg",
-      "en_venta": false,
-      "precio": null,
-      "categoria": "Cuadros",
-      "destacada": false,
-      "propietario": null
-    },
-    {
       "id": "2017-apium",
       "titulo": "Apium",
       "año": 2017,
@@ -2728,7 +2714,7 @@
       "precio": null,
       "categoria": "Cuadros",
       "destacada": false,
-      "propietario": "Antonio Estevan"
+      "propietario": "Antonio Estevan y Teresa Torres"
     },
     {
       "id": "1996-villenera",
