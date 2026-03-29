@@ -449,6 +449,20 @@
       "propietario": null
     },
     {
+      "id": "1992-alegoria",
+      "titulo": "Alegoría",
+      "año": 1992,
+      "tecnica": "Grafito sobre papel",
+      "descripcion": "Reinterpretación surrealista de la Flora botticelliana en la que una figura femenina coronada de flores emerge como aparición fantasmagórica. El trazo combina la precisión del dibujo académico con gestos expresivos y difuminados que disuelven los contornos en el vacío del papel. La obra, enteramente monocromática en negros y grises, explora el diálogo entre lo clásico y lo efímero, entre la tradición renacentista y la sensibilidad onírica contemporánea.",
+      "dimensiones": "No definido",
+      "imagen": "1992 Alegoria.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": "Isabel Navarro Maestre"
+    },
+    {
       "id": "94-02",
       "titulo": "Amor de Piedra",
       "año": 1994,
@@ -503,6 +517,20 @@
       "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
+    },
+    {
+      "id": "1994-mochilera",
+      "titulo": "Mochilera",
+      "año": 1994,
+      "tecnica": "Litografía (P/A) con intervenciones de color",
+      "descripcion": "Prueba de artista en litografía donde una figura femenina con gafas de sol y ropajes ornamentales se metamorfosea en un ensamblaje de fragmentos arquitectónicos, mecánicos y astros. Un puntillismo minucioso convive con trazos gestuales de plumilla, creando una alegoría de la mujer como portadora de universos interiores. En la zona inferior, una forma espiral-caracola genera un contrapunto dinámico sobre el vacío deliberado del papel.",
+      "dimensiones": "50,5 x 41 cm",
+      "imagen": "1994 mochilera.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": "Antonio Prats García"
     },
     {
       "id": "95-03",
@@ -631,6 +659,20 @@
       "propietario": "Isabel Navarro Maestre"
     },
     {
+      "id": "1996-constelaciones-2",
+      "titulo": "Constelaciones II",
+      "año": 1996,
+      "tecnica": "Grafito sobre cartón",
+      "descripcion": "Atlas simbólico de cosmogonía surrealista que entrelaza pirámides, esferas planetarias, un rostro arcaico con cuernos, estructuras mandálicas concéntricas y constelaciones unidas por puntos. Trazos caligráficos negros de vocación casi oriental barren el espacio apaisado, superpuestos a una retícula de coordenadas que sostiene el orden racional bajo el flujo onírico. Un gabinete de curiosidades cósmicas dibujado con precisión de astrónomo y libertad de soñador.",
+      "dimensiones": "17 x 27 cm",
+      "imagen": "1996 Constelaciones 2.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": null
+    },
+    {
       "id": "97-02",
       "titulo": "Carnero Asirio",
       "año": 1997,
@@ -685,6 +727,20 @@
       "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
+    },
+    {
+      "id": "1997-autoretrato",
+      "titulo": "Autorretrato",
+      "año": 1997,
+      "tecnica": "Técnica mixta sobre cartón",
+      "descripcion": "Autorretrato surrealista de composición panorámica horizontal en el que el rostro del artista, con gafas y barba, emerge de una banda oscura desplazado hacia la derecha. Un caracol realista en tonos dorados y ocres descansa sobre formas orgánicas curvas, mientras puntas o clavos metálicos atraviesan la composición. La paleta, austera y predominantemente monocromática con acentos oxidados, refuerza la atmósfera introspectiva y los temas de tiempo, fragilidad y permanencia.",
+      "dimensiones": "38 x 71 cm",
+      "imagen": "1997 autoretrato.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": "Familia Pedro Marco"
     },
     {
       "id": "fragmentos-del-vacio",
@@ -2721,7 +2777,7 @@
       "titulo": "Paisaje Poético",
       "año": 2021,
       "tecnica": "Técnica mixta sobre papel",
-      "descripcion": "Una gran esfera flota sobre un paisaje brumoso y minimalista donde dos semiesferas menores emergen del suelo herboso. La esfera dominante está densamente cubierta por un microcosmos intrincado de imaginería surrealista: formas orgánicas, criaturas fantásticas, motivos botánicos, fragmentos arquitectónicos y figuras mitológicas, todo entretejido con extraordinario detalle obsesivo. Paleta fría y contenida de azul hielo pálido, gris plateado y blanco azulado, con sutiles destellos de verde y ocre dorado emanando del centro luminoso de la esfera. El contraste entre el microdetalle minucioso de la esfera y el fondo etéreo casi vacío evoca el realismo fantástico visionario.",
+      "descripcion": "Una gran esfera flota sobre un paisaje brumoso y minimalista donde dos semiesferas menores emergen del suelo herboso. La esfera dominante está densamente cubierta por un microcosmos intrincado de imaginería surrealista: formas orgánicas, criaturas fantásticas, motivos botánicos, fragmentos arquitectónicos y figuras mitológicas, todo entretejido con extraordinario detalle obsesivo. Paleta fría con sutiles destellos de verde y ocre dorado emanando del centro luminoso de la esfera. El contraste entre el microdetalle minucioso de la esfera y el fondo etéreo casi vacío evoca el realismo fantástico visionario.",
       "dimensiones": "50 x 72 cm",
       "imagen": "2021 Paisaje Poetico.jpg",
       "en_venta": false,
