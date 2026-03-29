@@ -2241,6 +2241,34 @@
       "propietario": "Familia Pedro Marco"
     },
     {
+      "id": "2021-dama-ibera",
+      "titulo": "Dama Íbera",
+      "año": 2021,
+      "tecnica": "Técnica mixta (grafito, tinta y acuarela) sobre papel",
+      "descripcion": "Composición simbólico-mitológica que entrelaza referentes del arte ibérico y el imaginario levantino. Una criatura híbrida cérvido-ave con tratamiento ornamental evocador de la cerámica ibérica de Elche-Archena corona la imagen, mientras en el centro una gran forma orgánica —entre vasija, cráneo y paisaje interior— alberga árboles y vegetación ramificada. Paleta terrosa y mediterránea de grises, rojos almagra y verdes acuosos que dialoga entre arqueología, naturaleza y memoria del territorio del Alto Vinalopó.",
+      "dimensiones": "No definido",
+      "imagen": "2021 Dama Ibera.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "2021-nuestro-adn",
+      "titulo": "Nuestro ADN",
+      "año": 2021,
+      "tecnica": "Técnica mixta (acrílico, grafito y tinta) sobre papel",
+      "descripcion": "Evocación de la iconografía faraónica donde un rostro frontal con nemes emerge como aparición espectral de veladuras acuosas en verdes agua, azules cerúleos y grises plateados. Dos bloques rectangulares en magenta anclan la mitad inferior como contrapunto abstracto-constructivista, mientras un gran arco envolvente enmarca la figura generando profundidad de nicho. Diálogo entre memoria histórica y disolución contemporánea de la forma.",
+      "dimensiones": "No definido",
+      "imagen": "2021 Nuestro ADN.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": null
+    },
+    {
       "id": "2022-gloria",
       "titulo": "Gloria",
       "año": 2022,
