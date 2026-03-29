@@ -855,6 +855,20 @@
       "propietario": null
     },
     {
+      "id": "2004-sahara",
+      "titulo": "Sáhara",
+      "año": 2004,
+      "tecnica": "Óleo sobre lienzo",
+      "descripcion": "Tres figuras saharauis ataviadas con melhfas y turbantes caminan agrupadas por una inmensidad desértica al amanecer. La pincelada horizontal y diluida, casi acuarelística, funde tierra y cielo en una gama de rosas, salmones y ocres que transita hacia azules cerúleos. Las figuras, descentradas en el tercio izquierdo, generan un vacío expansivo que acentúa la soledad y la condición nómada, elevando la escena del costumbrismo a la evocación lírica.",
+      "dimensiones": "No definido",
+      "imagen": "2004 sahara.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": null
+    },
+    {
       "id": "2005-sarri",
       "titulo": "Sarri",
       "año": 2005,
@@ -1187,6 +1201,34 @@
       "en_venta": false,
       "precio": null,
       "categoria": "Retratos",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "2011-orejon",
+      "titulo": "Orejón",
+      "año": 2011,
+      "tecnica": "Óleo sobre lienzo",
+      "descripcion": "Portada arquitectónica resuelta con virtuosismo hiperrealista en trampantojo donde dos mascarones se integran en la sillería caliza: un putto sonriente enmarcado por hojas de vid y un busto masculino con bigote y gorguera flanqueado por racimos de uva. La composición vertical y simétrica progresa desde una banda dorada superior hasta un portón claveteado, conjugando lo vivo petrificado con la frialdad mineral en la tensión surrealista característica del autor.",
+      "dimensiones": "No definido",
+      "imagen": "2011 orejon.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "2011-villeneras",
+      "titulo": "Villeneras",
+      "año": 2011,
+      "tecnica": "Óleo sobre lienzo",
+      "descripcion": "Cuatro mujeres con indumentaria tradicional villenense —jubón negro, tocado con velo y faldas de rayas policromas— ejecutan una danza festera con castañuelas en alto bajo un gran arco semicircular que funciona como mandorla laica. Un eje vertical de cruz-péndulo con inserciones doradas organiza la composición simétrica, mientras luna creciente, palmera y crepúsculo anaranjado configuran un paisaje levantino onírico que eleva la danza popular a visión arquetípica.",
+      "dimensiones": "No definido",
+      "imagen": "2011 villeneras.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
