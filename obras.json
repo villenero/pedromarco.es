@@ -379,6 +379,20 @@
       "propietario": null
     },
     {
+      "id": "1990-josefa-hurtado",
+      "titulo": "Josefa Hurtado",
+      "año": 1990,
+      "tecnica": "Óleo sobre lienzo",
+      "descripcion": "Mise en abyme de factura hiperrealista donde un retrato femenino enmarcado —mujer de cabello ondulado y blusa estampada en lila y oro— dialoga con una planta tillandsia sobre peana de bronce Art Nouveau en primer plano. La composición en capas de profundidad reflexiona sobre presencia, memoria y el juego entre lo vivo y lo representado, en una paleta cálida de cremas, ocres dorados y malvas que envuelve la escena en atmósfera íntima.",
+      "dimensiones": "No definido",
+      "imagen": "1990 Josefa Hurtado.jpeg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Retratos",
+      "destacada": false,
+      "propietario": null
+    },
+    {
       "id": "91-01",
       "titulo": "Tótem rosa",
       "año": 1991,
@@ -957,7 +971,7 @@
       "titulo": "Cartel Fiestas de Moros y Cristianos",
       "año": 2007,
       "tecnica": "Técnica mixta (fotografía, pintura y diseño gráfico)",
-      "descripcion": "Cartel oficial de las Fiestas de Moros y Cristianos de Villena 2007. La muralla como soporte simbólico de memoria y fortaleza: un fondo fotográfico de paramento pétreo sobre el que irrumpen bloques negros geométricos y pinceladas gestuales en rojo carmesí que evocan pasión festera. Un trazo curvo inferior alude a la media luna sin figuración literal. Economía de medios que equilibra abstracción contemporánea y evocación histórica.",
+      "descripcion": "Cartel oficial de las Fiestas de Moros y Cristianos de Villena 2007. La torre del Castillo como soporte simbólico de memoria y fortaleza: un fondo fotográfico de paramento pétreo sobre el que irrumpen bloques negros geométricos y pinceladas gestuales en rojo carmesí que evocan pasión festera. Un trazo curvo inferior alude a la media luna sin figuración literal. Economía de medios que equilibra abstracción contemporánea y evocación histórica.",
       "dimensiones": "No definido",
       "imagen": "2007 cartel fiestas.jpg",
       "en_venta": false,
@@ -2714,7 +2728,7 @@
       "precio": null,
       "categoria": "Cuadros",
       "destacada": false,
-      "propietario": null
+      "propietario": "Antonio Estevan"
     },
     {
       "id": "1996-villenera",
