@@ -72,7 +72,7 @@ const jsonLd = {
           type="text"
           id="search-input"
           placeholder="Buscar..."
-          class="w-full pl-8 pr-7 py-1.5 text-sm border border-gray-200 rounded-full bg-white focus:outline-none focus:border-gray-400 focus:ring-1 focus:ring-gray-200 transition-colors"
+          class="w-full pl-8 pr-7 py-1.5 text-base border border-gray-200 rounded-full bg-white focus:outline-none focus:border-gray-400 focus:ring-1 focus:ring-gray-200 transition-colors"
         />
         <svg class="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
         <button id="search-clear" class="absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 hidden" aria-label="Limpiar búsqueda">
@@ -602,7 +602,7 @@ const jsonLd = {
       items.forEach(item => {
         const idx = parseInt(item.getAttribute('data-index'));
         const obra = obrasData[idx];
-        const catMatch = activeCategory === 'all' || obra.categoria === activeCategory;
+        const catMatch = query ? true : (activeCategory === 'all' || obra.categoria === activeCategory);
 
         let searchMatch = true;
         if (query) {
