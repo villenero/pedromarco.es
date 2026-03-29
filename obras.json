@@ -953,6 +953,20 @@
       "propietario": null
     },
     {
+      "id": "2007-cartel-fiestas",
+      "titulo": "Cartel Fiestas de Moros y Cristianos",
+      "año": 2007,
+      "tecnica": "Técnica mixta (fotografía, pintura y diseño gráfico)",
+      "descripcion": "Cartel oficial de las Fiestas de Moros y Cristianos de Villena 2007. La muralla como soporte simbólico de memoria y fortaleza: un fondo fotográfico de paramento pétreo sobre el que irrumpen bloques negros geométricos y pinceladas gestuales en rojo carmesí que evocan pasión festera. Un trazo curvo inferior alude a la media luna sin figuración literal. Economía de medios que equilibra abstracción contemporánea y evocación histórica.",
+      "dimensiones": "No definido",
+      "imagen": "2007 cartel fiestas.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Diseño",
+      "destacada": false,
+      "propietario": null
+    },
+    {
       "id": "altea02",
       "titulo": "Cabra sobre oleaje rojo",
       "año": 2008,
@@ -1020,6 +1034,20 @@
       "precio": null,
       "categoria": "Cuadros",
       "destacada": true,
+      "propietario": null
+    },
+    {
+      "id": "2008-onirismos",
+      "titulo": "Onirismos",
+      "año": 2008,
+      "tecnica": "Técnica mixta (óleo y tinta) sobre lienzo",
+      "descripcion": "Un ritón ceremonial de bronce con pátina verdosa se enrolla como cuerno de abundancia en el centro de la composición, levitando sobre un paisaje urbano miniaturizado de agujas góticas y figuras diminutas tratadas con grafismo de grabado. La paleta nacarada de verdes celadón, turquesas oxidados y amarillos azufre envuelve el objeto en un fondo etéreo de pinceladas curvas. El contraste de escalas entre el objeto colosal y la ciudad liliputiense acentúa la tensión entre memoria arqueológica mediterránea y visión cósmica.",
+      "dimensiones": "No definido",
+      "imagen": "2008 Onirismos.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
       "propietario": null
     },
     {
@@ -1097,7 +1125,7 @@
       "titulo": "Regidora",
       "año": 2010,
       "tecnica": "Técnica mixta (grafito y pan de oro) sobre papel",
-      "descripcion": "Retrato festero de una Reina de Fiestas de Moros y Cristianos enmarcado en un óvalo al modo de los camafeos decimonónicos. La figura, resuelta en virtuosa grisalla de grafito, contrasta con el pan de oro luminoso del fondo y las bandas cromáticas inferiores. Corpiño con filigrana, encajes y abanico desplegado con el escudo de Villena configuran un retrato conmemorativo que eleva la figura festera a icono identitario local.",
+      "descripcion": "Retrato festero de una regidora de Fiestas de Moros y Cristianos enmarcado en un óvalo al modo de los camafeos decimonónicos. La figura, resuelta en virtuosa grisalla de grafito, contrasta con el pan de oro luminoso del fondo y las bandas cromáticas inferiores. Corpiño con filigrana, encajes y abanico desplegado con el escudo de Villena configuran un retrato conmemorativo que eleva la figura festera a icono identitario local.",
       "dimensiones": "No definido",
       "imagen": "2010 regidora.jpg",
       "en_venta": false,
