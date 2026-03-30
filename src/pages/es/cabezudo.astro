@@ -1,0 +1,231 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "El Fraile — Un cabezudo pintado por Pedro Marco",
+  "description": "Historia de la restauración y pintura del cabezudo del Fraile por Pedro Marco para la Asociación de la Ermita de San José de Villena.",
+  "author": { "@type": "Person", "name": "Pedro Marco" },
+  "datePublished": "2013",
+  "about": {
+    "@type": "VisualArtwork",
+    "name": "El Fraile (cabezudo)",
+    "creator": { "@type": "Person", "name": "Pedro Marco" },
+    "artMedium": "Pintura sobre papel maché",
+    "locationCreated": { "@type": "Place", "name": "Villena, Alicante" }
+  }
+};
+---
+
+<Base
+  title="El Fraile — Pedro Marco y el cabezudo de San José"
+  description="Historia de cómo Pedro Marco pintó el cabezudo del Fraile para la Asociación de la Ermita de San José de Villena, dejando su firma secreta: un caracol en la caries de un diente."
+  jsonLd={jsonLd}
+>
+  <!-- Hero -->
+  <section class="relative bg-amber-950 text-white overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-amber-950/90 to-amber-950/70 z-10"></div>
+    <img
+      src="/cabezudo/despues.jpg"
+      alt="El Fraile — Cabezudo pintado por Pedro Marco"
+      class="absolute inset-0 w-full h-full object-cover opacity-30 blur-sm scale-105"
+    />
+    <div class="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32 text-center">
+      <p class="text-amber-300/80 text-sm font-semibold uppercase tracking-widest mb-4">Arte en la calle</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+        El Fraile
+      </h1>
+      <p class="text-lg sm:text-xl text-amber-100/80 max-w-2xl mx-auto leading-relaxed">
+        La historia de cómo un cabezudo destrozado renació en las manos de Pedro Marco,
+        con un caracol escondido en la caries de un diente.
+      </p>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+    <div class="prose prose-lg prose-gray max-w-none">
+      <p class="text-xl text-gray-600 leading-relaxed">
+        Un día, la <strong>Asociación de la Ermita de San José</strong> de Villena recibió un cabezudo
+        en muy malas condiciones. Era la cabeza de un fraile, de esas figuras enormes de papel maché
+        que recorren las calles en fiestas, sembrando risas y sustos a partes iguales. Pero este fraile
+        había visto mejores días: la pintura se desprendía a jirones, el papel de periódico asomaba entre
+        las grietas, y la mandíbula se deshacía como un recuerdo viejo.
+      </p>
+      <p class="text-xl text-gray-600 leading-relaxed">
+        Pedro Marco, que nunca necesitó un lienzo para hacer arte, se ofreció sin dudarlo:
+        <em>«Si vosotros lo restauráis, yo lo pinto.»</em>
+      </p>
+    </div>
+  </section>
+
+  <!-- Antes / Después -->
+  <section class="bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+      <h2 class="text-2xl sm:text-3xl font-bold text-center mb-4">Antes y después</h2>
+      <p class="text-center text-gray-500 mb-12 max-w-xl mx-auto">
+        La asociación restauró la estructura. Pedro le devolvió el alma.
+      </p>
+      <div class="grid sm:grid-cols-2 gap-6 sm:gap-10">
+        <div>
+          <div class="aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
+            <img src="/cabezudo/antes.jpg" alt="El cabezudo antes de la restauración" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <p class="text-center text-sm text-gray-400 mt-3">
+            El fraile antes: pintura descascarillada, grietas en el cráneo, periódico al descubierto
+          </p>
+        </div>
+        <div>
+          <div class="aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
+            <img src="/cabezudo/despues.jpg" alt="El cabezudo después, pintado por Pedro Marco" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <p class="text-center text-sm text-gray-400 mt-3">
+            El fraile renacido: Pedro Marco le dio expresión, carácter y una sonrisa contagiosa
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- La historia del proceso -->
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+    <div class="prose prose-lg prose-gray max-w-none space-y-6">
+      <h2 class="text-2xl sm:text-3xl font-bold">Las manchas de la cabeza</h2>
+      <p class="text-gray-600 leading-relaxed">
+        Pedro era un perfeccionista de los que no piden permiso. Para pintar las manchas del
+        cráneo del fraile, pidió a <strong>Toni Gómez</strong> —miembro de la asociación— que le
+        fotografiase unas manchitas que tenía él mismo en la cabeza. Quería reproducirlas
+        <em>exactamente</em> como eran: con su forma, su tono, su verdad. Porque para Pedro
+        no existía el «más o menos». Existía el detalle justo, o nada.
+      </p>
+    </div>
+  </section>
+
+  <!-- Pedro trabajando -->
+  <section class="bg-amber-50/40">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+      <h2 class="text-2xl sm:text-3xl font-bold text-center mb-4">El maestro en acción</h2>
+      <p class="text-center text-gray-500 mb-12 max-w-xl mx-auto">
+        Pedro Marco, con su boina y su spray, dándole vida al fraile en el taller de la asociación.
+      </p>
+      <div class="grid sm:grid-cols-2 gap-6">
+        <div class="rounded-xl overflow-hidden shadow-lg">
+          <img src="/cabezudo/detalle-4.jpg" alt="Pedro Marco aplicando spray al cabezudo" class="w-full h-auto" loading="lazy" />
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-lg">
+          <img src="/cabezudo/detalle-1.jpg" alt="Pedro Marco junto al cabezudo terminado" class="w-full h-auto" loading="lazy" />
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-lg">
+          <img src="/cabezudo/detalle-2.jpg" alt="Pedro Marco explicando detalles del cabezudo" class="w-full h-auto" loading="lazy" />
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-lg">
+          <img src="/cabezudo/homenaje-2.jpg" alt="Pedro Marco en su estudio con el cabezudo" class="w-full h-auto" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- La firma secreta -->
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+    <div class="sm:flex gap-10 items-center">
+      <div class="sm:w-1/2 mb-8 sm:mb-0">
+        <div class="rounded-xl overflow-hidden shadow-xl">
+          <img src="/cabezudo/firma-pedro.jpg" alt="El caracol de Pedro Marco firmado en la caries del diente del cabezudo" class="w-full h-auto" loading="lazy" />
+        </div>
+      </div>
+      <div class="sm:w-1/2">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-6">El caracol en la caries</h2>
+        <div class="prose prose-lg prose-gray">
+          <p class="text-gray-600 leading-relaxed">
+            Pedro Marco siempre firmaba sus obras con un caracol. Era su sello, su huella,
+            su forma de decir <em>«por aquí pasó un soñador»</em>.
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            En este cabezudo, buscó el lugar más insospechado: <strong>la caries de un diente</strong>.
+            Ahí, diminuto y escondido entre el esmalte y la lengua rosada, dejó su caracol.
+            Una firma secreta que solo descubres si sabes mirar —o si alguien te cuenta la historia.
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            Ahora ya lo sabes. Y la próxima vez que el fraile recorra las calles de Villena,
+            quizá te agaches a buscarla.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- La tonsura -->
+  <section class="bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold mb-4">Hasta el último detalle</h2>
+      <p class="text-gray-500 mb-10 max-w-xl mx-auto">
+        La tonsura del fraile, con su corona de pelo canoso y una cruz pintada en la coronilla.
+        Pedro no dejaba nada al azar.
+      </p>
+      <div class="max-w-lg mx-auto rounded-xl overflow-hidden shadow-lg">
+        <img src="/cabezudo/detalle-3.jpg" alt="Detalle de la tonsura del fraile con cruz pintada" class="w-full h-auto" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- El homenaje -->
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+    <div class="prose prose-lg prose-gray max-w-none space-y-6">
+      <h2 class="text-2xl sm:text-3xl font-bold">Un fraile que vive en la calle</h2>
+      <p class="text-gray-600 leading-relaxed">
+        El fraile se convirtió en una de las pocas obras de Pedro Marco que <strong>salen a la calle</strong>.
+        No está en un museo ni en una galería con luz cenital. Está en las fiestas del Medievo,
+        en las celebraciones de San José, en las salidas a otras ciudades. Es arte que se agita,
+        que se tambalea sobre los hombros de alguien, que hace reír a los niños y que lleva
+        la firma de un genio escondida en un diente.
+      </p>
+    </div>
+
+    <!-- Foto de grupo -->
+    <div class="mt-12 rounded-xl overflow-hidden shadow-lg">
+      <img src="/cabezudo/2016-proceso.jpg" alt="La asociación con sus gigantes y cabezudos, incluido el fraile de Pedro Marco" class="w-full h-auto" loading="lazy" />
+    </div>
+    <p class="text-center text-sm text-gray-400 mt-4">
+      La Asociación de la Ermita de San José con su comparsa de gigantes y cabezudos.
+      El fraile de Pedro Marco, con su sonrisa inconfundible, entre ellos.
+    </p>
+  </section>
+
+  <!-- El segundo cabezudo: homenaje a Pedro -->
+  <section class="bg-amber-50/40">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold mb-4">El homenaje</h2>
+      <p class="text-gray-600 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+        Dos años después del fallecimiento de Pedro, la asociación decidió homenajearlo
+        de la única forma que tenía sentido: <strong>creando un cabezudo con su rostro</strong>.
+        Una figura que se la rifan para poder sacarla a la calle. Porque Pedro sigue saliendo
+        a las fiestas de Villena, con su boina y su sonrisa, sobre los hombros de quienes le recuerdan.
+      </p>
+      <div class="max-w-sm mx-auto rounded-xl overflow-hidden shadow-lg">
+        <img src="/cabezudo/homenaje-1.jpg" alt="Pedro Marco posando junto al fraile en su estudio" class="w-full h-auto" loading="lazy" />
+      </div>
+      <p class="text-sm text-gray-400 mt-4">
+        Pedro Marco junto al fraile en su estudio, poco después de terminar la pintura.
+      </p>
+    </div>
+  </section>
+
+  <!-- Créditos -->
+  <section class="border-t border-gray-100">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center text-sm text-gray-400">
+      <p>
+        Historia contada por <strong class="text-gray-600">Toni Gómez</strong>,
+        miembro de la Asociación de la Ermita de San José de Villena.
+      </p>
+      <p class="mt-2">
+        Fotografías cedidas por la asociación y por Toni Gómez.
+      </p>
+      <div class="mt-6">
+        <a href="/es/" class="text-amber-800 hover:text-amber-900 transition-colors">
+          ← Volver al catálogo
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>
