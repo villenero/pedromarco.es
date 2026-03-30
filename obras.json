@@ -482,13 +482,13 @@
       "año": 1993,
       "tecnica": "Técnica mixta (tinta, grafito y acuarela) sobre papel",
       "descripcion": "Figura totémica y solitaria —mitad espantapájaros, mitad aparición cruciforme— erguida sobre patas imposiblemente esbeltas en medio de un paisaje desolado que se fuga hacia un horizonte lejano. El torso es un ensamblaje biomorfo de formas orgánicas: haces de fibra, vainas vegetales y estructuras de concha que parecen simultáneamente anatomía, cosecha y fósil. Un halo geométrico circunda la cabeza oculta bajo un sombrero de ala ancha, confiriendo a la figura una cualidad devocional. Arcos de compás deliberadamente visibles sobre el suelo sugieren una era de trilla o un ruedo, anclando la ensoñación surrealista en la tierra agrícola del interior alicantino. Paleta de sienas, ocres cálidos, cremas y grises acerados, con la luz blanqueada de la meseta castellano-levantina.",
-      "dimensiones": null,
+      "dimensiones": "70 x 50 cm",
       "imagen": "1993 Espantapajaros.jpg",
       "en_venta": false,
       "precio": null,
       "categoria": "Cuadros",
       "destacada": false,
-      "propietario": null
+      "propietario": "Carmen Hernández Azorín"
     },
     {
       "id": "94-02",
@@ -1411,6 +1411,20 @@
       "en_venta": false,
       "precio": null,
       "categoria": "Retratos",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "2016-lorca-en-nueva-york",
+      "titulo": "Lorca en Nueva York",
+      "año": 2016,
+      "tecnica": "Técnica mixta (carboncillo, grafito y aerógrafo) sobre papel",
+      "descripcion": "Meditación visual sobre la estancia de Federico García Lorca en Nueva York (1929-1930) que inspiró su poemario Poeta en Nueva York. El rostro del poeta, monumental y espectral, flota sobre el skyline de Manhattan con una mirada contemplativa y melancólica, como una aparición que vigila la ciudad que tanto le perturbó. Abajo, el Chrysler Building y el Empire State se recortan con precisión arquitectónica, anclando la ensoñación en la metrópoli de la era del jazz. La obra es enteramente monocromática —del negro carbón al blanco luminoso— evocando la fotografía de época y la atmósfera alienada de los poemas lorquianos. La disolución de los bordes del rostro en la atmósfera y la superposición onírica de figura y paisaje urbano crean un palimpsesto entre el retrato y la ciudad, entre la presencia y la ausencia.",
+      "dimensiones": null,
+      "imagen": "2016 Lorca en Neva York.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     },
