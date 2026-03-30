@@ -1639,18 +1639,18 @@
       "propietario": null
     },
     {
-      "id": "2018-costura",
+      "id": "2016-costura",
       "titulo": "Costura",
-      "año": 2018,
+      "año": 2016,
       "tecnica": "Técnica mixta",
       "descripcion": "Composición que entrelaza formas y texturas evocando el acto de coser, con capas de color y materia",
-      "dimensiones": "",
+      "dimensiones": "120 x 90 cm",
       "imagen": "2018 Costura.jpg",
       "en_venta": false,
       "precio": null,
       "categoria": "Cuadros",
       "destacada": false,
-      "propietario": null
+      "propietario": "Francisco Javier Palero"
     },
     {
       "id": "2018-dama-peseta",
