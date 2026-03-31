@@ -3065,6 +3065,48 @@
       "categoria": "Cuadros",
       "destacada": false,
       "propietario": "Colección particular"
+    },
+    {
+      "id": "2016-fave",
+      "titulo": "El Pierrot lunar",
+      "año": 2016,
+      "tecnica": "Técnica mixta (lápiz, carboncillo y acuarela) sobre papel",
+      "descripcion": "Obra de madurez en la que Pedro Marco despliega con singular dominio su universo onírico a través del grafito. Sobre un fondo de cielo tormentoso, modelado con suaves degradados de carboncillo que evocan nubes en tránsito, flotan cuatro esferas celestes en distintas fases —lunas o planetas sin nombre— que confieren a la composición una atmósfera de tiempo suspendido, anterior o posterior a toda lógica. En el centro emerge una figura de ambigua condición —humana y a la vez arquetípica—, tocada con un sombrero cónico de reminiscencias circenses que porta en su copa dos flores silvestres secas. El rostro, tratado con una línea precisa y levemente cubistizada, acumula elementos heterogéneos: un tercer ojo esbozado, marcas que parecen cicatrices del tiempo, hilos que se enredan sobre la piel como escritura automática. La figura viste una gorguera voluminosa —guiño al Pierrot de la commedia dell'arte—, dotándola de una teatralidad melancólica. La composición austera en su escala de grises es rasgada por dos intervenciones de color puro: una pluma amarillo-verdosa que el personaje sostiene como ofrenda, y una mancha de rojo intenso en el tercio inferior que actúa como acento dramático y punto de fuga emocional.",
+      "dimensiones": "No definido",
+      "imagen": "2016 fave.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Dibujos",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "2016-si-muero",
+      "titulo": "Si muero",
+      "año": 2016,
+      "tecnica": "Óleo sobre lienzo",
+      "descripcion": "Pedro Marco construye un espacio onírico de extraordinaria luminosidad cromática. El lienzo se organiza en una verticalidad casi escultórica: desde la parte inferior emerge una gran esfera de formas concéntricas —reminiscente de una huella dactilar cósmica o de los anillos de un árbol milenario—, modelada en ocres, dorados y malvas, que brota de un horizonte de aguamarina y turquesa. En el centro compositivo flota, con la lógica imposible del sueño, una ventana-cuadro: un portal rectangular que contiene su propio cielo interior, dominado por nubes de tonos cálidos recortadas contra un fondo que transita del azul cobalto al carmín. De ese fragmento de realidad enmarcada se desprende una cascada de letras y caracteres dispersos —en azul, rojo, amarillo— que caen en espiral hacia la esfera inferior. Entre el caos tipográfico emerge con deliberada claridad la frase «SI MUERO», cargándola de una densidad existencial que convierte la obra en una meditación sobre la memoria, la palabra y la extinción. La paleta —azul cerúleo, verde esmeralda y turquesa— envuelve la escena en una atmósfera de calma suspendida, casi submarina, que contrasta con la agitación implícita del texto desintegrado.",
+      "dimensiones": "No definido",
+      "imagen": "2016 tesoro.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "2016-minotauro",
+      "titulo": "Minotauro herido",
+      "año": 2016,
+      "tecnica": "Técnica mixta (tinta china y aguada roja) sobre papel",
+      "descripcion": "Obra de poderosa tensión simbólica en la que Pedro Marco reinterpreta el mito clásico del Minotauro desde una óptica surrealista de acusada violencia contenida. La figura híbrida —torso masculino desnudo coronado por una cabeza bovina de factura mecanicista, construida a base de tiras entretejidas, argollas y herrajes que evocan tanto la coraza como la jaula— emerge sobre el blanco inmaculado del papel con una presencia al mismo tiempo monumental y vulnerable. La paleta se articula en una dualidad extrema: el grafismo minucioso en negro y grises de la plumilla, de una precisión casi orfebre en los cuernos y la máscara, contrasta violentamente con la explosión de rojo intenso —sangre, pasión, muerte— que ocupa el tercio inferior. Esa mancha roja, ejecutada con gestualidad casi automática, salpica el torso del ser y lo impregna de mortalidad, en diálogo directo con la iconografía taurina española. Un objeto punzante —lanza o banderilla— atraviesa el costado derecho de la figura, anclando la obra en la tradición de la tauromaquia como metáfora existencial. La composición, deliberadamente inacabada en su zona superior, potencia la sensación de aparición onírica: un ser atrapado entre lo animal y lo humano, entre el mito y la carne.",
+      "dimensiones": "No definido",
+      "imagen": "2016 toro.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Dibujos",
+      "destacada": false,
+      "propietario": null
     }
   ]
 }
