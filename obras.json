@@ -3076,9 +3076,9 @@
       "imagen": "2016 fave.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Dibujos",
+      "categoria": "Cuadros",
       "destacada": false,
-      "propietario": null
+      "propietario": "Familia Pedro Marco"
     },
     {
       "id": "2016-si-muero",
@@ -3098,13 +3098,13 @@
       "id": "2016-minotauro",
       "titulo": "Minotauro herido",
       "año": 2016,
-      "tecnica": "Técnica mixta (tinta china y aguada roja) sobre papel",
+      "tecnica": "Grafito y aguada roja sobre carton",
       "descripcion": "Obra de poderosa tensión simbólica en la que Pedro Marco reinterpreta el mito clásico del Minotauro desde una óptica surrealista de acusada violencia contenida. La figura híbrida —torso masculino desnudo coronado por una cabeza bovina de factura mecanicista, construida a base de tiras entretejidas, argollas y herrajes que evocan tanto la coraza como la jaula— emerge sobre el blanco inmaculado del papel con una presencia al mismo tiempo monumental y vulnerable. La paleta se articula en una dualidad extrema: el grafismo minucioso en negro y grises de la plumilla, de una precisión casi orfebre en los cuernos y la máscara, contrasta violentamente con la explosión de rojo intenso —sangre, pasión, muerte— que ocupa el tercio inferior. Esa mancha roja, ejecutada con gestualidad casi automática, salpica el torso del ser y lo impregna de mortalidad, en diálogo directo con la iconografía taurina española. Un objeto punzante —lanza o banderilla— atraviesa el costado derecho de la figura, anclando la obra en la tradición de la tauromaquia como metáfora existencial. La composición, deliberadamente inacabada en su zona superior, potencia la sensación de aparición onírica: un ser atrapado entre lo animal y lo humano, entre el mito y la carne.",
       "dimensiones": "No definido",
       "imagen": "2016 toro.jpg",
       "en_venta": false,
       "precio": null,
-      "categoria": "Dibujos",
+      "categoria": "Cuadros",
       "destacada": false,
       "propietario": null
     }
