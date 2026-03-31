@@ -11,6 +11,9 @@ export default defineConfig({
     sitemap(),
   ],
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    server: {
+      allowedHosts: ['mac-mini-de-carlos.tail65c43.ts.net']
+    }
   }
 });
