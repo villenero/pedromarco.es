@@ -1,0 +1,74 @@
+---
+import Base from '../../layouts/Base.astro';
+import fs from 'node:fs';
+import path from 'node:path';
+
+const obrasRaw = JSON.parse(fs.readFileSync(path.resolve('obras.json'), 'utf-8'));
+
+// Agrupar obras por propietario, excluyendo null, vacíos y "Colección particular"
+const excludePatterns = ['colección particular', 'coleccion particular'];
+const propietarios: Record<string, Array<{id: string, titulo: string, imagen: string, año: number | null}>> = {};
+
+for (const o of obrasRaw.obras) {
+  const prop = o.propietario;
+  if (!prop || prop.trim() === '') continue;
+  if (excludePatterns.some(p => prop.toLowerCase().includes(p))) continue;
+  
+  if (!propietarios[prop]) propietarios[prop] = [];
+  propietarios[prop].push({
+    id: o.id,
+    titulo: o.titulo,
+    imagen: o.imagen,
+    año: o.año
+  });
+}
+
+// Ordenar alfabéticamente por nombre de propietario
+const sorted = Object.entries(propietarios).sort((a, b) => 
+  a[0].localeCompare(b[0], 'es', { sensitivity: 'base' })
+);
+---
+
+<Base
+  title="Colecciones — Pedro Marco"
+  description="Colecciones de obras de Pedro Marco."
+>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <h1 class="text-3xl font-bold mb-2">Colecciones</h1>
+    <p class="text-gray-500 mb-10">
+      {sorted.length} colecciones de obra de Pedro Marco
+    </p>
+
+    <div class="space-y-8">
+      {sorted.map(([nombre, obras]) => (
+        <div class="border-b border-gray-100 pb-8 last:border-0">
+          <div class="flex items-baseline gap-3 mb-4">
+            <h2 class="text-lg font-semibold text-gray-900">{nombre}</h2>
+            <span class="inline-flex items-center justify-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800">
+              {obras.length} {obras.length === 1 ? 'obra' : 'obras'}
+            </span>
+          </div>
+          <div class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-2">
+            {obras
+              .sort((a, b) => (a.año || 0) - (b.año || 0))
+              .map((obra) => (
+                <a
+                  href={`/es/obra/${obra.id}`}
+                  title={`${obra.titulo}${obra.año ? ` (${obra.año})` : ''}`}
+                  class="group block aspect-square rounded-md overflow-hidden border border-gray-200 hover:border-amber-400 hover:scale-105 transition-all duration-200 shadow-sm hover:shadow-md"
+                >
+                  <img
+                    src={`/obras/thumbs/${obra.imagen}`}
+                    alt={obra.titulo}
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </a>
+              ))
+            }
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</Base>

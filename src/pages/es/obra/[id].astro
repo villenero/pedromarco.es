@@ -157,10 +157,15 @@ const jsonLd = {
         img.style.cursor = slider.value > 100 ? 'grab' : '';
       });
 
-      // Mouse wheel zoom
+      // Mouse wheel zoom — only when already zoomed in
       wrap.addEventListener('wheel', function(e) {
+        var cur = parseInt(slider.value);
+        // If at 100% and scrolling down (zoom out), let page scroll normally
+        if (cur <= 100 && e.deltaY > 0) return;
+        // If at 100% and scrolling up, only zoom if Ctrl/Meta held
+        if (cur <= 100 && e.deltaY < 0 && !e.ctrlKey && !e.metaKey) return;
         e.preventDefault();
-        var val = parseInt(slider.value) + (e.deltaY < 0 ? 10 : -10);
+        var val = cur + (e.deltaY < 0 ? 10 : -10);
         val = Math.max(100, Math.min(300, val));
         slider.value = val;
         label.textContent = val + '%';
