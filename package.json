@@ -11,7 +11,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "admin": "node scripts/admin.mjs",
-    "deploy": "astro build && wrangler pages deploy dist --project-name pedromarco-es"
+    "deploy": "astro build && CLOUDFLARE_API_TOKEN=$(cat ~/.clawdbot/credentials/cloudflare/api_token) wrangler pages deploy dist --project-name pedromarco-es"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.1",

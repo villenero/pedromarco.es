@@ -39,7 +39,7 @@
       "en_venta": false,
       "precio": null,
       "categoria": "Cuadros",
-      "destacada": true,
+      "destacada": false,
       "propietario": "José Marco Esteban"
     },
     {
@@ -81,7 +81,7 @@
       "en_venta": false,
       "precio": null,
       "categoria": "Retratos",
-      "destacada": true,
+      "destacada": false,
       "propietario": "Familia Pedro Marco"
     },
     {
@@ -235,7 +235,7 @@
       "en_venta": false,
       "precio": null,
       "categoria": "Cuadros",
-      "destacada": false,
+      "destacada": true,
       "propietario": "Diputación de Alicante"
     },
     {
@@ -277,7 +277,7 @@
       "en_venta": false,
       "precio": null,
       "categoria": "Retratos",
-      "destacada": true,
+      "destacada": false,
       "propietario": null
     },
     {
@@ -473,7 +473,7 @@
       "en_venta": false,
       "precio": null,
       "categoria": "Cuadros",
-      "destacada": false,
+      "destacada": true,
       "propietario": null
     },
     {
@@ -599,7 +599,7 @@
       "en_venta": false,
       "precio": null,
       "categoria": "Cuadros",
-      "destacada": false,
+      "destacada": true,
       "propietario": null
     },
     {
@@ -613,7 +613,7 @@
       "en_venta": false,
       "precio": null,
       "categoria": "Cuadros",
-      "destacada": false,
+      "destacada": true,
       "propietario": null
     },
     {
@@ -627,7 +627,7 @@
       "en_venta": false,
       "precio": null,
       "categoria": "Cuadros",
-      "destacada": false,
+      "destacada": true,
       "propietario": null
     },
     {
@@ -655,7 +655,7 @@
       "en_venta": false,
       "precio": null,
       "categoria": "Retratos",
-      "destacada": true,
+      "destacada": false,
       "propietario": "Familia Toni Pardo"
     },
     {
@@ -1303,18 +1303,18 @@
       "propietario": null
     },
     {
-      "id": "2011-espiga",
-      "titulo": "Espiga",
+      "id": "2011-nuestro-pan",
+      "titulo": "Nuestro pan",
       "año": 2011,
-      "tecnica": "Técnica mixta (óleo y veladuras) sobre cartón",
-      "descripcion": "Composición de austeridad casi litúrgica que enfrenta dos elementos aislados sobre un vasto campo neutro de blancos cálidos y ocres nacarados: a la izquierda, una concha ciprea representada con minucioso verismo táctil cuya forma evoca inequívocamente la anatomía femenina; a la derecha, una espiga de avena loca se yergue vertical, frágil y filiforme, en contrapunto fálico de ascensión vegetal. El diálogo entre ambos motivos —lo cóncavo y lo erecto, lo carnal y lo herbáceo— inscribe la pieza en la tradición surrealista de la analogía biomorfa, donde la naturaleza muerta se transfigura en alegoría erótica y germinal. Una atmósfera de silencio contemplativo que invita a leer en estos dos humildes especímenes naturales un cifrado poema sobre la fertilidad y el misterio de lo orgánico.",
-      "dimensiones": "",
+      "tecnica": "Témpera acrílica",
+      "descripcion": "Composición de austeridad casi litúrgica que enfrenta dos elementos aislados sobre un vasto campo neutro de blancos cálidos y ocres nacarados: a la izquierda, un panecillo cuya forma evoca con preciso verismo la anatomía femenina, elaborado expresamente para la obra; a la derecha, una espiga de avena loca se yergue vertical, frágil y filiforme, en contrapunto de ascensión vegetal. El diálogo entre ambos motivos —lo cóncavo y lo erecto, lo carnal y lo herbáceo— inscribe la pieza en la tradición surrealista de la analogía biomórfica, donde el bodegón cotidiano se transfigura en alegoría erótica y germinal. Una atmósfera de silencio contemplativo en la que dos humildes elementos del día a día cifran un poema sobre la fertilidad y el deseo.",
+      "dimensiones": "73 x 53 cm",
       "imagen": "2011 Espiga.jpg",
       "en_venta": false,
       "precio": null,
       "categoria": "Cuadros",
       "destacada": false,
-      "propietario": null
+      "propietario": "Francisco Muñoz Seva e Irene Domene García"
     },
     {
       "id": "2011-isla",
@@ -2293,7 +2293,7 @@
       "en_venta": false,
       "precio": null,
       "categoria": "Retratos",
-      "destacada": true,
+      "destacada": false,
       "propietario": "Familia Pedro Marco"
     },
     {
@@ -2321,7 +2321,7 @@
       "en_venta": false,
       "precio": null,
       "categoria": "Cuadros",
-      "destacada": true,
+      "destacada": false,
       "propietario": null
     },
     {
@@ -2363,7 +2363,7 @@
       "en_venta": false,
       "precio": null,
       "categoria": "Retratos",
-      "destacada": true,
+      "destacada": false,
       "propietario": "Familia Pedro Marco"
     },
     {
@@ -2703,13 +2703,13 @@
       "propietario": null
     },
     {
-      "id": "77-03",
+      "id": "1977-por-delante",
       "titulo": "Por delante",
-      "año": null,
+      "año": 1977,
       "tecnica": "Óleo sobre lienzo",
       "descripcion": "La parte inferior de un torso femenino ceñida por unos vaqueros azules pintados con detalle fotográfico se disuelve en el vientre en una espiral laberíntica concéntrica que asciende como emanación etérea. La materialidad táctil del denim contrapuesta a una abstracción orgánica y enigmática que sugiere una dimensión interior oculta bajo lo cotidiano",
       "dimensiones": "No definido",
-      "imagen": "77-03.JPG",
+      "imagen": "1977 Por Delante.jpg",
       "en_venta": false,
       "precio": null,
       "categoria": "Cuadros",
@@ -2717,13 +2717,13 @@
       "propietario": null
     },
     {
-      "id": "77-02",
+      "id": "1977-por-detras",
       "titulo": "Por detrás",
-      "año": null,
+      "año": 1977,
       "tecnica": "Óleo sobre lienzo",
       "descripcion": "Un torso femenino desnudo visto de espaldas se despoja de una prenda que se metamorfosea en formas vegetales y orgánicas como hojas secas o alas, difuminando la frontera entre cuerpo y naturaleza. La paleta monocroma ocre-dorada confiere a la figura una cualidad escultórica y atemporal",
       "dimensiones": "No definido",
-      "imagen": "77-02.JPG",
+      "imagen": "1977 Por Detras.jpg",
       "en_venta": false,
       "precio": null,
       "categoria": "Cuadros",
@@ -2783,7 +2783,7 @@
       "en_venta": false,
       "precio": null,
       "categoria": "Cuadros",
-      "destacada": true,
+      "destacada": false,
       "propietario": null
     },
     {
@@ -2955,6 +2955,20 @@
       "propietario": "Familia Estevan Torres"
     },
     {
+      "id": "1975-espana-al-reves",
+      "titulo": "España al revés",
+      "año": 1975,
+      "tecnica": "Dibujo sobre papel",
+      "descripcion": "Dibujo sobre papel blanco en el que la Península Ibérica aparece girada ciento ochenta grados: el sur queda arriba y el norte abajo, los Pirineos en la parte inferior y el Mediterráneo coronando la composición. La línea es precisa y económica, con la contención gráfica propia del dibujo cartográfico: el contorno peninsular se reconoce de inmediato, pero la desorientación es instantánea e irreversible. Realizado en los últimos meses del franquismo, la inversión cartográfica trasciende el ejercicio formal para convertirse en un gesto de extrañamiento cultural y político: dar la vuelta a España es preguntarse qué convención —y qué poder— decidió que el norte fuera arriba. El artista lo presentó indistintamente bajo los títulos «España al revés» y «España vista desde Europa».",
+      "dimensiones": "62 x 49 cm",
+      "imagen": "1975 espana al reves.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": "Mateo Marco Amorós"
+    },
+    {
       "id": "1996-villenera",
       "titulo": "Villenera picassiana",
       "año": 1996,
@@ -3049,7 +3063,7 @@
       "en_venta": false,
       "precio": null,
       "categoria": "Cuadros",
-      "destacada": true,
+      "destacada": false,
       "propietario": "Ayuntamiento de Villena"
     },
     {
@@ -3063,7 +3077,7 @@
       "en_venta": false,
       "precio": null,
       "categoria": "Cuadros",
-      "destacada": false,
+      "destacada": true,
       "propietario": null
     },
     {
@@ -3194,17 +3208,17 @@
     },
     {
       "id": "2016-minotauro",
-      "titulo": "Minotauro herido",
+      "titulo": "La Sangre Derramada",
       "año": 2016,
-      "tecnica": "Grafito y aguada roja sobre carton",
-      "descripcion": "Obra de poderosa tensión simbólica en la que Pedro Marco reinterpreta el mito clásico del Minotauro desde una óptica surrealista de acusada violencia contenida. La figura híbrida —torso masculino desnudo coronado por una cabeza bovina de factura mecanicista, construida a base de tiras entretejidas, argollas y herrajes que evocan tanto la coraza como la jaula— emerge sobre el blanco inmaculado del papel con una presencia al mismo tiempo monumental y vulnerable. La paleta se articula en una dualidad extrema: el grafismo minucioso en negro y grises de la plumilla, de una precisión casi orfebre en los cuernos y la máscara, contrasta violentamente con la explosión de rojo intenso —sangre, pasión, muerte— que ocupa el tercio inferior. Esa mancha roja, ejecutada con gestualidad casi automática, salpica el torso del ser y lo impregna de mortalidad, en diálogo directo con la iconografía taurina española. Un objeto punzante —lanza o banderilla— atraviesa el costado derecho de la figura, anclando la obra en la tradición de la tauromaquia como metáfora existencial. La composición, deliberadamente inacabada en su zona superior, potencia la sensación de aparición onírica: un ser atrapado entre lo animal y lo humano, entre el mito y la carne.",
-      "dimensiones": "No definido",
+      "tecnica": "Grafito y tinta china sobre cartón",
+      "descripcion": "Obra de poderosa tensión simbólica en la que Pedro Marco reinterpreta el mito del Minotauro desde una óptica surrealista, en diálogo directo con el poema que Lorca dedicó a su amigo Ignacio Sánchez Mejías, torero muerto en la plaza. La figura híbrida —torso masculino coronado por una cabeza bovina de factura mecanicista, construida a base de argollas y herrajes que evocan tanto la coraza como la jaula— emerge sobre el blanco del papel con una presencia al mismo tiempo monumental y vulnerable.\n\nEl grafismo minucioso en negro y grises del grafito y la tinta china contrasta violentamente con la explosión de rojo —sangre, pasión, muerte— que ocupa el tercio inferior, impregnando la figura de mortalidad. Un objeto punzante atraviesa el costado derecho, anclando la obra en la tauromaquia como metáfora existencial: la misma que cobró vida y muerte real en la arena con Sánchez Mejías. La composición, deliberadamente inacabada en su zona superior, potencia la sensación de aparición onírica: un ser atrapado entre el mito y la carne, entre el poema y la plaza.",
+      "dimensiones": "70 x 50 cm",
       "imagen": "2016 toro.jpg",
       "en_venta": false,
       "precio": null,
       "categoria": "Cuadros",
-      "destacada": false,
-      "propietario": null
+      "destacada": true,
+      "propietario": "Grupo Glem"
     },
     {
       "id": "2001-siglo-xi",
@@ -3401,6 +3415,118 @@
       "categoria": "Cuadros",
       "destacada": false,
       "propietario": "Berenice Pérez"
+    },
+    {
+      "id": "2000-comparsas",
+      "titulo": "Comparsas",
+      "año": 2000,
+      "tecnica": "Acrílico sobre lienzo",
+      "descripcion": "Composición panorámica que despliega los emblemas de las comparsas de los Moros y Cristianos de Villena en una franja horizontal de oro sobre un cielo atlante de tonos salmón y rosa. El Castillo de la Atalaya aparece al centro reducido a una silueta geométrica y pixelada en siena oscuro, como si fuera un logotipo surgido de la propia luz crepuscular. Los símbolos de cada comparsa —calaveras, cruces, medias lunas, figuras estilizadas— se suceden en procesión gráfica sobre la banda dorada, flanqueados por espirales en azul turquesa y multicolor que evocan el dinamismo festivo. Un inventario simbólico de la identidad festera de Villena.",
+      "dimensiones": "No definido",
+      "imagen": "2000 comparsas.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Diseño",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "1985-pedrovillar",
+      "titulo": "Perfil",
+      "año": 1985,
+      "tecnica": "Técnica mixta (grafito y lápices de color) sobre papel",
+      "descripcion": "Retrato de perfil de marcado acento expresionista en el que la cabeza del personaje, modelada con lápiz sanguina y pigmento siena, emerge sobre un fondo de papel casi desnudo atravesado por una tenue forma circular. La factura gestual combina la línea de grafito —nerviosa, estructural— con manchas de lápiz en ocre, azul y negro que dinamizan el busto, mientras la textura punteada de la vestimenta contrasta con la energía espontánea del trazo. Estudio de carácter de pequeño formato donde la síntesis expresiva anticipa los personajes de la década siguiente.",
+      "dimensiones": "14,5 x 11,5 cm",
+      "imagen": "1985 pedrovillar.jpeg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": "Pedro Villar Sánchez"
+    },
+    {
+      "id": "2009-alarcon",
+      "titulo": "Alarcón",
+      "año": 2009,
+      "tecnica": "Témpera acrílica y grafito sobre tabla",
+      "descripcion": "Sobre un damero de naranjas y granates —a modo de estandarte heráldico medieval— se despliegan fragmentos del cerro de Alarcón (Cuenca) en distintas atmósferas lumínicas: atardeceres incendiados y amaneceres envueltos en la niebla invernal de la Serranía. El castillo-parador del Marqués de Villena emerge como protagonista entre los cuadros del reticulado, y un fragmento de cerámica verde-manganeso que flota sobre la escena introduce el elemento físico surreal tan característico de la obra de Pedro Marco. Le acompaña una cartela de 14 × 14 × 5 cm realizada en 2020 a imitación de un azulejo de Paterna del siglo XIV-XV, con el título, las iniciales de los propietarios, la fecha de su primera visita a la villa y el símbolo del caracol en su versión más detallada.",
+      "dimensiones": "126 x 98 cm",
+      "imagen": "2009 Alarcon.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": "Francisco Muñoz Seva e Irene Domene García"
+    },
+    {
+      "id": "1972-expedicion",
+      "titulo": "Expedición",
+      "año": 1972,
+      "tecnica": "Óleo y técnica mixta sobre lienzo",
+      "descripcion": "Una esfera monumental de materia orgánica ocupa el eje derecho de la composición, construida con empastes densísimos de ocres, siennas y negros que evocan la corteza de un planeta o la espiral de un caracol gigante; un fino halo dorado corona su cima. A su izquierda arde un acento rojo de brasa que ancla la masa informe sobre el mismo fondo terroso. El conjunto flota sobre un campo de azul turquesa de factura lisa y aérea, surcado por líneas finas de grafito que trazan una estructura geométrica a modo de planos de expedición científica, mientras un pájaro dibujado con trazo delicado y pequeñas figuras en el margen inferior introducen la nota de lo vivo frente a la escala cósmica de la materia.",
+      "dimensiones": "49 x 38 cm",
+      "imagen": "1972 expedicion.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": "Pedro Pardo Hernández"
+    },
+    {
+      "id": "1986-ciclista",
+      "titulo": "Ciclista",
+      "año": 1986,
+      "tecnica": "Óleo sobre lienzo",
+      "descripcion": "Sobre un campo de blanco y malva casi vacío, emerge en el tercio inferior la cabeza y el torso de un ciclista en posición aerodinámica, modelados con factura precisa en azules intensos y tierras ocres. Por encima de la figura, la bicicleta se desintegra en un diagrama espectral: ruedas, radios y cuadro se superponen en volutas translúcidas que remiten a un despiece técnico o a las cronofotografías de Muybridge. Un marco rectangular trazado con línea fina encuadra la escena como un fotograma detenido, suspendiendo el dinamismo de la carrera en una atmósfera de tiempo congelado.",
+      "dimensiones": "120 x 100 cm",
+      "imagen": "1986 Ciclista.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": "Peter Gabarro"
+    },
+    {
+      "id": "1985-accidente",
+      "titulo": "Accidente",
+      "año": 1985,
+      "tecnica": "Grafito y carboncillo sobre papel",
+      "descripcion": "Estudio cinético que fragmenta la bicicleta y su jinete caído en una secuencia de planos superpuestos, a la manera de la cronofotografía. La rueda delantera y el cuadro se desdoblan en varias posiciones simultáneas sobre la mitad izquierda del soporte, mientras la figura del ciclista —condensada en una mancha oscura y gestual— se inclina sobre los restos de la máquina en el ángulo derecho. El grafito construye una narración de impacto y colapso a través de la acumulación nerviosa de líneas y la superposición de planos geométricos que fragmentan el espacio en el instante del accidente.",
+      "dimensiones": "No definido",
+      "imagen": "1985 Accidente.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "1985-cura-y-capellan",
+      "titulo": "Cura y Capellán",
+      "año": 1985,
+      "tecnica": "Grafito y carboncillo sobre papel",
+      "descripcion": "Dos figuras religiosas enfrentadas en un campo casi vacío de grafito y carboncillo: a la izquierda, el cura con la cabeza hundida entre las manos en un gesto de abatimiento o rezo, modelado con trazos densos que confunden el rostro con las palmas; a la derecha, sobre la silueta de una cruz, el capellán se yergue en una forma alargada de acento orgánico y casi vegetal, la cabeza transformada en un capullo que se abre hacia arriba en tensión ascendente. El contraste entre el recogimiento torturado de uno y la estilización casi mística del otro crea un diálogo sobre la fe y sus formas extremas.",
+      "dimensiones": "No definido",
+      "imagen": "1985 Cura y Capellan.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Cuadros",
+      "destacada": false,
+      "propietario": null
+    },
+    {
+      "id": "2009-botellas-chapi",
+      "titulo": "Botella conmemorativa Ruperto Chapí",
+      "año": 2009,
+      "tecnica": "Diseño gráfico (etiqueta de botella)",
+      "descripcion": "Diseño de etiqueta para una emisión especial de 5.000 botellas numeradas de vino tinto Monastrell/Merlot, elaboradas por Bodegas Ntra. Sra. de las Virtudes (Villena) en conmemoración del centenario de la muerte del compositor villenense Ruperto Chapí (1909–2009). La etiqueta principal presenta un retrato oval del compositor en grisalla, enmarcado con laureles y sobreimpreso en negro sobre la botella oscura, con el nombre en caligrafía dorada. La etiqueta trasera, también diseñada por Pedro Marco, recoge los datos de la edición y la leyenda «Obra de Pedro Marco».",
+      "dimensiones": "No definido",
+      "imagen": "2009 botellas chapi.jpg",
+      "en_venta": false,
+      "precio": null,
+      "categoria": "Diseño",
+      "destacada": false,
+      "propietario": null
     }
   ]
 }

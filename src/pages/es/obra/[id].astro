@@ -11,7 +11,7 @@ export function getStaticPaths() {
 
 const { id } = Astro.params;
 const obra = data.obras.find(o => o.id === id);
-if (!obra) return Astro.redirect('/es/');
+if (!obra) return Astro.redirect('/es/obras');
 
 // Find detail/variant images (_01, _02, etc.)
 const obrasDir = path.resolve('public/obras');
@@ -46,7 +46,7 @@ const jsonLd = {
 
 <Base title={`${titulo} — Pedro Marco`} description={description} image={ogImage} jsonLd={jsonLd}>
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <a id="back-link" href="/es/" class="inline-flex items-center gap-1 text-sm text-gray-500 hover:text-gray-900 mb-6 transition-colors">
+    <a id="back-link" href="/es/obras" class="inline-flex items-center gap-1 text-sm text-gray-500 hover:text-gray-900 mb-6 transition-colors">
       ← <span id="back-text">{t('artwork.back')}</span>
     </a>
     <script is:inline>

@@ -1,0 +1,238 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const historias = [
+  {
+    href: '/es/primer-cuadro',
+    tag: 'Archivo · 1962',
+    title: 'El primer cuadro',
+    excerpt:
+      'Una vista de Villena en lápices de color, ceras y tinta china, firmada «niño P. Marco» el 16 de abril de 1962, cuando Pedro tenía trece años. Regalada a una amiga llamada Sole, reapareció en Madrid sesenta años después.',
+    image: '/primer-cuadro/pintura.jpg',
+    imageAlt: 'Dibujo de Villena de Pedro Marco a los 13 años',
+  },
+  {
+    href: '/es/cabezudo',
+    tag: 'Arte en la calle · 2013',
+    title: 'El Fraile',
+    excerpt:
+      'Cómo un cabezudo destrozado renació en las manos de Pedro Marco, con un caracol escondido en la caries de un diente. Una firma secreta que solo descubres si sabes mirar.',
+    image: '/cabezudo/despues.jpg',
+    imageAlt: 'El cabezudo del Fraile pintado por Pedro Marco',
+  },
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Historias — Pedro Marco',
+  description:
+    'Relatos y episodios que acompañan al catálogo de Pedro Marco: obras con historia, encargos, firmas secretas y piezas reencontradas.',
+  url: 'https://pedromarco.es/es/historias/',
+  hasPart: historias.map((h) => ({
+    '@type': 'Article',
+    headline: h.title,
+    url: `https://pedromarco.es${h.href}`,
+    description: h.excerpt,
+  })),
+};
+---
+
+<Base
+  title="Historias — Pedro Marco"
+  description="Relatos que acompañan al catálogo de Pedro Marco: obras con historia, encargos, firmas secretas y piezas reencontradas."
+  jsonLd={jsonLd}
+>
+  <!-- Hero -->
+  <section class="historias-hero">
+    <div class="historias-hero-inner">
+      <p class="historias-kicker">Episodios del archivo</p>
+      <h1 class="historias-title">
+        Historias
+      </h1>
+      <p class="historias-lede">
+        Obras con relato propio: encargos inesperados, piezas reencontradas, firmas secretas.
+        Cada entrada cuenta un episodio en la vida de Pedro Marco, más allá del catálogo.
+      </p>
+    </div>
+  </section>
+
+  <!-- Stories grid -->
+  <section class="historias-list">
+    <div class="historias-grid">
+      {historias.map((h) => (
+        <a class="historia-card" href={h.href}>
+          <div class="historia-frame">
+            <img src={h.image} alt={h.imageAlt} loading="lazy" />
+          </div>
+          <div class="historia-body">
+            <span class="historia-tag">{h.tag}</span>
+            <h2 class="historia-title">{h.title}</h2>
+            <p class="historia-excerpt">{h.excerpt}</p>
+            <span class="historia-cta">
+              Leer la historia
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10m-4-4l4 4-4 4"/></svg>
+            </span>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <p class="historias-more">
+      Más historias por venir. Si tienes una que contar sobre alguna obra de Pedro,
+      <a href="/es/contacto">escríbenos</a>.
+    </p>
+  </section>
+
+  <style is:global>
+    .historias-hero {
+      background: var(--bg-warm);
+      border-bottom: 1px solid var(--line);
+    }
+    .historias-hero-inner {
+      max-width: 900px; margin: 0 auto;
+      padding: 100px 32px 80px;
+      text-align: center;
+    }
+    @media (max-width: 780px) {
+      .historias-hero-inner { padding: 56px 20px 44px; }
+    }
+    .historias-kicker {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 20px;
+    }
+    @media (max-width: 780px) { .historias-kicker { margin-bottom: 14px; } }
+    .historias-title {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(44px, 12vw, 120px);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin: 0 0 28px;
+      overflow-wrap: anywhere;
+    }
+    @media (max-width: 780px) { .historias-title { margin-bottom: 20px; } }
+    .historias-lede {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(17px, 2vw, 22px);
+      line-height: 1.45;
+      color: var(--ink-soft);
+      max-width: 48ch;
+      margin: 0 auto;
+    }
+
+    .historias-list {
+      max-width: 1280px; margin: 0 auto;
+      padding: 80px 32px 100px;
+    }
+    @media (max-width: 780px) {
+      .historias-list { padding: 44px 20px 64px; }
+    }
+    .historias-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+    @media (max-width: 900px) { .historias-grid { grid-template-columns: 1fr; gap: 48px; } }
+
+    .historia-card {
+      display: flex; flex-direction: column;
+      gap: 20px;
+      text-decoration: none;
+      color: inherit;
+      transition: transform .4s cubic-bezier(.2,.7,.2,1);
+    }
+    @media (max-width: 780px) { .historia-card { gap: 16px; } }
+    .historia-card:hover { transform: translateY(-4px); }
+    .historia-frame {
+      position: relative;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      background: var(--bg-deep);
+      box-shadow: 0 1px 0 rgba(0,0,0,0.04), 0 20px 40px -30px rgba(42,33,27,0.3);
+    }
+    .historia-frame img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform .8s cubic-bezier(.2,.7,.2,1);
+    }
+    .historia-card:hover .historia-frame img { transform: scale(1.04); }
+    .historia-frame::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 55%, rgba(0,0,0,0.2));
+      opacity: 0;
+      transition: opacity .3s;
+      pointer-events: none;
+    }
+    .historia-card:hover .historia-frame::after { opacity: 1; }
+
+    .historia-body { display: flex; flex-direction: column; gap: 12px; }
+    .historia-tag {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+    }
+    .historia-title {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(26px, 3vw, 40px);
+      line-height: 1.05;
+      letter-spacing: -0.015em;
+      color: var(--ink);
+      margin: 0;
+    }
+    .historia-excerpt {
+      font-family: var(--serif);
+      font-size: 17px;
+      line-height: 1.5;
+      color: var(--ink-soft);
+      margin: 0;
+    }
+    @media (max-width: 780px) { .historia-excerpt { font-size: 16px; } }
+    .historia-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border-bottom: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+      padding-bottom: 3px;
+      align-self: flex-start;
+      transition: color .2s, border-color .2s;
+      margin-top: 4px;
+    }
+    .historia-card:hover .historia-cta {
+      color: var(--ink);
+      border-bottom-color: var(--ink);
+    }
+
+    .historias-more {
+      margin: 64px 0 0;
+      font-family: var(--serif);
+      font-style: italic;
+      color: var(--ink-soft);
+      text-align: center;
+      font-size: 17px;
+      padding: 0 8px;
+    }
+    @media (max-width: 780px) { .historias-more { margin-top: 48px; font-size: 16px; } }
+    .historias-more a {
+      color: var(--accent);
+      border-bottom: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+      transition: color .2s, border-color .2s;
+    }
+    .historias-more a:hover { color: var(--ink); border-bottom-color: var(--ink); }
+  </style>
+</Base>

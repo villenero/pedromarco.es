@@ -1,6 +1,5 @@
 ---
 import '../styles/global.css';
-import { t } from '../i18n/utils';
 import obrasData from '../../obras.json';
 
 interface Props {
@@ -8,17 +7,21 @@ interface Props {
   description?: string;
   image?: string;
   jsonLd?: Record<string, any>;
+  bodyClass?: string;
 }
 
 const siteUrl = 'https://pedromarco.es';
 const totalObras = obrasData.obras.length;
 const buildDate = new Date().toLocaleDateString('es-ES', { year: 'numeric', month: 'long' });
 
-const { title, description = 'Pedro Marco Hernández — Pintor', image, jsonLd } = Astro.props;
+const { title, description = 'Pedro Marco Hernández — Pintor', image, jsonLd, bodyClass = '' } = Astro.props;
 
 const currentPath = Astro.url.pathname;
 const canonicalUrl = `${siteUrl}${currentPath}`;
 const ogImage = image ?? `${siteUrl}/favicon-512.png`;
+
+const isLanding = currentPath === '/es/' || currentPath === '/es';
+const bodyClasses = ['site-body', 'grain', bodyClass].filter(Boolean).join(' ');
 ---
 
 <!doctype html>
@@ -31,10 +34,8 @@ const ogImage = image ?? `${siteUrl}/favicon-512.png`;
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-  <!-- SEO -->
   <link rel="canonical" href={canonicalUrl} />
 
-  <!-- Open Graph -->
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:image" content={ogImage} />
@@ -43,7 +44,6 @@ const ogImage = image ?? `${siteUrl}/favicon-512.png`;
   <meta property="og:locale" content="es_ES" />
   <meta property="og:site_name" content="Pedro Marco" />
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
@@ -54,203 +54,209 @@ const ogImage = image ?? `${siteUrl}/favicon-512.png`;
   )}
 
   <title>{title}</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
 </head>
-<body class="min-h-screen bg-white text-gray-900 flex flex-col">
-  <!-- Navigation -->
-  <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-        <!-- Logo -->
-        <a href="/es/" class="hover:opacity-70 transition-opacity">
-          <img src="/logo.png" alt="Pedro Marco" class="h-6 sm:h-8" />
-        </a>
+<body class={bodyClasses}>
 
-        <!-- Nav links (desktop) -->
-        <div class="hidden sm:flex items-center gap-6 text-sm">
-          <a href="/es/" class="hover:opacity-70 transition-opacity">
-            {t('nav.home')}
-          </a>
-          <a href="/es/sobre" class="hover:opacity-70 transition-opacity">
-            {t('nav.about')}
-          </a>
-          <a href="/es/recorrido" class="hover:opacity-70 transition-opacity">
-            {t('nav.journey')}
-          </a>
-        </div>
-
-        <!-- Hamburger (mobile) -->
-        <button id="menu-toggle" class="sm:hidden p-2 -mr-2" aria-label="Menu">
-          <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
-          <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" d="M6 6l12 12M6 18L18 6"/>
-          </svg>
-        </button>
+  <!-- NAV -->
+  <nav class="site" id="site-nav">
+    <div class="nav-inner">
+      <a href="/es/" class="brand" aria-label="Pedro Marco — inicio">
+        <img src="/logo.png" alt="Pedro Marco — firma" />
+      </a>
+      <div class="nav-links">
+        <a href="/es/obras">Obra</a>
+        <a href="/es/sobre">Biografía</a>
+        <a href="/es/recorrido">Recorrido</a>
+        <a href="/es/contacto" class="nav-cta">Colaborar</a>
       </div>
+      <button class="nav-burger" id="nav-burger" aria-label="Menú" aria-expanded="false">
+        <svg id="burger-open" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="burger-close" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="display:none"><path stroke-linecap="round" d="M6 6l12 12M6 18L18 6"/></svg>
+      </button>
     </div>
-
-    <!-- Mobile menu -->
-    <div id="mobile-menu" class="sm:hidden hidden border-t border-gray-100 bg-white/95 backdrop-blur-md">
-      <div class="flex flex-col items-center py-4 gap-3 text-sm">
-        <a href="/es/" class="py-1.5 hover:opacity-70 transition-opacity">
-          {t('nav.home')}
-        </a>
-        <a href="/es/sobre" class="py-1.5 hover:opacity-70 transition-opacity">
-          {t('nav.about')}
-        </a>
-        <a href="/es/recorrido" class="py-1.5 hover:opacity-70 transition-opacity">
-          {t('nav.journey')}
-        </a>
+    <div class="mobile-menu" id="mobile-menu">
+      <div class="mm-inner">
+        <a href="/es/obras">Obra</a>
+        <a href="/es/sobre">Biografía</a>
+        <a href="/es/recorrido">Recorrido</a>
+        <a href="/es/contacto" class="nav-cta">Colaborar</a>
       </div>
     </div>
   </nav>
 
   <script is:inline>
-    document.getElementById('menu-toggle').addEventListener('click', () => {
-      const menu = document.getElementById('mobile-menu');
-      const open = document.getElementById('icon-open');
-      const close = document.getElementById('icon-close');
-      menu.classList.toggle('hidden');
-      open.classList.toggle('hidden');
-      close.classList.toggle('hidden');
-    });
-  </script>
-
-  <!-- Welcome modal (first visit only) -->
-  <div id="welcome-modal" class="fixed inset-0 z-[200] flex items-center justify-center p-4" style="display:none">
-    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" id="welcome-backdrop"></div>
-    <div class="relative bg-white rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden animate-modal-in">
-      <!-- Close X -->
-      <button id="welcome-x" class="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center rounded-full text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors" aria-label="Cerrar">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 6l12 12M6 18L18 6"/></svg>
-      </button>
-      <!-- Header con fondo cálido -->
-      <div class="bg-gradient-to-br from-amber-50 to-orange-50 px-6 sm:px-8 pt-6 sm:pt-8 pb-4 sm:pb-6 text-center">
-        <img src="/favicon.png" alt="" class="w-12 sm:w-16 h-12 sm:h-16 mx-auto mb-3 sm:mb-4 opacity-70" />
-        <h2 class="text-xl sm:text-2xl font-bold text-gray-900 mb-1">Ayúdanos a preservar su legado</h2>
-        <p class="text-amber-800/70 text-sm">Pedro Marco · Villena, 1949–2022</p>
-      </div>
-      <!-- Body -->
-      <div class="px-6 sm:px-8 py-4 sm:py-6 text-gray-600 text-sm sm:text-[15px] leading-relaxed space-y-3 sm:space-y-4">
-        <p>
-          A lo largo de más de 56 años de trayectoria, Pedro Marco creó un cuerpo de obra extenso hoy disperso en colecciones privadas, instituciones y hogares.
-        </p>
-        <p>
-          <strong class="text-gray-800">¿Tienes una obra suya?</strong> Un cuadro, grabado o dibujo… Nos encantaría saber de él.
-        </p>
-        <div class="flex items-start gap-3 bg-amber-50/60 rounded-xl p-3 sm:p-4 text-sm">
-          <span class="text-lg sm:text-xl mt-0.5">📷</span>
-          <span>Basta con una foto desde el móvil y cualquier dato que conozcas.</span>
-        </div>
-      </div>
-      <!-- Actions -->
-      <div class="px-6 sm:px-8 pb-6 sm:pb-8 flex flex-col sm:flex-row gap-3">
-        <a
-          id="welcome-collaborate"
-          href="/es/contacto"
-          class="flex-1 inline-flex items-center justify-center gap-2 bg-amber-800 text-white px-5 py-3 rounded-xl font-medium hover:bg-amber-900 transition-colors text-sm"
-        >
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-          </svg>
-          Quiero colaborar
-        </a>
-        <button
-          id="welcome-close"
-          class="flex-1 px-5 py-3 rounded-xl font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors text-sm"
-        >
-          Ahora no, gracias
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <style>
-    @keyframes modal-in {
-      from { opacity: 0; transform: translateY(20px) scale(0.97); }
-      to { opacity: 1; transform: translateY(0) scale(1); }
-    }
-    .animate-modal-in {
-      animation: modal-in 0.35s ease-out;
-    }
-  </style>
-
-  <!-- Floating snail button (hidden on /contacto) -->
-  {!currentPath.includes('/contacto') && (
-    <button
-      id="snail-fab"
-      aria-label="Colaborar con el catálogo"
-      class="fixed bottom-6 right-6 z-[150] w-12 h-12 rounded-full bg-white/80 backdrop-blur-sm shadow-lg border border-gray-200/60 flex items-center justify-center hover:bg-amber-50 hover:shadow-xl hover:scale-110 transition-all duration-300 cursor-pointer group"
-    >
-      <img src="/favicon.png" alt="" class="w-7 h-7 opacity-50 group-hover:opacity-80 transition-opacity" />
-    </button>
-  )}
-
-  <script is:inline>
     (function() {
-      var modal = document.getElementById('welcome-modal');
-      var fab = document.getElementById('snail-fab');
+      var nav = document.getElementById('site-nav');
+      var burger = document.getElementById('nav-burger');
+      var menu = document.getElementById('mobile-menu');
+      var iconOpen = document.getElementById('burger-open');
+      var iconClose = document.getElementById('burger-close');
 
-      function openModal() {
-        modal.style.display = 'flex';
+      if (burger && menu) {
+        burger.addEventListener('click', function() {
+          var open = menu.classList.toggle('open');
+          burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+          if (iconOpen) iconOpen.style.display = open ? 'none' : '';
+          if (iconClose) iconClose.style.display = open ? '' : 'none';
+        });
       }
-      function dismiss() {
-        localStorage.setItem('pm_welcome_seen', '1');
-        modal.style.display = 'none';
+
+      if (nav) {
+        window.addEventListener('scroll', function() {
+          nav.classList.toggle('scrolled', window.scrollY > 8);
+        }, { passive: true });
       }
-
-      // First visit: auto-show after delay
-      if (!localStorage.getItem('pm_welcome_seen')) {
-        setTimeout(openModal, 1500);
-      }
-
-      // Floating button always opens modal (not present on /contacto)
-      if (fab) fab.addEventListener('click', openModal);
-
-      // Close handlers
-      document.getElementById('welcome-close').addEventListener('click', dismiss);
-      document.getElementById('welcome-x').addEventListener('click', dismiss);
-      document.getElementById('welcome-backdrop').addEventListener('click', dismiss);
-      document.getElementById('welcome-collaborate').addEventListener('click', function() {
-        localStorage.setItem('pm_welcome_seen', '1');
-      });
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.style.display === 'flex') dismiss();
-      });
     })();
   </script>
 
+  {!isLanding && (
+    <>
+      <!-- Welcome modal (first visit only, not on landing) -->
+      <div id="welcome-modal" class="fixed inset-0 z-[200] flex items-center justify-center p-4" style="display:none">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" id="welcome-backdrop"></div>
+        <div class="relative bg-white rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden animate-modal-in">
+          <button id="welcome-x" class="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center rounded-full text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors" aria-label="Cerrar">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 6l12 12M6 18L18 6"/></svg>
+          </button>
+          <div class="bg-gradient-to-br from-amber-50 to-orange-50 px-6 sm:px-8 pt-6 sm:pt-8 pb-4 sm:pb-6 text-center">
+            <img src="/favicon.png" alt="" class="w-12 sm:w-16 h-12 sm:h-16 mx-auto mb-3 sm:mb-4 opacity-70" />
+            <h2 class="text-xl sm:text-2xl font-bold text-gray-900 mb-1">Ayúdanos a preservar su legado</h2>
+            <p class="text-amber-800/70 text-sm">Pedro Marco · Villena, 1949–2022</p>
+          </div>
+          <div class="px-6 sm:px-8 py-4 sm:py-6 text-gray-600 text-sm sm:text-[15px] leading-relaxed space-y-3 sm:space-y-4">
+            <p>
+              A lo largo de más de 56 años de trayectoria, Pedro Marco creó un cuerpo de obra extenso hoy disperso en colecciones privadas, instituciones y hogares.
+            </p>
+            <p>
+              <strong class="text-gray-800">¿Tienes una obra suya?</strong> Un cuadro, grabado o dibujo… Nos encantaría saber de él.
+            </p>
+            <div class="flex items-start gap-3 bg-amber-50/60 rounded-xl p-3 sm:p-4 text-sm">
+              <span class="text-lg sm:text-xl mt-0.5">📷</span>
+              <span>Basta con una foto desde el móvil y cualquier dato que conozcas.</span>
+            </div>
+          </div>
+          <div class="px-6 sm:px-8 pb-6 sm:pb-8 flex flex-col sm:flex-row gap-3">
+            <a
+              id="welcome-collaborate"
+              href="/es/contacto"
+              class="flex-1 inline-flex items-center justify-center gap-2 bg-amber-800 text-white px-5 py-3 rounded-xl font-medium hover:bg-amber-900 transition-colors text-sm"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+              </svg>
+              Quiero colaborar
+            </a>
+            <button
+              id="welcome-close"
+              class="flex-1 px-5 py-3 rounded-xl font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors text-sm"
+            >
+              Ahora no, gracias
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <style is:global>
+        @keyframes modal-in {
+          from { opacity: 0; transform: translateY(20px) scale(0.97); }
+          to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .animate-modal-in {
+          animation: modal-in 0.35s ease-out;
+        }
+      </style>
+
+      {!currentPath.includes('/contacto') && (
+        <button
+          id="snail-fab"
+          aria-label="Colaborar con el catálogo"
+          class="fixed bottom-6 right-6 z-[150] w-12 h-12 rounded-full backdrop-blur-sm shadow-lg flex items-center justify-center hover:shadow-xl hover:scale-110 transition-all duration-300 cursor-pointer group"
+          style="background: color-mix(in srgb, var(--paper) 85%, transparent); border: 1px solid var(--line);"
+        >
+          <img src="/favicon.png" alt="" class="w-7 h-7 opacity-50 group-hover:opacity-80 transition-opacity" />
+        </button>
+      )}
+
+      <script is:inline>
+        (function() {
+          var modal = document.getElementById('welcome-modal');
+          var fab = document.getElementById('snail-fab');
+          if (!modal) return;
+
+          function openModal() { modal.style.display = 'flex'; }
+          function dismiss() {
+            localStorage.setItem('pm_welcome_seen', '1');
+            modal.style.display = 'none';
+          }
+
+          if (!localStorage.getItem('pm_welcome_seen')) {
+            setTimeout(openModal, 1500);
+          }
+
+          if (fab) fab.addEventListener('click', openModal);
+
+          var closeBtn = document.getElementById('welcome-close');
+          var xBtn = document.getElementById('welcome-x');
+          var bdBtn = document.getElementById('welcome-backdrop');
+          var collab = document.getElementById('welcome-collaborate');
+          if (closeBtn) closeBtn.addEventListener('click', dismiss);
+          if (xBtn) xBtn.addEventListener('click', dismiss);
+          if (bdBtn) bdBtn.addEventListener('click', dismiss);
+          if (collab) collab.addEventListener('click', function() {
+            localStorage.setItem('pm_welcome_seen', '1');
+          });
+          document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.style.display === 'flex') dismiss();
+          });
+        })();
+      </script>
+    </>
+  )}
+
   <!-- Content -->
-  <main class="flex-1">
+  <main>
     <slot />
   </main>
 
-  <!-- Footer -->
-  <footer class="border-t border-gray-100 py-8 text-center text-sm text-gray-400">
-    <div class="mb-2 flex items-center justify-center gap-4">
-      <a href="/es/" class="hover:text-gray-600 transition-colors">
-        {t('nav.home')}
-      </a>
-      <a href="/es/sobre" class="hover:text-gray-600 transition-colors">
-        {t('nav.about')}
-      </a>
-      <a href="/es/recorrido" class="hover:text-gray-600 transition-colors">
-        {t('nav.journey')}
-      </a>
-      <a href="/es/contacto" class="hover:text-gray-600 transition-colors">
-        {t('nav.contact')}
-      </a>
-      <a href="/es/colecciones" class="hover:text-gray-600 transition-colors">
-        Colecciones
-      </a>
-      <a href="/es/cabezudo" class="hover:text-gray-600 transition-colors">
-        El Fraile
-      </a>
+  <!-- FOOTER -->
+  <footer class="site" id="contacto">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <h3 class="footer-big">
+          Un archivo <em>vivo,</em><br/>
+          hecho entre <em>todos.</em>
+        </h3>
+        <div class="footer-col">
+          <h5>Navegación</h5>
+          <ul>
+            <li><a href="/es/obras">Obra</a></li>
+            <li><a href="/es/sobre">Biografía</a></li>
+            <li><a href="/es/recorrido">Recorrido</a></li>
+            <li><a href="/es/propietarios">Propietarios</a></li>
+            <li><a href="/es/historias">Historias</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Familia Pedro Marco</h5>
+          <ul>
+            <li><a href="mailto:pedromarco@pedromarco.es">pedromarco@pedromarco.es</a></li>
+            <li>Villena · Alicante, España</li>
+            <li style="margin-top:16px;"><a href="/es/contacto">Formulario de contacto →</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© {new Date().getFullYear()} Familia Pedro Marco — Todos los derechos reservados</span>
+        <span>{totalObras} obras catalogadas · actualizado {buildDate}</span>
+      </div>
     </div>
-    <img src="/favicon.png" alt="" class="h-6 mx-auto mb-2 opacity-40" />
-    <p>&copy; {new Date().getFullYear()} Familia Pedro Marco. {t('footer.rights')}.</p>
-    <p class="mt-2 text-xs text-gray-300">{totalObras} obras catalogadas · Actualizado {buildDate}</p>
   </footer>
 </body>
 </html>

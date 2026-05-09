@@ -1,0 +1,302 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "1962 — El primer cuadro de Pedro Marco",
+  "description": "La historia del que posiblemente es el primer cuadro pintado por Pedro Marco, una vista de Villena en lápices de color, ceras y tinta china firmada 'niño P. Marco' el 16 de abril de 1962, cuando tenía 13 años.",
+  "author": { "@type": "Person", "name": "José Marco Hernández" },
+  "datePublished": "2023-08-13",
+  "about": {
+    "@type": "VisualArtwork",
+    "name": "Villena (El Huerto)",
+    "creator": { "@type": "Person", "name": "Pedro Marco" },
+    "dateCreated": "1962-04-16",
+    "artMedium": "Técnica mixta (lápices de color, ceras y tinta china) sobre papel",
+    "artform": "Paisaje",
+    "width": "43 cm",
+    "height": "33 cm",
+    "locationCreated": { "@type": "Place", "name": "Villena, Alicante" }
+  }
+};
+---
+
+<Base
+  title="1962 — El primer cuadro de Pedro Marco"
+  description="La historia del que posiblemente es el primer cuadro pintado por Pedro Marco, una vista de Villena en lápices de color, ceras y tinta china firmada 'niño P. Marco' el 16 de abril de 1962, cuando tenía 13 años."
+  jsonLd={jsonLd}
+>
+  <!-- Hero -->
+  <section class="relative bg-amber-950 text-white overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-amber-950/90 to-amber-950/70 z-10"></div>
+    <img
+      src="/primer-cuadro/pintura.jpg"
+      alt="Dibujo de Villena pintado por Pedro Marco a los 13 años"
+      class="absolute inset-0 w-full h-full object-cover opacity-30 blur-sm scale-105"
+    />
+    <div class="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32 text-center">
+      <p class="text-amber-300/80 text-sm font-semibold uppercase tracking-widest mb-4">Archivo · 1962</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+        El primer cuadro
+      </h1>
+      <p class="text-lg sm:text-xl text-amber-100/80 max-w-2xl mx-auto leading-relaxed">
+        Una vista de Villena dibujada por un niño de trece años en lápices de color, ceras y tinta china.
+        Firmada con letra de escolar, regalada como recuerdo, y encontrada seis décadas después en Madrid.
+      </p>
+    </div>
+  </section>
+
+  <!-- Intro narrativa -->
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+    <div class="prose prose-lg prose-gray max-w-none">
+      <p class="text-xl text-gray-600 leading-relaxed">
+        <strong>16 de abril de 1962.</strong> Pedro Marco tiene trece años. Sobre un papel
+        de 43 × 33 cm, con <strong>lápices de color, ceras y tinta china</strong> —y un cuidado impropio de
+        su edad—, dibuja Villena desde el huerto que regentaba su abuelo, el huerto de
+        <strong>Don Juan García</strong>, «el amo». La firma aún es de escolar:
+        <em>«niño P. Marco, 16-4-1962»</em>.
+      </p>
+      <p class="text-xl text-gray-600 leading-relaxed">
+        El cuadro lo regaló a una amiga llamada Sole, para el día de su santo. En el reverso,
+        el padre de Pedro escribió la dedicatoria. Con el tiempo, el dibujo viajó hasta
+        Madrid, donde hoy lo conserva <strong>Paco Méndez</strong>. En julio de 2023, una
+        fotografía del cuadro llegó por WhatsApp a la familia Marco. Era, muy probablemente,
+        <em>la primera pieza</em> de un catálogo que acabaría teniendo cientos.
+      </p>
+    </div>
+  </section>
+
+  <!-- El cuadro -->
+  <section class="bg-gray-50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+      <h2 class="text-2xl sm:text-3xl font-bold text-center mb-4">Villena, desde el huerto</h2>
+      <p class="text-center text-gray-500 mb-12 max-w-2xl mx-auto">
+        Lápices de color, ceras y tinta china sobre papel · 43 × 33 cm · 16 de abril de 1962.
+        Propietario: Paco Méndez (Madrid).
+      </p>
+      <div class="rounded-xl overflow-hidden shadow-2xl bg-white">
+        <img
+          src="/primer-cuadro/pintura.jpg"
+          alt="Villena pintada por Pedro Marco a los 13 años: torre de Santa María, castillo, palmera, huerto de Don Juan García"
+          class="w-full h-auto"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- La precisión de un niño -->
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+    <div class="prose prose-lg prose-gray max-w-none space-y-6">
+      <h2 class="text-2xl sm:text-3xl font-bold">La precisión de un niño</h2>
+      <p class="text-gray-600 leading-relaxed">
+        Lo que sorprende no es que un niño de trece años coja el papel y los lápices. Lo que
+        sorprende es el nivel de <strong>observación</strong>. Pedro no copia un paisaje:
+        lo cataloga. Cada ventana está en su sitio. Cada campana suena a la hora correcta.
+        Hasta la luz del día está codificada en las sombras.
+      </p>
+      <p class="text-gray-600 leading-relaxed">
+        En palabras de su hermano <strong>Pepe Marco</strong>, que escribió el estudio de la obra
+        en 2023, ya en este dibujo «tenía perfecto conocimiento del huerto y del paisaje en general
+        que lo componía, se aproximaba a la realidad, como si fuese una fotografía». Un adelanto
+        —sin saberlo— del hiperrealismo que años después marcaría buena parte de su producción.
+      </p>
+    </div>
+  </section>
+
+  <!-- Detalles catalogados por Pepe Marco -->
+  <section class="bg-amber-50/40">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+      <h2 class="text-2xl sm:text-3xl font-bold text-center mb-3">Los detalles, uno a uno</h2>
+      <p class="text-center text-gray-500 mb-12 max-w-2xl mx-auto">
+        Estudio de la obra por Pepe Marco (30 de julio de 2023).
+        Cada elemento del cuadro tiene su correlato real en el huerto de Don Juan.
+      </p>
+
+      <div class="space-y-6 text-gray-700 leading-relaxed">
+        <div class="bg-white rounded-xl p-6 sm:p-8 shadow-sm border border-amber-100/50">
+          <h3 class="text-lg font-semibold text-amber-900 mb-2">La torre de Santa María</h3>
+          <p>
+            Las ventanas de subida están situadas correctamente, así como las dos campanas y el reloj.
+            En la parte superior izquierda se ve la <em>«campanica de la Virgen»</em> que daba las horas
+            —campana original de la torre del Orejón (1500–1888)—.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 sm:p-8 shadow-sm border border-amber-100/50">
+          <h3 class="text-lg font-semibold text-amber-900 mb-2">La torre del Homenaje</h3>
+          <p>
+            Pintó las ventanas del Castillo en su posición exacta, y algunos pájaros sobre las murallas.
+            Aplicó a la escena una hora del día: las sombras de ambas torres indican que es
+            <strong>media mañana</strong>. Alrededor, varias casas-cueva por la zona del Castillo.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 sm:p-8 shadow-sm border border-amber-100/50">
+          <h3 class="text-lg font-semibold text-amber-900 mb-2">La casa de Don Juan García</h3>
+          <p>
+            A sus ventanas les pintó cortinas y macetas. A la izquierda, una ventana azul cerrada
+            da a las <em>cambras</em>, donde jugaban con Juanito, nieto de Don Juan.
+            Sobre las casas, las primeras antenas de TV de Villena. La palmera con dátiles está
+            situada en su sitio: el patio de Don Juan.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 sm:p-8 shadow-sm border border-amber-100/50">
+          <h3 class="text-lg font-semibold text-amber-900 mb-2">El abuelo y el huerto</h3>
+          <p>
+            El abuelo se ve entrando a la casa, después de dar órdenes y vigilar los trabajos.
+            También aparece en <em>«el paseo»</em>, una senda desde la casa a la noria, elevada
+            sobre una pared de 80 cm con manzanilla y flores a los lados. El huerto se vendió en 1970.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 sm:p-8 shadow-sm border border-amber-100/50">
+          <h3 class="text-lg font-semibold text-amber-900 mb-2">Los árboles y el lavadero</h3>
+          <p>
+            El árbol central son ciruelos amarillos —los <em>«cascabeles»</em>, como los llamaba
+            el abuelo—. A la derecha, un tilo. Al fondo, el lavadero donde las criadas de Don Juan
+            hacían la colada, que servía también de vestidor para las nietas cuando se bañaban
+            en la balsa. En la balsa, alguien bañándose.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 sm:p-8 shadow-sm border border-amber-100/50">
+          <h3 class="text-lg font-semibold text-amber-900 mb-2">La noria cubierta</h3>
+          <p>
+            Quizás la única noria de Villena a cubierto, dentro de un almacén que servía también
+            para guardar herramientas, sarmientos y manzanilla —y de vestidor a la hora del baño,
+            «nunca juntos, chicos o chicas»—.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 sm:p-8 shadow-sm border border-amber-100/50">
+          <h3 class="text-lg font-semibold text-amber-900 mb-2">El agua, catalogada</h3>
+          <p>
+            El punto oscuro junto a la noria es el partidor de salida de agua de la balsa para riego.
+            Pedro pinta cómo la <em>«regaera»</em> va llena hasta el regador (seguramente su padre);
+            pasado éste, ya no lleva agua. Los puntos oscuros son las portillas para la entrada de agua
+            en las <em>«parás»</em>. Dibujó varias clases de cultivos: lechugas, espinacas, zanahorias, apio…
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 sm:p-8 shadow-sm border border-amber-100/50">
+          <h3 class="text-lg font-semibold text-amber-900 mb-2">La gente en movimiento</h3>
+          <p>
+            Un labrador con mula —podría ser el tío Antonio o Miguel el mulero, que el abuelo tenía
+            dado de alta todo el año—. Y en el centro del paseo-jardín, una niña saltando a la cuerda.
+            Un cuadro en movimiento, dentro de un huerto que ya no existe.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- La firma -->
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+    <div class="sm:flex gap-10 items-center">
+      <div class="sm:w-1/2 mb-8 sm:mb-0">
+        <div class="rounded-xl overflow-hidden shadow-xl">
+          <img
+            src="/primer-cuadro/firma.jpg"
+            alt="Firma: niño P. Marco, 16-4-1962. Junto a la mula y el labrador en el huerto."
+            class="w-full h-auto"
+            loading="lazy"
+          />
+        </div>
+      </div>
+      <div class="sm:w-1/2">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-6">«niño P. Marco»</h2>
+        <div class="prose prose-lg prose-gray">
+          <p class="text-gray-600 leading-relaxed">
+            La firma delata la edad. No es aún la caligrafía decidida del Pedro Marco adulto,
+            sino la de un chaval que todavía firmaba con el diminutivo: <em>«niño P. Marco»</em>.
+            Al lado, el labrador guía a la mula por la parcela. Décadas antes del
+            <strong>caracol</strong> con el que sellaría sus obras maduras, aquí ya está todo:
+            el gesto, la seguridad en el trazo, la voluntad de no dejar nada al azar.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- La dedicatoria -->
+  <section class="bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+      <div class="sm:flex gap-10 items-center">
+        <div class="sm:w-1/2 sm:order-2 mb-8 sm:mb-0">
+          <div class="rounded-xl overflow-hidden shadow-xl">
+            <img
+              src="/primer-cuadro/dedicatoria.jpg"
+              alt="Dedicatoria en el reverso del cuadro: 'Sole en el día de tu santo, un recuerdo de Villena, el Huerto. Vuestro amigo, Pedro Marco.'"
+              class="w-full h-auto"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <div class="sm:w-1/2 sm:order-1">
+          <h2 class="text-2xl sm:text-3xl font-bold mb-6">Un recuerdo para Sole</h2>
+          <div class="prose prose-lg prose-gray">
+            <p class="text-gray-600 leading-relaxed">
+              En el reverso del papel, con la letra inconfundible del padre de Pedro, se lee:
+            </p>
+            <blockquote class="border-l-4 border-amber-300 pl-5 italic text-gray-700 my-4 not-prose">
+              «Sole en el día de tu santo, un recuerdo de Villena, el Huerto.
+              Vuestro amigo.»
+            </blockquote>
+            <p class="text-gray-600 leading-relaxed">
+              Firmado por el propio Pedro. El cuadro era un regalo de santo —una costumbre antigua,
+              casi olvidada— para una amiga llamada Sole. De ahí viajaría hasta Madrid, y allí
+              esperaría más de seis décadas a que alguien, en julio de 2023, hiciera
+              <strong>una foto con el móvil</strong> y la enviara a la familia del artista.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Epílogo -->
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+    <div class="prose prose-lg prose-gray max-w-none space-y-6">
+      <h2 class="text-2xl sm:text-3xl font-bold">Un huerto que ya no existe</h2>
+      <p class="text-gray-600 leading-relaxed">
+        El huerto de Don Juan se vendió en 1970. La palmera, el lavadero, la noria cubierta,
+        los ciruelos amarillos, la niña saltando a la cuerda —todo desapareció. Lo único que
+        queda, fijado en 43 × 33 cm de papel, lápiz, cera y tinta, es la mirada de un niño que ya dibujaba como si
+        supiera que un día habría que <strong>acordarse de todo esto</strong>.
+      </p>
+      <p class="text-gray-600 leading-relaxed">
+        Este cuadro es, probablemente, el principio del catálogo. Pero también es otra cosa:
+        la prueba de que Pedro Marco, mucho antes de ser <em>pintor de sueños</em>, ya era
+        pintor de memoria.
+      </p>
+    </div>
+  </section>
+
+  <!-- Créditos -->
+  <section class="border-t border-gray-100">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center text-sm text-gray-400">
+      <p>
+        Estudio de la obra y relato de detalles por
+        <strong class="text-gray-600">Pepe Marco</strong>, 30 de julio de 2023.
+      </p>
+      <p class="mt-2">
+        Publicado originalmente en
+        <a href="https://www.villenacuentame.com/2023/08/1962-el-primer-cuadro-de-pedro-marco.html" target="_blank" rel="noopener" class="text-amber-800 hover:text-amber-900 underline underline-offset-2">
+          Villena Cuéntame
+        </a>
+        (13 de agosto de 2023).
+      </p>
+      <p class="mt-2">
+        Obra propiedad de <strong class="text-gray-600">Paco Méndez</strong> (Madrid).
+      </p>
+      <div class="mt-6">
+        <a href="/es/obras" class="text-amber-800 hover:text-amber-900 transition-colors">
+          ← Volver al catálogo
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>
